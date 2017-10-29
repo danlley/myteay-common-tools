@@ -39,5 +39,7 @@
         <module>myteay-common-event</module>
         <module>myteay-common-orm</module>
         <module>myteay-common-aop</module>
+        <module>myteay-common-app</module>
+        <module>myteay-common-router</module>
     </modules>
 </project>
