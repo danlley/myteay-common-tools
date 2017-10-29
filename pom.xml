@@ -37,5 +37,7 @@
     <modules>
         <module>myteay-common-util</module>
         <module>myteay-common-event</module>
+        <module>myteay-common-orm</module>
+        <module>myteay-common-aop</module>
     </modules>
 </project>
