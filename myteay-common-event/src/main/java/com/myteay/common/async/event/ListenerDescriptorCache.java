@@ -31,9 +31,9 @@ public class ListenerDescriptorCache {
      * 
      * @param topic         事件主题
      * @return              监听器描述文件
-     * @throws MtException  异常
+     * @throws MtEventException  异常
      */
-    public ListenerDescriptor getListenerDescriptor(String topic) throws MtException {
+    public ListenerDescriptor getListenerDescriptor(String topic) throws MtEventException {
 
         if (StringUtils.isBlank(topic)) {
             logger.error("用于查找监听器的主题信息不存在，无法得到监听器描述文件，topic is null");
@@ -42,7 +42,7 @@ public class ListenerDescriptorCache {
 
         if (CollectionUtils.isEmpty(topicListeners)) {
             logger.warn("topicListeners must not be null");
-            throw new MtException("topicListeners must not be null");
+            throw new MtEventException("topicListeners must not be null");
         }
         return topicListeners.get(topic);
     }

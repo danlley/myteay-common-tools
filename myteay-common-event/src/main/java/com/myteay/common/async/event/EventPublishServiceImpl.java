@@ -22,12 +22,12 @@ public class EventPublishServiceImpl<T> implements EventPublishService<T> {
     private ListenerDescriptorCache listenerDescriptorCache;
 
     /** 
-     * @throws MtException 
+     * @throws MtEventException 
      * @see com.alipay.promocore.core.model.event.EventPulishService#publishEvent(com.alipay.promocore.core.model.event.MtEvent)
      */
     @SuppressWarnings("unchecked")
     @Override
-    public T publishEvent(MtEvent<?> event) throws MtException {
+    public T publishEvent(MtEvent<?> event) throws MtEventException {
 
         if (event == null) {
             logger.warn("PromocoreEvent is null，默认不执行");
@@ -39,7 +39,7 @@ public class EventPublishServiceImpl<T> implements EventPublishService<T> {
         ListenerDescriptor descriptor = listenerDescriptorCache.getListenerDescriptor(topic);
         if (descriptor == null) {
             logger.warn("扩展描述文件配置不可为空，topic=" + topic);
-            throw new MtException("扩展描述文件配置不可为空，topic=" + topic);
+            throw new MtEventException("扩展描述文件配置不可为空，topic=" + topic);
         }
 
         //扩展点在开发配置过程已进行校验，这里不需要重复校验

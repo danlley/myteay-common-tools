@@ -17,5 +17,5 @@ public interface EventPublishService<T> {
      * 
      * @param event     异步事件模型
      */
-    public T publishEvent(MtEvent<?> event) throws MtException;
+    public T publishEvent(MtEvent<?> event) throws MtEventException;
 }

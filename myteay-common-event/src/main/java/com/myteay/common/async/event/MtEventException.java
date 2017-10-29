@@ -8,9 +8,9 @@ package com.myteay.common.async.event;
  * 业务处理异常
  * 
  * @author min.weixm
- * @version $Id: MtException.java, v 0.1 Oct 28, 2017 11:23:31 PM min.weixm Exp $
+ * @version $Id: MtEventException.java, v 0.1 Oct 28, 2017 11:23:31 PM min.weixm Exp $
  */
-public class MtException extends Throwable {
+public class MtEventException extends Throwable {
 
     /** serialVersionUID */
     private static final long     serialVersionUID = -1698555152104131128L;
@@ -30,7 +30,7 @@ public class MtException extends Throwable {
     /**
      * @param e
      */
-    public MtException() {
+    public MtEventException() {
         this.errorCode = DEFAULT_ERR_CODE;
         this.message = DEFAULT_ERR_MSG;
     }
@@ -38,7 +38,7 @@ public class MtException extends Throwable {
     /**
      * @param e
      */
-    public MtException(String message) {
+    public MtEventException(String message) {
         super(message);
         this.errorCode = DEFAULT_ERR_CODE;
         this.message = message;
@@ -47,7 +47,7 @@ public class MtException extends Throwable {
     /**
      * @param e
      */
-    public MtException(Throwable e) {
+    public MtEventException(Throwable e) {
         super(e);
 
         this.errorCode = DEFAULT_ERR_CODE;
@@ -58,7 +58,7 @@ public class MtException extends Throwable {
      * @param msg
      * @param e
      */
-    public MtException(String msg, Throwable e) {
+    public MtEventException(String msg, Throwable e) {
         super(msg, e);
     }
 }
