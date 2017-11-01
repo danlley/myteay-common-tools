@@ -1,5 +1,5 @@
 /**
- * Danlley Wei (mailto://danlley@126.com)
+ * Myteay.com Inc.
  * Copyright (c) 2005-2017 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger;
@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 /**
  * DAL调用监控拦截器, 记录DAL执行的摘要日志
  * 
- * @author danlley
- * @version $Id: DalMonitorInterceptor.java, v 0.1 Oct 27, 2017 11:40:25 PM danlley Exp $
+ * @author min.weixm
+ * @version $Id: DalMonitorInterceptor.java, v 0.1 Nov 1, 2017 9:22:50 PM min.weixm Exp $
  */
 public class DalMonitorInterceptor implements MethodInterceptor {
 
