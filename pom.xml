@@ -41,5 +41,6 @@
         <module>myteay-common-aop</module>
         <module>myteay-common-app</module>
         <module>myteay-common-router</module>
+        <module>myteay-common-http</module>
     </modules>
 </project>
