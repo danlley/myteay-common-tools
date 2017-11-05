@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
  * DAL调用监控拦截器, 记录DAL执行的摘要日志
  * 
  * @author min.weixm
- * @version $Id: DalMonitorInterceptor.java, v 0.1 Nov 1, 2017 9:22:50 PM min.weixm Exp $
+ * @version $Id: DalMonitorInterceptor.java, v 0.1 Nov 5, 2017 9:32:11 PM min.weixm Exp $
  */
 public class DalMonitorInterceptor implements MethodInterceptor {
 
