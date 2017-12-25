@@ -7,13 +7,13 @@ package com.myteay.common.router.support;
 /**
  * 
  * @author Administrator
- * @version $Id: TPLinkRouterConstants.java, v 0.1 2016Äê4ÔÂ29ÈÕ ÏÂÎç11:13:15 Administrator Exp $
+ * @version $Id: TPLinkRouterConstants.java, v 0.1 2016å¹´4æœˆ29æ—¥ ä¸‹åˆ11:13:15 Administrator Exp $
  */
 public class TPLinkRouterConstants {
 
-    /** ÉèÖÃÏòµ¼Ê×Ò³£¨wan=16 Â·ÓÉÆ÷×Ô¼ºÑ¡Ôñ£»wan=2 PPPOE·½Ê½£»wan=0 ¶¯Ì¬IP£¨ÒÔÌ«Íø¿í´ø£¬×Ô¶¯´ÓÍøÂç·şÎñÉÌ»ñÈ¡IPµØÖ·£©;wan=1 ¾²Ì¬IP£¨ÒÔÌ«Íø¿í´ø£¬ÍøÂç·şÎñÉÌÌá¹©¹Ì¶¨IPµØÖ·£©£© */
+    /** è®¾ç½®å‘å¯¼é¦–é¡µï¼ˆwan=16 è·¯ç”±å™¨è‡ªå·±é€‰æ‹©ï¼›wan=2 PPPOEæ–¹å¼ï¼›wan=0 åŠ¨æ€IPï¼ˆä»¥å¤ªç½‘å®½å¸¦ï¼Œè‡ªåŠ¨ä»ç½‘ç»œæœåŠ¡å•†è·å–IPåœ°å€ï¼‰;wan=1 é™æ€IPï¼ˆä»¥å¤ªç½‘å®½å¸¦ï¼Œç½‘ç»œæœåŠ¡å•†æä¾›å›ºå®šIPåœ°å€ï¼‰ï¼‰ */
     public static final String WZD_WANTYPE_RPM = "http://192.168.1.1/userRpm/WzdWanTypeRpm.htm";
 
-    /** ÉèÖÃ²¦ºÅÕËºÅ£¨acc:ÉÏÍøÕÊºÅ; psw:ÉÏÍø¿ÚÁî; confirm:È·ÈÏ¿ÚÁî£© */
+    /** è®¾ç½®æ‹¨å·è´¦å·ï¼ˆacc:ä¸Šç½‘å¸å·; psw:ä¸Šç½‘å£ä»¤; confirm:ç¡®è®¤å£ä»¤ï¼‰ */
     public static final String WZD_PPPOE_RPM   = "http://192.168.1.1/userRpm/WzdPPPoERpm.htm";
 }

@@ -8,35 +8,35 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * ÊÂ¼şÖ´ĞĞ³éÏó½Ó¿Ú
+ * äº‹ä»¶æ‰§è¡ŒæŠ½è±¡æ¥å£
  * 
  * @author min.weixm
  * @version $Id: EventListener.java, v 0.1 Oct 28, 2017 11:19:30 PM min.weixm Exp $
  */
 public abstract class EventListener<T> implements InitializingBean {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger      logger = Logger.getLogger(EventListener.class);
 
-    /** ¼àÌıÆ÷ÃèÊöÎÄ¼ş»º´æ */
+    /** ç›‘å¬å™¨æè¿°æ–‡ä»¶ç¼“å­˜ */
     private ListenerDescriptorCache listenerDescriptorCache;
 
-    /** ¼àÌıÆ÷ÃèÊöÎÄ¼ş */
+    /** ç›‘å¬å™¨æè¿°æ–‡ä»¶ */
     private ListenerDescriptor      descriptor;
 
     /**
-     * ÅĞ¶ÏÊÇ·ñ´¦Àí¸ÃÊÂ¼ş
-     * @param event ´ı´¦ÀíÊÂ¼ş
-     * @return ·µ»Øtrue£¬±íÊ¾ĞèÒª´¦Àí¸ÃÊÂ¼ş£»·µ»Øfalse£¬±íÊ¾²»´¦Àí¸ÃÊÂ¼ş
+     * åˆ¤æ–­æ˜¯å¦å¤„ç†è¯¥äº‹ä»¶
+     * @param event å¾…å¤„ç†äº‹ä»¶
+     * @return è¿”å›trueï¼Œè¡¨ç¤ºéœ€è¦å¤„ç†è¯¥äº‹ä»¶ï¼›è¿”å›falseï¼Œè¡¨ç¤ºä¸å¤„ç†è¯¥äº‹ä»¶
      */
     public boolean aboutToHandleEvent(MtEvent<?> event) {
         return true;
     }
 
     /**
-     * ´¦ÀíÊÂ¼ş
-     * @param event ´ı´¦ÀíµÄÊÂ¼ş
-     * @return      ÓÃÓÚÖ§³ÖÍ¬²½µÄ·µ»ØÖµ
+     * å¤„ç†äº‹ä»¶
+     * @param event å¾…å¤„ç†çš„äº‹ä»¶
+     * @return      ç”¨äºæ”¯æŒåŒæ­¥çš„è¿”å›å€¼
      */
     public abstract T handleEvent(MtEvent<?> event);
 
@@ -48,7 +48,7 @@ public abstract class EventListener<T> implements InitializingBean {
         try {
             listenerDescriptorCache.registerExtension(descriptor, this);
         } catch (Exception e) {
-            logger.error("µ±Ç°ÊÂ¼şÃèÊöÎÄ¼ş×¢²áÊ§°Ü£ºdescriptor=" + descriptor, e);
+            logger.error("å½“å‰äº‹ä»¶æè¿°æ–‡ä»¶æ³¨å†Œå¤±è´¥ï¼šdescriptor=" + descriptor, e);
         }
     }
 

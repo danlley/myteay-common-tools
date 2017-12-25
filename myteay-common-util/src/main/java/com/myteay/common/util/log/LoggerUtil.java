@@ -4,20 +4,20 @@ import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
 /**
- * ·½±ãloggerÊµÏÖµÄĞ¡¹¤¾ß.
+ * æ–¹ä¾¿loggerå®ç°çš„å°å·¥å…·.
  * 
  * @author min.weixm
  * @version $Id: LoggerUtil.java, v 0.1 Oct 29, 2017 12:10:09 PM min.weixm Exp $
  */
 public class LoggerUtil {
     /**
-     * ´Óresource bundleÖĞÈ¡µÃ¸ñÊ½»¯µÄÏûÏ¢.
+     * ä»resource bundleä¸­å–å¾—æ ¼å¼åŒ–çš„æ¶ˆæ¯.
      *
      * @param logger logger
      * @param key resource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param params å‚æ•°æ•°ç»„
      *
-     * @return ¸ñÊ½»¯µÄÏûÏ¢×Ö·û´®, Èç¹ûresource bundle²»´æÔÚ, »òkeyÎ´ÕÒµ½, Ôò·µ»Ø<code>key</code>
+     * @return æ ¼å¼åŒ–çš„æ¶ˆæ¯å­—ç¬¦ä¸², å¦‚æœresource bundleä¸å­˜åœ¨, æˆ–keyæœªæ‰¾åˆ°, åˆ™è¿”å›<code>key</code>
      */
     public static String getMessage(Logger logger, Object key, Object[] params) {
         ResourceBundle bundle = logger.getResourceBundle();

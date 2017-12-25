@@ -4,42 +4,42 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * ´´½¨<code>Logger</code>µÄ¹¤³§.  ´Ócommons-loggingµÄ<code>LogFactory</code>ÅÉÉú.
- * Äã¿ÉÒÔµ÷ÓÃÔ­À´µÄ<code>LoggerFactory.getLog</code>·½·¨, µ«ÕâÑù²»ÄÜµÃµ½À©Õ¹µÄ¹¦ÄÜ.
- * µ÷ÓÃ<code>LoggerFactory.getLogger</code>Ôò¿ÉÒÔµÃµ½À©Õ¹µÄ<code>Logger</code>µÄ¹¦ÄÜ.
+ * åˆ›å»º<code>Logger</code>çš„å·¥å‚.  ä»commons-loggingçš„<code>LogFactory</code>æ´¾ç”Ÿ.
+ * ä½ å¯ä»¥è°ƒç”¨åŸæ¥çš„<code>LoggerFactory.getLog</code>æ–¹æ³•, ä½†è¿™æ ·ä¸èƒ½å¾—åˆ°æ‰©å±•çš„åŠŸèƒ½.
+ * è°ƒç”¨<code>LoggerFactory.getLogger</code>åˆ™å¯ä»¥å¾—åˆ°æ‰©å±•çš„<code>Logger</code>çš„åŠŸèƒ½.
  * 
  * @author min.weixm
  * @version $Id: LoggerFactory.java, v 0.1 Oct 29, 2017 12:02:08 PM min.weixm Exp $
  */
 public abstract class LoggerFactory extends LogFactory {
     /**
-     * È¡µÃÀ©Õ¹µÄ<code>Logger</code>.
+     * å–å¾—æ‰©å±•çš„<code>Logger</code>.
      *
-     * @param clazz ´ú±í<code>Logger</code>Ãû³ÆµÄÀà
+     * @param clazz ä»£è¡¨<code>Logger</code>åç§°çš„ç±»
      *
-     * @return À©Õ¹µÄ<code>Logger</code>ÊµÏÖ
+     * @return æ‰©å±•çš„<code>Logger</code>å®ç°
      */
     public static Logger getLogger(Class<?> clazz) {
         return getLogger(getLog(clazz));
     }
 
     /**
-     * È¡µÃÀ©Õ¹µÄ<code>Logger</code>.
+     * å–å¾—æ‰©å±•çš„<code>Logger</code>.
      *
-     * @param name <code>Logger</code>Ãû³Æ
+     * @param name <code>Logger</code>åç§°
      *
-     * @return À©Õ¹µÄ<code>Logger</code>ÊµÏÖ
+     * @return æ‰©å±•çš„<code>Logger</code>å®ç°
      */
     public static Logger getLogger(String name) {
         return getLogger(getLog(name));
     }
 
     /**
-     * È¡µÃÀ©Õ¹µÄ<code>Logger</code>, Èç¹ûÖ¸¶¨µÄlog¶ÔÏóÒÑ¾­ÊµÏÖÁË<code>Logger</code>½Ó¿Ú, ÔòÖ±½Ó·µ»Ø, ·ñÔò°ü×°Ò»ÏÂÔÙ·µ»Ø.
+     * å–å¾—æ‰©å±•çš„<code>Logger</code>, å¦‚æœæŒ‡å®šçš„logå¯¹è±¡å·²ç»å®ç°äº†<code>Logger</code>æ¥å£, åˆ™ç›´æ¥è¿”å›, å¦åˆ™åŒ…è£…ä¸€ä¸‹å†è¿”å›.
      *
-     * @param log ÊµÏÖcommons-loggingµÄ<code>Log</code>½Ó¿ÚµÄ¶ÔÏó
+     * @param log å®ç°commons-loggingçš„<code>Log</code>æ¥å£çš„å¯¹è±¡
      *
-     * @return À©Õ¹µÄ<code>Logger</code>ÊµÏÖ
+     * @return æ‰©å±•çš„<code>Logger</code>å®ç°
      */
     private static Logger getLogger(Log log) {
         if (log instanceof Logger) {

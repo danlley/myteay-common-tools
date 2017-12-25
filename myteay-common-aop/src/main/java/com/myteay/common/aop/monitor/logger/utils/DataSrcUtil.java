@@ -12,14 +12,14 @@ import org.springframework.jdbc.datasource.ConnectionHolder;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 /**
- * ¹ØÓÚÊı¾İÔ´´¦ÀíµÄ¹¤¾ßÀà
+ * å…³äºæ•°æ®æºå¤„ç†çš„å·¥å…·ç±»
  * 
  * @author min.weixm
  * @version $Id: DataSrcUtil.java, v 0.1 Nov 5, 2017 9:36:59 PM min.weixm Exp $
  */
 public class DataSrcUtil {
     /*
-     * µ±Ç°ÊÂÎñºÍÖ¸¶¨µÄdatasourceÊÇ·ñÍ¬Ò»¸öÊı¾İÔ´,Èç¹ûÊı¾İÔ´Îªnull»òµ±Ç°Ã»ÓĞÊÂÎñ·µ»Øtrue
+     * å½“å‰äº‹åŠ¡å’ŒæŒ‡å®šçš„datasourceæ˜¯å¦åŒä¸€ä¸ªæ•°æ®æº,å¦‚æœæ•°æ®æºä¸ºnullæˆ–å½“å‰æ²¡æœ‰äº‹åŠ¡è¿”å›true
      * 
      */
     static public boolean isSameRm(DataSource dataSource) {
@@ -34,7 +34,7 @@ public class DataSrcUtil {
                 method.setAccessible(true);
                 return (Boolean) method.invoke(conHolder);
             } catch (Exception e) {
-                throw new RuntimeException("²»Ó¦¸Ã·¢ÉúµÄÒì³££¬Çë¼ì²éÔ­Òò¡£", e);
+                throw new RuntimeException("ä¸åº”è¯¥å‘ç”Ÿçš„å¼‚å¸¸ï¼Œè¯·æ£€æŸ¥åŸå› ã€‚", e);
             }
         }
         return false;

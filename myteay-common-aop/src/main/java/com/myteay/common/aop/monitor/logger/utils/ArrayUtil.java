@@ -12,10 +12,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ÓĞ¹ØÊı×é´¦ÀíµÄ¹¤¾ßÀà¡£
+ * æœ‰å…³æ•°ç»„å¤„ç†çš„å·¥å…·ç±»ã€‚
  * 
  * <p>
- * Õâ¸öÀàÖĞµÄÃ¿¸ö·½·¨¶¼¿ÉÒÔ¡°°²È«¡±µØ´¦Àí<code>null</code>£¬¶ø²»»áÅ×³ö<code>NullPointerException</code>¡£
+ * è¿™ä¸ªç±»ä¸­çš„æ¯ä¸ªæ–¹æ³•éƒ½å¯ä»¥â€œå®‰å…¨â€åœ°å¤„ç†<code>null</code>ï¼Œè€Œä¸ä¼šæŠ›å‡º<code>NullPointerException</code>ã€‚
  * </p>
  * 
  * @author min.weixm
@@ -23,382 +23,382 @@ import java.util.Map;
  */
 public class ArrayUtil {
     /* ============================================================================ */
-    /*  ³£Á¿ºÍsingleton¡£                                                           */
+    /*  å¸¸é‡å’Œsingletonã€‚                                                           */
     /* ============================================================================ */
-    /** ¿ÕµÄ<code>Class</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Class</code>æ•°ç»„ã€‚ */
     public static final Class[]     EMPTY_CLASS_ARRAY              = new Class[0];
 
-    /** ¿ÕµÄ<code>Object</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Object</code>æ•°ç»„ã€‚ */
     public static final Object[]    EMPTY_OBJECT_ARRAY             = new Object[0];
 
-    /** ¿ÕµÄ<code>String</code>Êı×é¡£ */
+    /** ç©ºçš„<code>String</code>æ•°ç»„ã€‚ */
     public static final String[]    EMPTY_STRING_ARRAY             = new String[0];
 
-    /** ¿ÕµÄ<code>long</code>Êı×é¡£ */
+    /** ç©ºçš„<code>long</code>æ•°ç»„ã€‚ */
     public static final long[]      EMPTY_LONG_ARRAY               = new long[0];
 
-    /** ¿ÕµÄ<code>Long</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Long</code>æ•°ç»„ã€‚ */
     public static final Long[]      EMPTY_LONG_OBJECT_ARRAY        = new Long[0];
 
-    /** ¿ÕµÄ<code>int</code>Êı×é¡£ */
+    /** ç©ºçš„<code>int</code>æ•°ç»„ã€‚ */
     public static final int[]       EMPTY_INT_ARRAY                = new int[0];
 
-    /** ¿ÕµÄ<code>Integer</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Integer</code>æ•°ç»„ã€‚ */
     public static final Integer[]   EMPTY_INTEGER_OBJECT_ARRAY     = new Integer[0];
 
-    /** ¿ÕµÄ<code>short</code>Êı×é¡£ */
+    /** ç©ºçš„<code>short</code>æ•°ç»„ã€‚ */
     public static final short[]     EMPTY_SHORT_ARRAY              = new short[0];
 
-    /** ¿ÕµÄ<code>Short</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Short</code>æ•°ç»„ã€‚ */
     public static final Short[]     EMPTY_SHORT_OBJECT_ARRAY       = new Short[0];
 
-    /** ¿ÕµÄ<code>byte</code>Êı×é¡£ */
+    /** ç©ºçš„<code>byte</code>æ•°ç»„ã€‚ */
     public static final byte[]      EMPTY_BYTE_ARRAY               = new byte[0];
 
-    /** ¿ÕµÄ<code>Byte</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Byte</code>æ•°ç»„ã€‚ */
     public static final Byte[]      EMPTY_BYTE_OBJECT_ARRAY        = new Byte[0];
 
-    /** ¿ÕµÄ<code>double</code>Êı×é¡£ */
+    /** ç©ºçš„<code>double</code>æ•°ç»„ã€‚ */
     public static final double[]    EMPTY_DOUBLE_ARRAY             = new double[0];
 
-    /** ¿ÕµÄ<code>Double</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Double</code>æ•°ç»„ã€‚ */
     public static final Double[]    EMPTY_DOUBLE_OBJECT_ARRAY      = new Double[0];
 
-    /** ¿ÕµÄ<code>float</code>Êı×é¡£ */
+    /** ç©ºçš„<code>float</code>æ•°ç»„ã€‚ */
     public static final float[]     EMPTY_FLOAT_ARRAY              = new float[0];
 
-    /** ¿ÕµÄ<code>Float</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Float</code>æ•°ç»„ã€‚ */
     public static final Float[]     EMPTY_FLOAT_OBJECT_ARRAY       = new Float[0];
 
-    /** ¿ÕµÄ<code>boolean</code>Êı×é¡£ */
+    /** ç©ºçš„<code>boolean</code>æ•°ç»„ã€‚ */
     public static final boolean[]   EMPTY_BOOLEAN_ARRAY            = new boolean[0];
 
-    /** ¿ÕµÄ<code>Boolean</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Boolean</code>æ•°ç»„ã€‚ */
     public static final Boolean[]   EMPTY_BOOLEAN_OBJECT_ARRAY     = new Boolean[0];
 
-    /** ¿ÕµÄ<code>char</code>Êı×é¡£ */
+    /** ç©ºçš„<code>char</code>æ•°ç»„ã€‚ */
     public static final char[]      EMPTY_CHAR_ARRAY               = new char[0];
 
-    /** ¿ÕµÄ<code>Character</code>Êı×é¡£ */
+    /** ç©ºçš„<code>Character</code>æ•°ç»„ã€‚ */
     public static final Character[] EMPTY_CHARACTER_OBJECT_ARRAY   = new Character[0];
 
-    /** ¼ÆËãhashcodeËùÓÃµÄ³£Á¿¡£ */
+    /** è®¡ç®—hashcodeæ‰€ç”¨çš„å¸¸é‡ã€‚ */
     private static final int        INITIAL_NON_ZERO_ODD_NUMBER    = 17;
 
-    /** ¼ÆËãhashcodeËùÓÃµÄ³£Á¿¡£ */
+    /** è®¡ç®—hashcodeæ‰€ç”¨çš„å¸¸é‡ã€‚ */
     private static final int        MULTIPLIER_NON_ZERO_ODD_NUMBER = 37;
 
     /* ============================================================================ */
-    /*  ÅĞ¿Õº¯Êı¡£                                                                  */
+    /*  åˆ¤ç©ºå‡½æ•°ã€‚                                                                  */
     /*                                                                              */
-    /*  ÅĞ¶ÏÒ»¸öÊı×éÊÇ·ñÎªnull»ò°üº¬0¸öÔªËØ¡£                                       */
+    /*  åˆ¤æ–­ä¸€ä¸ªæ•°ç»„æ˜¯å¦ä¸ºnullæˆ–åŒ…å«0ä¸ªå…ƒç´ ã€‚                                       */
     /* ============================================================================ */
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new String[0])     = true
      * ArrayUtil.isEmpty(new String[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(Object[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new long[0])     = true
      * ArrayUtil.isEmpty(new long[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(long[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new int[0])     = true
      * ArrayUtil.isEmpty(new int[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(int[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new short[0])     = true
      * ArrayUtil.isEmpty(new short[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(short[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new byte[0])     = true
      * ArrayUtil.isEmpty(new byte[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(byte[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new double[0])     = true
      * ArrayUtil.isEmpty(new double[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(double[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new float[0])     = true
      * ArrayUtil.isEmpty(new float[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(float[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new boolean[0])     = true
      * ArrayUtil.isEmpty(new boolean[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(boolean[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñÎª<code>null</code>»ò¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = true
      * ArrayUtil.isEmpty(new char[0])     = true
      * ArrayUtil.isEmpty(new char[10])    = false
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(char[] array) {
         return ((array == null) || (array.length == 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new String[0])     = false
      * ArrayUtil.isEmpty(new String[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(Object[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new long[0])     = false
      * ArrayUtil.isEmpty(new long[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(long[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new int[0])     = false
      * ArrayUtil.isEmpty(new int[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(int[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new short[0])     = false
      * ArrayUtil.isEmpty(new short[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(short[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new byte[0])     = false
      * ArrayUtil.isEmpty(new byte[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(byte[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new double[0])     = false
      * ArrayUtil.isEmpty(new double[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(double[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new float[0])     = false
      * ArrayUtil.isEmpty(new float[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(float[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new boolean[0])     = false
      * ArrayUtil.isEmpty(new boolean[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(boolean[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /**
-     * ¼ì²éÊı×éÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿ÕÊı×é<code>[]</code>¡£
+     * æ£€æŸ¥æ•°ç»„æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºæ•°ç»„<code>[]</code>ã€‚
      * <pre>
      * ArrayUtil.isEmpty(null)              = false
      * ArrayUtil.isEmpty(new char[0])     = false
      * ArrayUtil.isEmpty(new char[10])    = true
      * </pre>
      *
-     * @param array Òª¼ì²éµÄÊı×é
+     * @param array è¦æ£€æŸ¥çš„æ•°ç»„
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(char[] array) {
         return ((array != null) && (array.length > 0));
     }
 
     /* ============================================================================ */
-    /*  Ä¬ÈÏÖµº¯Êı¡£                                                                */
+    /*  é»˜è®¤å€¼å‡½æ•°ã€‚                                                                */
     /*                                                                              */
-    /*  µ±Êı×éÎªnull»òemptyÊ±£¬½«Êı×é×ª»»³ÉÖ¸¶¨µÄÄ¬ÈÏÊı×é¡£                         */
+    /*  å½“æ•°ç»„ä¸ºnullæˆ–emptyæ—¶ï¼Œå°†æ•°ç»„è½¬æ¢æˆæŒ‡å®šçš„é»˜è®¤æ•°ç»„ã€‚                         */
     /* ============================================================================ */
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new String[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new String[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new String[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new String[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static Object[] defaultIfNull(Object[] array) {
         return (array == null) ? EMPTY_OBJECT_ARRAY
@@ -406,16 +406,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new long[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new long[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new long[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new long[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static long[] defaultIfNull(long[] array) {
         return (array == null) ? EMPTY_LONG_ARRAY
@@ -423,16 +423,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new int[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new int[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new int[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new int[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static int[] defaultIfNull(int[] array) {
         return (array == null) ? EMPTY_INT_ARRAY
@@ -440,16 +440,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new short[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new short[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new short[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new short[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static short[] defaultIfNull(short[] array) {
         return (array == null) ? EMPTY_SHORT_ARRAY
@@ -457,16 +457,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new byte[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new byte[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new byte[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new byte[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static byte[] defaultIfNull(byte[] array) {
         return (array == null) ? EMPTY_BYTE_ARRAY
@@ -474,16 +474,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new double[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new double[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new double[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new double[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static double[] defaultIfNull(double[] array) {
         return (array == null) ? EMPTY_DOUBLE_ARRAY
@@ -491,16 +491,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new float[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new float[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new float[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new float[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static float[] defaultIfNull(float[] array) {
         return (array == null) ? EMPTY_FLOAT_ARRAY
@@ -508,16 +508,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new boolean[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new boolean[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new boolean[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new boolean[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static boolean[] defaultIfNull(boolean[] array) {
         return (array == null) ? EMPTY_BOOLEAN_ARRAY
@@ -525,16 +525,16 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null)           = []
-     * ArrayUtil.defaultIfNull(new char[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new char[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new char[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new char[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static char[] defaultIfNull(char[] array) {
         return (array == null) ? EMPTY_CHAR_ARRAY
@@ -542,17 +542,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)           = defaultArray
-     * ArrayUtil.defaultIfNull(new String[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new String[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new String[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new String[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static Object[] defaultIfNull(Object[] array, Object[] defaultArray) {
         return (array == null) ? defaultArray
@@ -560,17 +560,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)         = defaultArray
-     * ArrayUtil.defaultIfNull(new long[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new long[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new long[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new long[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static long[] defaultIfNull(long[] array, long[] defaultArray) {
         return (array == null) ? defaultArray
@@ -578,17 +578,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)        = defaultArray
-     * ArrayUtil.defaultIfNull(new int[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new int[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new int[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new int[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static int[] defaultIfNull(int[] array, int[] defaultArray) {
         return (array == null) ? defaultArray
@@ -596,17 +596,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)          = defaultArray
-     * ArrayUtil.defaultIfNull(new short[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new short[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new short[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new short[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static short[] defaultIfNull(short[] array, short[] defaultArray) {
         return (array == null) ? defaultArray
@@ -614,17 +614,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)         = defaultArray
-     * ArrayUtil.defaultIfNull(new byte[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new byte[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new byte[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new byte[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static byte[] defaultIfNull(byte[] array, byte[] defaultArray) {
         return (array == null) ? defaultArray
@@ -632,17 +632,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)         = defaultArray
-     * ArrayUtil.defaultIfNull(new double[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new double[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new double[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new double[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static double[] defaultIfNull(double[] array, double[] defaultArray) {
         return (array == null) ? defaultArray
@@ -650,17 +650,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)          = defaultArray
-     * ArrayUtil.defaultIfNull(new float[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new float[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new float[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new float[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static float[] defaultIfNull(float[] array, float[] defaultArray) {
         return (array == null) ? defaultArray
@@ -668,17 +668,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)            = defaultArray
-     * ArrayUtil.defaultIfNull(new boolean[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new boolean[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new boolean[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new boolean[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static boolean[] defaultIfNull(boolean[] array, boolean[] defaultArray) {
         return (array == null) ? defaultArray
@@ -686,17 +686,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, defaultArray)         = defaultArray
-     * ArrayUtil.defaultIfNull(new char[0], defaultArray)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new char[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new char[0], defaultArray)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new char[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static char[] defaultIfNull(char[] array, char[] defaultArray) {
         return (array == null) ? defaultArray
@@ -704,17 +704,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨ÔªËØÀàĞÍµÄ¿ÕÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šå…ƒç´ ç±»å‹çš„ç©ºæ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, String.class)           = new String[0]
-     * ArrayUtil.defaultIfNull(new String[0], String.class)  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfNull(new String[10], String.class) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new String[0], String.class)  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfNull(new String[10], String.class) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultComponentType Ä¬ÈÏÊı×éµÄÔªËØÀàĞÍ
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultComponentType é»˜è®¤æ•°ç»„çš„å…ƒç´ ç±»å‹
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨ÀàĞÍµÄ¿ÕÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šç±»å‹çš„ç©ºæ•°ç»„
      */
     public static Object[] defaultIfNull(Object[] array, Class defaultComponentType) {
         return (array == null)
@@ -723,20 +723,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)           = []
-     * ArrayUtil.defaultIfEmpty(new String[0])  = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new String[10]) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new String[0])  = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new String[10]) = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static Object[] defaultIfEmpty(Object[] array) {
         return (array == null) ? EMPTY_OBJECT_ARRAY
@@ -744,20 +744,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)           = []
-     * ArrayUtil.defaultIfEmpty(new long[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new long[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new long[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new long[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static long[] defaultIfEmpty(long[] array) {
         return (array == null) ? EMPTY_LONG_ARRAY
@@ -765,20 +765,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)          = []
-     * ArrayUtil.defaultIfEmpty(new int[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new int[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new int[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new int[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static int[] defaultIfEmpty(int[] array) {
         return (array == null) ? EMPTY_INT_ARRAY
@@ -786,20 +786,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)               = []
-     * ArrayUtil.defaultIfEmpty(new short[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new short[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new short[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new short[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static short[] defaultIfEmpty(short[] array) {
         return (array == null) ? EMPTY_SHORT_ARRAY
@@ -807,20 +807,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)           = []
-     * ArrayUtil.defaultIfEmpty(new byte[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new byte[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new byte[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new byte[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static byte[] defaultIfEmpty(byte[] array) {
         return (array == null) ? EMPTY_BYTE_ARRAY
@@ -828,20 +828,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)               = []
-     * ArrayUtil.defaultIfEmpty(new double[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new double[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new double[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new double[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static double[] defaultIfEmpty(double[] array) {
         return (array == null) ? EMPTY_DOUBLE_ARRAY
@@ -849,20 +849,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)               = []
-     * ArrayUtil.defaultIfEmpty(new float[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new float[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new float[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new float[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static float[] defaultIfEmpty(float[] array) {
         return (array == null) ? EMPTY_FLOAT_ARRAY
@@ -870,20 +870,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)               = []
-     * ArrayUtil.defaultIfEmpty(new boolean[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new boolean[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new boolean[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new boolean[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static boolean[] defaultIfEmpty(boolean[] array) {
         return (array == null) ? EMPTY_BOOLEAN_ARRAY
@@ -891,20 +891,20 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»Ø¿ÕÊı×é<code>[]</code>£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›ç©ºæ•°ç»„<code>[]</code>ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(Object[])</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(Object[])</code>ç­‰æ•ˆã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null)           = []
-     * ArrayUtil.defaultIfEmpty(new char[0])    = Êı×é±¾Éí
-     * ArrayUtil.defaultIfEmpty(new char[10])   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new char[0])    = æ•°ç»„æœ¬èº«
+     * ArrayUtil.defaultIfEmpty(new char[10])   = æ•°ç»„æœ¬èº«
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return Êı×é±¾Éí»ò¿ÕÊı×é<code>[]</code>
+     * @return æ•°ç»„æœ¬èº«æˆ–ç©ºæ•°ç»„<code>[]</code>
      */
     public static char[] defaultIfEmpty(char[] array) {
         return (array == null) ? EMPTY_CHAR_ARRAY
@@ -912,17 +912,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new String[0], defaultArray)  = defaultArray
-     * ArrayUtil.defaultIfEmpty(new String[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new String[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static Object[] defaultIfEmpty(Object[] array, Object[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -930,17 +930,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new long[0], defaultArray)    = defaultArray
-     * ArrayUtil.defaultIfEmpty(new long[10], defaultArray)   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new long[10], defaultArray)   = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static long[] defaultIfEmpty(long[] array, long[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -948,17 +948,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new int[0], defaultArray)     = defaultArray
-     * ArrayUtil.defaultIfEmpty(new int[10], defaultArray)    = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new int[10], defaultArray)    = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static int[] defaultIfEmpty(int[] array, int[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -966,17 +966,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new short[0], defaultArray)   = defaultArray
-     * ArrayUtil.defaultIfEmpty(new short[10], defaultArray)  = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new short[10], defaultArray)  = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static short[] defaultIfEmpty(short[] array, short[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -984,17 +984,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new byte[0], defaultArray)    = defaultArray
-     * ArrayUtil.defaultIfEmpty(new byte[10], defaultArray)   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new byte[10], defaultArray)   = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static byte[] defaultIfEmpty(byte[] array, byte[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -1002,17 +1002,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new double[0], defaultArray)  = defaultArray
-     * ArrayUtil.defaultIfEmpty(new double[10], defaultArray) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new double[10], defaultArray) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static double[] defaultIfEmpty(double[] array, double[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -1020,17 +1020,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new float[0], defaultArray)   = defaultArray
-     * ArrayUtil.defaultIfEmpty(new float[10], defaultArray)  = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new float[10], defaultArray)  = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static float[] defaultIfEmpty(float[] array, float[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -1038,17 +1038,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)              = defaultArray
      * ArrayUtil.defaultIfEmpty(new boolean[0], defaultArray)    = defaultArray
-     * ArrayUtil.defaultIfEmpty(new boolean[10], defaultArray)   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new boolean[10], defaultArray)   = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static boolean[] defaultIfEmpty(boolean[] array, boolean[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -1056,17 +1056,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤æ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfEmpty(null, defaultArray)           = defaultArray
      * ArrayUtil.defaultIfEmpty(new char[0], defaultArray)    = defaultArray
-     * ArrayUtil.defaultIfEmpty(new char[10], defaultArray)   = Êı×é±¾Éí
+     * ArrayUtil.defaultIfEmpty(new char[10], defaultArray)   = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultArray Ä¬ÈÏÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultArray é»˜è®¤æ•°ç»„
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤æ•°ç»„
      */
     public static char[] defaultIfEmpty(char[] array, char[] defaultArray) {
         return ((array == null) || (array.length == 0)) ? defaultArray
@@ -1074,17 +1074,17 @@ public class ArrayUtil {
     }
 
     /**
-     * Èç¹ûÊı×éÊÇ<code>null</code>»ò¿ÕÊı×é<code>[]</code>£¬Ôò·µ»ØÖ¸¶¨ÔªËØÀàĞÍµÄ¿ÕÊı×é£¬·ñÔò·µ»ØÊı×é±¾Éí¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>æˆ–ç©ºæ•°ç»„<code>[]</code>ï¼Œåˆ™è¿”å›æŒ‡å®šå…ƒç´ ç±»å‹çš„ç©ºæ•°ç»„ï¼Œå¦åˆ™è¿”å›æ•°ç»„æœ¬èº«ã€‚
      * <pre>
      * ArrayUtil.defaultIfNull(null, String.class)           = new String[0]
      * ArrayUtil.defaultIfNull(new String[0], String.class)  = new String[0]
-     * ArrayUtil.defaultIfNull(new String[10], String.class) = Êı×é±¾Éí
+     * ArrayUtil.defaultIfNull(new String[10], String.class) = æ•°ç»„æœ¬èº«
      * </pre>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param defaultComponentType Ä¬ÈÏÊı×éµÄÔªËØÀàĞÍ
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param defaultComponentType é»˜è®¤æ•°ç»„çš„å…ƒç´ ç±»å‹
      *
-     * @return Êı×é±¾Éí»òÖ¸¶¨ÀàĞÍµÄ¿ÕÊı×é
+     * @return æ•°ç»„æœ¬èº«æˆ–æŒ‡å®šç±»å‹çš„ç©ºæ•°ç»„
      */
     public static Object[] defaultIfEmpty(Object[] array, Class defaultComponentType) {
         return ((array == null) || (array.length == 0))
@@ -1093,22 +1093,22 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½Ïº¯Êı¡£                                                                  */
+    /*  æ¯”è¾ƒå‡½æ•°ã€‚                                                                  */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´±È½ÏÁ½¸öÊı×éÊÇ·ñÍêÈ«ÏàÍ¬£¬Ö§³Ö¶àÎ¬Êı×é¡£                        */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥æ¯”è¾ƒä¸¤ä¸ªæ•°ç»„æ˜¯å¦å®Œå…¨ç›¸åŒï¼Œæ”¯æŒå¤šç»´æ•°ç»„ã€‚                        */
     /* ============================================================================ */
 
     /**
-     * µİ¹éµØ±È½ÏÁ½¸öÊı×éÊÇ·ñÏàÍ¬£¬Ö§³Ö¶àÎ¬Êı×é¡£
+     * é€’å½’åœ°æ¯”è¾ƒä¸¤ä¸ªæ•°ç»„æ˜¯å¦ç›¸åŒï¼Œæ”¯æŒå¤šç»´æ•°ç»„ã€‚
      * 
      * <p>
-     * Èç¹û±È½ÏµÄ¶ÔÏó²»ÊÇÊı×é£¬Ôò´Ë·½·¨µÄ½á¹ûÍ¬<code>ObjectUtil.equals</code>¡£
+     * å¦‚æœæ¯”è¾ƒçš„å¯¹è±¡ä¸æ˜¯æ•°ç»„ï¼Œåˆ™æ­¤æ–¹æ³•çš„ç»“æœåŒ<code>ObjectUtil.equals</code>ã€‚
      * </p>
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÏàµÈ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœç›¸ç­‰, åˆ™è¿”å›<code>true</code>
      */
     public static boolean equals(Object array1, Object array2) {
         if (array1 == array2) {
@@ -1129,7 +1129,7 @@ public class ArrayUtil {
             return array1.equals(array2);
         }
 
-        // array1ºÍarray2ÎªÍ¬ÀàĞÍµÄÊı×é
+        // array1å’Œarray2ä¸ºåŒç±»å‹çš„æ•°ç»„
         if (array1 instanceof long[]) {
             long[] longArray1 = (long[]) array1;
             long[] longArray2 = (long[]) array2;
@@ -1269,21 +1269,21 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  Hashcodeº¯Êı¡£                                                              */
+    /*  Hashcodeå‡½æ•°ã€‚                                                              */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´È¡µÃÊı×éµÄhash code¡£                                           */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥å–å¾—æ•°ç»„çš„hash codeã€‚                                           */
     /* ============================================================================ */
 
     /**
-     * È¡µÃÊı×éµÄhashÖµ, Èç¹ûÊı×éÎª<code>null</code>, Ôò·µ»Ø<code>0</code>¡£
+     * å–å¾—æ•°ç»„çš„hashå€¼, å¦‚æœæ•°ç»„ä¸º<code>null</code>, åˆ™è¿”å›<code>0</code>ã€‚
      * 
      * <p>
-     * Èç¹û¶ÔÏó²»ÊÇÊı×é£¬Ôò´Ë·½·¨µÄ½á¹ûÍ¬<code>ObjectUtil.hashCode</code>¡£
+     * å¦‚æœå¯¹è±¡ä¸æ˜¯æ•°ç»„ï¼Œåˆ™æ­¤æ–¹æ³•çš„ç»“æœåŒ<code>ObjectUtil.hashCode</code>ã€‚
      * </p>
      *
-     * @param array Êı×é
+     * @param array æ•°ç»„
      *
-     * @return hashÖµ
+     * @return hashå€¼
      */
     public static int hashCode(Object array) {
         if (array == null) {
@@ -1296,7 +1296,7 @@ public class ArrayUtil {
 
         int hashCode = INITIAL_NON_ZERO_ODD_NUMBER;
 
-        // arrayÊÇÊı×é
+        // arrayæ˜¯æ•°ç»„
         if (array instanceof long[]) {
             long[] longArray = (long[]) array;
 
@@ -1363,30 +1363,30 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  ½«Êı×é×ª»»³É¼¯ºÏÀà¡£                                                        */
+    /*  å°†æ•°ç»„è½¬æ¢æˆé›†åˆç±»ã€‚                                                        */
     /* ============================================================================ */
 
     /**
-     * ½«Êı×éÓ³Éä³É¹Ì¶¨³¤¶ÈµÄ<code>List</code>£¬µ±¸Ä±äÕâ¸ö<code>List</code>ÖĞµÄÖµÊ±¡£Êı×éÖĞµÄÏàÓ¦ÖµÒ²±»¸Ä±ä¡£
+     * å°†æ•°ç»„æ˜ å°„æˆå›ºå®šé•¿åº¦çš„<code>List</code>ï¼Œå½“æ”¹å˜è¿™ä¸ª<code>List</code>ä¸­çš„å€¼æ—¶ã€‚æ•°ç»„ä¸­çš„ç›¸åº”å€¼ä¹Ÿè¢«æ”¹å˜ã€‚
      * 
      * <p>
-     * Èç¹ûÊäÈëÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœè¾“å…¥æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * 
      * <p>
-     * ¸Ã·½·¨ÄÚ²¿µ÷ÓÃ<code>java.util.Arrays.asList</code>·½·¨Ëù·µ»ØµÄÁĞ±íÎªÖ¸¶¨Êı×éµÄÓ³Ïñ£¨¹Ì¶¨³¤¶È£©£¬Òò´ËĞÔÄÜºÍÄÚ´æÕ¼ÓÃÉÏ±È<code>toList</code>·½·¨¸üÓÅ¡£
+     * è¯¥æ–¹æ³•å†…éƒ¨è°ƒç”¨<code>java.util.Arrays.asList</code>æ–¹æ³•æ‰€è¿”å›çš„åˆ—è¡¨ä¸ºæŒ‡å®šæ•°ç»„çš„æ˜ åƒï¼ˆå›ºå®šé•¿åº¦ï¼‰ï¼Œå› æ­¤æ€§èƒ½å’Œå†…å­˜å ç”¨ä¸Šæ¯”<code>toList</code>æ–¹æ³•æ›´ä¼˜ã€‚
      * </p>
      * 
      * <p>
-     * Õâ¸ö·½·¨³£±»ÓÃÓÚ³õÊ¼»¯£¬ÀıÈç£º
+     * è¿™ä¸ªæ–¹æ³•å¸¸è¢«ç”¨äºåˆå§‹åŒ–ï¼Œä¾‹å¦‚ï¼š
      * <pre>
      * List myList = ArrayUtil.toFixedList(new String[] { "aaa", "bbb", "ccc" });
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return ÒÔÊı×é±¾ÉíÎªÓ³ÉäµÄlist
+     * @return ä»¥æ•°ç»„æœ¬èº«ä¸ºæ˜ å°„çš„list
      */
     public static List toFixedList(Object[] array) {
         if (array == null) {
@@ -1397,62 +1397,62 @@ public class ArrayUtil {
     }
 
     /**
-     * ½«Êı×é×ª»»³É<code>List</code>¡£
+     * å°†æ•°ç»„è½¬æ¢æˆ<code>List</code>ã€‚
      * 
      * <p>
-     * Èç¹ûÊäÈëÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœè¾“å…¥æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * 
      * <p>
-     * ¸Ã·½·¨·µ»ØµÄÁĞ±íÎªÖ¸¶¨Êı×éµÄ¸´±¾£¬¶ø<code>java.util.Arrays.asList</code>·½·¨Ëù·µ»ØµÄÁĞ±íÎªÖ¸¶¨Êı×éµÄÓ³Ïñ£¨¹Ì¶¨³¤¶È£©¡£
+     * è¯¥æ–¹æ³•è¿”å›çš„åˆ—è¡¨ä¸ºæŒ‡å®šæ•°ç»„çš„å¤æœ¬ï¼Œè€Œ<code>java.util.Arrays.asList</code>æ–¹æ³•æ‰€è¿”å›çš„åˆ—è¡¨ä¸ºæŒ‡å®šæ•°ç»„çš„æ˜ åƒï¼ˆå›ºå®šé•¿åº¦ï¼‰ã€‚
      * </p>
      * 
      * <p>
-     * Õâ¸ö·½·¨³£±»ÓÃÓÚ³õÊ¼»¯£¬ÀıÈç£º
+     * è¿™ä¸ªæ–¹æ³•å¸¸è¢«ç”¨äºåˆå§‹åŒ–ï¼Œä¾‹å¦‚ï¼š
      * <pre>
      * List myList      = ArrayUtil.toList(new String[] { "aaa", "bbb", "ccc" });
-     * List singleList  = ArrayUtil.toList("hello");     // ·µ»Øµ¥¸öÔªËØµÄÁĞ±í["hello"]
+     * List singleList  = ArrayUtil.toList("hello");     // è¿”å›å•ä¸ªå…ƒç´ çš„åˆ—è¡¨["hello"]
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return ±»´´½¨µÄlist
+     * @return è¢«åˆ›å»ºçš„list
      */
     public static List toList(Object array) {
         return toList(array, null);
     }
 
     /**
-     * ½«Êı×é×ª»»³É<code>List</code>¡£
+     * å°†æ•°ç»„è½¬æ¢æˆ<code>List</code>ã€‚
      * 
      * <p>
-     * Èç¹ûÊäÈëÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœè¾“å…¥æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * 
      * <p>
-     * ¸Ã·½·¨·µ»ØµÄÁĞ±íÎªÖ¸¶¨Êı×éµÄ¸´±¾£¬¶ø<code>java.util.Arrays.asList</code>·½·¨Ëù·µ»ØµÄÁĞ±íÎªÖ¸¶¨Êı×éµÄÓ³Ïñ£¨¹Ì¶¨³¤¶È£©¡£
+     * è¯¥æ–¹æ³•è¿”å›çš„åˆ—è¡¨ä¸ºæŒ‡å®šæ•°ç»„çš„å¤æœ¬ï¼Œè€Œ<code>java.util.Arrays.asList</code>æ–¹æ³•æ‰€è¿”å›çš„åˆ—è¡¨ä¸ºæŒ‡å®šæ•°ç»„çš„æ˜ åƒï¼ˆå›ºå®šé•¿åº¦ï¼‰ã€‚
      * </p>
      * 
      * <p>
-     * Õâ¸ö·½·¨³£±»ÓÃÓÚ³õÊ¼»¯£¬ÀıÈç£º
+     * è¿™ä¸ªæ–¹æ³•å¸¸è¢«ç”¨äºåˆå§‹åŒ–ï¼Œä¾‹å¦‚ï¼š
      * <pre>
      * List myList      = ArrayUtil.toList(new String[] { "aaa", "bbb", "ccc" }, new ArrayList());
-     * List singleList  = ArrayUtil.toList("hello", new ArrayList());     // ·µ»Øµ¥¸öÔªËØµÄÁĞ±í["hello"]
+     * List singleList  = ArrayUtil.toList("hello", new ArrayList());     // è¿”å›å•ä¸ªå…ƒç´ çš„åˆ—è¡¨["hello"]
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param list ÒªÌî³äµÄÁĞ±í£¬Èç¹ûÊÇ<code>null</code>£¬Ôò´´½¨Ö®
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param list è¦å¡«å……çš„åˆ—è¡¨ï¼Œå¦‚æœæ˜¯<code>null</code>ï¼Œåˆ™åˆ›å»ºä¹‹
      *
-     * @return ±»´´½¨»òÌî³äµÄlist
+     * @return è¢«åˆ›å»ºæˆ–å¡«å……çš„list
      */
     public static List<Object> toList(Object array, List<Object> list) {
         if (array == null) {
             return list;
         }
 
-        // ·Çarray£¬´´½¨Ò»¸öÖ»ÓĞÒ»¸öÔªËØµÄÁĞ±í
+        // éarrayï¼Œåˆ›å»ºä¸€ä¸ªåªæœ‰ä¸€ä¸ªå…ƒç´ çš„åˆ—è¡¨
         if (!array.getClass().isArray()) {
             if (list == null) {
                 list = new ArrayList<>(1);
@@ -1556,14 +1556,14 @@ public class ArrayUtil {
     }
 
     /**
-     * ½«Êı×é×ª»»³É<code>Map</code>¡£Êı×éµÄÔªËØ±ØĞëÊÇ<code>Map.Entry</code>»òÔªËØ¸öÊı¶àÓÚ2µÄ×ÓÊı×é¡£
+     * å°†æ•°ç»„è½¬æ¢æˆ<code>Map</code>ã€‚æ•°ç»„çš„å…ƒç´ å¿…é¡»æ˜¯<code>Map.Entry</code>æˆ–å…ƒç´ ä¸ªæ•°å¤šäº2çš„å­æ•°ç»„ã€‚
      * 
      * <p>
-     * Èç¹ûÊäÈëÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœè¾“å…¥æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * 
      * <p>
-     * Õâ¸ö·½·¨³£±»ÓÃÓÚ³õÊ¼»¯£¬ÀıÈç£º
+     * è¿™ä¸ªæ–¹æ³•å¸¸è¢«ç”¨äºåˆå§‹åŒ–ï¼Œä¾‹å¦‚ï¼š
      * <pre>
      * Map colorMap = ArrayUtil.toMap(new String[][] {
      *     {"RED", "#FF0000"},
@@ -1572,25 +1572,25 @@ public class ArrayUtil {
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return ±»´´½¨µÄmap
+     * @return è¢«åˆ›å»ºçš„map
      *
-     * @throws IllegalArgumentException Èç¹ûÓĞÒ»¸ö×ÓÊı×éÔªËØ¸öÊıĞ¡ÓÚ2»ò²»ÊÇ<code>Map.Entry</code>ÊµÀı
+     * @throws IllegalArgumentException å¦‚æœæœ‰ä¸€ä¸ªå­æ•°ç»„å…ƒç´ ä¸ªæ•°å°äº2æˆ–ä¸æ˜¯<code>Map.Entry</code>å®ä¾‹
      */
     public static Map toMap(Object[] array) {
         return toMap(array, null);
     }
 
     /**
-     * ½«Êı×é×ª»»³É<code>Map</code>¡£Êı×éµÄÔªËØ±ØĞëÊÇ<code>Map.Entry</code>»òÔªËØ¸öÊı¶àÓÚ2µÄ×ÓÊı×é¡£
+     * å°†æ•°ç»„è½¬æ¢æˆ<code>Map</code>ã€‚æ•°ç»„çš„å…ƒç´ å¿…é¡»æ˜¯<code>Map.Entry</code>æˆ–å…ƒç´ ä¸ªæ•°å¤šäº2çš„å­æ•°ç»„ã€‚
      * 
      * <p>
-     * Èç¹ûÊäÈëÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœè¾“å…¥æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * 
      * <p>
-     * Õâ¸ö·½·¨³£±»ÓÃÓÚ³õÊ¼»¯£¬ÀıÈç£º
+     * è¿™ä¸ªæ–¹æ³•å¸¸è¢«ç”¨äºåˆå§‹åŒ–ï¼Œä¾‹å¦‚ï¼š
      * <pre>
      * Map colorMap = ArrayUtil.toMap(new String[][] {{
      *     {"RED", "#FF0000"},
@@ -1599,12 +1599,12 @@ public class ArrayUtil {
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param map ÒªÌî³äµÄmap£¬Èç¹ûÎª<code>null</code>Ôò×Ô¶¯´´½¨Ö®
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param map è¦å¡«å……çš„mapï¼Œå¦‚æœä¸º<code>null</code>åˆ™è‡ªåŠ¨åˆ›å»ºä¹‹
      *
-     * @return ±»´´½¨»òÌî³äµÄmap
+     * @return è¢«åˆ›å»ºæˆ–å¡«å……çš„map
      *
-     * @throws IllegalArgumentException Èç¹ûÓĞÒ»¸ö×ÓÊı×éÔªËØ¸öÊıĞ¡ÓÚ2»ò²»ÊÇ<code>Map.Entry</code>ÊµÀı
+     * @throws IllegalArgumentException å¦‚æœæœ‰ä¸€ä¸ªå­æ•°ç»„å…ƒç´ ä¸ªæ•°å°äº2æˆ–ä¸æ˜¯<code>Map.Entry</code>å®ä¾‹
      */
     public static Map toMap(Object[] array, Map map) {
         if (array == null) {
@@ -1641,21 +1641,21 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  Cloneº¯Êı¡£                                                                 */
+    /*  Cloneå‡½æ•°ã€‚                                                                 */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨µ÷ÓÃObject.clone·½·¨£¬½øĞĞ¡°Ç³¸´ÖÆ¡±£¨shallow copy£©¡£              */
+    /*  ä»¥ä¸‹æ–¹æ³•è°ƒç”¨Object.cloneæ–¹æ³•ï¼Œè¿›è¡Œâ€œæµ…å¤åˆ¶â€ï¼ˆshallow copyï¼‰ã€‚              */
     /* ============================================================================ */
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ö»½øĞĞ¡°Ç³¸´ÖÆ¡±£¬Ò²¾ÍÊÇËµ£¬Êı×éÖĞµÄ¶ÔÏó±¾Éí²»»á±»¸´ÖÆ¡£ ÁíÍâ£¬´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•åªè¿›è¡Œâ€œæµ…å¤åˆ¶â€ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œæ•°ç»„ä¸­çš„å¯¹è±¡æœ¬èº«ä¸ä¼šè¢«å¤åˆ¶ã€‚ å¦å¤–ï¼Œæ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static Object[] clone(Object[] array) {
         if (array == null) {
@@ -1666,15 +1666,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static long[] clone(long[] array) {
         if (array == null) {
@@ -1685,15 +1685,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static int[] clone(int[] array) {
         if (array == null) {
@@ -1704,15 +1704,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static short[] clone(short[] array) {
         if (array == null) {
@@ -1723,15 +1723,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static byte[] clone(byte[] array) {
         if (array == null) {
@@ -1742,15 +1742,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static double[] clone(double[] array) {
         if (array == null) {
@@ -1761,15 +1761,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static float[] clone(float[] array) {
         if (array == null) {
@@ -1780,15 +1780,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static boolean[] clone(boolean[] array) {
         if (array == null) {
@@ -1799,15 +1799,15 @@ public class ArrayUtil {
     }
 
     /**
-     * ¸´ÖÆÒ»¸öÊı×é¡£Èç¹ûÊı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªæ•°ç»„ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Ò²²»´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•ä¹Ÿä¸å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static char[] clone(char[] array) {
         if (array == null) {
@@ -1818,16 +1818,16 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½ÏÊı×éµÄ³¤¶È¡£                                                            */
+    /*  æ¯”è¾ƒæ•°ç»„çš„é•¿åº¦ã€‚                                                            */
     /* ============================================================================ */
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(Object[] array1, Object[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1839,12 +1839,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(long[] array1, long[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1856,12 +1856,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(int[] array1, int[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1873,12 +1873,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(short[] array1, short[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1890,12 +1890,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(byte[] array1, byte[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1907,12 +1907,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(double[] array1, double[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1924,12 +1924,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(float[] array1, float[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1941,12 +1941,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(boolean[] array1, boolean[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1958,12 +1958,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÁ½¸öÊı×éÊÇ·ñ¾ßÓĞÏàÍ¬µÄ³¤¶È¡£Èç¹ûÊı×éÎª<code>null</code>Ôò±»¿´×÷³¤¶ÈÎª<code>0</code>¡£
+     * åˆ¤æ–­ä¸¤ä¸ªæ•°ç»„æ˜¯å¦å…·æœ‰ç›¸åŒçš„é•¿åº¦ã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¢«çœ‹ä½œé•¿åº¦ä¸º<code>0</code>ã€‚
      *
-     * @param array1 Êı×é1
-     * @param array2 Êı×é2
+     * @param array1 æ•°ç»„1
+     * @param array2 æ•°ç»„2
      *
-     * @return Èç¹ûÁ½¸öÊı×é³¤¶ÈÏàÍ¬£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªæ•°ç»„é•¿åº¦ç›¸åŒï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameLength(char[] array1, char[] array2) {
         int length1 = (array1 == null) ? 0
@@ -1975,13 +1975,13 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  ·´×ªÊı×éµÄÔªËØË³Ğò¡£                                                        */
+    /*  åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚                                                        */
     /* ============================================================================ */
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(Object[] array) {
         if (array == null) {
@@ -1998,9 +1998,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(long[] array) {
         if (array == null) {
@@ -2017,9 +2017,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(int[] array) {
         if (array == null) {
@@ -2036,9 +2036,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(short[] array) {
         if (array == null) {
@@ -2055,9 +2055,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(byte[] array) {
         if (array == null) {
@@ -2074,9 +2074,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(double[] array) {
         if (array == null) {
@@ -2093,9 +2093,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(float[] array) {
         if (array == null) {
@@ -2112,9 +2112,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(boolean[] array) {
         if (array == null) {
@@ -2131,9 +2131,9 @@ public class ArrayUtil {
     }
 
     /**
-     * ·´×ªÊı×éµÄÔªËØË³Ğò¡£Èç¹ûÊı×éÎª<code>null</code>£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åè½¬æ•°ç»„çš„å…ƒç´ é¡ºåºã€‚å¦‚æœæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      *
-     * @param array Òª·´×ªµÄÊı×é
+     * @param array è¦åè½¬çš„æ•°ç»„
      */
     public static void reverse(char[] array) {
         if (array == null) {
@@ -2150,59 +2150,59 @@ public class ArrayUtil {
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºObject[]                                                              */
+    /*  ç±»å‹ï¼šObject[]                                                              */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param objectToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param objectToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(Object[] array, Object objectToFind) {
         return indexOf(array, objectToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(Object[] array, Object[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param objectToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param objectToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(Object[] array, Object objectToFind, int startIndex) {
         if (array == null) {
@@ -2231,21 +2231,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(Object[] array, Object[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -2273,7 +2273,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && !ObjectUtil.equals(array[i], first)) {
                 i++;
             }
@@ -2282,7 +2282,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -2291,64 +2291,64 @@ public class ArrayUtil {
                 if (!ObjectUtil.equals(array[j++], arrayToFind[k++])) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param objectToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param objectToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(Object[] array, Object objectToFind) {
         return lastIndexOf(array, objectToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(Object[] array, Object[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param objectToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param objectToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(Object[] array, Object objectToFind, int startIndex) {
         if (array == null) {
@@ -2379,21 +2379,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(Object[] array, Object[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -2447,91 +2447,91 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param objectToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param objectToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(Object[] array, Object objectToFind) {
         return indexOf(array, objectToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(Object[] array, Object[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºlong[]                                                                */
+    /*  ç±»å‹ï¼šlong[]                                                                */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param longToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param longToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(long[] array, long longToFind) {
         return indexOf(array, longToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(long[] array, long[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param longToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param longToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(long[] array, long longToFind, int startIndex) {
         if (array == null) {
@@ -2552,21 +2552,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(long[] array, long[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -2594,7 +2594,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -2603,7 +2603,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -2612,64 +2612,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param longToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param longToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(long[] array, long longToFind) {
         return lastIndexOf(array, longToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(long[] array, long[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param longToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param longToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(long[] array, long longToFind, int startIndex) {
         if (array == null) {
@@ -2692,21 +2692,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(long[] array, long[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -2760,91 +2760,91 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param longToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param longToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(long[] array, long longToFind) {
         return indexOf(array, longToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(long[] array, long[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºint[]                                                                 */
+    /*  ç±»å‹ï¼šint[]                                                                 */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param intToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param intToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(int[] array, int intToFind) {
         return indexOf(array, intToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(int[] array, int[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param intToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param intToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(int[] array, int intToFind, int startIndex) {
         if (array == null) {
@@ -2865,21 +2865,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(int[] array, int[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -2907,7 +2907,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -2916,7 +2916,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -2925,64 +2925,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param intToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param intToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(int[] array, int intToFind) {
         return lastIndexOf(array, intToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(int[] array, int[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param intToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param intToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(int[] array, int intToFind, int startIndex) {
         if (array == null) {
@@ -3005,21 +3005,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(int[] array, int[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3073,91 +3073,91 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param intToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param intToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(int[] array, int intToFind) {
         return indexOf(array, intToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(int[] array, int[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºshort[]                                                               */
+    /*  ç±»å‹ï¼šshort[]                                                               */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param shortToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param shortToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(short[] array, short shortToFind) {
         return indexOf(array, shortToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(short[] array, short[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param shortToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param shortToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(short[] array, short shortToFind, int startIndex) {
         if (array == null) {
@@ -3178,21 +3178,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(short[] array, short[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3220,7 +3220,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -3229,7 +3229,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -3238,64 +3238,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param shortToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param shortToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(short[] array, short shortToFind) {
         return lastIndexOf(array, shortToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(short[] array, short[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param shortToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param shortToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(short[] array, short shortToFind, int startIndex) {
         if (array == null) {
@@ -3318,21 +3318,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(short[] array, short[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3386,91 +3386,91 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param shortToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param shortToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(short[] array, short shortToFind) {
         return indexOf(array, shortToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(short[] array, short[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºbyte[]                                                                */
+    /*  ç±»å‹ï¼šbyte[]                                                                */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param byteToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param byteToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(byte[] array, byte byteToFind) {
         return indexOf(array, byteToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(byte[] array, byte[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param byteToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param byteToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(byte[] array, byte byteToFind, int startIndex) {
         if (array == null) {
@@ -3491,21 +3491,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(byte[] array, byte[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3533,7 +3533,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -3542,7 +3542,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -3551,64 +3551,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param byteToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param byteToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(byte[] array, byte byteToFind) {
         return lastIndexOf(array, byteToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(byte[] array, byte[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param byteToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param byteToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(byte[] array, byte byteToFind, int startIndex) {
         if (array == null) {
@@ -3631,21 +3631,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(byte[] array, byte[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3699,147 +3699,147 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param byteToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param byteToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(byte[] array, byte byteToFind) {
         return indexOf(array, byteToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(byte[] array, byte[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºdouble[]                                                              */
+    /*  ç±»å‹ï¼šdouble[]                                                              */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double doubleToFind) {
         return indexOf(array, doubleToFind, 0, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double doubleToFind, double tolerance) {
         return indexOf(array, doubleToFind, 0, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double[] arrayToFind) {
         return indexOf(array, arrayToFind, 0, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double[] arrayToFind, double tolerance) {
         return indexOf(array, arrayToFind, 0, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double doubleToFind, int startIndex) {
         return indexOf(array, doubleToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double doubleToFind, int startIndex, double tolerance) {
         if (array == null) {
@@ -3863,43 +3863,43 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double[] arrayToFind, int startIndex) {
         return indexOf(array, arrayToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(double[] array, double[] arrayToFind, int startIndex, double tolerance) {
         if ((array == null) || (arrayToFind == null)) {
@@ -3928,7 +3928,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && ((array[i] < firstMin) || (array[i] > firstMax))) {
                 i++;
             }
@@ -3937,7 +3937,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -3946,120 +3946,120 @@ public class ArrayUtil {
                 if (Math.abs(array[j++] - arrayToFind[k++]) > tolerance) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double doubleToFind) {
         return lastIndexOf(array, doubleToFind, Integer.MAX_VALUE, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double doubleToFind, double tolerance) {
         return lastIndexOf(array, doubleToFind, Integer.MAX_VALUE, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double[] arrayToFind, double tolerance) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double doubleToFind, int startIndex) {
         return lastIndexOf(array, doubleToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double doubleToFind, int startIndex,
                                   double tolerance) {
@@ -4086,43 +4086,43 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double[] arrayToFind, int startIndex) {
         return lastIndexOf(array, arrayToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(double[] array, double[] arrayToFind, int startIndex,
                                   double tolerance) {
@@ -4178,181 +4178,181 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(double[] array, double doubleToFind) {
         return indexOf(array, doubleToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param doubleToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param doubleToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(double[] array, double doubleToFind, double tolerance) {
         return indexOf(array, doubleToFind, tolerance) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(double[] array, double[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(double[] array, double[] arrayToFind, double tolerance) {
         return indexOf(array, arrayToFind, tolerance) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºfloat[]                                                               */
+    /*  ç±»å‹ï¼šfloat[]                                                               */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float floatToFind) {
         return indexOf(array, floatToFind, 0, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float floatToFind, float tolerance) {
         return indexOf(array, floatToFind, 0, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float[] arrayToFind) {
         return indexOf(array, arrayToFind, 0, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float[] arrayToFind, float tolerance) {
         return indexOf(array, arrayToFind, 0, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float floatToFind, int startIndex) {
         return indexOf(array, floatToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float floatToFind, int startIndex, float tolerance) {
         if (array == null) {
@@ -4376,43 +4376,43 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float[] arrayToFind, int startIndex) {
         return indexOf(array, arrayToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(float[] array, float[] arrayToFind, int startIndex, float tolerance) {
         if ((array == null) || (arrayToFind == null)) {
@@ -4441,7 +4441,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && ((array[i] < firstMin) || (array[i] > firstMax))) {
                 i++;
             }
@@ -4450,7 +4450,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -4459,120 +4459,120 @@ public class ArrayUtil {
                 if (Math.abs(array[j++] - arrayToFind[k++]) > tolerance) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float floatToFind) {
         return lastIndexOf(array, floatToFind, Integer.MAX_VALUE, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float floatToFind, float tolerance) {
         return lastIndexOf(array, floatToFind, Integer.MAX_VALUE, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float[] arrayToFind, float tolerance) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE, tolerance);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float floatToFind, int startIndex) {
         return lastIndexOf(array, floatToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float floatToFind, int startIndex, float tolerance) {
         if (array == null) {
@@ -4598,43 +4598,43 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float[] arrayToFind, int startIndex) {
         return lastIndexOf(array, arrayToFind, startIndex, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
+     * @param tolerance è¯¯å·®
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(float[] array, float[] arrayToFind, int startIndex,
                                   float tolerance) {
@@ -4690,125 +4690,125 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(float[] array, float floatToFind) {
         return indexOf(array, floatToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param floatToFind Òª²éÕÒµÄÔªËØ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param floatToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param tolerance è¯¯å·®
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(float[] array, float floatToFind, float tolerance) {
         return indexOf(array, floatToFind, tolerance) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(float[] array, float[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param tolerance Îó²î
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param tolerance è¯¯å·®
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(float[] array, float[] arrayToFind, float tolerance) {
         return indexOf(array, arrayToFind, tolerance) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºboolean[]                                                             */
+    /*  ç±»å‹ï¼šboolean[]                                                             */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param booleanToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param booleanToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(boolean[] array, boolean booleanToFind) {
         return indexOf(array, booleanToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(boolean[] array, boolean[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param booleanToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param booleanToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(boolean[] array, boolean booleanToFind, int startIndex) {
         if (array == null) {
@@ -4829,21 +4829,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(boolean[] array, boolean[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -4871,7 +4871,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -4880,7 +4880,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -4889,64 +4889,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param booleanToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param booleanToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(boolean[] array, boolean booleanToFind) {
         return lastIndexOf(array, booleanToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(boolean[] array, boolean[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param booleanToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param booleanToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(boolean[] array, boolean booleanToFind, int startIndex) {
         if (array == null) {
@@ -4969,21 +4969,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(boolean[] array, boolean[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -5037,91 +5037,91 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param booleanToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param booleanToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(boolean[] array, boolean booleanToFind) {
         return indexOf(array, booleanToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(boolean[] array, boolean[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ»òÒ»¸öÔªËØĞòÁĞ¡£                                        */
+    /*  åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ æˆ–ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚                                        */
     /*                                                                              */
-    /*  ÀàĞÍ£ºchar[]                                                                */
+    /*  ç±»å‹ï¼šchar[]                                                                */
     /* ============================================================================ */
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param charToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param charToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(char[] array, char charToFind) {
         return indexOf(array, charToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(char[] array, char[] arrayToFind) {
         return indexOf(array, arrayToFind, 0);
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param charToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param charToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(char[] array, char charToFind, int startIndex) {
         if (array == null) {
@@ -5142,21 +5142,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò¿´×÷<code>0</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò·µ»Ø<code>-1</code>¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™çœ‹ä½œ<code>0</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int indexOf(char[] array, char[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -5184,7 +5184,7 @@ public class ArrayUtil {
         int max = sourceLength - targetLength;
 
         startSearchForFirst: while (true) {
-            // ²éÕÒµÚÒ»¸öÔªËØ
+            // æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
             while ((i <= max) && (array[i] != first)) {
                 i++;
             }
@@ -5193,7 +5193,7 @@ public class ArrayUtil {
                 return -1;
             }
 
-            // ÒÑ¾­ÕÒµ½µÚÒ»¸öÔªËØ£¬½Ó×ÅÕÒ
+            // å·²ç»æ‰¾åˆ°ç¬¬ä¸€ä¸ªå…ƒç´ ï¼Œæ¥ç€æ‰¾
             int j = i + 1;
             int end = (j + targetLength) - 1;
             int k = 1;
@@ -5202,64 +5202,64 @@ public class ArrayUtil {
                 if (array[j++] != arrayToFind[k++]) {
                     i++;
 
-                    // ÖØĞÂ²éÕÒµÚÒ»¸öÔªËØ
+                    // é‡æ–°æŸ¥æ‰¾ç¬¬ä¸€ä¸ªå…ƒç´ 
                     continue startSearchForFirst;
                 }
             }
 
-            // ÕÒµ½ÁË
+            // æ‰¾åˆ°äº†
             return i;
         }
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param charToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param charToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(char[] array, char charToFind) {
         return lastIndexOf(array, charToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(char[] array, char[] arrayToFind) {
         return lastIndexOf(array, arrayToFind, Integer.MAX_VALUE);
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param charToFind Òª²éÕÒµÄÔªËØ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param charToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(char[] array, char charToFind, int startIndex) {
         if (array == null) {
@@ -5282,21 +5282,21 @@ public class ArrayUtil {
     }
 
     /**
-     * ÔÚÊı×éÖĞ´ÓÄ©Î²¿ªÊ¼²éÕÒÒ»¸öÔªËØĞòÁĞ¡£
+     * åœ¨æ•°ç»„ä¸­ä»æœ«å°¾å¼€å§‹æŸ¥æ‰¾ä¸€ä¸ªå…ƒç´ åºåˆ—ã€‚
      * 
      * <p>
-     * Èç¹ûÎ´ÕÒµ½»òÊı×éÎª<code>null</code>Ôò·µ»Ø<code>-1</code>¡£
+     * å¦‚æœæœªæ‰¾åˆ°æˆ–æ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>-1</code>ã€‚
      * </p>
      * 
      * <p>
-     * ÆğÊ¼Ë÷ÒıĞ¡ÓÚ<code>0</code>Ôò·µ»Ø<code>-1</code>£¬³¬³öÊı×é³¤¶ÈµÄÆğÊ¼Ë÷ÒıÔò´ÓÊı×éÄ©Î²¿ªÊ¼ÕÒ¡£
+     * èµ·å§‹ç´¢å¼•å°äº<code>0</code>åˆ™è¿”å›<code>-1</code>ï¼Œè¶…å‡ºæ•°ç»„é•¿åº¦çš„èµ·å§‹ç´¢å¼•åˆ™ä»æ•°ç»„æœ«å°¾å¼€å§‹æ‰¾ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
-     * @param startIndex ÆğÊ¼Ë÷Òı
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
+     * @param startIndex èµ·å§‹ç´¢å¼•
      *
-     * @return ¸ÃÔªËØĞòÁĞÔÚÊı×éÖĞµÄĞòºÅ£¬Èç¹ûÊı×éÎª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * @return è¯¥å…ƒç´ åºåˆ—åœ¨æ•°ç»„ä¸­çš„åºå·ï¼Œå¦‚æœæ•°ç»„ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      */
     public static int lastIndexOf(char[] array, char[] arrayToFind, int startIndex) {
         if ((array == null) || (arrayToFind == null)) {
@@ -5350,124 +5350,124 @@ public class ArrayUtil {
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨¶ÔÏóÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå¯¹è±¡æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param charToFind Òª²éÕÒµÄÔªËØ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param charToFind è¦æŸ¥æ‰¾çš„å…ƒç´ 
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(char[] array, char charToFind) {
         return indexOf(array, charToFind) != -1;
     }
 
     /**
-     * ÅĞ¶ÏÖ¸¶¨ÔªËØĞòÁĞÊÇ·ñ´æÔÚÓÚÖ¸¶¨Êı×éÖĞ¡£
+     * åˆ¤æ–­æŒ‡å®šå…ƒç´ åºåˆ—æ˜¯å¦å­˜åœ¨äºæŒ‡å®šæ•°ç»„ä¸­ã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£
+     * å¦‚æœæ•°ç»„ä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚
      * </p>
      *
-     * @param array ÒªÉ¨ÃèµÄÊı×é
-     * @param arrayToFind Òª²éÕÒµÄÔªËØĞòÁĞ
+     * @param array è¦æ‰«æçš„æ•°ç»„
+     * @param arrayToFind è¦æŸ¥æ‰¾çš„å…ƒç´ åºåˆ—
      *
-     * @return Èç¹ûÕÒµ½Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°åˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(char[] array, char[] arrayToFind) {
         return indexOf(array, arrayToFind) != -1;
     }
 
     /* ============================================================================ */
-    /*  ½«Êı×é×ª»»³ÉÒ×ÓÚÔÄ¶ÁµÄ×Ö·û´®±íÊ¾¡£                                          */
+    /*  å°†æ•°ç»„è½¬æ¢æˆæ˜“äºé˜…è¯»çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚                                          */
     /*                                                                              */
-    /*  Ö§³Ö¶àÎ¬Êı×é¡£                                                              */
+    /*  æ”¯æŒå¤šç»´æ•°ç»„ã€‚                                                              */
     /* ============================================================================ */
 
     /**
-     * ½«Êı×é×ª»»³ÉÒ×ÓÚÔÄ¶ÁµÄ×Ö·û´®±íÊ¾¡£
+     * å°†æ•°ç»„è½¬æ¢æˆæ˜“äºé˜…è¯»çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÊÇ<code>null</code>Ôò·µ»Ø<code>[]</code>£¬Ö§³Ö¶àÎ¬Êı×é¡£
-     * Èç¹ûÊı×éÔªËØÎª<code>null</code>£¬ÔòÏÔÊ¾<code>&lt;null&gt;</code>¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>åˆ™è¿”å›<code>[]</code>ï¼Œæ”¯æŒå¤šç»´æ•°ç»„ã€‚
+     * å¦‚æœæ•°ç»„å…ƒç´ ä¸º<code>null</code>ï¼Œåˆ™æ˜¾ç¤º<code>&lt;null&gt;</code>ã€‚
      * <pre>
      * ArrayUtil.toString(null)                              = "[]"
      * ArrayUtil.toString(new int[] {1, 2, 3})               = "[1, 2, 3]"
      * ArrayUtil.toString(new boolean[] {true, false, true}) = "[true, false, true]"
      * ArrayUtil.toString(new Object[] {
-     *                       {1, 2, 3},  // Ç¶Ì×Êı×é
-     *                       hello,      // Ç¶Ì×·ÇÊı×é
-     *                       null,       // Ç¶Ì×null
-     *                       {},         // Ç¶Ì×¿ÕÊı×é
-     *                       {2, 3, 4}   // Ç¶Ì×Êı×é
+     *                       {1, 2, 3},  // åµŒå¥—æ•°ç»„
+     *                       hello,      // åµŒå¥—éæ•°ç»„
+     *                       null,       // åµŒå¥—null
+     *                       {},         // åµŒå¥—ç©ºæ•°ç»„
+     *                       {2, 3, 4}   // åµŒå¥—æ•°ç»„
      *                    })                                 = "[[1, 2, 3], hello, <null>, [], [2, 3, 4]]"
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
      *
-     * @return ×Ö·û´®±íÊ¾£¬<code>"[]"</code>±íÊ¾¿ÕÊı×é»ò<code>null</code>
+     * @return å­—ç¬¦ä¸²è¡¨ç¤ºï¼Œ<code>"[]"</code>è¡¨ç¤ºç©ºæ•°ç»„æˆ–<code>null</code>
      */
     public static String toString(Object array) {
         return toString(array, "[]", "<null>");
     }
 
     /**
-     * ½«Êı×é×ª»»³ÉÒ×ÓÚÔÄ¶ÁµÄ×Ö·û´®±íÊ¾¡£
+     * å°†æ•°ç»„è½¬æ¢æˆæ˜“äºé˜…è¯»çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÊÇ<code>null</code>Ôò·µ»ØÖ¸¶¨×Ö·û´®£¬Ö§³Ö¶àÎ¬Êı×é¡£
-     * Èç¹ûÊı×éÔªËØÎª<code>null</code>£¬ÔòÏÔÊ¾<code>&lt;null&gt;</code>¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>åˆ™è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ï¼Œæ”¯æŒå¤šç»´æ•°ç»„ã€‚
+     * å¦‚æœæ•°ç»„å…ƒç´ ä¸º<code>null</code>ï¼Œåˆ™æ˜¾ç¤º<code>&lt;null&gt;</code>ã€‚
      * <pre>
      * ArrayUtil.toString(null, "null")                              = "null"
      * ArrayUtil.toString(new int[] {1, 2, 3}, "null")               = "[1, 2, 3]"
      * ArrayUtil.toString(new boolean[] {true, false, true}, "null") = "[true, false, true]"
      * ArrayUtil.toString(new Object[] {
-     *                       {1, 2, 3},  // Ç¶Ì×Êı×é
-     *                       hello,      // Ç¶Ì×·ÇÊı×é
-     *                       null,       // Ç¶Ì×null
-     *                       {},         // Ç¶Ì×¿ÕÊı×é
-     *                       {2, 3, 4}   // Ç¶Ì×Êı×é
+     *                       {1, 2, 3},  // åµŒå¥—æ•°ç»„
+     *                       hello,      // åµŒå¥—éæ•°ç»„
+     *                       null,       // åµŒå¥—null
+     *                       {},         // åµŒå¥—ç©ºæ•°ç»„
+     *                       {2, 3, 4}   // åµŒå¥—æ•°ç»„
      *                    }, "null")                                 = "[[1, 2, 3], hello, <null>, [], [2, 3, 4]]"
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param nullArrayStr Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø´Ë×Ö·û´®
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param nullArrayStr å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æ­¤å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±íÊ¾£¬»ò·µ»ØÖ¸¶¨×Ö·û´®±íÊ¾<code>null</code>
+     * @return å­—ç¬¦ä¸²è¡¨ç¤ºï¼Œæˆ–è¿”å›æŒ‡å®šå­—ç¬¦ä¸²è¡¨ç¤º<code>null</code>
      */
     public static String toString(Object array, String nullArrayStr) {
         return toString(array, nullArrayStr, "<null>");
     }
 
     /**
-     * ½«Êı×é×ª»»³ÉÒ×ÓÚÔÄ¶ÁµÄ×Ö·û´®±íÊ¾¡£
+     * å°†æ•°ç»„è½¬æ¢æˆæ˜“äºé˜…è¯»çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚
      * 
      * <p>
-     * Èç¹ûÊı×éÊÇ<code>null</code>Ôò·µ»ØÖ¸¶¨×Ö·û´®£¬Ö§³Ö¶àÎ¬Êı×é¡£ Èç¹ûÊı×éÔªËØÎª<code>null</code>£¬ÔòÏÔÊ¾Ö¸¶¨×Ö·û´®¡£
+     * å¦‚æœæ•°ç»„æ˜¯<code>null</code>åˆ™è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ï¼Œæ”¯æŒå¤šç»´æ•°ç»„ã€‚ å¦‚æœæ•°ç»„å…ƒç´ ä¸º<code>null</code>ï¼Œåˆ™æ˜¾ç¤ºæŒ‡å®šå­—ç¬¦ä¸²ã€‚
      * <pre>
      * ArrayUtil.toString(null, "null", "NULL")                              = "null"
      * ArrayUtil.toString(new int[] {1, 2, 3}, "null", "NULL")               = "[1, 2, 3]"
      * ArrayUtil.toString(new boolean[] {true, false, true}, "null", "NULL") = "[true, false, true]"
      * ArrayUtil.toString(new Object[] {
-     *                       {1, 2, 3},  // Ç¶Ì×Êı×é
-     *                       hello,      // Ç¶Ì×·ÇÊı×é
-     *                       null,       // Ç¶Ì×null
-     *                       {},         // Ç¶Ì×¿ÕÊı×é
-     *                       {2, 3, 4}   // Ç¶Ì×Êı×é
+     *                       {1, 2, 3},  // åµŒå¥—æ•°ç»„
+     *                       hello,      // åµŒå¥—éæ•°ç»„
+     *                       null,       // åµŒå¥—null
+     *                       {},         // åµŒå¥—ç©ºæ•°ç»„
+     *                       {2, 3, 4}   // åµŒå¥—æ•°ç»„
      *                    }, "null", "NULL")                                 = "[[1, 2, 3], hello, NULL, [], [2, 3, 4]]"
      * </pre>
      * </p>
      *
-     * @param array Òª×ª»»µÄÊı×é
-     * @param nullArrayStr Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø´Ë×Ö·û´®
-     * @param nullElementStr Èç¹ûÊı×éÖĞµÄÔªËØÎª<code>null</code>£¬Ôò·µ»Ø´Ë×Ö·û´®
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param nullArrayStr å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æ­¤å­—ç¬¦ä¸²
+     * @param nullElementStr å¦‚æœæ•°ç»„ä¸­çš„å…ƒç´ ä¸º<code>null</code>ï¼Œåˆ™è¿”å›æ­¤å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±íÊ¾£¬»ò·µ»ØÖ¸¶¨×Ö·û´®±íÊ¾<code>null</code>
+     * @return å­—ç¬¦ä¸²è¡¨ç¤ºï¼Œæˆ–è¿”å›æŒ‡å®šå­—ç¬¦ä¸²è¡¨ç¤º<code>null</code>
      */
     public static String toString(Object array, String nullArrayStr, String nullElementStr) {
         if (array == null) {
@@ -5482,12 +5482,12 @@ public class ArrayUtil {
     }
 
     /**
-     * ½«Êı×é×ª»»³ÉÒ×ÓÚÔÄ¶ÁµÄ×Ö·û´®±íÊ¾¡£<code>null</code>½«±»¿´×÷¿ÕÊı×é¡£ Ö§³Ö¶àÎ¬Êı×é¡£
+     * å°†æ•°ç»„è½¬æ¢æˆæ˜“äºé˜…è¯»çš„å­—ç¬¦ä¸²è¡¨ç¤ºã€‚<code>null</code>å°†è¢«çœ‹ä½œç©ºæ•°ç»„ã€‚ æ”¯æŒå¤šç»´æ•°ç»„ã€‚
      *
-     * @param buffer ½«×ª»»ºóµÄ×Ö·û´®¼ÓÈëµ½Õâ¸ö<code>StringBuffer</code>ÖĞ
-     * @param array Òª×ª»»µÄÊı×é
-     * @param nullArrayStr Èç¹ûÊı×éÊÇ<code>null</code>£¬Ôò·µ»Ø´Ë×Ö·û´®
-     * @param nullElementStr Èç¹ûÊı×éÖĞµÄÔªËØÎª<code>null</code>£¬Ôò·µ»Ø´Ë×Ö·û´®
+     * @param buffer å°†è½¬æ¢åçš„å­—ç¬¦ä¸²åŠ å…¥åˆ°è¿™ä¸ª<code>StringBuffer</code>ä¸­
+     * @param array è¦è½¬æ¢çš„æ•°ç»„
+     * @param nullArrayStr å¦‚æœæ•°ç»„æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æ­¤å­—ç¬¦ä¸²
+     * @param nullElementStr å¦‚æœæ•°ç»„ä¸­çš„å…ƒç´ ä¸º<code>null</code>ï¼Œåˆ™è¿”å›æ­¤å­—ç¬¦ä¸²
      */
     private static void toString(StringBuffer buffer, Object array, String nullArrayStr,
                                  String nullElementStr) {
@@ -5503,7 +5503,7 @@ public class ArrayUtil {
 
         buffer.append('[');
 
-        // arrayÎªÊı×é
+        // arrayä¸ºæ•°ç»„
         if (array instanceof long[]) {
             long[] longArray = (long[]) array;
             int length = longArray.length;

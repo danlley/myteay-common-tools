@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import com.myteay.common.aop.monitor.logger.supports.ExceptionHelper;
 
 /**
- * ¿ÉÇ¶Ì×µÄÒì³£´úÀí, ¼ò»¯¿ÉÇ¶Ì×µÄÒì³£µÄÊµÏÖ.
+ * å¯åµŒå¥—çš„å¼‚å¸¸ä»£ç†, ç®€åŒ–å¯åµŒå¥—çš„å¼‚å¸¸çš„å®ç°.
  * 
  * @author min.weixm
  * @version $Id: ChainedThrowableDelegate.java, v 0.1 Nov 5, 2017 9:34:50 PM min.weixm Exp $
@@ -24,10 +24,10 @@ public class ChainedThrowableDelegate
                                       implements ChainedThrowable {
     private static final long        serialVersionUID   = 3257288032683241523L;
 
-    /** ±íÊ¾Òì³£²»´æÔÚµÄ³£Á¿. */
+    /** è¡¨ç¤ºå¼‚å¸¸ä¸å­˜åœ¨çš„å¸¸é‡. */
     protected static final Throwable NO_CAUSE           = new Throwable();
 
-    /** ³£¼ûµÄÓÃÀ´È¡µÃÒì³£ÆğÒòµÄ·½·¨Ãû. */
+    /** å¸¸è§çš„ç”¨æ¥å–å¾—å¼‚å¸¸èµ·å› çš„æ–¹æ³•å. */
     private static final String[]    CAUSE_METHOD_NAMES = {
                                                             "getNested", "getNestedException",
                                                             "getNextException", "getTargetException",
@@ -36,38 +36,38 @@ public class ChainedThrowableDelegate
                                                             "getCause"
     };
 
-    /** ³£¼ûµÄÓÃÀ´È¡µÃÒì³£ÆğÒòµÄ×Ö¶ÎÃû. */
+    /** å¸¸è§çš„ç”¨æ¥å–å¾—å¼‚å¸¸èµ·å› çš„å­—æ®µå. */
     private static final String[]    CAUSE_FIELD_NAMES  = { "detail" };
 
-    /** ±»´úÀíµÄ<code>Throwable</code>¶ÔÏó. */
+    /** è¢«ä»£ç†çš„<code>Throwable</code>å¯¹è±¡. */
     public Throwable                 delegatedThrowable;
 
     /**
-     * ´´½¨Ò»¸ö<code>Throwable</code>´úÀí.
+     * åˆ›å»ºä¸€ä¸ª<code>Throwable</code>ä»£ç†.
      *
-     * @param throwable ±»´úÀíµÄÒì³£
+     * @param throwable è¢«ä»£ç†çš„å¼‚å¸¸
      */
     public ChainedThrowableDelegate(Throwable throwable) {
         this.delegatedThrowable = throwable;
     }
 
     /**
-     * È¡µÃ±»´úÀíµÄÒì³£µÄÆğÒò.
+     * å–å¾—è¢«ä»£ç†çš„å¼‚å¸¸çš„èµ·å› .
      *
-     * @return Òì³£µÄÆğÒò.
+     * @return å¼‚å¸¸çš„èµ·å› .
      */
     public Throwable getCause() {
         Throwable cause = getCauseByWellKnownTypes(delegatedThrowable);
 
         for (Class<?> throwableClass = delegatedThrowable.getClass(); (cause == null) && Throwable.class.isAssignableFrom(
             throwableClass); throwableClass = throwableClass.getSuperclass()) {
-            // ³¢ÊÔ³£¼ûµÄ·½·¨
+            // å°è¯•å¸¸è§çš„æ–¹æ³•
             for (int i = 0; (cause == null) && (i < CAUSE_METHOD_NAMES.length); i++) {
                 cause = getCauseByMethodName(delegatedThrowable, throwableClass,
                     CAUSE_METHOD_NAMES[i]);
             }
 
-            // ³¢ÊÔ³£¼ûµÄ×Ö¶Î
+            // å°è¯•å¸¸è§çš„å­—æ®µ
             for (int i = 0; (cause == null) && (i < CAUSE_FIELD_NAMES.length); i++) {
                 cause = getCauseByFieldName(delegatedThrowable, throwableClass, CAUSE_FIELD_NAMES[i]);
             }
@@ -85,11 +85,11 @@ public class ChainedThrowableDelegate
     }
 
     /**
-     * È¡µÃ³£¼û<code>Throwable</code>ÀàµÄÒì³£ÆğÒò.
+     * å–å¾—å¸¸è§<code>Throwable</code>ç±»çš„å¼‚å¸¸èµ·å› .
      *
-     * @param throwable Òì³£
+     * @param throwable å¼‚å¸¸
      *
-     * @return Òì³£ÆğÒò
+     * @return å¼‚å¸¸èµ·å› 
      */
     public Throwable getCauseByWellKnownTypes(Throwable throwable) {
         Throwable cause = null;
@@ -117,13 +117,13 @@ public class ChainedThrowableDelegate
     }
 
     /**
-     * Í¨¹ı³£¼ûµÄ·½·¨¶¯Ì¬µØÈ¡µÃÒì³£ÆğÒò.
+     * é€šè¿‡å¸¸è§çš„æ–¹æ³•åŠ¨æ€åœ°å–å¾—å¼‚å¸¸èµ·å› .
      *
-     * @param throwable Òì³£
-     * @param throwableClass Òì³£Àà
-     * @param methodName ·½·¨Ãû
+     * @param throwable å¼‚å¸¸
+     * @param throwableClass å¼‚å¸¸ç±»
+     * @param methodName æ–¹æ³•å
      *
-     * @return Òì³£ÆğÒò»ò<code>NO_CAUSE</code>
+     * @return å¼‚å¸¸èµ·å› æˆ–<code>NO_CAUSE</code>
      */
     public Throwable getCauseByMethodName(Throwable throwable, Class<?> throwableClass,
                                           String methodName) {
@@ -155,13 +155,13 @@ public class ChainedThrowableDelegate
     }
 
     /**
-     * Í¨¹ı³£¼ûµÄ·½·¨¶¯Ì¬µØÈ¡µÃÒì³£ÆğÒò.
+     * é€šè¿‡å¸¸è§çš„æ–¹æ³•åŠ¨æ€åœ°å–å¾—å¼‚å¸¸èµ·å› .
      *
-     * @param throwable Òì³£
-     * @param throwableClass Òì³£Àà
-     * @param fieldName ×Ö¶ÎÃû
+     * @param throwable å¼‚å¸¸
+     * @param throwableClass å¼‚å¸¸ç±»
+     * @param fieldName å­—æ®µå
      *
-     * @return Òì³£ÆğÒò»ò<code>NO_CAUSE</code>
+     * @return å¼‚å¸¸èµ·å› æˆ–<code>NO_CAUSE</code>
      */
     public Throwable getCauseByFieldName(Throwable throwable, Class<?> throwableClass,
                                          String fieldName) {
@@ -192,34 +192,34 @@ public class ChainedThrowableDelegate
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½±ê×¼´íÎó.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æ ‡å‡†é”™è¯¯.
      */
     public void printStackTrace() {
         ExceptionHelper.printStackTrace(this);
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½Ö¸¶¨Êä³öÁ÷.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æŒ‡å®šè¾“å‡ºæµ.
      *
-     * @param stream Êä³ö×Ö½ÚÁ÷.
+     * @param stream è¾“å‡ºå­—èŠ‚æµ.
      */
     public void printStackTrace(PrintStream stream) {
         ExceptionHelper.printStackTrace(this, stream);
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½Ö¸¶¨Êä³öÁ÷.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æŒ‡å®šè¾“å‡ºæµ.
      *
-     * @param writer Êä³ö×Ö·ûÁ÷.
+     * @param writer è¾“å‡ºå­—ç¬¦æµ.
      */
     public void printStackTrace(PrintWriter writer) {
         ExceptionHelper.printStackTrace(this, writer);
     }
 
     /**
-     * ´òÓ¡Òì³£µÄµ÷ÓÃÕ», ²»°üÀ¨ÆğÒòÒì³£µÄĞÅÏ¢.
+     * æ‰“å°å¼‚å¸¸çš„è°ƒç”¨æ ˆ, ä¸åŒ…æ‹¬èµ·å› å¼‚å¸¸çš„ä¿¡æ¯.
      *
-     * @param writer ´òÓ¡µ½Êä³öÁ÷
+     * @param writer æ‰“å°åˆ°è¾“å‡ºæµ
      */
     public void printCurrentStackTrace(PrintWriter writer) {
         if (delegatedThrowable instanceof ChainedThrowable) {

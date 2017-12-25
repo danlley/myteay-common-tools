@@ -7,27 +7,27 @@ package com.myteay.common.async.event;
 import org.apache.log4j.Logger;
 
 /**
- * ÊÂ¼şÖ´ĞĞÆ÷</br>
- * ÊÂ¼şÖ´ĞĞÆ÷ÊµÏÖÁË{@link Runnable}½Ó¿Ú£¬±»´´½¨ºó»á×Ô¶¯´¥·¢Ö´ĞĞ£¬´´½¨Ò»¸öÊÂ¼şÖ´ĞĞÆ÷Ê±ĞèÒª°üº¬ÓĞ¸ÃÊÂ¼ş±»´¦ÀíÊ±ĞèÒªµÄÊÂ¼ş¶ÔÏóºÍÊÂ¼ş¼àÌıÆ÷¡£
+ * äº‹ä»¶æ‰§è¡Œå™¨</br>
+ * äº‹ä»¶æ‰§è¡Œå™¨å®ç°äº†{@link Runnable}æ¥å£ï¼Œè¢«åˆ›å»ºåä¼šè‡ªåŠ¨è§¦å‘æ‰§è¡Œï¼Œåˆ›å»ºä¸€ä¸ªäº‹ä»¶æ‰§è¡Œå™¨æ—¶éœ€è¦åŒ…å«æœ‰è¯¥äº‹ä»¶è¢«å¤„ç†æ—¶éœ€è¦çš„äº‹ä»¶å¯¹è±¡å’Œäº‹ä»¶ç›‘å¬å™¨ã€‚
  * 
  * @author min.weixm
  * @version $Id: EventListenerExecutor.java, v 0.1 Oct 28, 2017 11:20:30 PM min.weixm Exp $
  */
 public class EventListenerExecutor implements Runnable {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger logger = Logger.getLogger(EventListenerExecutor.class);
 
-    /** ÊÂ¼ş¼àÌıÆ÷ */
+    /** äº‹ä»¶ç›‘å¬å™¨ */
     private EventListener<?>   eventListener;
 
-    /** ÊÂ¼şÄ£ĞÍ */
+    /** äº‹ä»¶æ¨¡å‹ */
     private MtEvent<?>         event;
 
     /**
-     * ¹¹Ôì·½·¨
-     * @param eventListener     ¼àÌıÆ÷
-     * @param event             Òì²½ÊÂ¼şÄ£ĞÍ
+     * æ„é€ æ–¹æ³•
+     * @param eventListener     ç›‘å¬å™¨
+     * @param event             å¼‚æ­¥äº‹ä»¶æ¨¡å‹
      */
     public EventListenerExecutor(EventListener<?> eventListener, MtEvent<?> event) {
         super();
@@ -42,7 +42,7 @@ public class EventListenerExecutor implements Runnable {
 
         try {
             if (eventListener == null) {
-                logger.warn("ÊÂ¼şÃ»ÓĞÕÒµ½¶ÔÓ¦µÄÖ´ĞĞ¼àÌıÆ÷£¬event" + event);
+                logger.warn("äº‹ä»¶æ²¡æœ‰æ‰¾åˆ°å¯¹åº”çš„æ‰§è¡Œç›‘å¬å™¨ï¼Œevent" + event);
                 return;
             }
 
@@ -51,7 +51,7 @@ public class EventListenerExecutor implements Runnable {
             }
 
         } catch (Exception e) {
-            logger.error("ÊÂ¼şÖ´ĞĞÆ÷´¦ÀíÊ±·¢ÉúÒì³£ event=" + event + ", eventListener=" + eventListener, e);
+            logger.error("äº‹ä»¶æ‰§è¡Œå™¨å¤„ç†æ—¶å‘ç”Ÿå¼‚å¸¸ event=" + event + ", eventListener=" + eventListener, e);
         }
     }
 }

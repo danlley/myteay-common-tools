@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * °üº¬¡°·ÖÒ³¡±ĞÅÏ¢µÄ<code>List</code>¡£
+ * åŒ…å«â€œåˆ†é¡µâ€ä¿¡æ¯çš„<code>List</code>ã€‚
  *
  * @author min.weixm
  * @version $Id: PageList.java, v 0.1 Oct 29, 2017 12:34:45 PM min.weixm Exp $
@@ -20,25 +20,25 @@ public class PageList<T> extends ArrayList<T> {
     private Paginator         paginator;
 
     /**
-     * ´´½¨Ò»¸ö<code>PageList</code>¡£
+     * åˆ›å»ºä¸€ä¸ª<code>PageList</code>ã€‚
      */
     public PageList() {
         paginator = new Paginator();
     }
 
     /**
-     * ´´½¨<code>PageList</code>£¬²¢½«Ö¸¶¨<code>Collection</code>ÖĞµÄÄÚÈİ¸´ÖÆµ½ĞÂµÄlistÖĞ¡£
+     * åˆ›å»º<code>PageList</code>ï¼Œå¹¶å°†æŒ‡å®š<code>Collection</code>ä¸­çš„å†…å®¹å¤åˆ¶åˆ°æ–°çš„listä¸­ã€‚
      *
-     * @param c Òª¸´ÖÆµÄ<code>Collection</code>
+     * @param c è¦å¤åˆ¶çš„<code>Collection</code>
      */
     public PageList(Collection<T> c) {
         this(c, null);
     }
 
     /**
-     * ´´½¨<code>PageList</code>£¬²¢½«Ö¸¶¨<code>Collection</code>ÖĞµÄÄÚÈİ¸´ÖÆµ½ĞÂµÄlistÖĞ¡£
+     * åˆ›å»º<code>PageList</code>ï¼Œå¹¶å°†æŒ‡å®š<code>Collection</code>ä¸­çš„å†…å®¹å¤åˆ¶åˆ°æ–°çš„listä¸­ã€‚
      *
-     * @param c Òª¸´ÖÆµÄ<code>Collection</code>
+     * @param c è¦å¤åˆ¶çš„<code>Collection</code>
      */
     public PageList(Collection<T> c, Paginator paginator) {
         super(c);
@@ -46,18 +46,18 @@ public class PageList<T> extends ArrayList<T> {
     }
 
     /**
-     * È¡µÃ·ÖÒ³Æ÷£¬¿É´ÓÖĞÈ¡µÃÓĞ¹Ø·ÖÒ³ºÍÒ³ÂëµÄËùÓĞĞÅÏ¢¡£
+     * å–å¾—åˆ†é¡µå™¨ï¼Œå¯ä»ä¸­å–å¾—æœ‰å…³åˆ†é¡µå’Œé¡µç çš„æ‰€æœ‰ä¿¡æ¯ã€‚
      *
-     * @return ·ÖÒ³Æ÷¶ÔÏó
+     * @return åˆ†é¡µå™¨å¯¹è±¡
      */
     public Paginator getPaginator() {
         return paginator;
     }
 
     /**
-     * ÉèÖÃ·ÖÒ³Æ÷¡£
+     * è®¾ç½®åˆ†é¡µå™¨ã€‚
      *
-     * @param paginator ÒªÉèÖÃµÄ·ÖÒ³Æ÷¶ÔÏó
+     * @param paginator è¦è®¾ç½®çš„åˆ†é¡µå™¨å¯¹è±¡
      */
     public void setPaginator(Paginator paginator) {
         if (paginator != null) {

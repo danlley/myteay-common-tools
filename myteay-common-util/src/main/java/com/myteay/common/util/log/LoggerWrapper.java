@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 import org.apache.commons.logging.Log;
 
 /**
- * °ü×°commons-loggingµÄ<code>Log</code>Àà, ÊµÏÖÀ©Õ¹µÄlog¹¦ÄÜ.
+ * åŒ…è£…commons-loggingçš„<code>Log</code>ç±», å®ç°æ‰©å±•çš„logåŠŸèƒ½.
  * 
  * @author min.weixm
  * @version $Id: LoggerWrapper.java, v 0.1 Oct 29, 2017 12:09:36 PM min.weixm Exp $
@@ -15,92 +15,92 @@ public class LoggerWrapper implements Logger {
     private ResourceBundle bundle;
 
     /**
-     * ¹¹Ôìº¯Êı.
+     * æ„é€ å‡½æ•°.
      *
-     * @param log ±»°ü×°µÄ<code>Log</code>¶ÔÏó
+     * @param log è¢«åŒ…è£…çš„<code>Log</code>å¯¹è±¡
      */
     public LoggerWrapper(Log log) {
         this.log = log;
     }
 
     /**
-     * ÅĞ¶Ïtrace levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­trace levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûtrace level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœtrace levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isTraceEnabled() {
         return log.isTraceEnabled();
     }
 
     /**
-     * ÅĞ¶Ïdebug levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­debug levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûdebug level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœdebug levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isDebugEnabled() {
         return log.isDebugEnabled();
     }
 
     /**
-     * ÅĞ¶Ïinfo levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­info levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûinfo level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœinfo levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isInfoEnabled() {
         return log.isInfoEnabled();
     }
 
     /**
-     * ÅĞ¶Ïwarn levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­warn levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûwarn level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœwarn levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isWarnEnabled() {
         return log.isWarnEnabled();
     }
 
     /**
-     * ÅĞ¶Ïerror levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­error levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûerror level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœerror levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isErrorEnabled() {
         return log.isErrorEnabled();
     }
 
     /**
-     * ÅĞ¶Ïfatal levelÊÇ·ñ±»´ò¿ª.
+     * åˆ¤æ–­fatal levelæ˜¯å¦è¢«æ‰“å¼€.
      *
-     * @return Èç¹ûfatal level±»´ò¿ª, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœfatal levelè¢«æ‰“å¼€, åˆ™è¿”å›<code>true</code>
      */
     public boolean isFatalEnabled() {
         return log.isFatalEnabled();
     }
 
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void trace(Object message) {
         log.trace(message);
     }
 
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void trace(Object message, Throwable cause) {
         log.trace(message, cause);
     }
 
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void trace(Object key, Object[] params) {
         if (log.isTraceEnabled()) {
@@ -109,11 +109,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void trace(Object key, Object[] params, Throwable cause) {
         if (log.isTraceEnabled()) {
@@ -122,29 +122,29 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void debug(Object message) {
         log.debug(message);
     }
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void debug(Object message, Throwable cause) {
         log.debug(message, cause);
     }
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void debug(Object key, Object[] params) {
         if (log.isDebugEnabled()) {
@@ -153,11 +153,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void debug(Object key, Object[] params, Throwable cause) {
         if (log.isDebugEnabled()) {
@@ -166,29 +166,29 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void info(Object message) {
         log.info(message);
     }
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void info(Object message, Throwable cause) {
         log.info(message, cause);
     }
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void info(Object key, Object[] params) {
         if (log.isInfoEnabled()) {
@@ -197,11 +197,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void info(Object key, Object[] params, Throwable cause) {
         if (log.isInfoEnabled()) {
@@ -210,29 +210,29 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void warn(Object message) {
         log.warn(message);
     }
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void warn(Object message, Throwable cause) {
         log.warn(message, cause);
     }
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void warn(Object key, Object[] params) {
         if (log.isWarnEnabled()) {
@@ -241,11 +241,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void warn(Object key, Object[] params, Throwable cause) {
         if (log.isWarnEnabled()) {
@@ -254,29 +254,29 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void error(Object message) {
         log.error(message);
     }
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void error(Object message, Throwable cause) {
         log.error(message, cause);
     }
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void error(Object key, Object[] params) {
         if (log.isErrorEnabled()) {
@@ -285,11 +285,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void error(Object key, Object[] params, Throwable cause) {
         if (log.isErrorEnabled()) {
@@ -298,29 +298,29 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
+     * @param message logä¿¡æ¯
      */
     public void fatal(Object message) {
         log.fatal(message);
     }
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param message logĞÅÏ¢
-     * @param cause Òì³£
+     * @param message logä¿¡æ¯
+     * @param cause å¼‚å¸¸
      */
     public void fatal(Object message, Throwable cause) {
         log.fatal(message, cause);
     }
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     public void fatal(Object key, Object[] params) {
         if (log.isFatalEnabled()) {
@@ -329,11 +329,11 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     public void fatal(Object key, Object[] params, Throwable cause) {
         if (log.isFatalEnabled()) {
@@ -342,27 +342,27 @@ public class LoggerWrapper implements Logger {
     }
 
     /**
-     * È¡µÃlogger¶ÔÓ¦µÄ×ÊÔ´Êø.
+     * å–å¾—loggerå¯¹åº”çš„èµ„æºæŸ.
      *
-     * @return ×ÊÔ´Êø
+     * @return èµ„æºæŸ
      */
     public ResourceBundle getResourceBundle() {
         return bundle;
     }
 
     /**
-     * ÉèÖÃlogger¶ÔÓ¦µÄ×ÊÔ´Êø.
+     * è®¾ç½®loggerå¯¹åº”çš„èµ„æºæŸ.
      *
-     * @param bundle ×ÊÔ´Êø
+     * @param bundle èµ„æºæŸ
      */
     public void setResourceBundle(ResourceBundle bundle) {
         this.bundle = bundle;
     }
 
     /**
-     * È¡µÃloggerµÄ×Ö·û´®±íÊ¾, Í¨³£·µ»ØloggerµÄÃû³Æ.
+     * å–å¾—loggerçš„å­—ç¬¦ä¸²è¡¨ç¤º, é€šå¸¸è¿”å›loggerçš„åç§°.
      *
-     * @return loggerµÄ×Ö·û´®±íÊ¾
+     * @return loggerçš„å­—ç¬¦ä¸²è¡¨ç¤º
      */
     public String toString() {
         return log.toString();

@@ -11,10 +11,10 @@ import java.lang.reflect.Method;
 import com.myteay.common.aop.monitor.logger.exception.CloneNotSupportedException;
 
 /**
- * ÓĞ¹Ø<code>Object</code>´¦ÀíµÄ¹¤¾ßÀà¡£
+ * æœ‰å…³<code>Object</code>å¤„ç†çš„å·¥å…·ç±»ã€‚
  * 
  * <p>
- * Õâ¸öÀàÖĞµÄÃ¿¸ö·½·¨¶¼¿ÉÒÔ¡°°²È«¡±µØ´¦Àí<code>null</code>£¬¶ø²»»áÅ×³ö<code>NullPointerException</code>¡£
+ * è¿™ä¸ªç±»ä¸­çš„æ¯ä¸ªæ–¹æ³•éƒ½å¯ä»¥â€œå®‰å…¨â€åœ°å¤„ç†<code>null</code>ï¼Œè€Œä¸ä¼šæŠ›å‡º<code>NullPointerException</code>ã€‚
  * </p>
  * 
  * @author min.weixm
@@ -22,19 +22,19 @@ import com.myteay.common.aop.monitor.logger.exception.CloneNotSupportedException
  */
 public class ObjectUtil {
     /* ============================================================================ */
-    /*  ³£Á¿ºÍsingleton¡£                                                           */
+    /*  å¸¸é‡å’Œsingletonã€‚                                                           */
     /* ============================================================================ */
 
     /**
-     * ÓÃÓÚ±íÊ¾<code>null</code>µÄ³£Á¿¡£
+     * ç”¨äºè¡¨ç¤º<code>null</code>çš„å¸¸é‡ã€‚
      * 
      * <p>
-     * ÀıÈç£¬<code>HashMap.get(Object)</code>·½·¨·µ»Ø<code>null</code>ÓĞÁ½ÖÖ¿ÉÄÜ£º
-     * Öµ²»´æÔÚ»òÖµÎª<code>null</code>¡£¶øÕâ¸ösingleton¿ÉÓÃÀ´Çø±ğÕâÁ½ÖÖÇéĞÎ¡£
+     * ä¾‹å¦‚ï¼Œ<code>HashMap.get(Object)</code>æ–¹æ³•è¿”å›<code>null</code>æœ‰ä¸¤ç§å¯èƒ½ï¼š
+     * å€¼ä¸å­˜åœ¨æˆ–å€¼ä¸º<code>null</code>ã€‚è€Œè¿™ä¸ªsingletonå¯ç”¨æ¥åŒºåˆ«è¿™ä¸¤ç§æƒ…å½¢ã€‚
      * </p>
      * 
      * <p>
-     * ÁíÒ»¸öÀı×ÓÊÇ£¬<code>Hashtable</code>µÄÖµ²»ÄÜÎª<code>null</code>¡£
+     * å¦ä¸€ä¸ªä¾‹å­æ˜¯ï¼Œ<code>Hashtable</code>çš„å€¼ä¸èƒ½ä¸º<code>null</code>ã€‚
      * </p>
      */
     public static final Object NULL = new Serializable() {
@@ -46,13 +46,13 @@ public class ObjectUtil {
     };
 
     /* ============================================================================ */
-    /*  Ä¬ÈÏÖµº¯Êı¡£                                                                */
+    /*  é»˜è®¤å€¼å‡½æ•°ã€‚                                                                */
     /*                                                                              */
-    /*  µ±¶ÔÏóÎªnullÊ±£¬½«¶ÔÏó×ª»»³ÉÖ¸¶¨µÄÄ¬ÈÏ¶ÔÏó¡£                                */
+    /*  å½“å¯¹è±¡ä¸ºnullæ—¶ï¼Œå°†å¯¹è±¡è½¬æ¢æˆæŒ‡å®šçš„é»˜è®¤å¯¹è±¡ã€‚                                */
     /* ============================================================================ */
 
     /**
-     * Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏ¶ÔÏó£¬·ñÔò·µ»Ø¶ÔÏó±¾Éí¡£
+     * å¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤å¯¹è±¡ï¼Œå¦åˆ™è¿”å›å¯¹è±¡æœ¬èº«ã€‚
      * <pre>
      * ObjectUtil.defaultIfNull(null, null)      = null
      * ObjectUtil.defaultIfNull(null, "")        = ""
@@ -61,10 +61,10 @@ public class ObjectUtil {
      * ObjectUtil.defaultIfNull(Boolean.TRUE, *) = Boolean.TRUE
      * </pre>
      *
-     * @param object Òª²âÊÔµÄ¶ÔÏó
-     * @param defaultValue Ä¬ÈÏÖµ
+     * @param object è¦æµ‹è¯•çš„å¯¹è±¡
+     * @param defaultValue é»˜è®¤å€¼
      *
-     * @return ¶ÔÏó±¾Éí»òÄ¬ÈÏ¶ÔÏó
+     * @return å¯¹è±¡æœ¬èº«æˆ–é»˜è®¤å¯¹è±¡
      */
     public static Object defaultIfNull(Object object, Object defaultValue) {
         return (object != null) ? object
@@ -72,16 +72,16 @@ public class ObjectUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½Ïº¯Êı¡£                                                                  */
+    /*  æ¯”è¾ƒå‡½æ•°ã€‚                                                                  */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´±È½ÏÁ½¸ö¶ÔÏóÊÇ·ñÏàÍ¬¡£                                          */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥æ¯”è¾ƒä¸¤ä¸ªå¯¹è±¡æ˜¯å¦ç›¸åŒã€‚                                          */
     /* ============================================================================ */
 
     /**
-     * ±È½ÏÁ½¸ö¶ÔÏóÊÇ·ñÍêÈ«ÏàµÈ¡£
+     * æ¯”è¾ƒä¸¤ä¸ªå¯¹è±¡æ˜¯å¦å®Œå…¨ç›¸ç­‰ã€‚
      * 
      * <p>
-     * ´Ë·½·¨¿ÉÒÔÕıÈ·µØ±È½Ï¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•å¯ä»¥æ­£ç¡®åœ°æ¯”è¾ƒå¤šç»´æ•°ç»„ã€‚
      * <pre>
      * ObjectUtil.equals(null, null)                  = true
      * ObjectUtil.equals(null, "")                    = false
@@ -94,46 +94,46 @@ public class ObjectUtil {
      * </pre>
      * </p>
      *
-     * @param object1 ¶ÔÏó1
-     * @param object2 ¶ÔÏó2
+     * @param object1 å¯¹è±¡1
+     * @param object2 å¯¹è±¡2
      *
-     * @return Èç¹ûÏàµÈ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœç›¸ç­‰, åˆ™è¿”å›<code>true</code>
      */
     public static boolean equals(Object object1, Object object2) {
         return ArrayUtil.equals(object1, object2);
     }
 
     /* ============================================================================ */
-    /*  Hashcodeº¯Êı¡£                                                              */
+    /*  Hashcodeå‡½æ•°ã€‚                                                              */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´È¡µÃ¶ÔÏóµÄhash code¡£                                           */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥å–å¾—å¯¹è±¡çš„hash codeã€‚                                           */
     /* ============================================================================ */
 
     /**
-     * È¡µÃ¶ÔÏóµÄhashÖµ, Èç¹û¶ÔÏóÎª<code>null</code>, Ôò·µ»Ø<code>0</code>¡£
+     * å–å¾—å¯¹è±¡çš„hashå€¼, å¦‚æœå¯¹è±¡ä¸º<code>null</code>, åˆ™è¿”å›<code>0</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨¿ÉÒÔÕıÈ·µØ´¦Àí¶àÎ¬Êı×é¡£
+     * æ­¤æ–¹æ³•å¯ä»¥æ­£ç¡®åœ°å¤„ç†å¤šç»´æ•°ç»„ã€‚
      * </p>
      *
-     * @param object ¶ÔÏó
+     * @param object å¯¹è±¡
      *
-     * @return hashÖµ
+     * @return hashå€¼
      */
     public static int hashCode(Object object) {
         return ArrayUtil.hashCode(object);
     }
 
     /**
-     * È¡µÃ¶ÔÏóµÄÔ­Ê¼µÄhashÖµ, Èç¹û¶ÔÏóÎª<code>null</code>, Ôò·µ»Ø<code>0</code>¡£
+     * å–å¾—å¯¹è±¡çš„åŸå§‹çš„hashå€¼, å¦‚æœå¯¹è±¡ä¸º<code>null</code>, åˆ™è¿”å›<code>0</code>ã€‚
      * 
      * <p>
-     * ¸Ã·½·¨Ê¹ÓÃ<code>System.identityHashCode</code>À´È¡µÃhashÖµ£¬¸ÃÖµ²»ÊÜ¶ÔÏó±¾ÉíµÄ<code>hashCode</code>·½·¨µÄÓ°Ïì¡£
+     * è¯¥æ–¹æ³•ä½¿ç”¨<code>System.identityHashCode</code>æ¥å–å¾—hashå€¼ï¼Œè¯¥å€¼ä¸å—å¯¹è±¡æœ¬èº«çš„<code>hashCode</code>æ–¹æ³•çš„å½±å“ã€‚
      * </p>
      *
-     * @param object ¶ÔÏó
+     * @param object å¯¹è±¡
      *
-     * @return hashÖµ
+     * @return hashå€¼
      */
     public static int identityHashCode(Object object) {
         return (object == null) ? 0
@@ -141,11 +141,11 @@ public class ObjectUtil {
     }
 
     /* ============================================================================ */
-    /*  È¡µÃ¶ÔÏóµÄidentity¡£                                                        */
+    /*  å–å¾—å¯¹è±¡çš„identityã€‚                                                        */
     /* ============================================================================ */
 
     /**
-     * È¡µÃ¶ÔÏó×ÔÉíµÄidentity£¬ÈçÍ¬¶ÔÏóÃ»ÓĞ¸²¸Ç<code>toString()</code>·½·¨Ê±£¬<code>Object.toString()</code>µÄÔ­Ê¼Êä³ö¡£
+     * å–å¾—å¯¹è±¡è‡ªèº«çš„identityï¼Œå¦‚åŒå¯¹è±¡æ²¡æœ‰è¦†ç›–<code>toString()</code>æ–¹æ³•æ—¶ï¼Œ<code>Object.toString()</code>çš„åŸå§‹è¾“å‡ºã€‚
      * <pre>
      * ObjectUtil.identityToString(null)          = null
      * ObjectUtil.identityToString("")            = "java.lang.String@1e23"
@@ -154,9 +154,9 @@ public class ObjectUtil {
      * ObjectUtil.identityToString(new Object[0]) = "java.lang.Object[]@7fa"
      * </pre>
      *
-     * @param object ¶ÔÏó
+     * @param object å¯¹è±¡
      *
-     * @return ¶ÔÏóµÄidentity£¬Èç¹û¶ÔÏóÊÇ<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å¯¹è±¡çš„identityï¼Œå¦‚æœå¯¹è±¡æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String identityToString(Object object) {
         if (object == null) {
@@ -167,7 +167,7 @@ public class ObjectUtil {
     }
 
     /**
-     * È¡µÃ¶ÔÏó×ÔÉíµÄidentity£¬ÈçÍ¬¶ÔÏóÃ»ÓĞ¸²¸Ç<code>toString()</code>·½·¨Ê±£¬<code>Object.toString()</code>µÄÔ­Ê¼Êä³ö¡£
+     * å–å¾—å¯¹è±¡è‡ªèº«çš„identityï¼Œå¦‚åŒå¯¹è±¡æ²¡æœ‰è¦†ç›–<code>toString()</code>æ–¹æ³•æ—¶ï¼Œ<code>Object.toString()</code>çš„åŸå§‹è¾“å‡ºã€‚
      * <pre>
      * ObjectUtil.identityToString(null, "NULL")            = "NULL"
      * ObjectUtil.identityToString("", "NULL")              = "java.lang.String@1e23"
@@ -176,10 +176,10 @@ public class ObjectUtil {
      * ObjectUtil.identityToString(new Object[0], "NULL")   = "java.lang.Object[]@7fa"
      * </pre>
      *
-     * @param object ¶ÔÏó
-     * @param nullStr Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»Ø¸Ã×Ö·û´®
+     * @param object å¯¹è±¡
+     * @param nullStr å¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›è¯¥å­—ç¬¦ä¸²
      *
-     * @return ¶ÔÏóµÄidentity£¬Èç¹û¶ÔÏóÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨×Ö·û´®
+     * @return å¯¹è±¡çš„identityï¼Œå¦‚æœå¯¹è±¡æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šå­—ç¬¦ä¸²
      */
     public static String identityToString(Object object, String nullStr) {
         if (object == null) {
@@ -190,7 +190,7 @@ public class ObjectUtil {
     }
 
     /**
-     * ½«¶ÔÏó×ÔÉíµÄidentity¡ª¡ªÈçÍ¬¶ÔÏóÃ»ÓĞ¸²¸Ç<code>toString()</code>·½·¨Ê±£¬<code>Object.toString()</code>µÄÔ­Ê¼Êä³ö¡ª¡ª×·¼Óµ½<code>StringBuffer</code>ÖĞ¡£
+     * å°†å¯¹è±¡è‡ªèº«çš„identityâ€”â€”å¦‚åŒå¯¹è±¡æ²¡æœ‰è¦†ç›–<code>toString()</code>æ–¹æ³•æ—¶ï¼Œ<code>Object.toString()</code>çš„åŸå§‹è¾“å‡ºâ€”â€”è¿½åŠ åˆ°<code>StringBuffer</code>ä¸­ã€‚
      * <pre>
      * ObjectUtil.appendIdentityToString(*, null)            = null
      * ObjectUtil.appendIdentityToString(null, "")           = "java.lang.String@1e23"
@@ -200,10 +200,10 @@ public class ObjectUtil {
      * ObjectUtil.appendIdentityToString(buf, new Object[0]) = buf.append("java.lang.Object[]@7fa")
      * </pre>
      *
-     * @param buffer <code>StringBuffer</code>¶ÔÏó£¬Èç¹ûÊÇ<code>null</code>£¬Ôò´´½¨ĞÂµÄ
-     * @param object ¶ÔÏó
+     * @param buffer <code>StringBuffer</code>å¯¹è±¡ï¼Œå¦‚æœæ˜¯<code>null</code>ï¼Œåˆ™åˆ›å»ºæ–°çš„
+     * @param object å¯¹è±¡
      *
-     * @return <code>StringBuffer</code>¶ÔÏó£¬Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return <code>StringBuffer</code>å¯¹è±¡ï¼Œå¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static StringBuffer appendIdentityToString(StringBuffer buffer, Object object) {
         if (object == null) {
@@ -220,28 +220,28 @@ public class ObjectUtil {
     }
 
     /* ============================================================================ */
-    /*  Cloneº¯Êı¡£                                                                 */
+    /*  Cloneå‡½æ•°ã€‚                                                                 */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨µ÷ÓÃObject.clone·½·¨£¬Ä¬ÈÏÊÇ¡°Ç³¸´ÖÆ¡±£¨shallow copy£©¡£            */
+    /*  ä»¥ä¸‹æ–¹æ³•è°ƒç”¨Object.cloneæ–¹æ³•ï¼Œé»˜è®¤æ˜¯â€œæµ…å¤åˆ¶â€ï¼ˆshallow copyï¼‰ã€‚            */
     /* ============================================================================ */
 
     /**
-     * ¸´ÖÆÒ»¸ö¶ÔÏó¡£Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¤åˆ¶ä¸€ä¸ªå¯¹è±¡ã€‚å¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ´Ë·½·¨µ÷ÓÃ<code>Object.clone</code>·½·¨£¬Ä¬ÈÏÖ»½øĞĞ¡°Ç³¸´ÖÆ¡±¡£ ¶ÔÓÚÊı×é£¬µ÷ÓÃ<code>ArrayUtil.clone</code>·½·¨¸ü¸ßĞ§¡£
+     * æ­¤æ–¹æ³•è°ƒç”¨<code>Object.clone</code>æ–¹æ³•ï¼Œé»˜è®¤åªè¿›è¡Œâ€œæµ…å¤åˆ¶â€ã€‚ å¯¹äºæ•°ç»„ï¼Œè°ƒç”¨<code>ArrayUtil.clone</code>æ–¹æ³•æ›´é«˜æ•ˆã€‚
      * </p>
      *
-     * @param array Òª¸´ÖÆµÄÊı×é
+     * @param array è¦å¤åˆ¶çš„æ•°ç»„
      *
-     * @return Êı×éµÄ¸´±¾£¬Èç¹ûÔ­Ê¼Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ•°ç»„çš„å¤æœ¬ï¼Œå¦‚æœåŸå§‹æ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static Object clone(Object array) {
         if (array == null) {
             return null;
         }
 
-        // ¶ÔÊı×éÌØÊâ´¦Àí
+        // å¯¹æ•°ç»„ç‰¹æ®Šå¤„ç†
         if (array instanceof Object[]) {
             return ArrayUtil.clone((Object[]) array);
         }
@@ -284,7 +284,7 @@ public class ObjectUtil {
                                                  + " is not Cloneable");
         }
 
-        // ÓÃreflectionµ÷ÓÃclone·½·¨
+        // ç”¨reflectionè°ƒç”¨cloneæ–¹æ³•
         Class<?> clazz = array.getClass();
 
         try {
@@ -303,16 +303,16 @@ public class ObjectUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½Ï¶ÔÏóµÄÀàĞÍ¡£                                                            */
+    /*  æ¯”è¾ƒå¯¹è±¡çš„ç±»å‹ã€‚                                                            */
     /* ============================================================================ */
 
     /**
-     * ¼ì²éÁ½¸ö¶ÔÏóÊÇ·ñÊôÓÚÏàÍ¬ÀàĞÍ¡£<code>null</code>½«±»¿´×÷ÈÎÒâÀàĞÍ¡£
+     * æ£€æŸ¥ä¸¤ä¸ªå¯¹è±¡æ˜¯å¦å±äºç›¸åŒç±»å‹ã€‚<code>null</code>å°†è¢«çœ‹ä½œä»»æ„ç±»å‹ã€‚
      *
-     * @param object1 ¶ÔÏó1
-     * @param object2 ¶ÔÏó2
+     * @param object1 å¯¹è±¡1
+     * @param object2 å¯¹è±¡2
      *
-     * @return Èç¹ûÁ½¸ö¶ÔÏóÓĞÏàÍ¬µÄÀàĞÍ£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªå¯¹è±¡æœ‰ç›¸åŒçš„ç±»å‹ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isSameType(Object object1, Object object2) {
         if ((object1 == null) || (object2 == null)) {
@@ -323,11 +323,11 @@ public class ObjectUtil {
     }
 
     /* ============================================================================ */
-    /*  toString·½·¨¡£                                                              */
+    /*  toStringæ–¹æ³•ã€‚                                                              */
     /* ============================================================================ */
 
     /**
-     * È¡µÃ¶ÔÏóµÄ<code>toString()</code>µÄÖµ£¬Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>¡£
+     * å–å¾—å¯¹è±¡çš„<code>toString()</code>çš„å€¼ï¼Œå¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * <pre>
      * ObjectUtil.toString(null)         = ""
      * ObjectUtil.toString("")           = ""
@@ -336,9 +336,9 @@ public class ObjectUtil {
      * ObjectUtil.toString([1, 2, 3])    = "[1, 2, 3]"
      * </pre>
      *
-     * @param object ¶ÔÏó
+     * @param object å¯¹è±¡
      *
-     * @return ¶ÔÏóµÄ<code>toString()</code>µÄ·µ»ØÖµ£¬»ò¿Õ×Ö·û´®<code>""</code>
+     * @return å¯¹è±¡çš„<code>toString()</code>çš„è¿”å›å€¼ï¼Œæˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>
      */
     public static String toString(Object object) {
         return (object == null) ? StringUtil.EMPTY_STRING
@@ -347,7 +347,7 @@ public class ObjectUtil {
     }
 
     /**
-     * È¡µÃ¶ÔÏóµÄ<code>toString()</code>µÄÖµ£¬Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»ØÖ¸¶¨×Ö·û´®¡£
+     * å–å¾—å¯¹è±¡çš„<code>toString()</code>çš„å€¼ï¼Œå¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šå­—ç¬¦ä¸²ã€‚
      * <pre>
      * ObjectUtil.toString(null, null)           = null
      * ObjectUtil.toString(null, "null")         = "null"
@@ -357,10 +357,10 @@ public class ObjectUtil {
      * ObjectUtil.toString([1, 2, 3], "null")    = "[1, 2, 3]"
      * </pre>
      *
-     * @param object ¶ÔÏó
-     * @param nullStr Èç¹û¶ÔÏóÎª<code>null</code>£¬Ôò·µ»Ø¸Ã×Ö·û´®
+     * @param object å¯¹è±¡
+     * @param nullStr å¦‚æœå¯¹è±¡ä¸º<code>null</code>ï¼Œåˆ™è¿”å›è¯¥å­—ç¬¦ä¸²
      *
-     * @return ¶ÔÏóµÄ<code>toString()</code>µÄ·µ»ØÖµ£¬»òÖ¸¶¨×Ö·û´®
+     * @return å¯¹è±¡çš„<code>toString()</code>çš„è¿”å›å€¼ï¼Œæˆ–æŒ‡å®šå­—ç¬¦ä¸²
      */
     public static String toString(Object object, String nullStr) {
         return (object == null) ? nullStr

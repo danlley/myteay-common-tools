@@ -7,7 +7,7 @@ package com.myteay.common.aop.monitor.logger.exception;
 import com.myteay.common.aop.monitor.logger.enums.ResultCode;
 
 /**
- * Ğ¯´ø<code>ResultCode</code>µÄÒì³£¡£
+ * æºå¸¦<code>ResultCode</code>çš„å¼‚å¸¸ã€‚
  * 
  * @author min.weixm
  * @version $Id: ResultCodeRuntimeException.java, v 0.1 Nov 5, 2017 9:35:32 PM min.weixm Exp $
@@ -17,14 +17,14 @@ public class ResultCodeRuntimeException extends ChainedRuntimeException {
     private ResultCode        resultCode;
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public ResultCodeRuntimeException(ResultCode resultCode) {
         this(resultCode, null, null);
     }
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public ResultCodeRuntimeException(ResultCode resultCode, String message) {
         super(message);
@@ -32,7 +32,7 @@ public class ResultCodeRuntimeException extends ChainedRuntimeException {
     }
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public ResultCodeRuntimeException(ResultCode resultCode, String message, Throwable cause) {
         super(message, cause);
@@ -40,7 +40,7 @@ public class ResultCodeRuntimeException extends ChainedRuntimeException {
     }
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public ResultCodeRuntimeException(ResultCode resultCode, Throwable cause) {
         super((resultCode == null) ? null
@@ -49,7 +49,7 @@ public class ResultCodeRuntimeException extends ChainedRuntimeException {
     }
 
     /**
-     * È¡µÃ<code>ResultCode</code>¡£
+     * å–å¾—<code>ResultCode</code>ã€‚
      *
      * @return result code
      */

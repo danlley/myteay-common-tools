@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.core.task.TaskExecutor;
 
 /**
- * ÊÂ¼ş¼àÌıÃèÊö
+ * äº‹ä»¶ç›‘å¬æè¿°
  * 
  * @author min.weixm
  * @version $Id: ListenerDescriptor.java, v 0.1 Oct 28, 2017 11:25:00 PM min.weixm Exp $
@@ -20,16 +20,16 @@ public class ListenerDescriptor implements Serializable {
     /** serialVersionUID */
     private static final long serialVersionUID = 5675513576693140655L;
 
-    /** ÊÂ¼şÖ÷Ìâ */
+    /** äº‹ä»¶ä¸»é¢˜ */
     private String            topic;
 
-    /** ÊÇ·ñĞèÒª×öÒì²½´¦Àí */
+    /** æ˜¯å¦éœ€è¦åšå¼‚æ­¥å¤„ç† */
     private boolean           async;
 
-    /** ÊÂ¼ş¼àÌıÆ÷ */
+    /** äº‹ä»¶ç›‘å¬å™¨ */
     private EventListener<?>  listener;
 
-    /** ÓÃÓÚÒì²½ÊÂ¼ş´¦ÀíµÄÈÎÎñÖ´ĞĞÆ÷£¬ÉèÖÃÎªÒì²½´¦ÀíÊ±±ØĞëÉèÖÃ¸ÃÊôĞÔ */
+    /** ç”¨äºå¼‚æ­¥äº‹ä»¶å¤„ç†çš„ä»»åŠ¡æ‰§è¡Œå™¨ï¼Œè®¾ç½®ä¸ºå¼‚æ­¥å¤„ç†æ—¶å¿…é¡»è®¾ç½®è¯¥å±æ€§ */
     private TaskExecutor      taskExecutor;
 
     /**

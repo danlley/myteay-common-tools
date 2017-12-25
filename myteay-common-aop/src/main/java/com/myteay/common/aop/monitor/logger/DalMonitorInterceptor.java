@@ -11,14 +11,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * DALµ÷ÓÃ¼à¿ØÀ¹½ØÆ÷, ¼ÇÂ¼DALÖ´ĞĞµÄÕªÒªÈÕÖ¾
+ * DALè°ƒç”¨ç›‘æ§æ‹¦æˆªå™¨, è®°å½•DALæ‰§è¡Œçš„æ‘˜è¦æ—¥å¿—
  * 
  * @author min.weixm
  * @version $Id: DalMonitorInterceptor.java, v 0.1 Nov 5, 2017 9:32:11 PM min.weixm Exp $
  */
 public class DalMonitorInterceptor implements MethodInterceptor {
 
-    /** DAL²ãÕªÒªÈÕÖ¾£¬dal²ãÎŞ·¨·ÃÎÊcommon-util²ã´úÂë£¬¹Ê´Ë´¦Ğ´ËÀÈÕÖ¾Name */
+    /** DALå±‚æ‘˜è¦æ—¥å¿—ï¼Œdalå±‚æ— æ³•è®¿é—®common-utilå±‚ä»£ç ï¼Œæ•…æ­¤å¤„å†™æ­»æ—¥å¿—Name */
     private static final Logger digestLogger = LoggerFactory.getLogger("DAL-DIGEST");
 
     /** 
@@ -32,7 +32,7 @@ public class DalMonitorInterceptor implements MethodInterceptor {
 
         long startTime = System.currentTimeMillis();
 
-        //ÊÇ·ñÓĞThrowable
+        //æ˜¯å¦æœ‰Throwable
         boolean hasError = false;
         try {
             return invocation.proceed();
@@ -54,7 +54,7 @@ public class DalMonitorInterceptor implements MethodInterceptor {
     }
 
     /**
-     * ½âÎöÊı¾İ¿âÃû³Æ
+     * è§£ææ•°æ®åº“åç§°
      * 
      * @param packageName
      * @param className

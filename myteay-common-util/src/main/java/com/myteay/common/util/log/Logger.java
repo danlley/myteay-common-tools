@@ -5,14 +5,14 @@ import java.util.ResourceBundle;
 import org.apache.commons.logging.Log;
 
 /**
- * À©Õ¹ÁËcommons-loggingµÄ<code>Log</code>½Ó¿Ú, Ôö¼ÓÁËÈçÏÂ¹¦ÄÜ:
+ * æ‰©å±•äº†commons-loggingçš„<code>Log</code>æ¥å£, å¢åŠ äº†å¦‚ä¸‹åŠŸèƒ½:
  * 
  * <ul>
  * <li>
- * <code>ResourceBundle</code>Ö§³Ö
+ * <code>ResourceBundle</code>æ”¯æŒ
  * </li>
  * <li>
- * <code>NDC</code>, <code>MDC</code>Ö§³Ö
+ * <code>NDC</code>, <code>MDC</code>æ”¯æŒ
  * </li>
  * </ul>
  * 
@@ -21,125 +21,125 @@ import org.apache.commons.logging.Log;
  */
 public interface Logger extends Log {
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void trace(Object key, Object[] params);
 
     /**
-     * Êä³ötrace levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºtrace levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void trace(Object key, Object[] params, Throwable cause);
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void debug(Object key, Object[] params);
 
     /**
-     * Êä³ödebug levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºdebug levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void debug(Object key, Object[] params, Throwable cause);
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void info(Object key, Object[] params);
 
     /**
-     * Êä³öinfo levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºinfo levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void info(Object key, Object[] params, Throwable cause);
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void warn(Object key, Object[] params);
 
     /**
-     * Êä³öwarn levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºwarn levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void warn(Object key, Object[] params, Throwable cause);
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void error(Object key, Object[] params);
 
     /**
-     * Êä³öerror levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºerror levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void error(Object key, Object[] params, Throwable cause);
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
      */
     void fatal(Object key, Object[] params);
 
     /**
-     * Êä³öfatal levelµÄlogĞÅÏ¢.
+     * è¾“å‡ºfatal levelçš„logä¿¡æ¯.
      *
-     * @param key ´ú±ílogĞÅÏ¢µÄresource bundle key
-     * @param params ²ÎÊıÊı×é
-     * @param cause Òì³£
+     * @param key ä»£è¡¨logä¿¡æ¯çš„resource bundle key
+     * @param params å‚æ•°æ•°ç»„
+     * @param cause å¼‚å¸¸
      */
     void fatal(Object key, Object[] params, Throwable cause);
 
     /**
-     * È¡µÃlogger¶ÔÓ¦µÄ×ÊÔ´Êø.
+     * å–å¾—loggerå¯¹åº”çš„èµ„æºæŸ.
      *
-     * @return ×ÊÔ´Êø
+     * @return èµ„æºæŸ
      */
     ResourceBundle getResourceBundle();
 
     /**
-     * ÉèÖÃlogger¶ÔÓ¦µÄ×ÊÔ´Êø.
+     * è®¾ç½®loggerå¯¹åº”çš„èµ„æºæŸ.
      *
-     * @param bundle ×ÊÔ´Êø
+     * @param bundle èµ„æºæŸ
      */
     void setResourceBundle(ResourceBundle bundle);
 
     /**
-     * È¡µÃloggerµÄ×Ö·û´®±íÊ¾, Í¨³£·µ»ØloggerµÄÃû³Æ.
+     * å–å¾—loggerçš„å­—ç¬¦ä¸²è¡¨ç¤º, é€šå¸¸è¿”å›loggerçš„åç§°.
      *
-     * @return loggerµÄ×Ö·û´®±íÊ¾
+     * @return loggerçš„å­—ç¬¦ä¸²è¡¨ç¤º
      */
     String toString();
 }

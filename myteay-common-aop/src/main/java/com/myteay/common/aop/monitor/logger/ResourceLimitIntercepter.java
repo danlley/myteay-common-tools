@@ -15,7 +15,7 @@ import com.myteay.common.aop.monitor.logger.supports.SynchronizedResource;
 import com.myteay.common.aop.monitor.logger.utils.StringUtil;
 
 /**
- * ¶Ô·ÃÎÊ×ÊÔ´½øĞĞÏŞÖÆµÄÀ¹½ØÆ÷¡£
+ * å¯¹è®¿é—®èµ„æºè¿›è¡Œé™åˆ¶çš„æ‹¦æˆªå™¨ã€‚
  * 
  * @author min.weixm
  * @version $Id: ResourceLimitIntercepter.java, v 0.1 Nov 5, 2017 9:33:53 PM min.weixm Exp $
@@ -24,21 +24,21 @@ public class ResourceLimitIntercepter implements MethodInterceptor {
 
     private static final Logger  logger = LoggerFactory.getLogger(ResourceLimitIntercepter.class);
 
-    //ÁîÅÆ¿ØÖÆÆ÷
+    //ä»¤ç‰Œæ§åˆ¶å™¨
     private SynchronizedResource synchronizedResource;
 
-    //ĞèÒªÀ¹½ØµÄ·½·¨
+    //éœ€è¦æ‹¦æˆªçš„æ–¹æ³•
     private String               methodName;
 
     /**
-     * À¹½ØEBankPaymentµÄgenEBankItem·½·¨£¬ÏŞÖÆ½øÈë¸Ã·½·¨µÄÏß³ÌÊı¡£
+     * æ‹¦æˆªEBankPaymentçš„genEBankItemæ–¹æ³•ï¼Œé™åˆ¶è¿›å…¥è¯¥æ–¹æ³•çš„çº¿ç¨‹æ•°ã€‚
      * 
      * @see org.aopalliance.intercept.MethodInterceptor#invoke(org.aopalliance.intercept.MethodInvocation)
      */
     public Object invoke(MethodInvocation invocation) throws Throwable {
         if (StringUtil.equals(invocation.getMethod().getName(), methodName)) {
             if (logger.isDebugEnabled()) {
-                logger.debug("À¹½Ø·½·¨=[" + invocation.getMethod().getClass().getName() + "."
+                logger.debug("æ‹¦æˆªæ–¹æ³•=[" + invocation.getMethod().getClass().getName() + "."
                              + methodName + "]");
             }
 

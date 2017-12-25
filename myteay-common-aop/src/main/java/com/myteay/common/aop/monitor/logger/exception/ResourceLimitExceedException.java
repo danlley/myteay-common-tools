@@ -7,7 +7,7 @@ package com.myteay.common.aop.monitor.logger.exception;
 import com.myteay.common.aop.monitor.logger.enums.ResultCode;
 
 /**
- * ×ÊÔ´·ÃÎÊ³¬³öÏŞÖÆÒì³£¡£
+ * èµ„æºè®¿é—®è¶…å‡ºé™åˆ¶å¼‚å¸¸ã€‚
  * 
  * @author min.weixm
  * @version $Id: ResourceLimitExceedException.java, v 0.1 Nov 5, 2017 9:35:18 PM min.weixm Exp $
@@ -16,7 +16,7 @@ public class ResourceLimitExceedException extends ResultCodeRuntimeException {
     /** serialVersionUID */
     private static final long serialVersionUID = -6328786303005448132L;
 
-    /** ³¬³ö×ÊÔ´ÏŞÖÆµÄ×ÊÔ´Ãû³Æ */
+    /** è¶…å‡ºèµ„æºé™åˆ¶çš„èµ„æºåç§° */
     private final String      resourceType;
 
     public ResourceLimitExceedException(String resourceType, ResultCode resultCode) {

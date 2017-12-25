@@ -5,7 +5,7 @@
 package com.myteay.common.async.event;
 
 /**
- * ÒµÎñ´¦ÀíÒì³£
+ * ä¸šåŠ¡å¤„ç†å¼‚å¸¸
  * 
  * @author min.weixm
  * @version $Id: MtEventException.java, v 0.1 Oct 28, 2017 11:23:31 PM min.weixm Exp $
@@ -15,16 +15,16 @@ public class MtEventException extends Throwable {
     /** serialVersionUID */
     private static final long     serialVersionUID = -1698555152104131128L;
 
-    /** ÏµÍ³Ä¬ÈÏ´íÎóÂë */
+    /** ç³»ç»Ÿé»˜è®¤é”™è¯¯ç  */
     protected static final String DEFAULT_ERR_CODE = "-999999";
 
-    /** Ä¬ÈÏ´íÎóÏêÇé */
-    protected static final String DEFAULT_ERR_MSG  = "Î´Öª´íÎó";
+    /** é»˜è®¤é”™è¯¯è¯¦æƒ… */
+    protected static final String DEFAULT_ERR_MSG  = "æœªçŸ¥é”™è¯¯";
 
-    /** ´íÎóÂë */
+    /** é”™è¯¯ç  */
     protected String              errorCode;
 
-    /** ´íÎóÏêÇé */
+    /** é”™è¯¯è¯¦æƒ… */
     protected String              message;
 
     /**

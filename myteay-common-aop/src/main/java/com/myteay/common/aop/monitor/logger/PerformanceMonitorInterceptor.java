@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 import com.myteay.common.aop.monitor.logger.supports.Profiler;
 
 /**
- * Ò»¸ö¼òµ¥µÄÓÃÓÚÐÔÄÜ¼à²âµÄÀ¹½ØÆ÷.
+ * ä¸€ä¸ªç®€å•çš„ç”¨äºŽæ€§èƒ½ç›‘æµ‹çš„æ‹¦æˆªå™¨.
  * 
  * @author min.weixm
  * @version $Id: PerformanceMonitorInterceptor.java, v 0.1 Nov 5, 2017 9:33:37 PM min.weixm Exp $
@@ -21,18 +21,18 @@ public class PerformanceMonitorInterceptor implements MethodInterceptor {
     /** logger */
     private static final Logger logger    = LoggerFactory.getLogger(PerformanceMonitorInterceptor.class);
 
-    /** ÒÔºÁÃë±íÊ¾µÄãÐÖµ */
+    /** ä»¥æ¯«ç§’è¡¨ç¤ºçš„é˜ˆå€¼ */
     private int                 threshold = 1;
 
     /**
-     * È±Ê¡µÄ¹¹Ôì·½·¨.
+     * ç¼ºçœçš„æž„é€ æ–¹æ³•.
      */
     public PerformanceMonitorInterceptor() {
         super();
     }
 
     /**
-     * ÅÐ¶Ï·½·¨µ÷ÓÃµÄÊ±¼äÊÇ·ñ³¬¹ýãÐÖµ£¬Èç¹ûÊÇ£¬Ôò´òÓ¡ÐÔÄÜÈÕÖ¾.
+     * åˆ¤æ–­æ–¹æ³•è°ƒç”¨çš„æ—¶é—´æ˜¯å¦è¶…è¿‡é˜ˆå€¼ï¼Œå¦‚æžœæ˜¯ï¼Œåˆ™æ‰“å°æ€§èƒ½æ—¥å¿—.
      *
      * @see org.aopalliance.intercept.MethodInterceptor#invoke(org.aopalliance.intercept.MethodInvocation)
      */
@@ -52,16 +52,16 @@ public class PerformanceMonitorInterceptor implements MethodInterceptor {
             long elapseTime = System.currentTimeMillis() - startTime;
 
             if (elapseTime > threshold) {
-                logger.info("·½·¨" + name + "µÄÖ´ÐÐÊ±¼ä³¬¹ýãÐÖµ£¬Êµ¼ÊÖ´ÐÐÊ±¼äÎª" + elapseTime + "ºÁÃë¡£");
+                logger.info("æ–¹æ³•" + name + "çš„æ‰§è¡Œæ—¶é—´è¶…è¿‡é˜ˆå€¼ï¼Œå®žé™…æ‰§è¡Œæ—¶é—´ä¸º" + elapseTime + "æ¯«ç§’ã€‚");
             } else {
                 if (logger.isDebugEnabled()) {
-                    logger.debug("·½·¨" + name + "µÄÖ´ÐÐÊ±¼äÎª" + elapseTime + "ºÁÃë¡£");
+                    logger.debug("æ–¹æ³•" + name + "çš„æ‰§è¡Œæ—¶é—´ä¸º" + elapseTime + "æ¯«ç§’ã€‚");
                 }
             }
         }
     }
 
-    // ----- ÈÝÆ÷·½·¨ ------
+    // ----- å®¹å™¨æ–¹æ³• ------
 
     /**
      * @param threshold The threshold to set.

@@ -10,7 +10,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 /**
- * ¿É³Ö¾Ã»¯µÄÊÂ¼şÄ£ĞÍ
+ * å¯æŒä¹…åŒ–çš„äº‹ä»¶æ¨¡å‹
  * 
  * @author min.weixm
  * @version $Id: MtEvent.java, v 0.1 Oct 28, 2017 11:11:01 PM min.weixm Exp $
@@ -20,16 +20,16 @@ public class MtEvent<T> implements Serializable {
     /** serialVersionUID */
     private static final long serialVersionUID = 1598681584260004463L;
 
-    /** ÊÂ¼şÖ÷Ìâ */
+    /** äº‹ä»¶ä¸»é¢˜ */
     private String            topic;
 
-    /** ÊÂ¼şÖĞ°üº¬µÄÊı¾İ */
+    /** äº‹ä»¶ä¸­åŒ…å«çš„æ•°æ® */
     private T                 data;
 
     /**
-     * ¹¹Ôì·½·¨
-     * @param topic     Òì²½ÊÂ¼şÖ÷Ìâ
-     * @param data      Òì²½ÍÆËÍÊı¾İ
+     * æ„é€ æ–¹æ³•
+     * @param topic     å¼‚æ­¥äº‹ä»¶ä¸»é¢˜
+     * @param data      å¼‚æ­¥æ¨é€æ•°æ®
      */
     public MtEvent(String topic, T data) {
         this.topic = topic;

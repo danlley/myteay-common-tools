@@ -8,7 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Í¬²½×ÊÔ´µÄ¿ØÖÆÆ÷. ¸ºÔğ¿ØÖÆ×ÊÔ´µÄÍ¬²½ÉêÇëºÍÊÍ·Å¡£ 
+ * åŒæ­¥èµ„æºçš„æ§åˆ¶å™¨. è´Ÿè´£æ§åˆ¶èµ„æºçš„åŒæ­¥ç”³è¯·å’Œé‡Šæ”¾ã€‚ 
  * 
  * @author min.weixm
  * @version $Id: SynchronizedResource.java, v 0.1 Nov 5, 2017 9:36:08 PM min.weixm Exp $
@@ -18,13 +18,13 @@ public class SynchronizedResource {
     private static final Logger logger               = LoggerFactory
         .getLogger(SynchronizedResource.class);
 
-    /** Í¬Ê±ÔÊĞíµÄ×ÊÔ´Êı */
+    /** åŒæ—¶å…è®¸çš„èµ„æºæ•° */
     private int                 resourceCount        = 5;
 
-    /** µ±Ê±Õ¼ÓÃµÄ×ÊÔ´Êı */
+    /** å½“æ—¶å ç”¨çš„èµ„æºæ•° */
     private int                 currentResourceCount = 0;
 
-    /** Ä¬ÈÏ×ÊÔ´ */
+    /** é»˜è®¤èµ„æº */
     private String              resourceName         = "DEFAULT";
 
     public synchronized boolean applyResource() {
@@ -32,15 +32,15 @@ public class SynchronizedResource {
             currentResourceCount++;
 
             if (logger.isDebugEnabled()) {
-                logger.debug("×ÊÔ´[" + resourceName + "], ¼ÆÊı[" + currentResourceCount + "/"
-                             + resourceCount + "], ÉêÇë[³É¹¦]");
+                logger.debug("èµ„æº[" + resourceName + "], è®¡æ•°[" + currentResourceCount + "/"
+                             + resourceCount + "], ç”³è¯·[æˆåŠŸ]");
             }
 
             return true;
         } else {
             if (logger.isWarnEnabled()) {
-                logger.warn("×ÊÔ´[" + resourceName + "], ¼ÆÊı[" + currentResourceCount + "/"
-                            + resourceCount + "], ÉêÇë[Ê§°Ü]");
+                logger.warn("èµ„æº[" + resourceName + "], è®¡æ•°[" + currentResourceCount + "/"
+                            + resourceCount + "], ç”³è¯·[å¤±è´¥]");
             }
 
             return false;
@@ -51,8 +51,8 @@ public class SynchronizedResource {
         currentResourceCount--;
 
         if (logger.isDebugEnabled()) {
-            logger.debug("×ÊÔ´[" + resourceName + "], ¼ÆÊı[" + currentResourceCount + "/"
-                         + resourceCount + "], ÊÍ·Å[³É¹¦]");
+            logger.debug("èµ„æº[" + resourceName + "], è®¡æ•°[" + currentResourceCount + "/"
+                         + resourceCount + "], é‡Šæ”¾[æˆåŠŸ]");
         }
     }
 

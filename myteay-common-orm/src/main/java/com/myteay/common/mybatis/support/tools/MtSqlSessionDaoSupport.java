@@ -11,26 +11,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DaoSupport;
 
 /**
- * ±¾Àà²Î¿¼ÁËorg.mybatis.spring.support.SqlSessionDaoSupportÀàµÄÊµÏÖ£¬µ«½â¾öÁË¶àÊı¾İÔ´¹ÜÀíµÄÎÊÌâ
+ * æœ¬ç±»å‚è€ƒäº†org.mybatis.spring.support.SqlSessionDaoSupportç±»çš„å®ç°ï¼Œä½†è§£å†³äº†å¤šæ•°æ®æºç®¡ç†çš„é—®é¢˜
  * 
  * @see org.mybatis.spring.support.SqlSessionDaoSupport
  * @author danlley(danlley@126.com)
- * @version $Id: MtSqlSessionDaoSupport.java, v 0.1 2017Äê5ÔÂ7ÈÕ ÉÏÎç12:35:28 danlley(danlley@126.com) Exp $
+ * @version $Id: MtSqlSessionDaoSupport.java, v 0.1 2017å¹´5æœˆ7æ—¥ ä¸Šåˆ12:35:28 danlley(danlley@126.com) Exp $
  */
 public class MtSqlSessionDaoSupport extends DaoSupport {
 
-    /** Êı¾İ¿âÇĞ»»¹ÜÀíÆ÷ */
+    /** æ•°æ®åº“åˆ‡æ¢ç®¡ç†å™¨ */
     @Autowired
     private SqlSessionSwitcher switcher;
 
-    /** SQL»á»° */
+    /** SQLä¼šè¯ */
     private SqlSession         sqlSession;
 
-    /** Íâ²¿SQL»á»°±êÊ¶ */
+    /** å¤–éƒ¨SQLä¼šè¯æ ‡è¯† */
     private boolean            externalSqlSession = false;
 
     /**
-     * ³õÊ¼»¯SQL»á»°
+     * åˆå§‹åŒ–SQLä¼šè¯
      * 
      * @param sqlSessionFactory
      */
@@ -41,7 +41,7 @@ public class MtSqlSessionDaoSupport extends DaoSupport {
     }
 
     /**
-     * SQL»á»°
+     * SQLä¼šè¯
      * 
      * @param sqlSessionTemplate
      */
@@ -64,7 +64,7 @@ public class MtSqlSessionDaoSupport extends DaoSupport {
             return this.sqlSession;
         }
 
-        //·ÀÖ¹Ïß³Ì¶à´Î¶ÔÊµÀı½øĞĞ²»±ØÒªµÄ³õÊ¼»¯
+        //é˜²æ­¢çº¿ç¨‹å¤šæ¬¡å¯¹å®ä¾‹è¿›è¡Œä¸å¿…è¦çš„åˆå§‹åŒ–
         if (switcher == null || switcher.getSqlSessionFactory(key) == null) {
             throw new IllegalArgumentException(
                 "Property 'sqlSessionFactory' or 'sqlSessionTemplate' or 'switcher' are required");

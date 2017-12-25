@@ -5,10 +5,10 @@
 package com.myteay.common.aop.monitor.logger.exception;
 
 /**
- * µ±<code>ObjectUtil.clone</code>·½·¨±»µ÷ÓÃÊ±£¬Èç¹û±»¸´ÖÆµÄ¶ÔÏó²»Ö§³Ö¸Ã²Ù×÷£¬ÔòÅ×³ö¸ÃÒì³£¡£
+ * å½“<code>ObjectUtil.clone</code>æ–¹æ³•è¢«è°ƒç”¨æ—¶ï¼Œå¦‚æœè¢«å¤åˆ¶çš„å¯¹è±¡ä¸æ”¯æŒè¯¥æ“ä½œï¼Œåˆ™æŠ›å‡ºè¯¥å¼‚å¸¸ã€‚
  * 
  * <p>
- * ×¢Òâ£¬ºÍ<code>java.lang.CloneNotSupportedException</code>²»Í¬£¬¸ÃÒì³£´Ó<code>RuntimeException</code>ÅÉÉú¡£
+ * æ³¨æ„ï¼Œå’Œ<code>java.lang.CloneNotSupportedException</code>ä¸åŒï¼Œè¯¥å¼‚å¸¸ä»<code>RuntimeException</code>æ´¾ç”Ÿã€‚
  * </p>
  * 
  * @author min.weixm
@@ -19,35 +19,35 @@ public class CloneNotSupportedException extends ChainedRuntimeException {
     private static final long serialVersionUID = 3257281439807584562L;
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public CloneNotSupportedException() {
         super();
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷Òì³£µÄÏêÏ¸ĞÅÏ¢.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼‚å¸¸çš„è¯¦ç»†ä¿¡æ¯.
      *
-     * @param message ÏêÏ¸ĞÅÏ¢
+     * @param message è¯¦ç»†ä¿¡æ¯
      */
     public CloneNotSupportedException(String message) {
         super(message);
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷ÒıÆğÕâ¸öÒì³£µÄÆğÒò.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼•èµ·è¿™ä¸ªå¼‚å¸¸çš„èµ·å› .
      *
-     * @param cause Òì³£µÄÆğÒò
+     * @param cause å¼‚å¸¸çš„èµ·å› 
      */
     public CloneNotSupportedException(Throwable cause) {
         super(cause);
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷ÒıÆğÕâ¸öÒì³£µÄÆğÒò.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼•èµ·è¿™ä¸ªå¼‚å¸¸çš„èµ·å› .
      *
-     * @param message ÏêÏ¸ĞÅÏ¢
-     * @param cause Òì³£µÄÆğÒò
+     * @param message è¯¦ç»†ä¿¡æ¯
+     * @param cause å¼‚å¸¸çš„èµ·å› 
      */
     public CloneNotSupportedException(String message, Throwable cause) {
         super(message, cause);

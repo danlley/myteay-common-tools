@@ -30,17 +30,17 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * °²È«µÄRestful·şÎñ·ÃÎÊÇëÇó·â×°´¦Àí
+ * å®‰å…¨çš„RestfulæœåŠ¡è®¿é—®è¯·æ±‚å°è£…å¤„ç†
  * 
  * @author min.weixm
  * @version $Id: HttpsRestTemplateTools.java, v 0.1 Nov 1, 2017 8:32:30 PM min.weixm Exp $
  */
 public class HttpsRestTemplateTools {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     private static final Logger                 logger    = Logger.getLogger(HttpClientUtils.class);
 
-    /** µ¥ÊµÀı */
+    /** å•å®ä¾‹ */
     private static final HttpsRestTemplateTools _instance = new HttpsRestTemplateTools();
 
     public static HttpsRestTemplateTools getInstance() {
@@ -48,7 +48,7 @@ public class HttpsRestTemplateTools {
     }
 
     /**
-     * ÇëÇóÖ¸¶¨µØÖ·µÄrestful·şÎñ
+     * è¯·æ±‚æŒ‡å®šåœ°å€çš„restfulæœåŠ¡
      * 
      * @param url
      * @param obj
@@ -57,7 +57,7 @@ public class HttpsRestTemplateTools {
     public Object postDefaultRestfulService(String url, Object obj) {
 
         if (obj == null) {
-            logger.warn("Èë²Î¶ÔÏó²»¿ÉÓÃ£¬²»×öÇëÇó¡£ obj is null!");
+            logger.warn("å…¥å‚å¯¹è±¡ä¸å¯ç”¨ï¼Œä¸åšè¯·æ±‚ã€‚ obj is null!");
             return null;
         }
 
@@ -66,18 +66,18 @@ public class HttpsRestTemplateTools {
     }
 
     /**
-     * ³õÊ¼»¯Ö¤ÊéÖ§³ÖµÄCloseableHttpClient
+     * åˆå§‹åŒ–è¯ä¹¦æ”¯æŒçš„CloseableHttpClient
      * 
-     * @throws KeyStoreException        Ö¤Êé´æ´¢Òì³£
-     * @throws NoSuchAlgorithmException Ëã·¨Òì³£
-     * @throws KeyManagementException   Ö¤Êé¹ÜÀíÒì³£
+     * @throws KeyStoreException        è¯ä¹¦å­˜å‚¨å¼‚å¸¸
+     * @throws NoSuchAlgorithmException ç®—æ³•å¼‚å¸¸
+     * @throws KeyManagementException   è¯ä¹¦ç®¡ç†å¼‚å¸¸
      * @return                          CloseableHttpClient
      */
     private static CloseableHttpClient acceptsDefaultUntrustedCertsHttpClient() throws KeyStoreException,
                                                                                 NoSuchAlgorithmException,
                                                                                 KeyManagementException {
 
-        //²»×öÈÎºÎ´¦Àí£¬Ä¬ÈÏÏàĞÅËùÓĞÖ¤Êé
+        //ä¸åšä»»ä½•å¤„ç†ï¼Œé»˜è®¤ç›¸ä¿¡æ‰€æœ‰è¯ä¹¦
         SSLContext sslContext = new SSLContextBuilder()
             .loadTrustMaterial(null, new TrustStrategy() {
                 public boolean isTrusted(X509Certificate[] arg0,
@@ -86,14 +86,14 @@ public class HttpsRestTemplateTools {
                 }
             }).build();
 
-        //½«¶ÔÖ¤ÊéµÄÈÏ¿ÉÅäÖÃ¼ÓÈëÉÏÏÂÎÄ
+        //å°†å¯¹è¯ä¹¦çš„è®¤å¯é…ç½®åŠ å…¥ä¸Šä¸‹æ–‡
         HttpClientBuilder b = HttpClientBuilder.create();
         b.setSSLContext(sslContext);
 
-        //¶ÔHostName²»×öĞ£Ñé
+        //å¯¹HostNameä¸åšæ ¡éªŒ
         HostnameVerifier hostnameVerifier = NoopHostnameVerifier.INSTANCE;
 
-        //×¢²áÇëÇó·½Ê½
+        //æ³¨å†Œè¯·æ±‚æ–¹å¼
         SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext,
             hostnameVerifier);
         Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder
@@ -101,7 +101,7 @@ public class HttpsRestTemplateTools {
             .register("http", PlainConnectionSocketFactory.getSocketFactory())
             .register("https", sslSocketFactory).build();
 
-        //½«ÇëÇó·½Ê½¼ÓÈëÁ¬½Ó¹ÜÀíÆ÷£¨Ö§³Ö¶àÏß³Ì£©
+        //å°†è¯·æ±‚æ–¹å¼åŠ å…¥è¿æ¥ç®¡ç†å™¨ï¼ˆæ”¯æŒå¤šçº¿ç¨‹ï¼‰
         PoolingHttpClientConnectionManager connMgr = new PoolingHttpClientConnectionManager(
             socketFactoryRegistry);
         connMgr.setMaxTotal(200);
@@ -112,7 +112,7 @@ public class HttpsRestTemplateTools {
     }
 
     /**
-     * ¹¹½¨RestTemplateÊµÀı
+     * æ„å»ºRestTemplateå®ä¾‹
      * 
      * @return  RestTemplate
      */
@@ -121,11 +121,11 @@ public class HttpsRestTemplateTools {
         try {
             httpClient = acceptsDefaultUntrustedCertsHttpClient();
         } catch (KeyManagementException e) {
-            logger.error("Ö¤Êé¹Ø¼ü×ÖÒì³££º" + e.getMessage(), e);
+            logger.error("è¯ä¹¦å…³é”®å­—å¼‚å¸¸ï¼š" + e.getMessage(), e);
         } catch (KeyStoreException e) {
-            logger.error("Ö¤Êé´æ´¢Òì³££º" + e.getMessage(), e);
+            logger.error("è¯ä¹¦å­˜å‚¨å¼‚å¸¸ï¼š" + e.getMessage(), e);
         } catch (NoSuchAlgorithmException e) {
-            logger.error("Ëã·¨Ö´ĞĞÒì³££º" + e.getMessage(), e);
+            logger.error("ç®—æ³•æ‰§è¡Œå¼‚å¸¸ï¼š" + e.getMessage(), e);
         }
         return new RestTemplate(new HttpComponentsClientHttpRequestFactory(httpClient));
     }

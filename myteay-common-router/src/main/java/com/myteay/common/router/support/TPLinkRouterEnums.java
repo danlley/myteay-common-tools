@@ -7,27 +7,27 @@ package com.myteay.common.router.support;
 /**
  * 
  * @author Administrator
- * @version $Id: TPLinkRouterEnums.java, v 0.1 2016Äê4ÔÂ29ÈÕ ÏÂÎç11:02:01 Administrator Exp $
+ * @version $Id: TPLinkRouterEnums.java, v 0.1 2016å¹´4æœˆ29æ—¥ ä¸‹åˆ11:02:01 Administrator Exp $
  */
 public enum TPLinkRouterEnums {
 
     /**  */
-    TPLINK_CONN("TPLINK_CONN", "StatusRpm", "Connect", "Á¬ ½Ó", "&wan="),
+    TPLINK_CONN("TPLINK_CONN", "StatusRpm", "Connect", "è¿ æ¥", "&wan="),
 
     /**  */
-    TPLINK_DISCONNECT("TPLINK_DISCONNECT", "StatusRpm", "Disconnect", "¶Ï Ïß", "&wan="),
+    TPLINK_DISCONNECT("TPLINK_DISCONNECT", "StatusRpm", "Disconnect", "æ–­ çº¿", "&wan="),
 
     /**  */
-    TPLINK_RENEW("TPLINK_RENEW", "StatusRpm", "RenewIp", "¸ü ĞÂ", "&wan="),
+    TPLINK_RENEW("TPLINK_RENEW", "StatusRpm", "RenewIp", "æ›´ æ–°", "&wan="),
 
     /**  */
-    TPLINK_RELEASE_IP("TPLINK_RELEASE_IP", "StatusRpm", "ReleaseIp", "ÊÍ ·Å", "&wan="),
+    TPLINK_RELEASE_IP("TPLINK_RELEASE_IP", "StatusRpm", "ReleaseIp", "é‡Š æ”¾", "&wan="),
 
     /**  */
-    TPLINK_LOGIN("TPLINK_LOGIN", "StatusRpm", "Login", "µÇ Â¼", "&wan="),
+    TPLINK_LOGIN("TPLINK_LOGIN", "StatusRpm", "Login", "ç™» å½•", "&wan="),
 
     /**  */
-    TPLINK_LOGOUT("TPLINK_LOGOUT", "StatusRpm", "Logout", "ÍË ³ö", "&wan="),
+    TPLINK_LOGOUT("TPLINK_LOGOUT", "StatusRpm", "Logout", "é€€ å‡º", "&wan="),
 
     ;
     /** value */
@@ -46,7 +46,7 @@ public enum TPLinkRouterEnums {
     private final String params;
 
     /**
-     * Ë½ÓĞ¹¹Ôì·½·¨
+     * ç§æœ‰æ„é€ æ–¹æ³•
      * @param code
      * @param description
      */
@@ -74,7 +74,7 @@ public enum TPLinkRouterEnums {
     }
 
     /**
-     * Í¨¹ıÃ¶¾Ù<code>value</code>»ñµÃÃ¶¾Ù
+     * é€šè¿‡æšä¸¾<code>value</code>è·å¾—æšä¸¾
      * 
      * @param value
      * @return

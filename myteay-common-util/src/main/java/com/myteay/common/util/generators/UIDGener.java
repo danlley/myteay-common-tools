@@ -12,30 +12,30 @@ import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * »áÔ±IDÉú³É¹¤¾ß
+ * ä¼šå‘˜IDç”Ÿæˆå·¥å…·
  * 
  * @author Administrator
- * @version $Id: UIDGener.java, v 0.1 2015Äê7ÔÂ5ÈÕ ÏÂÎç9:13:47 Administrator Exp $
+ * @version $Id: UIDGener.java, v 0.1 2015å¹´7æœˆ5æ—¥ ä¸‹åˆ9:13:47 Administrator Exp $
  */
 public class UIDGener {
 
-    /** »áÔ±IDÇ°×º */
+    /** ä¼šå‘˜IDå‰ç¼€ */
     public static final String              UID_FRONT             = "MT";
 
-    /** ¹ú¼ÒÂë£¨Ä¬ÈÏÖĞ¹ú£© */
+    /** å›½å®¶ç ï¼ˆé»˜è®¤ä¸­å›½ï¼‰ */
     public static final String              NATION_CODE           = "CN";
 
-    /** »áÔ±¼®¹áÊ¡·İĞÅÏ¢»º´æ */
+    /** ä¼šå‘˜ç±è´¯çœä»½ä¿¡æ¯ç¼“å­˜ */
     public static final Map<String, String> PROVINCE_LOCAL_CACHE  = Collections
         .synchronizedMap(new HashMap<String, String>());
 
-    /** Ê¡·İÄ¬ÈÏ´úÂë */
+    /** çœä»½é»˜è®¤ä»£ç  */
     public static final String              DEFAULT_PRIVINCE_CODE = "000000";
 
     /**
-     * ÕûÌå³õÊ¼»¯»º´æ(±¯¹ÛµÄ²¢·¢´¦Àí·½Ê½)
+     * æ•´ä½“åˆå§‹åŒ–ç¼“å­˜(æ‚²è§‚çš„å¹¶å‘å¤„ç†æ–¹å¼)
      * 
-     * @param params    Ê¡·İ¼°ÓÊ±àĞÅÏ¢
+     * @param params    çœä»½åŠé‚®ç¼–ä¿¡æ¯
      */
     public synchronized void initPrivinceCache(Map<String, String> params) {
         synchronized (PROVINCE_LOCAL_CACHE) {
@@ -44,10 +44,10 @@ public class UIDGener {
     }
 
     /**
-     * Ë¢ĞÂµ¥¸öÊ¡·İµÄ»º´æĞÅÏ¢£¨ÀÖ¹ÛµÄ²¢·¢´¦Àí·½Ê½£©
+     * åˆ·æ–°å•ä¸ªçœä»½çš„ç¼“å­˜ä¿¡æ¯ï¼ˆä¹è§‚çš„å¹¶å‘å¤„ç†æ–¹å¼ï¼‰
      * 
-     * @param key   Ê¡·İÃû³Æ
-     * @param value ÓÊÕş±àÂë
+     * @param key   çœä»½åç§°
+     * @param value é‚®æ”¿ç¼–ç 
      */
     public static void freshSingleCache(String key, String value) {
         synchronized (PROVINCE_LOCAL_CACHE) {
@@ -56,22 +56,22 @@ public class UIDGener {
     }
 
     /**
-     * »ñÈ¡µ±Ç°ÓÃ»§µÄUID
+     * è·å–å½“å‰ç”¨æˆ·çš„UID
      * 
      * ====================================================================================================<br>
-     * USERIDÉú³É¹æÔò£º  UID_FRONT + NATION_CODE + PROVINCE_LOCAL_CACHE + µ±Ç°Ê±¼ä£¨¾«È·µ½ºÁÃë£© + 4Î»Ëæ»úĞòÁĞÂë<br>
-     *             Èç£º MT          CN            741200                 2015 07 05 21 35 48 555      1234<br>
-     *       ºÏ³ÉºóÎª£º  MTCN741200201507052135485551234<br>MTCN741200    2015 07 06 00 56 31 726      0000
+     * USERIDç”Ÿæˆè§„åˆ™ï¼š  UID_FRONT + NATION_CODE + PROVINCE_LOCAL_CACHE + å½“å‰æ—¶é—´ï¼ˆç²¾ç¡®åˆ°æ¯«ç§’ï¼‰ + 4ä½éšæœºåºåˆ—ç <br>
+     *             å¦‚ï¼š MT          CN            741200                 2015 07 05 21 35 48 555      1234<br>
+     *       åˆæˆåä¸ºï¼š  MTCN741200201507052135485551234<br>MTCN741200    2015 07 06 00 56 31 726      0000
      * ====================================================================================================<br>
      * 
-     * @return  ·µ»Øµ±Ç°ÓÃ»§ĞèÒªÉú³ÉµÄuserid
+     * @return  è¿”å›å½“å‰ç”¨æˆ·éœ€è¦ç”Ÿæˆçš„userid
      */
     public static String genUserId(String privince, String randomString) throws MtUidGeneratorException {
 
         if (StringUtils.isBlank(privince) || StringUtils.isBlank(randomString)) {
             throw new MtUidGeneratorException();
         }
-        freshSingleCache("¸Ê¹ÈÏØ", "741200");
+        freshSingleCache("ç”˜è°·å¿", "741200");
         String privinceCode = PROVINCE_LOCAL_CACHE.get(privince);
         if (StringUtils.isBlank(privinceCode)) {
             privinceCode = DEFAULT_PRIVINCE_CODE;

@@ -6,7 +6,7 @@ package com.myteay.common.util.tools;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * 数字转换工具
+ * 鏁板瓧杞崲宸ュ叿
  * 
  * @author min.weixm
  * @version $Id: NumberUtil.java, v 0.1 Oct 29, 2017 12:20:47 PM min.weixm Exp $

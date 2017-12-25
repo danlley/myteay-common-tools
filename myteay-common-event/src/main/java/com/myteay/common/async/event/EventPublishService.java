@@ -5,7 +5,7 @@
 package com.myteay.common.async.event;
 
 /**
- * 异步事件执行服务（默认支持同步）
+ * 寮傛浜嬩欢鎵ц鏈嶅姟锛堥粯璁ゆ敮鎸佸悓姝ワ級
  * 
  * @author min.weixm
  * @version $Id: EventPublishService.java, v 0.1 Oct 28, 2017 11:21:57 PM min.weixm Exp $
@@ -13,9 +13,9 @@ package com.myteay.common.async.event;
 public interface EventPublishService<T> {
 
     /**
-     * 发布事件
+     * 鍙戝竷浜嬩欢
      * 
-     * @param event     异步事件模型
+     * @param event     寮傛浜嬩欢妯″瀷
      */
     public T publishEvent(MtEvent<?> event) throws MtEventException;
 }

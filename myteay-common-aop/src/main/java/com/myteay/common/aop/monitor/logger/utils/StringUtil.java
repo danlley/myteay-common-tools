@@ -9,10 +9,10 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ÓĞ¹Ø×Ö·û´®´¦ÀíµÄ¹¤¾ßÀà¡£
+ * æœ‰å…³å­—ç¬¦ä¸²å¤„ç†çš„å·¥å…·ç±»ã€‚
  * 
  * <p>
- * Õâ¸öÀàÖĞµÄÃ¿¸ö·½·¨¶¼¿ÉÒÔ¡°°²È«¡±µØ´¦Àí<code>null</code>£¬¶ø²»»áÅ×³ö<code>NullPointerException</code>¡£
+ * è¿™ä¸ªç±»ä¸­çš„æ¯ä¸ªæ–¹æ³•éƒ½å¯ä»¥â€œå®‰å…¨â€åœ°å¤„ç†<code>null</code>ï¼Œè€Œä¸ä¼šæŠ›å‡º<code>NullPointerException</code>ã€‚
  * </p>
  * 
  * @author min.weixm
@@ -20,23 +20,23 @@ import java.util.List;
  */
 public class StringUtil {
     /* ============================================================================ */
-    /*  ³£Á¿ºÍsingleton¡£                                                           */
+    /*  å¸¸é‡å’Œsingletonã€‚                                                           */
     /* ============================================================================ */
 
-    /** ¿Õ×Ö·û´®¡£ */
+    /** ç©ºå­—ç¬¦ä¸²ã€‚ */
     public static final String EMPTY_STRING = "";
 
     /* ============================================================================ */
-    /*  ÅĞ¿Õº¯Êı¡£                                                                  */
+    /*  åˆ¤ç©ºå‡½æ•°ã€‚                                                                  */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´ÅĞ¶¨Ò»¸ö×Ö·û´®ÊÇ·ñÎª£º                                          */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥åˆ¤å®šä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ä¸ºï¼š                                          */
     /*  1. null                                                                     */
     /*  2. empty - ""                                                               */
-    /*  3. blank - "È«²¿ÊÇ¿Õ°×" - ¿Õ°×ÓÉCharacter.isWhitespaceËù¶¨Òå¡£              */
+    /*  3. blank - "å…¨éƒ¨æ˜¯ç©ºç™½" - ç©ºç™½ç”±Character.isWhitespaceæ‰€å®šä¹‰ã€‚              */
     /* ============================================================================ */
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñÎª<code>null</code>»ò¿Õ×Ö·û´®<code>""</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * <pre>
      * StringUtil.isEmpty(null)      = true
      * StringUtil.isEmpty("")        = true
@@ -45,16 +45,16 @@ public class StringUtil {
      * StringUtil.isEmpty("  bob  ") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(String str) {
         return ((str == null) || (str.length() == 0));
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿Õ×Ö·û´®<code>""</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * <pre>
      * StringUtil.isEmpty(null)      = false
      * StringUtil.isEmpty("")        = false
@@ -63,16 +63,16 @@ public class StringUtil {
      * StringUtil.isEmpty("  bob  ") = true
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(String str) {
         return ((str != null) && (str.length() > 0));
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñÊÇ¿Õ°×£º<code>null</code>¡¢¿Õ×Ö·û´®<code>""</code>»òÖ»ÓĞ¿Õ°××Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦æ˜¯ç©ºç™½ï¼š<code>null</code>ã€ç©ºå­—ç¬¦ä¸²<code>""</code>æˆ–åªæœ‰ç©ºç™½å­—ç¬¦ã€‚
      * <pre>
      * StringUtil.isBlank(null)      = true
      * StringUtil.isBlank("")        = true
@@ -81,9 +81,9 @@ public class StringUtil {
      * StringUtil.isBlank("  bob  ") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ°×, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©ºç™½, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isBlank(String str) {
         int length;
@@ -102,7 +102,7 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñ²»ÊÇ¿Õ°×£º<code>null</code>¡¢¿Õ×Ö·û´®<code>""</code>»òÖ»ÓĞ¿Õ°××Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸æ˜¯ç©ºç™½ï¼š<code>null</code>ã€ç©ºå­—ç¬¦ä¸²<code>""</code>æˆ–åªæœ‰ç©ºç™½å­—ç¬¦ã€‚
      * <pre>
      * StringUtil.isBlank(null)      = false
      * StringUtil.isBlank("")        = false
@@ -111,9 +111,9 @@ public class StringUtil {
      * StringUtil.isBlank("  bob  ") = true
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ°×, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©ºç™½, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotBlank(String str) {
         int length;
@@ -132,13 +132,13 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  Ä¬ÈÏÖµº¯Êı¡£                                                                */
+    /*  é»˜è®¤å€¼å‡½æ•°ã€‚                                                                */
     /*                                                                              */
-    /*  µ±×Ö·û´®Îªnull¡¢empty»òblankÊ±£¬½«×Ö·û´®×ª»»³ÉÖ¸¶¨µÄÄ¬ÈÏ×Ö·û´®¡£            */
+    /*  å½“å­—ç¬¦ä¸²ä¸ºnullã€emptyæˆ–blankæ—¶ï¼Œå°†å­—ç¬¦ä¸²è½¬æ¢æˆæŒ‡å®šçš„é»˜è®¤å­—ç¬¦ä¸²ã€‚            */
     /* ============================================================================ */
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * <pre>
      * StringUtil.defaultIfNull(null)  = ""
      * StringUtil.defaultIfNull("")    = ""
@@ -146,9 +146,9 @@ public class StringUtil {
      * StringUtil.defaultIfNull("bat") = "bat"
      * </pre>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»ò¿Õ×Ö·û´®<code>""</code>
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>
      */
     public static String defaultIfNull(String str) {
         return (str == null) ? EMPTY_STRING
@@ -156,7 +156,7 @@ public class StringUtil {
     }
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏ×Ö·û´®£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤å­—ç¬¦ä¸²ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * <pre>
      * StringUtil.defaultIfNull(null, "default")  = "default"
      * StringUtil.defaultIfNull("", "default")    = ""
@@ -164,10 +164,10 @@ public class StringUtil {
      * StringUtil.defaultIfNull("bat", "default") = "bat"
      * </pre>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
-     * @param defaultStr Ä¬ÈÏ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
+     * @param defaultStr é»˜è®¤å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏ×Ö·û´®
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤å­—ç¬¦ä¸²
      */
     public static String defaultIfNull(String str, String defaultStr) {
         return (str == null) ? defaultStr
@@ -175,10 +175,10 @@ public class StringUtil {
     }
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>»ò¿Õ×Ö·û´®<code>""</code>£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * 
      * <p>
-     * ´Ë·½·¨Êµ¼ÊÉÏºÍ<code>defaultIfNull(String)</code>µÈĞ§¡£
+     * æ­¤æ–¹æ³•å®é™…ä¸Šå’Œ<code>defaultIfNull(String)</code>ç­‰æ•ˆã€‚
      * <pre>
      * StringUtil.defaultIfEmpty(null)  = ""
      * StringUtil.defaultIfEmpty("")    = ""
@@ -187,9 +187,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»ò¿Õ×Ö·û´®<code>""</code>
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>
      */
     public static String defaultIfEmpty(String str) {
         return (str == null) ? EMPTY_STRING
@@ -197,7 +197,7 @@ public class StringUtil {
     }
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>»ò¿Õ×Ö·û´®<code>""</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏ×Ö·û´®£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤å­—ç¬¦ä¸²ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * <pre>
      * StringUtil.defaultIfEmpty(null, "default")  = "default"
      * StringUtil.defaultIfEmpty("", "default")    = "default"
@@ -205,10 +205,10 @@ public class StringUtil {
      * StringUtil.defaultIfEmpty("bat", "default") = "bat"
      * </pre>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
-     * @param defaultStr Ä¬ÈÏ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
+     * @param defaultStr é»˜è®¤å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏ×Ö·û´®
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤å­—ç¬¦ä¸²
      */
     public static String defaultIfEmpty(String str, String defaultStr) {
         return ((str == null) || (str.length() == 0)) ? defaultStr
@@ -216,7 +216,7 @@ public class StringUtil {
     }
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ¿Õ°×£º<code>null</code>¡¢¿Õ×Ö·û´®<code>""</code>»òÖ»ÓĞ¿Õ°××Ö·û£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯ç©ºç™½ï¼š<code>null</code>ã€ç©ºå­—ç¬¦ä¸²<code>""</code>æˆ–åªæœ‰ç©ºç™½å­—ç¬¦ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * <pre>
      * StringUtil.defaultIfBlank(null)  = ""
      * StringUtil.defaultIfBlank("")    = ""
@@ -224,9 +224,9 @@ public class StringUtil {
      * StringUtil.defaultIfBlank("bat") = "bat"
      * </pre>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»ò¿Õ×Ö·û´®<code>""</code>
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>
      */
     public static String defaultIfBlank(String str) {
         return isBlank(str) ? EMPTY_STRING
@@ -234,7 +234,7 @@ public class StringUtil {
     }
 
     /**
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>»ò¿Õ×Ö·û´®<code>""</code>£¬Ôò·µ»ØÖ¸¶¨Ä¬ÈÏ×Ö·û´®£¬·ñÔò·µ»Ø×Ö·û´®±¾Éí¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œåˆ™è¿”å›æŒ‡å®šé»˜è®¤å­—ç¬¦ä¸²ï¼Œå¦åˆ™è¿”å›å­—ç¬¦ä¸²æœ¬èº«ã€‚
      * <pre>
      * StringUtil.defaultIfBlank(null, "default")  = "default"
      * StringUtil.defaultIfBlank("", "default")    = "default"
@@ -242,10 +242,10 @@ public class StringUtil {
      * StringUtil.defaultIfBlank("bat", "default") = "bat"
      * </pre>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
-     * @param defaultStr Ä¬ÈÏ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
+     * @param defaultStr é»˜è®¤å­—ç¬¦ä¸²
      *
-     * @return ×Ö·û´®±¾Éí»òÖ¸¶¨µÄÄ¬ÈÏ×Ö·û´®
+     * @return å­—ç¬¦ä¸²æœ¬èº«æˆ–æŒ‡å®šçš„é»˜è®¤å­—ç¬¦ä¸²
      */
     public static String defaultIfBlank(String str, String defaultStr) {
         return isBlank(str) ? defaultStr
@@ -253,17 +253,17 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  È¥¿Õ°×£¨»òÖ¸¶¨×Ö·û£©µÄº¯Êı¡£                                                */
+    /*  å»ç©ºç™½ï¼ˆæˆ–æŒ‡å®šå­—ç¬¦ï¼‰çš„å‡½æ•°ã€‚                                                */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´³ıÈ¥Ò»¸ö×Ö´®ÖĞµÄ¿Õ°×»òÖ¸¶¨×Ö·û¡£                                */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥é™¤å»ä¸€ä¸ªå­—ä¸²ä¸­çš„ç©ºç™½æˆ–æŒ‡å®šå­—ç¬¦ã€‚                                */
     /* ============================================================================ */
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄ¿Õ°×£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬ÒÀÈ»·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œä¾ç„¶è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trim(null)          = null
      * StringUtil.trim("")            = ""
@@ -273,16 +273,16 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trim(String str) {
         return trim(str, null, 0);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄÖ¸¶¨×Ö·û£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬ÒÀÈ»·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„æŒ‡å®šå­—ç¬¦ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œä¾ç„¶è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.trim(null, *)          = null
      * StringUtil.trim("", *)            = ""
@@ -293,21 +293,21 @@ public class StringUtil {
      * StringUtil.trim("  abcyx", "xyz") = "  abc"
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param stripChars Òª³ıÈ¥µÄ×Ö·û£¬Èç¹ûÎª<code>null</code>±íÊ¾³ıÈ¥¿Õ°××Ö·û
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param stripChars è¦é™¤å»çš„å­—ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>è¡¨ç¤ºé™¤å»ç©ºç™½å­—ç¬¦
      *
-     * @return ³ıÈ¥Ö¸¶¨×Ö·ûºóµÄµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»æŒ‡å®šå­—ç¬¦åçš„çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trim(String str, String stripChars) {
         return trim(str, stripChars, 0);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·²¿µÄ¿Õ°×£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trimStart(null)         = null
      * StringUtil.trimStart("")           = ""
@@ -318,16 +318,16 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimStart(String str) {
         return trim(str, null, -1);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·²¿µÄÖ¸¶¨×Ö·û£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬ÒÀÈ»·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´éƒ¨çš„æŒ‡å®šå­—ç¬¦ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œä¾ç„¶è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.trimStart(null, *)          = null
      * StringUtil.trimStart("", *)            = ""
@@ -339,21 +339,21 @@ public class StringUtil {
      * StringUtil.trimStart("yxabc  ", "xyz") = "abc  "
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param stripChars Òª³ıÈ¥µÄ×Ö·û£¬Èç¹ûÎª<code>null</code>±íÊ¾³ıÈ¥¿Õ°××Ö·û
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param stripChars è¦é™¤å»çš„å­—ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>è¡¨ç¤ºé™¤å»ç©ºç™½å­—ç¬¦
      *
-     * @return ³ıÈ¥Ö¸¶¨×Ö·ûºóµÄµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»æŒ‡å®šå­—ç¬¦åçš„çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimStart(String str, String stripChars) {
         return trim(str, stripChars, -1);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Î²²¿µÄ¿Õ°×£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trimEnd(null)       = null
      * StringUtil.trimEnd("")         = ""
@@ -364,16 +364,16 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimEnd(String str) {
         return trim(str, null, 1);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Î²²¿µÄÖ¸¶¨×Ö·û£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬ÒÀÈ»·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å°¾éƒ¨çš„æŒ‡å®šå­—ç¬¦ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œä¾ç„¶è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.trimEnd(null, *)          = null
      * StringUtil.trimEnd("", *)            = ""
@@ -385,21 +385,21 @@ public class StringUtil {
      * StringUtil.trimEnd("  abcyx", "xyz") = "  abc"
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param stripChars Òª³ıÈ¥µÄ×Ö·û£¬Èç¹ûÎª<code>null</code>±íÊ¾³ıÈ¥¿Õ°××Ö·û
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param stripChars è¦é™¤å»çš„å­—ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>è¡¨ç¤ºé™¤å»ç©ºç™½å­—ç¬¦
      *
-     * @return ³ıÈ¥Ö¸¶¨×Ö·ûºóµÄµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»æŒ‡å®šå­—ç¬¦åçš„çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimEnd(String str, String stripChars) {
         return trim(str, stripChars, 1);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄ¿Õ°×£¬Èç¹û½á¹û×Ö·û´®ÊÇ¿Õ×Ö·û´®<code>""</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœç»“æœå­—ç¬¦ä¸²æ˜¯ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trimToNull(null)          = null
      * StringUtil.trimToNull("")            = null
@@ -409,20 +409,20 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimToNull(String str) {
         return trimToNull(str, null);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄ¿Õ°×£¬Èç¹û½á¹û×Ö·û´®ÊÇ¿Õ×Ö·û´®<code>""</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœç»“æœå­—ç¬¦ä¸²æ˜¯ç©ºå­—ç¬¦ä¸²<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trim(null, *)          = null
      * StringUtil.trim("", *)            = null
@@ -434,10 +434,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param stripChars Òª³ıÈ¥µÄ×Ö·û£¬Èç¹ûÎª<code>null</code>±íÊ¾³ıÈ¥¿Õ°××Ö·û
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param stripChars è¦é™¤å»çš„å­—ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>è¡¨ç¤ºé™¤å»ç©ºç™½å­—ç¬¦
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimToNull(String str, String stripChars) {
         String result = trim(str, stripChars);
@@ -450,11 +450,11 @@ public class StringUtil {
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄ¿Õ°×£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trimToEmpty(null)          = ""
      * StringUtil.trimToEmpty("")            = ""
@@ -464,20 +464,20 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimToEmpty(String str) {
         return trimToEmpty(str, null);
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄ¿Õ°×£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„ç©ºç™½ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * 
      * <p>
-     * ×¢Òâ£¬ºÍ<code>String.trim</code>²»Í¬£¬´Ë·½·¨Ê¹ÓÃ<code>Character.isWhitespace</code>À´ÅĞ¶¨¿Õ°×£¬
-     * Òò¶ø¿ÉÒÔ³ıÈ¥Ó¢ÎÄ×Ö·û¼¯Ö®ÍâµÄÆäËü¿Õ°×£¬ÈçÖĞÎÄ¿Õ¸ñ¡£
+     * æ³¨æ„ï¼Œå’Œ<code>String.trim</code>ä¸åŒï¼Œæ­¤æ–¹æ³•ä½¿ç”¨<code>Character.isWhitespace</code>æ¥åˆ¤å®šç©ºç™½ï¼Œ
+     * å› è€Œå¯ä»¥é™¤å»è‹±æ–‡å­—ç¬¦é›†ä¹‹å¤–çš„å…¶å®ƒç©ºç™½ï¼Œå¦‚ä¸­æ–‡ç©ºæ ¼ã€‚
      * <pre>
      * StringUtil.trim(null, *)          = ""
      * StringUtil.trim("", *)            = ""
@@ -489,9 +489,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ³ıÈ¥¿Õ°×µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>»ò½á¹û×Ö·û´®Îª<code>""</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»ç©ºç™½çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>æˆ–ç»“æœå­—ç¬¦ä¸²ä¸º<code>""</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String trimToEmpty(String str, String stripChars) {
         String result = trim(str, stripChars);
@@ -504,7 +504,7 @@ public class StringUtil {
     }
 
     /**
-     * ³ıÈ¥×Ö·û´®Í·Î²²¿µÄÖ¸¶¨×Ö·û£¬Èç¹û×Ö·û´®ÊÇ<code>null</code>£¬ÒÀÈ»·µ»Ø<code>null</code>¡£
+     * é™¤å»å­—ç¬¦ä¸²å¤´å°¾éƒ¨çš„æŒ‡å®šå­—ç¬¦ï¼Œå¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>ï¼Œä¾ç„¶è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.trim(null, *)          = null
      * StringUtil.trim("", *)            = ""
@@ -515,11 +515,11 @@ public class StringUtil {
      * StringUtil.trim("  abcyx", "xyz") = "  abc"
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param stripChars Òª³ıÈ¥µÄ×Ö·û£¬Èç¹ûÎª<code>null</code>±íÊ¾³ıÈ¥¿Õ°××Ö·û
-     * @param mode <code>-1</code>±íÊ¾trimStart£¬<code>0</code>±íÊ¾trimÈ«²¿£¬<code>1</code>±íÊ¾trimEnd
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param stripChars è¦é™¤å»çš„å­—ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>è¡¨ç¤ºé™¤å»ç©ºç™½å­—ç¬¦
+     * @param mode <code>-1</code>è¡¨ç¤ºtrimStartï¼Œ<code>0</code>è¡¨ç¤ºtrimå…¨éƒ¨ï¼Œ<code>1</code>è¡¨ç¤ºtrimEnd
      *
-     * @return ³ıÈ¥Ö¸¶¨×Ö·ûºóµÄµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é™¤å»æŒ‡å®šå­—ç¬¦åçš„çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     private static String trim(String str, String stripChars, int mode) {
         if (str == null) {
@@ -530,7 +530,7 @@ public class StringUtil {
         int start = 0;
         int end = length;
 
-        // É¨Ãè×Ö·û´®Í·²¿
+        // æ‰«æå­—ç¬¦ä¸²å¤´éƒ¨
         if (mode <= 0) {
             if (stripChars == null) {
                 while ((start < end) && (Character.isWhitespace(str.charAt(start)))) {
@@ -545,7 +545,7 @@ public class StringUtil {
             }
         }
 
-        // É¨Ãè×Ö·û´®Î²²¿
+        // æ‰«æå­—ç¬¦ä¸²å°¾éƒ¨
         if (mode >= 0) {
             if (stripChars == null) {
                 while ((start < end) && (Character.isWhitespace(str.charAt(end - 1)))) {
@@ -568,13 +568,13 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½Ïº¯Êı¡£                                                                  */
+    /*  æ¯”è¾ƒå‡½æ•°ã€‚                                                                  */
     /*                                                                              */
-    /*  ÒÔÏÂ·½·¨ÓÃÀ´±È½ÏÁ½¸ö×Ö·û´®ÊÇ·ñÏàÍ¬¡£                                        */
+    /*  ä»¥ä¸‹æ–¹æ³•ç”¨æ¥æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ç›¸åŒã€‚                                        */
     /* ============================================================================ */
 
     /**
-     * ±È½ÏÁ½¸ö×Ö·û´®£¨´óĞ¡Ğ´Ãô¸Ğ£©¡£
+     * æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²ï¼ˆå¤§å°å†™æ•æ„Ÿï¼‰ã€‚
      * <pre>
      * StringUtil.equals(null, null)   = true
      * StringUtil.equals(null, "abc")  = false
@@ -583,10 +583,10 @@ public class StringUtil {
      * StringUtil.equals("abc", "ABC") = false
      * </pre>
      *
-     * @param str1 Òª±È½ÏµÄ×Ö·û´®1
-     * @param str2 Òª±È½ÏµÄ×Ö·û´®2
+     * @param str1 è¦æ¯”è¾ƒçš„å­—ç¬¦ä¸²1
+     * @param str2 è¦æ¯”è¾ƒçš„å­—ç¬¦ä¸²2
      *
-     * @return Èç¹ûÁ½¸ö×Ö·û´®ÏàÍ¬£¬»òÕß¶¼ÊÇ<code>null</code>£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªå­—ç¬¦ä¸²ç›¸åŒï¼Œæˆ–è€…éƒ½æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean equals(String str1, String str2) {
         if (str1 == null) {
@@ -597,7 +597,7 @@ public class StringUtil {
     }
 
     /**
-     * ±È½ÏÁ½¸ö×Ö·û´®£¨´óĞ¡Ğ´²»Ãô¸Ğ£©¡£
+     * æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²ï¼ˆå¤§å°å†™ä¸æ•æ„Ÿï¼‰ã€‚
      * <pre>
      * StringUtil.equalsIgnoreCase(null, null)   = true
      * StringUtil.equalsIgnoreCase(null, "abc")  = false
@@ -606,10 +606,10 @@ public class StringUtil {
      * StringUtil.equalsIgnoreCase("abc", "ABC") = true
      * </pre>
      *
-     * @param str1 Òª±È½ÏµÄ×Ö·û´®1
-     * @param str2 Òª±È½ÏµÄ×Ö·û´®2
+     * @param str1 è¦æ¯”è¾ƒçš„å­—ç¬¦ä¸²1
+     * @param str2 è¦æ¯”è¾ƒçš„å­—ç¬¦ä¸²2
      *
-     * @return Èç¹ûÁ½¸ö×Ö·û´®ÏàÍ¬£¬»òÕß¶¼ÊÇ<code>null</code>£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸¤ä¸ªå­—ç¬¦ä¸²ç›¸åŒï¼Œæˆ–è€…éƒ½æ˜¯<code>null</code>ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean equalsIgnoreCase(String str1, String str2) {
         if (str1 == null) {
@@ -620,16 +620,16 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ×Ö·û´®ÀàĞÍÅĞ¶¨º¯Êı¡£                                                        */
+    /*  å­—ç¬¦ä¸²ç±»å‹åˆ¤å®šå‡½æ•°ã€‚                                                        */
     /*                                                                              */
-    /*  ÅĞ¶¨×Ö·û´®µÄÀàĞÍÊÇ·ñÎª£º×ÖÄ¸¡¢Êı×Ö¡¢¿Õ°×µÈ                                  */
+    /*  åˆ¤å®šå­—ç¬¦ä¸²çš„ç±»å‹æ˜¯å¦ä¸ºï¼šå­—æ¯ã€æ•°å­—ã€ç©ºç™½ç­‰                                  */
     /* ============================================================================ */
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicode×ÖÄ¸¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeå­—æ¯ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isAlpha(null)   = false
@@ -640,9 +640,9 @@ public class StringUtil {
      * StringUtil.isAlpha("ab-c") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicode×ÖÄ¸×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeå­—æ¯ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isAlpha(String str) {
         if (str == null) {
@@ -661,10 +661,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicode×ÖÄ¸ºÍ¿Õ¸ñ<code>' '</code>¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeå­—æ¯å’Œç©ºæ ¼<code>' '</code>ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isAlphaSpace(null)   = false
@@ -676,9 +676,9 @@ public class StringUtil {
      * StringUtil.isAlphaSpace("ab-c") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicode×ÖÄ¸ºÍ¿Õ¸ñ×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeå­—æ¯å’Œç©ºæ ¼ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isAlphaSpace(String str) {
         if (str == null) {
@@ -697,10 +697,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicode×ÖÄ¸ºÍÊı×Ö¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeå­—æ¯å’Œæ•°å­—ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isAlphanumeric(null)   = false
@@ -712,9 +712,9 @@ public class StringUtil {
      * StringUtil.isAlphanumeric("ab-c") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicode×ÖÄ¸Êı×Ö×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeå­—æ¯æ•°å­—ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isAlphanumeric(String str) {
         if (str == null) {
@@ -733,10 +733,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicode×ÖÄ¸Êı×ÖºÍ¿Õ¸ñ<code>' '</code>¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeå­—æ¯æ•°å­—å’Œç©ºæ ¼<code>' '</code>ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isAlphanumericSpace(null)   = false
@@ -748,9 +748,9 @@ public class StringUtil {
      * StringUtil.isAlphanumericSpace("ab-c") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicode×ÖÄ¸Êı×ÖºÍ¿Õ¸ñ×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeå­—æ¯æ•°å­—å’Œç©ºæ ¼ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isAlphanumericSpace(String str) {
         if (str == null) {
@@ -769,10 +769,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicodeÊı×Ö¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeæ•°å­—ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isNumeric(null)   = false
@@ -785,9 +785,9 @@ public class StringUtil {
      * StringUtil.isNumeric("12.3") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicodeÊı×Ö×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeæ•°å­—ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isNumeric(String str) {
         if (str == null) {
@@ -806,10 +806,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicodeÊı×ÖºÍ¿Õ¸ñ<code>' '</code>¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeæ•°å­—å’Œç©ºæ ¼<code>' '</code>ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isNumericSpace(null)   = false
@@ -822,9 +822,9 @@ public class StringUtil {
      * StringUtil.isNumericSpace("12.3") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicodeÊı×ÖºÍ¿Õ¸ñ×é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeæ•°å­—å’Œç©ºæ ¼ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isNumericSpace(String str) {
         if (str == null) {
@@ -843,10 +843,10 @@ public class StringUtil {
     }
 
     /**
-     * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÖ»°üº¬unicode¿Õ°×¡£
+     * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦åªåŒ…å«unicodeç©ºç™½ã€‚
      * 
      * <p>
-     * <code>null</code>½«·µ»Ø<code>false</code>£¬¿Õ×Ö·û´®<code>""</code>½«·µ»Ø<code>true</code>¡£
+     * <code>null</code>å°†è¿”å›<code>false</code>ï¼Œç©ºå­—ç¬¦ä¸²<code>""</code>å°†è¿”å›<code>true</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.isWhitespace(null)   = false
@@ -857,9 +857,9 @@ public class StringUtil {
      * StringUtil.isWhitespace("ab-c") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û×Ö·û´®·Ç<code>null</code>²¢ÇÒÈ«ÓÉunicode¿Õ°××é³É£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœå­—ç¬¦ä¸²é<code>null</code>å¹¶ä¸”å…¨ç”±unicodeç©ºç™½ç»„æˆï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean isWhitespace(String str) {
         if (str == null) {
@@ -878,14 +878,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ´óĞ¡Ğ´×ª»»¡£                                                                */
+    /*  å¤§å°å†™è½¬æ¢ã€‚                                                                */
     /* ============================================================================ */
 
     /**
-     * ½«×Ö·û´®×ª»»³É´óĞ´¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆå¤§å†™ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toUpperCase(null)  = null
      * StringUtil.toUpperCase("")    = ""
@@ -893,9 +893,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ´óĞ´×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å¤§å†™å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toUpperCase(String str) {
         if (str == null) {
@@ -906,10 +906,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³ÉĞ¡Ğ´¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆå°å†™ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toLowerCase(null)  = null
      * StringUtil.toLowerCase("")    = ""
@@ -917,9 +917,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ´óĞ´×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å¤§å†™å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toLowerCase(String str) {
         if (str == null) {
@@ -930,10 +930,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®µÄÊ××Ö·û×ª³É´óĞ´£¨<code>Character.toTitleCase</code>£©£¬ÆäËü×Ö·û²»±ä¡£
+     * å°†å­—ç¬¦ä¸²çš„é¦–å­—ç¬¦è½¬æˆå¤§å†™ï¼ˆ<code>Character.toTitleCase</code>ï¼‰ï¼Œå…¶å®ƒå­—ç¬¦ä¸å˜ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.capitalize(null)  = null
      * StringUtil.capitalize("")    = ""
@@ -942,9 +942,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return Ê××Ö·ûÎª´óĞ´µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é¦–å­—ç¬¦ä¸ºå¤§å†™çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String capitalize(String str) {
         int strLen;
@@ -958,10 +958,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®µÄÊ××Ö·û×ª³ÉĞ¡Ğ´£¬ÆäËü×Ö·û²»±ä¡£
+     * å°†å­—ç¬¦ä¸²çš„é¦–å­—ç¬¦è½¬æˆå°å†™ï¼Œå…¶å®ƒå­—ç¬¦ä¸å˜ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.uncapitalize(null)  = null
      * StringUtil.uncapitalize("")    = ""
@@ -970,9 +970,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return Ê××Ö·ûÎªĞ¡Ğ´µÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é¦–å­—ç¬¦ä¸ºå°å†™çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String uncapitalize(String str) {
         int strLen;
@@ -986,10 +986,10 @@ public class StringUtil {
     }
 
     /**
-     * ·´×ª×Ö·û´®µÄ´óĞ¡Ğ´¡£
+     * åè½¬å­—ç¬¦ä¸²çš„å¤§å°å†™ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.swapCase(null)                 = null
      * StringUtil.swapCase("")                   = ""
@@ -997,9 +997,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ´óĞ¡Ğ´±»·´×ªµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å¤§å°å†™è¢«åè½¬çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String swapCase(String str) {
         int strLen;
@@ -1030,10 +1030,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³Écamel case¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆcamel caseã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toCamelCase(null)  = null
      * StringUtil.toCamelCase("")    = ""
@@ -1045,22 +1045,22 @@ public class StringUtil {
      * </p>
      * 
      * <p>
-     * ´Ë·½·¨»á±£Áô³ıÁËÏÂ»®ÏßºÍ¿Õ°×ÒÔÍâµÄËùÓĞ·Ö¸ô·û¡£
+     * æ­¤æ–¹æ³•ä¼šä¿ç•™é™¤äº†ä¸‹åˆ’çº¿å’Œç©ºç™½ä»¥å¤–çš„æ‰€æœ‰åˆ†éš”ç¬¦ã€‚
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return camel case×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return camel caseå­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toCamelCase(String str) {
         return CAMEL_CASE_TOKENIZER.parse(str);
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³Épascal case¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆpascal caseã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toPascalCase(null)  = null
      * StringUtil.toPascalCase("")    = ""
@@ -1072,22 +1072,22 @@ public class StringUtil {
      * </p>
      * 
      * <p>
-     * ´Ë·½·¨»á±£Áô³ıÁËÏÂ»®ÏßºÍ¿Õ°×ÒÔÍâµÄËùÓĞ·Ö¸ô·û¡£
+     * æ­¤æ–¹æ³•ä¼šä¿ç•™é™¤äº†ä¸‹åˆ’çº¿å’Œç©ºç™½ä»¥å¤–çš„æ‰€æœ‰åˆ†éš”ç¬¦ã€‚
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return pascal case×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return pascal caseå­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toPascalCase(String str) {
         return PASCAL_CASE_TOKENIZER.parse(str);
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³ÉÏÂ»®Ïß·Ö¸ôµÄ´óĞ´×Ö·û´®¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆä¸‹åˆ’çº¿åˆ†éš”çš„å¤§å†™å­—ç¬¦ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toUpperCaseWithUnderscores(null)  = null
      * StringUtil.toUpperCaseWithUnderscores("")    = ""
@@ -1100,22 +1100,22 @@ public class StringUtil {
      * </p>
      * 
      * <p>
-     * ´Ë·½·¨»á±£Áô³ıÁË¿Õ°×ÒÔÍâµÄËùÓĞ·Ö¸ô·û¡£
+     * æ­¤æ–¹æ³•ä¼šä¿ç•™é™¤äº†ç©ºç™½ä»¥å¤–çš„æ‰€æœ‰åˆ†éš”ç¬¦ã€‚
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ÏÂ»®Ïß·Ö¸ôµÄ´óĞ´×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return ä¸‹åˆ’çº¿åˆ†éš”çš„å¤§å†™å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toUpperCaseWithUnderscores(String str) {
         return UPPER_CASE_WITH_UNDERSCORES_TOKENIZER.parse(str);
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³ÉÏÂ»®Ïß·Ö¸ôµÄĞ¡Ğ´×Ö·û´®¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆä¸‹åˆ’çº¿åˆ†éš”çš„å°å†™å­—ç¬¦ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÊÇ<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²æ˜¯<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.toLowerCaseWithUnderscores(null)  = null
      * StringUtil.toLowerCaseWithUnderscores("")    = ""
@@ -1128,18 +1128,18 @@ public class StringUtil {
      * </p>
      * 
      * <p>
-     * ´Ë·½·¨»á±£Áô³ıÁË¿Õ°×ÒÔÍâµÄËùÓĞ·Ö¸ô·û¡£
+     * æ­¤æ–¹æ³•ä¼šä¿ç•™é™¤äº†ç©ºç™½ä»¥å¤–çš„æ‰€æœ‰åˆ†éš”ç¬¦ã€‚
      * </p>
      *
-     * @param str Òª×ª»»µÄ×Ö·û´®
+     * @param str è¦è½¬æ¢çš„å­—ç¬¦ä¸²
      *
-     * @return ÏÂ»®Ïß·Ö¸ôµÄĞ¡Ğ´×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return ä¸‹åˆ’çº¿åˆ†éš”çš„å°å†™å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String toLowerCaseWithUnderscores(String str) {
         return LOWER_CASE_WITH_UNDERSCORES_TOKENIZER.parse(str);
     }
 
-    /** ½âÎöµ¥´ÊµÄ½âÎöÆ÷¡£ */
+    /** è§£æå•è¯çš„è§£æå™¨ã€‚ */
     private static final WordTokenizer CAMEL_CASE_TOKENIZER                  = new WordTokenizer() {
                                                                                  protected void startSentence(StringBuffer buffer, char ch) {
                                                                                      buffer.append(Character.toLowerCase(ch));
@@ -1289,7 +1289,7 @@ public class StringUtil {
                                                                              };
 
     /**
-     * ½âÎö³öÏÂÁĞÓï·¨Ëù¹¹³ÉµÄ<code>SENTENCE</code>¡£
+     * è§£æå‡ºä¸‹åˆ—è¯­æ³•æ‰€æ„æˆçš„<code>SENTENCE</code>ã€‚
      * <pre>
      *  SENTENCE = WORD (DELIMITER* WORD)*
      * 
@@ -1312,7 +1312,7 @@ public class StringUtil {
         protected static final char UNDERSCORE = '_';
 
         /**
-         * Parse sentence¡£
+         * Parse sentenceã€‚
          */
         public String parse(String str) {
             if (StringUtil.isEmpty(str)) {
@@ -1325,12 +1325,12 @@ public class StringUtil {
             for (int index = 0; index < length; index++) {
                 char ch = str.charAt(index);
 
-                // ºöÂÔ¿Õ°×¡£
+                // å¿½ç•¥ç©ºç™½ã€‚
                 if (Character.isWhitespace(ch)) {
                     continue;
                 }
 
-                // ´óĞ´×ÖÄ¸¿ªÊ¼£ºUpperCaseWord»òÊÇTitleCaseWord¡£
+                // å¤§å†™å­—æ¯å¼€å§‹ï¼šUpperCaseWordæˆ–æ˜¯TitleCaseWordã€‚
                 if (Character.isUpperCase(ch)) {
                     int wordIndex = index + 1;
 
@@ -1347,9 +1347,9 @@ public class StringUtil {
                         }
                     }
 
-                    // 1. wordIndex == length£¬ËµÃ÷×îºóÒ»¸ö×ÖÄ¸Îª´óĞ´£¬ÒÔupperCaseWord´¦ÀíÖ®¡£
-                    // 2. wordIndex == index£¬ËµÃ÷index´¦ÎªÒ»¸ötitleCaseWord¡£
-                    // 3. wordIndex > index£¬ËµÃ÷indexµ½wordIndex - 1´¦È«²¿ÊÇ´óĞ´£¬ÒÔupperCaseWord´¦Àí¡£
+                    // 1. wordIndex == lengthï¼Œè¯´æ˜æœ€åä¸€ä¸ªå­—æ¯ä¸ºå¤§å†™ï¼Œä»¥upperCaseWordå¤„ç†ä¹‹ã€‚
+                    // 2. wordIndex == indexï¼Œè¯´æ˜indexå¤„ä¸ºä¸€ä¸ªtitleCaseWordã€‚
+                    // 3. wordIndex > indexï¼Œè¯´æ˜indexåˆ°wordIndex - 1å¤„å…¨éƒ¨æ˜¯å¤§å†™ï¼Œä»¥upperCaseWordå¤„ç†ã€‚
                     if ((wordIndex == length) || (wordIndex > index)) {
                         index = parseUpperCaseWord(buffer, str, index, wordIndex);
                     } else {
@@ -1359,19 +1359,19 @@ public class StringUtil {
                     continue;
                 }
 
-                // Ğ¡Ğ´×ÖÄ¸¿ªÊ¼£ºLowerCaseWord¡£
+                // å°å†™å­—æ¯å¼€å§‹ï¼šLowerCaseWordã€‚
                 if (Character.isLowerCase(ch)) {
                     index = parseLowerCaseWord(buffer, str, index);
                     continue;
                 }
 
-                // Êı×Ö¿ªÊ¼£ºDigitWord¡£
+                // æ•°å­—å¼€å§‹ï¼šDigitWordã€‚
                 if (Character.isDigit(ch)) {
                     index = parseDigitWord(buffer, str, index);
                     continue;
                 }
 
-                // ·Ç×ÖÄ¸Êı×Ö¿ªÊ¼£ºDelimiter¡£ 
+                // éå­—æ¯æ•°å­—å¼€å§‹ï¼šDelimiterã€‚ 
                 inDelimiter(buffer, ch);
             }
 
@@ -1381,14 +1381,14 @@ public class StringUtil {
         private int parseUpperCaseWord(StringBuffer buffer, String str, int index, int length) {
             char ch = str.charAt(index++);
 
-            // Ê××ÖÄ¸£¬±ØÈ»´æÔÚÇÒÎª´óĞ´¡£
+            // é¦–å­—æ¯ï¼Œå¿…ç„¶å­˜åœ¨ä¸”ä¸ºå¤§å†™ã€‚
             if (buffer.length() == 0) {
                 startSentence(buffer, ch);
             } else {
                 startWord(buffer, ch);
             }
 
-            // ºóĞø×ÖÄ¸£¬±ØÎªĞ¡Ğ´¡£
+            // åç»­å­—æ¯ï¼Œå¿…ä¸ºå°å†™ã€‚
             for (; index < length; index++) {
                 ch = str.charAt(index);
                 inWord(buffer, ch);
@@ -1400,14 +1400,14 @@ public class StringUtil {
         private int parseLowerCaseWord(StringBuffer buffer, String str, int index) {
             char ch = str.charAt(index++);
 
-            // Ê××ÖÄ¸£¬±ØÈ»´æÔÚÇÒÎªĞ¡Ğ´¡£
+            // é¦–å­—æ¯ï¼Œå¿…ç„¶å­˜åœ¨ä¸”ä¸ºå°å†™ã€‚
             if (buffer.length() == 0) {
                 startSentence(buffer, ch);
             } else {
                 startWord(buffer, ch);
             }
 
-            // ºóĞø×ÖÄ¸£¬±ØÎªĞ¡Ğ´¡£
+            // åç»­å­—æ¯ï¼Œå¿…ä¸ºå°å†™ã€‚
             int length = str.length();
 
             for (; index < length; index++) {
@@ -1426,14 +1426,14 @@ public class StringUtil {
         private int parseTitleCaseWord(StringBuffer buffer, String str, int index) {
             char ch = str.charAt(index++);
 
-            // Ê××ÖÄ¸£¬±ØÈ»´æÔÚÇÒÎª´óĞ´¡£
+            // é¦–å­—æ¯ï¼Œå¿…ç„¶å­˜åœ¨ä¸”ä¸ºå¤§å†™ã€‚
             if (buffer.length() == 0) {
                 startSentence(buffer, ch);
             } else {
                 startWord(buffer, ch);
             }
 
-            // ºóĞø×ÖÄ¸£¬±ØÎªĞ¡Ğ´¡£
+            // åç»­å­—æ¯ï¼Œå¿…ä¸ºå°å†™ã€‚
             int length = str.length();
 
             for (; index < length; index++) {
@@ -1452,14 +1452,14 @@ public class StringUtil {
         private int parseDigitWord(StringBuffer buffer, String str, int index) {
             char ch = str.charAt(index++);
 
-            // Ê××Ö·û£¬±ØÈ»´æÔÚÇÒÎªÊı×Ö¡£
+            // é¦–å­—ç¬¦ï¼Œå¿…ç„¶å­˜åœ¨ä¸”ä¸ºæ•°å­—ã€‚
             if (buffer.length() == 0) {
                 startDigitSentence(buffer, ch);
             } else {
                 startDigitWord(buffer, ch);
             }
 
-            // ºóĞø×Ö·û£¬±ØÎªÊı×Ö¡£
+            // åç»­å­—ç¬¦ï¼Œå¿…ä¸ºæ•°å­—ã€‚
             int length = str.length();
 
             for (; index < length; index++) {
@@ -1496,16 +1496,16 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ×Ö·û´®·Ö¸îº¯Êı¡£                                                            */
+    /*  å­—ç¬¦ä¸²åˆ†å‰²å‡½æ•°ã€‚                                                            */
     /*                                                                              */
-    /*  ½«×Ö·û´®°´Ö¸¶¨·Ö¸ô·û·Ö¸î¡£                                                  */
+    /*  å°†å­—ç¬¦ä¸²æŒ‰æŒ‡å®šåˆ†éš”ç¬¦åˆ†å‰²ã€‚                                                  */
     /* ============================================================================ */
 
     /**
-     * ½«×Ö·û´®°´¿Õ°××Ö·û·Ö¸î¡£
+     * å°†å­—ç¬¦ä¸²æŒ‰ç©ºç™½å­—ç¬¦åˆ†å‰²ã€‚
      * 
      * <p>
-     * ·Ö¸ô·û²»»á³öÏÖÔÚÄ¿±êÊı×éÖĞ£¬Á¬ĞøµÄ·Ö¸ô·û¾Í±»¿´×÷Ò»¸ö¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * åˆ†éš”ç¬¦ä¸ä¼šå‡ºç°åœ¨ç›®æ ‡æ•°ç»„ä¸­ï¼Œè¿ç»­çš„åˆ†éš”ç¬¦å°±è¢«çœ‹ä½œä¸€ä¸ªã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.split(null)       = null
      * StringUtil.split("")         = []
@@ -1515,19 +1515,19 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª·Ö¸îµÄ×Ö·û´®
+     * @param str è¦åˆ†å‰²çš„å­—ç¬¦ä¸²
      *
-     * @return ·Ö¸îºóµÄ×Ö·û´®Êı×é£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åˆ†å‰²åçš„å­—ç¬¦ä¸²æ•°ç»„ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String[] split(String str) {
         return split(str, null, -1);
     }
 
     /**
-     * ½«×Ö·û´®°´Ö¸¶¨×Ö·û·Ö¸î¡£
+     * å°†å­—ç¬¦ä¸²æŒ‰æŒ‡å®šå­—ç¬¦åˆ†å‰²ã€‚
      * 
      * <p>
-     * ·Ö¸ô·û²»»á³öÏÖÔÚÄ¿±êÊı×éÖĞ£¬Á¬ĞøµÄ·Ö¸ô·û¾Í±»¿´×÷Ò»¸ö¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * åˆ†éš”ç¬¦ä¸ä¼šå‡ºç°åœ¨ç›®æ ‡æ•°ç»„ä¸­ï¼Œè¿ç»­çš„åˆ†éš”ç¬¦å°±è¢«çœ‹ä½œä¸€ä¸ªã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.split(null, *)         = null
      * StringUtil.split("", *)           = []
@@ -1538,10 +1538,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª·Ö¸îµÄ×Ö·û´®
-     * @param separatorChar ·Ö¸ô·û
+     * @param str è¦åˆ†å‰²çš„å­—ç¬¦ä¸²
+     * @param separatorChar åˆ†éš”ç¬¦
      *
-     * @return ·Ö¸îºóµÄ×Ö·û´®Êı×é£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åˆ†å‰²åçš„å­—ç¬¦ä¸²æ•°ç»„ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String[] split(String str, char separatorChar) {
         if (str == null) {
@@ -1582,10 +1582,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®°´Ö¸¶¨×Ö·û·Ö¸î¡£
+     * å°†å­—ç¬¦ä¸²æŒ‰æŒ‡å®šå­—ç¬¦åˆ†å‰²ã€‚
      * 
      * <p>
-     * ·Ö¸ô·û²»»á³öÏÖÔÚÄ¿±êÊı×éÖĞ£¬Á¬ĞøµÄ·Ö¸ô·û¾Í±»¿´×÷Ò»¸ö¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * åˆ†éš”ç¬¦ä¸ä¼šå‡ºç°åœ¨ç›®æ ‡æ•°ç»„ä¸­ï¼Œè¿ç»­çš„åˆ†éš”ç¬¦å°±è¢«çœ‹ä½œä¸€ä¸ªã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.split(null, *)                = null
      * StringUtil.split("", *)                  = []
@@ -1597,20 +1597,20 @@ public class StringUtil {
      *  </pre>
      * </p>
      *
-     * @param str Òª·Ö¸îµÄ×Ö·û´®
-     * @param separatorChars ·Ö¸ô·û
+     * @param str è¦åˆ†å‰²çš„å­—ç¬¦ä¸²
+     * @param separatorChars åˆ†éš”ç¬¦
      *
-     * @return ·Ö¸îºóµÄ×Ö·û´®Êı×é£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åˆ†å‰²åçš„å­—ç¬¦ä¸²æ•°ç»„ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String[] split(String str, String separatorChars) {
         return split(str, separatorChars, -1);
     }
 
     /**
-     * ½«×Ö·û´®°´Ö¸¶¨×Ö·û·Ö¸î¡£
+     * å°†å­—ç¬¦ä¸²æŒ‰æŒ‡å®šå­—ç¬¦åˆ†å‰²ã€‚
      * 
      * <p>
-     * ·Ö¸ô·û²»»á³öÏÖÔÚÄ¿±êÊı×éÖĞ£¬Á¬ĞøµÄ·Ö¸ô·û¾Í±»¿´×÷Ò»¸ö¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * åˆ†éš”ç¬¦ä¸ä¼šå‡ºç°åœ¨ç›®æ ‡æ•°ç»„ä¸­ï¼Œè¿ç»­çš„åˆ†éš”ç¬¦å°±è¢«çœ‹ä½œä¸€ä¸ªã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.split(null, *, *)                 = null
      * StringUtil.split("", *, *)                   = []
@@ -1622,11 +1622,11 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª·Ö¸îµÄ×Ö·û´®
-     * @param separatorChars ·Ö¸ô·û
-     * @param max ·µ»ØµÄÊı×éµÄ×î´ó¸öÊı£¬Èç¹ûĞ¡ÓÚµÈÓÚ0£¬Ôò±íÊ¾ÎŞÏŞÖÆ
+     * @param str è¦åˆ†å‰²çš„å­—ç¬¦ä¸²
+     * @param separatorChars åˆ†éš”ç¬¦
+     * @param max è¿”å›çš„æ•°ç»„çš„æœ€å¤§ä¸ªæ•°ï¼Œå¦‚æœå°äºç­‰äº0ï¼Œåˆ™è¡¨ç¤ºæ— é™åˆ¶
      *
-     * @return ·Ö¸îºóµÄ×Ö·û´®Êı×é£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åˆ†å‰²åçš„å­—ç¬¦ä¸²æ•°ç»„ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String[] split(String str, String separatorChars, int max) {
         if (str == null) {
@@ -1646,7 +1646,7 @@ public class StringUtil {
         boolean match = false;
 
         if (separatorChars == null) {
-            // null±íÊ¾Ê¹ÓÃ¿Õ°××÷Îª·Ö¸ô·û
+            // nullè¡¨ç¤ºä½¿ç”¨ç©ºç™½ä½œä¸ºåˆ†éš”ç¬¦
             while (i < length) {
                 if (Character.isWhitespace(str.charAt(i))) {
                     if (match) {
@@ -1666,7 +1666,7 @@ public class StringUtil {
                 i++;
             }
         } else if (separatorChars.length() == 1) {
-            // ÓÅ»¯·Ö¸ô·û³¤¶ÈÎª1µÄÇéĞÎ
+            // ä¼˜åŒ–åˆ†éš”ç¬¦é•¿åº¦ä¸º1çš„æƒ…å½¢
             char sep = separatorChars.charAt(0);
 
             while (i < length) {
@@ -1688,7 +1688,7 @@ public class StringUtil {
                 i++;
             }
         } else {
-            // Ò»°ãÇéĞÎ
+            // ä¸€èˆ¬æƒ…å½¢
             while (i < length) {
                 if (separatorChars.indexOf(str.charAt(i)) >= 0) {
                     if (match) {
@@ -1717,13 +1717,13 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ×Ö·û´®Á¬½Óº¯Êı¡£                                                            */
+    /*  å­—ç¬¦ä¸²è¿æ¥å‡½æ•°ã€‚                                                            */
     /*                                                                              */
-    /*  ½«¶à¸ö¶ÔÏó°´Ö¸¶¨·Ö¸ô·ûÁ¬½Ó³É×Ö·û´®¡£                                        */
+    /*  å°†å¤šä¸ªå¯¹è±¡æŒ‰æŒ‡å®šåˆ†éš”ç¬¦è¿æ¥æˆå­—ç¬¦ä¸²ã€‚                                        */
     /* ============================================================================ */
 
     /**
-     * ½«Êı×éÖĞµÄÔªËØÁ¬½Ó³ÉÒ»¸ö×Ö·û´®¡£
+     * å°†æ•°ç»„ä¸­çš„å…ƒç´ è¿æ¥æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.join(null)            = null
      * StringUtil.join([])              = ""
@@ -1732,16 +1732,16 @@ public class StringUtil {
      * StringUtil.join([null, "", "a"]) = "a"
      * </pre>
      *
-     * @param array ÒªÁ¬½ÓµÄÊı×é
+     * @param array è¦è¿æ¥çš„æ•°ç»„
      *
-     * @return Á¬½ÓºóµÄ×Ö·û´®£¬Èç¹ûÔ­Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¿æ¥åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String join(Object[] array) {
         return join(array, null);
     }
 
     /**
-     * ½«Êı×éÖĞµÄÔªËØÁ¬½Ó³ÉÒ»¸ö×Ö·û´®¡£
+     * å°†æ•°ç»„ä¸­çš„å…ƒç´ è¿æ¥æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.join(null, *)               = null
      * StringUtil.join([], *)                 = ""
@@ -1751,10 +1751,10 @@ public class StringUtil {
      * StringUtil.join([null, "", "a"], ';')  = ";;a"
      * </pre>
      *
-     * @param array ÒªÁ¬½ÓµÄÊı×é
-     * @param separator ·Ö¸ô·û
+     * @param array è¦è¿æ¥çš„æ•°ç»„
+     * @param separator åˆ†éš”ç¬¦
      *
-     * @return Á¬½ÓºóµÄ×Ö·û´®£¬Èç¹ûÔ­Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¿æ¥åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String join(Object[] array, char separator) {
         if (array == null) {
@@ -1781,7 +1781,7 @@ public class StringUtil {
     }
 
     /**
-     * ½«Êı×éÖĞµÄÔªËØÁ¬½Ó³ÉÒ»¸ö×Ö·û´®¡£
+     * å°†æ•°ç»„ä¸­çš„å…ƒç´ è¿æ¥æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.join(null, *)                = null
      * StringUtil.join([], *)                  = ""
@@ -1792,10 +1792,10 @@ public class StringUtil {
      * StringUtil.join([null, "", "a"], ',')   = ",,a"
      * </pre>
      *
-     * @param array ÒªÁ¬½ÓµÄÊı×é
-     * @param separator ·Ö¸ô·û
+     * @param array è¦è¿æ¥çš„æ•°ç»„
+     * @param separator åˆ†éš”ç¬¦
      *
-     * @return Á¬½ÓºóµÄ×Ö·û´®£¬Èç¹ûÔ­Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¿æ¥åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String join(Object[] array, String separator) {
         if (array == null) {
@@ -1810,7 +1810,7 @@ public class StringUtil {
 
         // ArraySize ==  0: Len = 0
         // ArraySize > 0:   Len = NofStrings *(len(firstString) + len(separator))
-        //           (¹À¼Æ´óÔ¼ËùÓĞµÄ×Ö·û´®¶¼Ò»Ñù³¤)
+        //           (ä¼°è®¡å¤§çº¦æ‰€æœ‰çš„å­—ç¬¦ä¸²éƒ½ä¸€æ ·é•¿)
         int bufSize = (arraySize == 0) ? 0
             : (arraySize * (((array[0] == null) ? 16
                 : array[0].toString()
@@ -1834,7 +1834,7 @@ public class StringUtil {
     }
 
     /**
-     * ½«<code>Iterator</code>ÖĞµÄÔªËØÁ¬½Ó³ÉÒ»¸ö×Ö·û´®¡£
+     * å°†<code>Iterator</code>ä¸­çš„å…ƒç´ è¿æ¥æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.join(null, *)                = null
      * StringUtil.join([], *)                  = ""
@@ -1845,17 +1845,17 @@ public class StringUtil {
      * StringUtil.join([null, "", "a"], ',')   = ",,a"
      * </pre>
      *
-     * @param iterator ÒªÁ¬½ÓµÄ<code>Iterator</code>
-     * @param separator ·Ö¸ô·û
+     * @param iterator è¦è¿æ¥çš„<code>Iterator</code>
+     * @param separator åˆ†éš”ç¬¦
      *
-     * @return Á¬½ÓºóµÄ×Ö·û´®£¬Èç¹ûÔ­Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¿æ¥åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String join(Iterator<Object> iterator, char separator) {
         if (iterator == null) {
             return null;
         }
 
-        StringBuffer buf = new StringBuffer(256); // JavaÄ¬ÈÏÖµÊÇ16, ¿ÉÄÜÆ«Ğ¡
+        StringBuffer buf = new StringBuffer(256); // Javaé»˜è®¤å€¼æ˜¯16, å¯èƒ½åå°
 
         while (iterator.hasNext()) {
             Object obj = iterator.next();
@@ -1873,7 +1873,7 @@ public class StringUtil {
     }
 
     /**
-     * ½«<code>Iterator</code>ÖĞµÄÔªËØÁ¬½Ó³ÉÒ»¸ö×Ö·û´®¡£
+     * å°†<code>Iterator</code>ä¸­çš„å…ƒç´ è¿æ¥æˆä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.join(null, *)                = null
      * StringUtil.join([], *)                  = ""
@@ -1884,17 +1884,17 @@ public class StringUtil {
      * StringUtil.join([null, "", "a"], ',')   = ",,a"
      * </pre>
      *
-     * @param iterator ÒªÁ¬½ÓµÄ<code>Iterator</code>
-     * @param separator ·Ö¸ô·û
+     * @param iterator è¦è¿æ¥çš„<code>Iterator</code>
+     * @param separator åˆ†éš”ç¬¦
      *
-     * @return Á¬½ÓºóµÄ×Ö·û´®£¬Èç¹ûÔ­Êı×éÎª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¿æ¥åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸæ•°ç»„ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String join(Iterator<Object> iterator, String separator) {
         if (iterator == null) {
             return null;
         }
 
-        StringBuffer buf = new StringBuffer(256); // JavaÄ¬ÈÏÖµÊÇ16, ¿ÉÄÜÆ«Ğ¡
+        StringBuffer buf = new StringBuffer(256); // Javaé»˜è®¤å€¼æ˜¯16, å¯èƒ½åå°
 
         while (iterator.hasNext()) {
             Object obj = iterator.next();
@@ -1912,13 +1912,13 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ×Ö·û´®²éÕÒº¯Êı ¡ª¡ª ×Ö·û»ò×Ö·û´®¡£                                          */
+    /*  å­—ç¬¦ä¸²æŸ¥æ‰¾å‡½æ•° â€”â€” å­—ç¬¦æˆ–å­—ç¬¦ä¸²ã€‚                                          */
     /*                                                                              */
-    /*  ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û»ò×Ö·û´®¡£                                            */
+    /*  åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦æˆ–å­—ç¬¦ä¸²ã€‚                                            */
     /* ============================================================================ */
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOf(null, *)         = -1
      * StringUtil.indexOf("", *)           = -1
@@ -1926,10 +1926,10 @@ public class StringUtil {
      * StringUtil.indexOf("aabaabaa", 'b') = 2
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar Òª²éÕÒµÄ×Ö·û
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æŸ¥æ‰¾çš„å­—ç¬¦
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOf(String str, char searchChar) {
         if ((str == null) || (str.length() == 0)) {
@@ -1940,7 +1940,7 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOf(null, *, *)          = -1
      * StringUtil.indexOf("", *, *)            = -1
@@ -1950,11 +1950,11 @@ public class StringUtil {
      * StringUtil.indexOf("aabaabaa", 'b', -1) = 2
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar Òª²éÕÒµÄ×Ö·û
-     * @param startPos ¿ªÊ¼ËÑË÷µÄË÷ÒıÖµ£¬Èç¹ûĞ¡ÓÚ0£¬Ôò¿´×÷0
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æŸ¥æ‰¾çš„å­—ç¬¦
+     * @param startPos å¼€å§‹æœç´¢çš„ç´¢å¼•å€¼ï¼Œå¦‚æœå°äº0ï¼Œåˆ™çœ‹ä½œ0
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOf(String str, char searchChar, int startPos) {
         if ((str == null) || (str.length() == 0)) {
@@ -1965,7 +1965,7 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOf(null, *)          = -1
      * StringUtil.indexOf(*, null)          = -1
@@ -1976,10 +1976,10 @@ public class StringUtil {
      * StringUtil.indexOf("aabaabaa", "")   = 0
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStr Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStr è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOf(String str, String searchStr) {
         if ((str == null) || (searchStr == null)) {
@@ -1990,7 +1990,7 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOf(null, *, *)          = -1
      * StringUtil.indexOf(*, null, *)          = -1
@@ -2005,18 +2005,18 @@ public class StringUtil {
      * StringUtil.indexOf("abc", "", 9)        = 3
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStr Òª²éÕÒµÄ×Ö·û´®
-     * @param startPos ¿ªÊ¼ËÑË÷µÄË÷ÒıÖµ£¬Èç¹ûĞ¡ÓÚ0£¬Ôò¿´×÷0
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStr è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
+     * @param startPos å¼€å§‹æœç´¢çš„ç´¢å¼•å€¼ï¼Œå¦‚æœå°äº0ï¼Œåˆ™çœ‹ä½œ0
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOf(String str, String searchStr, int startPos) {
         if ((str == null) || (searchStr == null)) {
             return -1;
         }
 
-        // JDK1.3¼°ÒÔÏÂ°æ±¾µÄbug£º²»ÄÜÕıÈ·´¦ÀíÏÂÃæµÄÇé¿ö
+        // JDK1.3åŠä»¥ä¸‹ç‰ˆæœ¬çš„bugï¼šä¸èƒ½æ­£ç¡®å¤„ç†ä¸‹é¢çš„æƒ…å†µ
         if ((searchStr.length() == 0) && (startPos >= str.length())) {
             return str.length();
         }
@@ -2025,8 +2025,8 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOfAny(null, *)                = -1
      * StringUtil.indexOfAny("", *)                  = -1
@@ -2037,10 +2037,10 @@ public class StringUtil {
      * StringUtil.indexOfAny("aba", ['z'])           = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChars ÒªËÑË÷µÄ×Ö·û¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChars è¦æœç´¢çš„å­—ç¬¦é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfAny(String str, char[] searchChars) {
         if ((str == null) || (str.length() == 0) || (searchChars == null)
@@ -2062,8 +2062,8 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOfAny(null, *)            = -1
      * StringUtil.indexOfAny("", *)              = -1
@@ -2074,10 +2074,10 @@ public class StringUtil {
      * StringUtil.indexOfAny("aba","z")          = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChars ÒªËÑË÷µÄ×Ö·û¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChars è¦æœç´¢çš„å­—ç¬¦é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfAny(String str, String searchChars) {
         if ((str == null) || (str.length() == 0) || (searchChars == null)
@@ -2099,9 +2099,9 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒÖ¸¶¨×Ö·û´®¼¯ºÏÖĞµÄ×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û´®¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û´®¼¯ºÏ°üÀ¨<code>""</code>£¬²¢ÇÒ×Ö·û´®²»Îª<code>null</code>£¬Ôò·µ»Ø<code>str.length()</code>
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²é›†åˆä¸­çš„å­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦ä¸²é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦ä¸²é›†åˆåŒ…æ‹¬<code>""</code>ï¼Œå¹¶ä¸”å­—ç¬¦ä¸²ä¸ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>str.length()</code>
      * <pre>
      * StringUtil.indexOfAny(null, *)                     = -1
      * StringUtil.indexOfAny(*, null)                     = -1
@@ -2115,10 +2115,10 @@ public class StringUtil {
      * StringUtil.indexOfAny("", ["a"])                   = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStrs ÒªËÑË÷µÄ×Ö·û´®¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStrs è¦æœç´¢çš„å­—ç¬¦ä¸²é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfAny(String str, String[] searchStrs) {
         if ((str == null) || (searchStrs == null)) {
@@ -2155,8 +2155,8 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒ²»ÔÚÖ¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾ä¸åœ¨æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOfAnyBut(null, *)             = -1
      * StringUtil.indexOfAnyBut("", *)               = -1
@@ -2167,10 +2167,10 @@ public class StringUtil {
      * StringUtil.indexOfAnyBut("aba", 'ab')         = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChars ÒªËÑË÷µÄ×Ö·û¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChars è¦æœç´¢çš„å­—ç¬¦é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfAnyBut(String str, char[] searchChars) {
         if ((str == null) || (str.length() == 0) || (searchChars == null)
@@ -2194,8 +2194,8 @@ public class StringUtil {
     }
 
     /**
-     * ÔÚ×Ö·û´®ÖĞ²éÕÒ²»ÔÚÖ¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
+     * åœ¨å­—ç¬¦ä¸²ä¸­æŸ¥æ‰¾ä¸åœ¨æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.indexOfAnyBut(null, *)            = -1
      * StringUtil.indexOfAnyBut("", *)              = -1
@@ -2206,10 +2206,10 @@ public class StringUtil {
      * StringUtil.indexOfAnyBut("aba","ab")         = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChars ÒªËÑË÷µÄ×Ö·û¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChars è¦æœç´¢çš„å­—ç¬¦é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfAnyBut(String str, String searchChars) {
         if ((str == null) || (str.length() == 0) || (searchChars == null)
@@ -2227,7 +2227,7 @@ public class StringUtil {
     }
 
     /**
-     * ´Ó×Ö·û´®Î²²¿¿ªÊ¼²éÕÒÖ¸¶¨×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * ä»å­—ç¬¦ä¸²å°¾éƒ¨å¼€å§‹æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.lastIndexOf(null, *)         = -1
      * StringUtil.lastIndexOf("", *)           = -1
@@ -2235,10 +2235,10 @@ public class StringUtil {
      * StringUtil.lastIndexOf("aabaabaa", 'b') = 5
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar Òª²éÕÒµÄ×Ö·û
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æŸ¥æ‰¾çš„å­—ç¬¦
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int lastIndexOf(String str, char searchChar) {
         if ((str == null) || (str.length() == 0)) {
@@ -2249,7 +2249,7 @@ public class StringUtil {
     }
 
     /**
-     * ´Ó×Ö·û´®Î²²¿¿ªÊ¼²éÕÒÖ¸¶¨×Ö·û£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * ä»å­—ç¬¦ä¸²å°¾éƒ¨å¼€å§‹æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.lastIndexOf(null, *, *)          = -1
      * StringUtil.lastIndexOf("", *,  *)           = -1
@@ -2261,11 +2261,11 @@ public class StringUtil {
      * StringUtil.lastIndexOf("aabaabaa", 'a', 0)  = 0
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar Òª²éÕÒµÄ×Ö·û
-     * @param startPos ´ÓÖ¸¶¨Ë÷Òı¿ªÊ¼ÏòÇ°ËÑË÷
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æŸ¥æ‰¾çš„å­—ç¬¦
+     * @param startPos ä»æŒ‡å®šç´¢å¼•å¼€å§‹å‘å‰æœç´¢
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int lastIndexOf(String str, char searchChar, int startPos) {
         if ((str == null) || (str.length() == 0)) {
@@ -2276,7 +2276,7 @@ public class StringUtil {
     }
 
     /**
-     * ´Ó×Ö·û´®Î²²¿¿ªÊ¼²éÕÒÖ¸¶¨×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * ä»å­—ç¬¦ä¸²å°¾éƒ¨å¼€å§‹æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.lastIndexOf(null, *)         = -1
      * StringUtil.lastIndexOf("", *)           = -1
@@ -2284,10 +2284,10 @@ public class StringUtil {
      * StringUtil.lastIndexOf("aabaabaa", 'b') = 5
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStr Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStr è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int lastIndexOf(String str, String searchStr) {
         if ((str == null) || (searchStr == null)) {
@@ -2298,7 +2298,7 @@ public class StringUtil {
     }
 
     /**
-     * ´Ó×Ö·û´®Î²²¿¿ªÊ¼²éÕÒÖ¸¶¨×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>¡£
+     * ä»å­—ç¬¦ä¸²å°¾éƒ¨å¼€å§‹æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
      * <pre>
      * StringUtil.lastIndexOf(null, *, *)          = -1
      * StringUtil.lastIndexOf(*, null, *)          = -1
@@ -2311,11 +2311,11 @@ public class StringUtil {
      * StringUtil.lastIndexOf("aabaabaa", "b", 0)  = -1
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStr Òª²éÕÒµÄ×Ö·û´®
-     * @param startPos ´ÓÖ¸¶¨Ë÷Òı¿ªÊ¼ÏòÇ°ËÑË÷
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStr è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
+     * @param startPos ä»æŒ‡å®šç´¢å¼•å¼€å§‹å‘å‰æœç´¢
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int lastIndexOf(String str, String searchStr, int startPos) {
         if ((str == null) || (searchStr == null)) {
@@ -2326,9 +2326,9 @@ public class StringUtil {
     }
 
     /**
-     * ´Ó×Ö·û´®Î²²¿¿ªÊ¼²éÕÒÖ¸¶¨×Ö·û´®¼¯ºÏÖĞµÄ×Ö·û´®£¬²¢·µ»ØµÚÒ»¸öÆ¥ÅäµÄÆğÊ¼Ë÷Òı¡£ Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û´®¼¯ºÏÎª<code>null</code>»ò¿Õ£¬Ò²·µ»Ø<code>-1</code>¡£
-     * Èç¹û×Ö·û´®¼¯ºÏ°üÀ¨<code>""</code>£¬²¢ÇÒ×Ö·û´®²»Îª<code>null</code>£¬Ôò·µ»Ø<code>str.length()</code>
+     * ä»å­—ç¬¦ä¸²å°¾éƒ¨å¼€å§‹æŸ¥æ‰¾æŒ‡å®šå­—ç¬¦ä¸²é›†åˆä¸­çš„å­—ç¬¦ä¸²ï¼Œå¹¶è¿”å›ç¬¬ä¸€ä¸ªåŒ¹é…çš„èµ·å§‹ç´¢å¼•ã€‚ å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦ä¸²é›†åˆä¸º<code>null</code>æˆ–ç©ºï¼Œä¹Ÿè¿”å›<code>-1</code>ã€‚
+     * å¦‚æœå­—ç¬¦ä¸²é›†åˆåŒ…æ‹¬<code>""</code>ï¼Œå¹¶ä¸”å­—ç¬¦ä¸²ä¸ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>str.length()</code>
      * <pre>
      * StringUtil.lastIndexOfAny(null, *)                   = -1
      * StringUtil.lastIndexOfAny(*, null)                   = -1
@@ -2341,10 +2341,10 @@ public class StringUtil {
      * StringUtil.lastIndexOfAny("zzabyycdxx", ["mn",""])   = 10
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStrs ÒªËÑË÷µÄ×Ö·û´®¼¯ºÏ
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStrs è¦æœç´¢çš„å­—ç¬¦ä¸²é›†åˆ
      *
-     * @return µÚÒ»¸öÆ¥ÅäµÄË÷ÒıÖµ¡£Èç¹û×Ö·û´®Îª<code>null</code>»òÎ´ÕÒµ½£¬Ôò·µ»Ø<code>-1</code>
+     * @return ç¬¬ä¸€ä¸ªåŒ¹é…çš„ç´¢å¼•å€¼ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int lastIndexOfAny(String str, String[] searchStrs) {
         if ((str == null) || (searchStrs == null)) {
@@ -2373,7 +2373,7 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÖĞÊÇ·ñ°üº¬Ö¸¶¨µÄ×Ö·û¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬½«·µ»Ø<code>false</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²ä¸­æ˜¯å¦åŒ…å«æŒ‡å®šçš„å­—ç¬¦ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œå°†è¿”å›<code>false</code>ã€‚
      * <pre>
      * StringUtil.contains(null, *)    = false
      * StringUtil.contains("", *)      = false
@@ -2381,10 +2381,10 @@ public class StringUtil {
      * StringUtil.contains("abc", 'z') = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar Òª²éÕÒµÄ×Ö·û
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æŸ¥æ‰¾çš„å­—ç¬¦
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(String str, char searchChar) {
         if ((str == null) || (str.length() == 0)) {
@@ -2395,7 +2395,7 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÖĞÊÇ·ñ°üº¬Ö¸¶¨µÄ×Ö·û´®¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬½«·µ»Ø<code>false</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²ä¸­æ˜¯å¦åŒ…å«æŒ‡å®šçš„å­—ç¬¦ä¸²ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œå°†è¿”å›<code>false</code>ã€‚
      * <pre>
      * StringUtil.contains(null, *)     = false
      * StringUtil.contains(*, null)     = false
@@ -2405,10 +2405,10 @@ public class StringUtil {
      * StringUtil.contains("abc", "z")  = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchStr Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchStr è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean contains(String str, String searchStr) {
         if ((str == null) || (searchStr == null)) {
@@ -2419,11 +2419,11 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇÊÇ·ñÖ»°üº¬Ö¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯æ˜¯å¦åªåŒ…å«æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>false</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£ µ«ÊÇ¿Õ×Ö·û´®ÓÀÔ¶·µ»Ø<code>true</code>.
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>false</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚ ä½†æ˜¯ç©ºå­—ç¬¦ä¸²æ°¸è¿œè¿”å›<code>true</code>.
      * </p>
      * <pre>
      * StringUtil.containsOnly(null, *)       = false
@@ -2435,10 +2435,10 @@ public class StringUtil {
      * StringUtil.containsOnly("abz", 'abc')  = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param valid Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param valid è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean containsOnly(String str, char[] valid) {
         if ((valid == null) || (str == null)) {
@@ -2457,11 +2457,11 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇÊÇ·ñÖ»°üº¬Ö¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯æ˜¯å¦åªåŒ…å«æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>false</code>¡£
-     * Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>Ôò·µ»Ø<code>false</code>¡£ µ«ÊÇ¿Õ×Ö·û´®ÓÀÔ¶·µ»Ø<code>true</code>.
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>false</code>ã€‚
+     * å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>åˆ™è¿”å›<code>false</code>ã€‚ ä½†æ˜¯ç©ºå­—ç¬¦ä¸²æ°¸è¿œè¿”å›<code>true</code>.
      * </p>
      * <pre>
      * StringUtil.containsOnly(null, *)       = false
@@ -2473,10 +2473,10 @@ public class StringUtil {
      * StringUtil.containsOnly("abz", "abc")  = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param valid Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param valid è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean containsOnly(String str, String valid) {
         if ((str == null) || (valid == null)) {
@@ -2487,11 +2487,11 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇÊÇ·ñ²»°üº¬Ö¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯æ˜¯å¦ä¸åŒ…å«æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>false</code>¡£ Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>Ôò·µ»Ø<code>true</code>¡£
-     * µ«ÊÇ¿Õ×Ö·û´®ÓÀÔ¶·µ»Ø<code>true</code>.
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>false</code>ã€‚ å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>åˆ™è¿”å›<code>true</code>ã€‚
+     * ä½†æ˜¯ç©ºå­—ç¬¦ä¸²æ°¸è¿œè¿”å›<code>true</code>.
      * </p>
      * <pre>
      * StringUtil.containsNone(null, *)       = true
@@ -2503,10 +2503,10 @@ public class StringUtil {
      * StringUtil.containsNone("abz", 'xyz')  = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param invalid Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param invalid è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean containsNone(String str, char[] invalid) {
         if ((str == null) || (invalid == null)) {
@@ -2530,11 +2530,11 @@ public class StringUtil {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇÊÇ·ñ²»°üº¬Ö¸¶¨×Ö·û¼¯ºÏÖĞµÄ×Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯æ˜¯å¦ä¸åŒ…å«æŒ‡å®šå­—ç¬¦é›†åˆä¸­çš„å­—ç¬¦ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>false</code>¡£ Èç¹û×Ö·û¼¯ºÏÎª<code>null</code>Ôò·µ»Ø<code>true</code>¡£
-     * µ«ÊÇ¿Õ×Ö·û´®ÓÀÔ¶·µ»Ø<code>true</code>.
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>false</code>ã€‚ å¦‚æœå­—ç¬¦é›†åˆä¸º<code>null</code>åˆ™è¿”å›<code>true</code>ã€‚
+     * ä½†æ˜¯ç©ºå­—ç¬¦ä¸²æ°¸è¿œè¿”å›<code>true</code>.
      * </p>
      * <pre>
      * StringUtil.containsNone(null, *)       = true
@@ -2546,10 +2546,10 @@ public class StringUtil {
      * StringUtil.containsNone("abz", "xyz")  = false
      * </pre>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param invalidChars Òª²éÕÒµÄ×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param invalidChars è¦æŸ¥æ‰¾çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÕÒµ½£¬Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœæ‰¾åˆ°ï¼Œåˆ™è¿”å›<code>true</code>
      */
     public static boolean containsNone(String str, String invalidChars) {
         if ((str == null) || (invalidChars == null)) {
@@ -2560,10 +2560,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃÖ¸¶¨×Ó´®ÔÚ×Ö·û´®ÖĞ³öÏÖµÄ´ÎÊı¡£
+     * å–å¾—æŒ‡å®šå­ä¸²åœ¨å­—ç¬¦ä¸²ä¸­å‡ºç°çš„æ¬¡æ•°ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>»ò¿Õ£¬Ôò·µ»Ø<code>0</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–ç©ºï¼Œåˆ™è¿”å›<code>0</code>ã€‚
      * <pre>
      * StringUtil.countMatches(null, *)       = 0
      * StringUtil.countMatches("", *)         = 0
@@ -2575,10 +2575,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param subStr ×Ó×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param subStr å­å­—ç¬¦ä¸²
      *
-     * @return ×Ó´®ÔÚ×Ö·û´®ÖĞ³öÏÖµÄ´ÎÊı£¬Èç¹û×Ö·û´®Îª<code>null</code>»ò¿Õ£¬Ôò·µ»Ø<code>0</code>
+     * @return å­ä¸²åœ¨å­—ç¬¦ä¸²ä¸­å‡ºç°çš„æ¬¡æ•°ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–ç©ºï¼Œåˆ™è¿”å›<code>0</code>
      */
     public static int countMatches(String str, String subStr) {
         if ((str == null) || (str.length() == 0) || (subStr == null) || (subStr.length() == 0)) {
@@ -2597,14 +2597,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  È¡×Ó´®º¯Êı¡£                                                                */
+    /*  å–å­ä¸²å‡½æ•°ã€‚                                                                */
     /* ============================================================================ */
 
     /**
-     * È¡Ö¸¶¨×Ö·û´®µÄ×Ó´®¡£
+     * å–æŒ‡å®šå­—ç¬¦ä¸²çš„å­ä¸²ã€‚
      * 
      * <p>
-     * ¸ºµÄË÷Òı´ú±í´ÓÎ²²¿¿ªÊ¼¼ÆËã¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * è´Ÿçš„ç´¢å¼•ä»£è¡¨ä»å°¾éƒ¨å¼€å§‹è®¡ç®—ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.substring(null, *)   = null
      * StringUtil.substring("", *)     = ""
@@ -2616,10 +2616,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param start ÆğÊ¼Ë÷Òı£¬Èç¹ûÎª¸ºÊı£¬±íÊ¾´ÓÎ²²¿²éÕÒ
+     * @param str å­—ç¬¦ä¸²
+     * @param start èµ·å§‹ç´¢å¼•ï¼Œå¦‚æœä¸ºè´Ÿæ•°ï¼Œè¡¨ç¤ºä»å°¾éƒ¨æŸ¥æ‰¾
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substring(String str, int start) {
         if (str == null) {
@@ -2642,10 +2642,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡Ö¸¶¨×Ö·û´®µÄ×Ó´®¡£
+     * å–æŒ‡å®šå­—ç¬¦ä¸²çš„å­ä¸²ã€‚
      * 
      * <p>
-     * ¸ºµÄË÷Òı´ú±í´ÓÎ²²¿¿ªÊ¼¼ÆËã¡£Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * è´Ÿçš„ç´¢å¼•ä»£è¡¨ä»å°¾éƒ¨å¼€å§‹è®¡ç®—ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.substring(null, *, *)    = null
      * StringUtil.substring("", * ,  *)    = "";
@@ -2659,11 +2659,11 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param start ÆğÊ¼Ë÷Òı£¬Èç¹ûÎª¸ºÊı£¬±íÊ¾´ÓÎ²²¿¼ÆËã
-     * @param end ½áÊøË÷Òı£¨²»º¬£©£¬Èç¹ûÎª¸ºÊı£¬±íÊ¾´ÓÎ²²¿¼ÆËã
+     * @param str å­—ç¬¦ä¸²
+     * @param start èµ·å§‹ç´¢å¼•ï¼Œå¦‚æœä¸ºè´Ÿæ•°ï¼Œè¡¨ç¤ºä»å°¾éƒ¨è®¡ç®—
+     * @param end ç»“æŸç´¢å¼•ï¼ˆä¸å«ï¼‰ï¼Œå¦‚æœä¸ºè´Ÿæ•°ï¼Œè¡¨ç¤ºä»å°¾éƒ¨è®¡ç®—
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substring(String str, int start, int end) {
         if (str == null) {
@@ -2698,7 +2698,7 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ³¤¶ÈÎªÖ¸¶¨×Ö·ûÊıµÄ×î×ó±ßµÄ×Ó´®¡£
+     * å–å¾—é•¿åº¦ä¸ºæŒ‡å®šå­—ç¬¦æ•°çš„æœ€å·¦è¾¹çš„å­ä¸²ã€‚
      * <pre>
      * StringUtil.left(null, *)    = null
      * StringUtil.left(*, -ve)     = ""
@@ -2708,10 +2708,10 @@ public class StringUtil {
      * StringUtil.left("abc", 4)   = "abc"
      * </pre>
      *
-     * @param str ×Ö·û´®
-     * @param len ×î×ó×Ó´®µÄ³¤¶È
+     * @param str å­—ç¬¦ä¸²
+     * @param len æœ€å·¦å­ä¸²çš„é•¿åº¦
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹å­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String left(String str, int len) {
         if (str == null) {
@@ -2730,7 +2730,7 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ³¤¶ÈÎªÖ¸¶¨×Ö·ûÊıµÄ×îÓÒ±ßµÄ×Ó´®¡£
+     * å–å¾—é•¿åº¦ä¸ºæŒ‡å®šå­—ç¬¦æ•°çš„æœ€å³è¾¹çš„å­ä¸²ã€‚
      * <pre>
      * StringUtil.right(null, *)    = null
      * StringUtil.right(*, -ve)     = ""
@@ -2740,10 +2740,10 @@ public class StringUtil {
      * StringUtil.right("abc", 4)   = "abc"
      * </pre>
      *
-     * @param str ×Ö·û´®
-     * @param len ×îÓÒ×Ó´®µÄ³¤¶È
+     * @param str å­—ç¬¦ä¸²
+     * @param len æœ€å³å­ä¸²çš„é•¿åº¦
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹å­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String right(String str, int len) {
         if (str == null) {
@@ -2762,7 +2762,7 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ´ÓÖ¸¶¨Ë÷Òı¿ªÊ¼¼ÆËãµÄ¡¢³¤¶ÈÎªÖ¸¶¨×Ö·ûÊıµÄ×Ó´®¡£
+     * å–å¾—ä»æŒ‡å®šç´¢å¼•å¼€å§‹è®¡ç®—çš„ã€é•¿åº¦ä¸ºæŒ‡å®šå­—ç¬¦æ•°çš„å­ä¸²ã€‚
      * <pre>
      * StringUtil.mid(null, *, *)    = null
      * StringUtil.mid(*, *, -ve)     = ""
@@ -2774,11 +2774,11 @@ public class StringUtil {
      * StringUtil.mid("abc", -2, 2)  = "ab"
      * </pre>
      *
-     * @param str ×Ö·û´®
-     * @param pos ÆğÊ¼Ë÷Òı£¬Èç¹ûÎª¸ºÊı£¬Ôò¿´×÷<code>0</code>
-     * @param len ×Ó´®µÄ³¤¶È£¬Èç¹ûÎª¸ºÊı£¬Ôò¿´×÷³¤¶ÈÎª<code>0</code>
+     * @param str å­—ç¬¦ä¸²
+     * @param pos èµ·å§‹ç´¢å¼•ï¼Œå¦‚æœä¸ºè´Ÿæ•°ï¼Œåˆ™çœ‹ä½œ<code>0</code>
+     * @param len å­ä¸²çš„é•¿åº¦ï¼Œå¦‚æœä¸ºè´Ÿæ•°ï¼Œåˆ™çœ‹ä½œé•¿åº¦ä¸º<code>0</code>
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹å­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String mid(String str, int pos, int len) {
         if (str == null) {
@@ -2801,14 +2801,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ËÑË÷²¢È¡×Ó´®º¯Êı¡£                                                          */
+    /*  æœç´¢å¹¶å–å­ä¸²å‡½æ•°ã€‚                                                          */
     /* ============================================================================ */
 
     /**
-     * È¡µÃµÚÒ»¸ö³öÏÖµÄ·Ö¸ô×Ó´®Ö®Ç°µÄ×Ó´®¡£
+     * å–å¾—ç¬¬ä¸€ä¸ªå‡ºç°çš„åˆ†éš”å­ä¸²ä¹‹å‰çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>»òÎ´ÕÒµ½¸Ã×Ó´®£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°è¯¥å­ä¸²ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.substringBefore(null, *)      = null
      * StringUtil.substringBefore("", *)        = ""
@@ -2821,10 +2821,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param separator ÒªËÑË÷µÄ·Ö¸ô×Ó´®
+     * @param str å­—ç¬¦ä¸²
+     * @param separator è¦æœç´¢çš„åˆ†éš”å­ä¸²
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringBefore(String str, String separator) {
         if ((str == null) || (separator == null) || (str.length() == 0)) {
@@ -2845,10 +2845,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃµÚÒ»¸ö³öÏÖµÄ·Ö¸ô×Ó´®Ö®ºóµÄ×Ó´®¡£
+     * å–å¾—ç¬¬ä¸€ä¸ªå‡ºç°çš„åˆ†éš”å­ä¸²ä¹‹åçš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>»òÎ´ÕÒµ½¸Ã×Ó´®£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°è¯¥å­ä¸²ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.substringAfter(null, *)      = null
      * StringUtil.substringAfter("", *)        = ""
@@ -2861,10 +2861,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param separator ÒªËÑË÷µÄ·Ö¸ô×Ó´®
+     * @param str å­—ç¬¦ä¸²
+     * @param separator è¦æœç´¢çš„åˆ†éš”å­ä¸²
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringAfter(String str, String separator) {
         if ((str == null) || (str.length() == 0)) {
@@ -2885,10 +2885,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ×îºóÒ»¸öµÄ·Ö¸ô×Ó´®Ö®Ç°µÄ×Ó´®¡£
+     * å–å¾—æœ€åä¸€ä¸ªçš„åˆ†éš”å­ä¸²ä¹‹å‰çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>»òÎ´ÕÒµ½¸Ã×Ó´®£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°è¯¥å­ä¸²ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.substringBeforeLast(null, *)      = null
      * StringUtil.substringBeforeLast("", *)        = ""
@@ -2901,10 +2901,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param separator ÒªËÑË÷µÄ·Ö¸ô×Ó´®
+     * @param str å­—ç¬¦ä¸²
+     * @param separator è¦æœç´¢çš„åˆ†éš”å­ä¸²
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringBeforeLast(String str, String separator) {
         if ((str == null) || (separator == null) || (str.length() == 0)
@@ -2922,10 +2922,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ×îºóÒ»¸öµÄ·Ö¸ô×Ó´®Ö®ºóµÄ×Ó´®¡£
+     * å–å¾—æœ€åä¸€ä¸ªçš„åˆ†éš”å­ä¸²ä¹‹åçš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>»òÎ´ÕÒµ½¸Ã×Ó´®£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°è¯¥å­ä¸²ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.substringAfterLast(null, *)      = null
      * StringUtil.substringAfterLast("", *)        = ""
@@ -2939,10 +2939,10 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param separator ÒªËÑË÷µÄ·Ö¸ô×Ó´®
+     * @param str å­—ç¬¦ä¸²
+     * @param separator è¦æœç´¢çš„åˆ†éš”å­ä¸²
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringAfterLast(String str, String separator) {
         if ((str == null) || (str.length() == 0)) {
@@ -2963,10 +2963,10 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃÖ¸¶¨·Ö¸ô·ûµÄÇ°Á½´Î³öÏÖÖ®¼äµÄ×Ó´®¡£
+     * å–å¾—æŒ‡å®šåˆ†éš”ç¬¦çš„å‰ä¸¤æ¬¡å‡ºç°ä¹‹é—´çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.substringBetween(null, *)            = null
      * StringUtil.substringBetween("", "")             = ""
@@ -2977,20 +2977,20 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param tag ÒªËÑË÷µÄ·Ö¸ô×Ó´®
+     * @param str å­—ç¬¦ä¸²
+     * @param tag è¦æœç´¢çš„åˆ†éš”å­ä¸²
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>»òÎ´ÕÒµ½·Ö¸ô×Ó´®£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°åˆ†éš”å­ä¸²ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringBetween(String str, String tag) {
         return substringBetween(str, tag, tag, 0);
     }
 
     /**
-     * È¡µÃÁ½¸ö·Ö¸ô·ûÖ®¼äµÄ×Ó´®¡£
+     * å–å¾—ä¸¤ä¸ªåˆ†éš”ç¬¦ä¹‹é—´çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.substringBetween(null, *, *)          = null
      * StringUtil.substringBetween("", "", "")          = ""
@@ -3003,21 +3003,21 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param open ÒªËÑË÷µÄ·Ö¸ô×Ó´®1
-     * @param close ÒªËÑË÷µÄ·Ö¸ô×Ó´®2
+     * @param str å­—ç¬¦ä¸²
+     * @param open è¦æœç´¢çš„åˆ†éš”å­ä¸²1
+     * @param close è¦æœç´¢çš„åˆ†éš”å­ä¸²2
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>»òÎ´ÕÒµ½·Ö¸ô×Ó´®£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°åˆ†éš”å­ä¸²ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringBetween(String str, String open, String close) {
         return substringBetween(str, open, close, 0);
     }
 
     /**
-     * È¡µÃÁ½¸ö·Ö¸ô·ûÖ®¼äµÄ×Ó´®¡£
+     * å–å¾—ä¸¤ä¸ªåˆ†éš”ç¬¦ä¹‹é—´çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ Èç¹û·Ö¸ô×Ó´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ å¦‚æœåˆ†éš”å­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.substringBetween(null, *, *)          = null
      * StringUtil.substringBetween("", "", "")          = ""
@@ -3030,12 +3030,12 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ×Ö·û´®
-     * @param open ÒªËÑË÷µÄ·Ö¸ô×Ó´®1
-     * @param close ÒªËÑË÷µÄ·Ö¸ô×Ó´®2
-     * @param fromIndex ´ÓÖ¸¶¨index´¦ËÑË÷
+     * @param str å­—ç¬¦ä¸²
+     * @param open è¦æœç´¢çš„åˆ†éš”å­ä¸²1
+     * @param close è¦æœç´¢çš„åˆ†éš”å­ä¸²2
+     * @param fromIndex ä»æŒ‡å®šindexå¤„æœç´¢
      *
-     * @return ×Ó´®£¬Èç¹ûÔ­Ê¼´®Îª<code>null</code>»òÎ´ÕÒµ½·Ö¸ô×Ó´®£¬Ôò·µ»Ø<code>null</code>
+     * @return å­ä¸²ï¼Œå¦‚æœåŸå§‹ä¸²ä¸º<code>null</code>æˆ–æœªæ‰¾åˆ°åˆ†éš”å­ä¸²ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String substringBetween(String str, String open, String close, int fromIndex) {
         if ((str == null) || (open == null) || (close == null)) {
@@ -3056,11 +3056,11 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  É¾³ı×Ö·û¡£                                                                  */
+    /*  åˆ é™¤å­—ç¬¦ã€‚                                                                  */
     /* ============================================================================ */
 
     /**
-     * É¾³ıËùÓĞÔÚ<code>Character.isWhitespace(char)</code>ÖĞËù¶¨ÒåµÄ¿Õ°×¡£
+     * åˆ é™¤æ‰€æœ‰åœ¨<code>Character.isWhitespace(char)</code>ä¸­æ‰€å®šä¹‰çš„ç©ºç™½ã€‚
      * <pre>
      * StringUtil.deleteWhitespace(null)         = null
      * StringUtil.deleteWhitespace("")           = ""
@@ -3068,9 +3068,9 @@ public class StringUtil {
      * StringUtil.deleteWhitespace("   ab  c  ") = "abc"
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return È¥¿Õ°×ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return å»ç©ºç™½åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String deleteWhitespace(String str) {
         if (str == null) {
@@ -3090,14 +3090,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  Ìæ»»×Ó´®¡£                                                                  */
+    /*  æ›¿æ¢å­ä¸²ã€‚                                                                  */
     /* ============================================================================ */
 
     /**
-     * Ìæ»»Ö¸¶¨µÄ×Ó´®£¬Ö»Ìæ»»µÚÒ»¸ö³öÏÖµÄ×Ó´®¡£
+     * æ›¿æ¢æŒ‡å®šçš„å­ä¸²ï¼Œåªæ›¿æ¢ç¬¬ä¸€ä¸ªå‡ºç°çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>£¬Èç¹ûÖ¸¶¨×Ó´®Îª<code>null</code>£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>ï¼Œå¦‚æœæŒ‡å®šå­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.replaceOnce(null, *, *)        = null
      * StringUtil.replaceOnce("", *, *)          = ""
@@ -3109,21 +3109,21 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param text ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param repl ÒªËÑË÷µÄ×Ó´®
-     * @param with Ìæ»»×Ö·û´®
+     * @param text è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param repl è¦æœç´¢çš„å­ä¸²
+     * @param with æ›¿æ¢å­—ç¬¦ä¸²
      *
-     * @return ±»Ìæ»»ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«æ›¿æ¢åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String replaceOnce(String text, String repl, String with) {
         return replace(text, repl, with, 1);
     }
 
     /**
-     * Ìæ»»Ö¸¶¨µÄ×Ó´®£¬Ìæ»»ËùÓĞ³öÏÖµÄ×Ó´®¡£
+     * æ›¿æ¢æŒ‡å®šçš„å­ä¸²ï¼Œæ›¿æ¢æ‰€æœ‰å‡ºç°çš„å­ä¸²ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>£¬Èç¹ûÖ¸¶¨×Ó´®Îª<code>null</code>£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>ï¼Œå¦‚æœæŒ‡å®šå­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.replace(null, *, *)        = null
      * StringUtil.replace("", *, *)          = ""
@@ -3135,21 +3135,21 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param text ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param repl ÒªËÑË÷µÄ×Ó´®
-     * @param with Ìæ»»×Ö·û´®
+     * @param text è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param repl è¦æœç´¢çš„å­ä¸²
+     * @param with æ›¿æ¢å­—ç¬¦ä¸²
      *
-     * @return ±»Ìæ»»ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«æ›¿æ¢åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String replace(String text, String repl, String with) {
         return replace(text, repl, with, -1);
     }
 
     /**
-     * Ìæ»»Ö¸¶¨µÄ×Ó´®£¬Ìæ»»Ö¸¶¨µÄ´ÎÊı¡£
+     * æ›¿æ¢æŒ‡å®šçš„å­ä¸²ï¼Œæ›¿æ¢æŒ‡å®šçš„æ¬¡æ•°ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>£¬Èç¹ûÖ¸¶¨×Ó´®Îª<code>null</code>£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>ï¼Œå¦‚æœæŒ‡å®šå­ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * <pre>
      * StringUtil.replace(null, *, *, *)         = null
      * StringUtil.replace("", *, *, *)           = ""
@@ -3164,12 +3164,12 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param text ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param repl ÒªËÑË÷µÄ×Ó´®
-     * @param with Ìæ»»×Ö·û´®
+     * @param text è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param repl è¦æœç´¢çš„å­ä¸²
+     * @param with æ›¿æ¢å­—ç¬¦ä¸²
      * @param max maximum number of values to replace, or <code>-1</code> if no maximum
      *
-     * @return ±»Ìæ»»ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«æ›¿æ¢åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String replace(String text, String repl, String with, int max) {
         if ((text == null) || (repl == null) || (with == null) || (repl.length() == 0)
@@ -3195,10 +3195,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®ÖĞËùÓĞÖ¸¶¨µÄ×Ö·û£¬Ìæ»»³ÉÁíÒ»¸ö¡£
+     * å°†å­—ç¬¦ä¸²ä¸­æ‰€æœ‰æŒ‡å®šçš„å­—ç¬¦ï¼Œæ›¿æ¢æˆå¦ä¸€ä¸ªã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚
      * <pre>
      * StringUtil.replaceChars(null, *, *)        = null
      * StringUtil.replaceChars("", *, *)          = ""
@@ -3207,11 +3207,11 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChar ÒªËÑË÷µÄ×Ö·û
-     * @param replaceChar Ìæ»»×Ö·û
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChar è¦æœç´¢çš„å­—ç¬¦
+     * @param replaceChar æ›¿æ¢å­—ç¬¦
      *
-     * @return ±»Ìæ»»ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«æ›¿æ¢åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String replaceChars(String str, char searchChar, char replaceChar) {
         if (str == null) {
@@ -3222,18 +3222,18 @@ public class StringUtil {
     }
 
     /**
-     * ½«×Ö·û´®ÖĞËùÓĞÖ¸¶¨µÄ×Ö·û£¬Ìæ»»³ÉÁíÒ»¸ö¡£
+     * å°†å­—ç¬¦ä¸²ä¸­æ‰€æœ‰æŒ‡å®šçš„å­—ç¬¦ï¼Œæ›¿æ¢æˆå¦ä¸€ä¸ªã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>¡£Èç¹ûËÑË÷×Ö·û´®Îª<code>null</code>»ò¿Õ£¬Ôò·µ»ØÔ­×Ö·û´®¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>ã€‚å¦‚æœæœç´¢å­—ç¬¦ä¸²ä¸º<code>null</code>æˆ–ç©ºï¼Œåˆ™è¿”å›åŸå­—ç¬¦ä¸²ã€‚
      * </p>
      * 
      * <p>
-     * ÀıÈç£º <code>replaceChars(&quot;hello&quot;, &quot;ho&quot;, &quot;jy&quot;) = jelly</code>¡£
+     * ä¾‹å¦‚ï¼š <code>replaceChars(&quot;hello&quot;, &quot;ho&quot;, &quot;jy&quot;) = jelly</code>ã€‚
      * </p>
      * 
      * <p>
-     * Í¨³£ËÑË÷×Ö·û´®ºÍÌæ»»×Ö·û´®ÊÇµÈ³¤µÄ£¬Èç¹ûËÑË÷×Ö·û´®±ÈÌæ»»×Ö·û´®³¤£¬Ôò¶àÓàµÄ×Ö·û½«±»É¾³ı¡£ Èç¹ûËÑË÷×Ö·û´®±ÈÌæ»»×Ö·û´®¶Ì£¬ÔòÈ±ÉÙµÄ×Ö·û½«±»ºöÂÔ¡£
+     * é€šå¸¸æœç´¢å­—ç¬¦ä¸²å’Œæ›¿æ¢å­—ç¬¦ä¸²æ˜¯ç­‰é•¿çš„ï¼Œå¦‚æœæœç´¢å­—ç¬¦ä¸²æ¯”æ›¿æ¢å­—ç¬¦ä¸²é•¿ï¼Œåˆ™å¤šä½™çš„å­—ç¬¦å°†è¢«åˆ é™¤ã€‚ å¦‚æœæœç´¢å­—ç¬¦ä¸²æ¯”æ›¿æ¢å­—ç¬¦ä¸²çŸ­ï¼Œåˆ™ç¼ºå°‘çš„å­—ç¬¦å°†è¢«å¿½ç•¥ã€‚
      * <pre>
      * StringUtil.replaceChars(null, *, *)           = null
      * StringUtil.replaceChars("", *, *)             = ""
@@ -3247,11 +3247,11 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param searchChars ÒªËÑË÷µÄ×Ö·û´®
-     * @param replaceChars Ìæ»»×Ö·û´®
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param searchChars è¦æœç´¢çš„å­—ç¬¦ä¸²
+     * @param replaceChars æ›¿æ¢å­—ç¬¦ä¸²
      *
-     * @return ±»Ìæ»»ºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«æ›¿æ¢åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String replaceChars(String str, String searchChars, String replaceChars) {
         if ((str == null) || (str.length() == 0) || (searchChars == null)
@@ -3267,7 +3267,7 @@ public class StringUtil {
             char searchChar = searchChars.charAt(i);
 
             if ((replaceChars == null) || (i >= replaceChars.length())) {
-                // É¾³ı
+                // åˆ é™¤
                 int pos = 0;
 
                 for (int j = 0; j < len; j++) {
@@ -3280,7 +3280,7 @@ public class StringUtil {
 
                 len = pos;
             } else {
-                // Ìæ»»
+                // æ›¿æ¢
                 for (int j = 0; j < len; j++) {
                     if (chars[j] == searchChar) {
                         chars[j] = replaceChars.charAt(i);
@@ -3298,10 +3298,10 @@ public class StringUtil {
     }
 
     /**
-     * ½«Ö¸¶¨µÄ×Ó´®ÓÃÁíÒ»Ö¸¶¨×Ó´®¸²¸Ç¡£
+     * å°†æŒ‡å®šçš„å­ä¸²ç”¨å¦ä¸€æŒ‡å®šå­ä¸²è¦†ç›–ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£ ¸ºµÄË÷ÒıÖµ½«±»¿´×÷<code>0</code>£¬Ô½½çµÄË÷ÒıÖµ½«±»ÉèÖÃ³É×Ö·û´®µÄ³¤¶ÈÏàÍ¬µÄÖµ¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚ è´Ÿçš„ç´¢å¼•å€¼å°†è¢«çœ‹ä½œ<code>0</code>ï¼Œè¶Šç•Œçš„ç´¢å¼•å€¼å°†è¢«è®¾ç½®æˆå­—ç¬¦ä¸²çš„é•¿åº¦ç›¸åŒçš„å€¼ã€‚
      * <pre>
      * StringUtil.overlay(null, *, *, *)            = null
      * StringUtil.overlay("", "abc", 0, 0)          = "abc"
@@ -3317,12 +3317,12 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str ÒªÉ¨ÃèµÄ×Ö·û´®
-     * @param overlay ÓÃÀ´¸²¸ÇµÄ×Ö·û´®
-     * @param start ÆğÊ¼Ë÷Òı
-     * @param end ½áÊøË÷Òı
+     * @param str è¦æ‰«æçš„å­—ç¬¦ä¸²
+     * @param overlay ç”¨æ¥è¦†ç›–çš„å­—ç¬¦ä¸²
+     * @param start èµ·å§‹ç´¢å¼•
+     * @param end ç»“æŸç´¢å¼•
      *
-     * @return ±»¸²¸ÇºóµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return è¢«è¦†ç›–åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String overlay(String str, String overlay, int start, int end) {
         if (str == null) {
@@ -3363,14 +3363,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  Perl·ç¸ñµÄchompºÍchopº¯Êı¡£                                                 */
+    /*  Perlé£æ ¼çš„chompå’Œchopå‡½æ•°ã€‚                                                 */
     /* ============================================================================ */
 
     /**
-     * É¾³ı×Ö·û´®Ä©Î²µÄ»»ĞĞ·û¡£Èç¹û×Ö·û´®²»ÒÔ»»ĞĞ½áÎ²£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åˆ é™¤å­—ç¬¦ä¸²æœ«å°¾çš„æ¢è¡Œç¬¦ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸ä»¥æ¢è¡Œç»“å°¾ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      * 
      * <p>
-     * »»ĞĞ·ûÓĞÈıÖÖÇéĞÎ£º&quot;<code>\n</code>&quot;¡¢&quot;<code>\r</code>&quot;¡¢&quot;<code>\r\n</code>&quot;¡£
+     * æ¢è¡Œç¬¦æœ‰ä¸‰ç§æƒ…å½¢ï¼š&quot;<code>\n</code>&quot;ã€&quot;<code>\r</code>&quot;ã€&quot;<code>\r\n</code>&quot;ã€‚
      * <pre>
      * StringUtil.chomp(null)          = null
      * StringUtil.chomp("")            = ""
@@ -3386,9 +3386,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return ²»ÒÔ»»ĞĞ½áÎ²µÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return ä¸ä»¥æ¢è¡Œç»“å°¾çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String chomp(String str) {
         if ((str == null) || (str.length() == 0)) {
@@ -3421,7 +3421,7 @@ public class StringUtil {
     }
 
     /**
-     * É¾³ı×Ö·û´®Ä©Î²µÄÖ¸¶¨×Ö·û´®¡£Èç¹û×Ö·û´®²»ÒÔ¸Ã×Ö·û´®½áÎ²£¬ÔòÊ²Ã´Ò²²»×ö¡£
+     * åˆ é™¤å­—ç¬¦ä¸²æœ«å°¾çš„æŒ‡å®šå­—ç¬¦ä¸²ã€‚å¦‚æœå­—ç¬¦ä¸²ä¸ä»¥è¯¥å­—ç¬¦ä¸²ç»“å°¾ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åšã€‚
      * <pre>
      * StringUtil.chomp(null, *)         = null
      * StringUtil.chomp("", *)           = ""
@@ -3435,10 +3435,10 @@ public class StringUtil {
      * StringUtil.chomp("foo", null)     = "foo"
      * </pre>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
-     * @param separator ÒªÉ¾³ıµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
+     * @param separator è¦åˆ é™¤çš„å­—ç¬¦ä¸²
      *
-     * @return ²»ÒÔÖ¸¶¨×Ö·û´®½áÎ²µÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return ä¸ä»¥æŒ‡å®šå­—ç¬¦ä¸²ç»“å°¾çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String chomp(String str, String separator) {
         if ((str == null) || (str.length() == 0) || (separator == null)) {
@@ -3453,10 +3453,10 @@ public class StringUtil {
     }
 
     /**
-     * É¾³ı×îºóÒ»¸ö×Ö·û¡£
+     * åˆ é™¤æœ€åä¸€ä¸ªå­—ç¬¦ã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®ÒÔ<code>\r\n</code>½áÎ²£¬ÔòÍ¬Ê±É¾³ıËüÃÇ¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä»¥<code>\r\n</code>ç»“å°¾ï¼Œåˆ™åŒæ—¶åˆ é™¤å®ƒä»¬ã€‚
      * <pre>
      * StringUtil.chop(null)          = null
      * StringUtil.chop("")            = ""
@@ -3472,9 +3472,9 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª´¦ÀíµÄ×Ö·û´®
+     * @param str è¦å¤„ç†çš„å­—ç¬¦ä¸²
      *
-     * @return É¾³ı×îºóÒ»¸ö×Ö·ûµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åˆ é™¤æœ€åä¸€ä¸ªå­—ç¬¦çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String chop(String str) {
         if (str == null) {
@@ -3501,11 +3501,11 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ÖØ¸´/¶ÔÆë×Ö·û´®¡£                                                           */
+    /*  é‡å¤/å¯¹é½å­—ç¬¦ä¸²ã€‚                                                           */
     /* ============================================================================ */
 
     /**
-     * ½«Ö¸¶¨×Ö·û´®ÖØ¸´n±é¡£
+     * å°†æŒ‡å®šå­—ç¬¦ä¸²é‡å¤néã€‚
      * <pre>
      * StringUtil.repeat(null, 2)   = null
      * StringUtil.repeat("", 0)     = ""
@@ -3516,10 +3516,10 @@ public class StringUtil {
      * StringUtil.repeat("a", -2)   = ""
      * </pre>
      *
-     * @param str ÒªÖØ¸´µÄ×Ö·û´®
-     * @param repeat ÖØ¸´´ÎÊı£¬Èç¹ûĞ¡ÓÚ<code>0</code>£¬Ôò¿´×÷<code>0</code>
+     * @param str è¦é‡å¤çš„å­—ç¬¦ä¸²
+     * @param repeat é‡å¤æ¬¡æ•°ï¼Œå¦‚æœå°äº<code>0</code>ï¼Œåˆ™çœ‹ä½œ<code>0</code>
      *
-     * @return ÖØ¸´n´ÎµÄ×Ö·û´®£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return é‡å¤næ¬¡çš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String repeat(String str, int repeat) {
         if (str == null) {
@@ -3576,7 +3576,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢×ó¶ÔÆë×Ö·û´®£¬ÓÃ¿Õ¸ñ<code>' '</code>Ìî³äÓÒ±ß¡£
+     * æ‰©å±•å¹¶å·¦å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨ç©ºæ ¼<code>' '</code>å¡«å……å³è¾¹ã€‚
      * <pre>
      * StringUtil.alignLeft(null, *)   = null
      * StringUtil.alignLeft("", 3)     = "   "
@@ -3586,17 +3586,17 @@ public class StringUtil {
      * StringUtil.alignLeft("bat", -1) = "bat"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignLeft(String str, int size) {
         return alignLeft(str, size, ' ');
     }
 
     /**
-     * À©Õ¹²¢×ó¶ÔÆë×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·ûÌî³äÓÒ±ß¡£
+     * æ‰©å±•å¹¶å·¦å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦å¡«å……å³è¾¹ã€‚
      * <pre>
      * StringUtil.alignLeft(null, *, *)     = null
      * StringUtil.alignLeft("", 3, 'z')     = "zzz"
@@ -3606,11 +3606,11 @@ public class StringUtil {
      * StringUtil.alignLeft("bat", -1, 'z') = "bat"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padChar Ìî³ä×Ö·û
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padChar å¡«å……å­—ç¬¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignLeft(String str, int size, char padChar) {
         if (str == null) {
@@ -3627,7 +3627,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢×ó¶ÔÆë×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·û´®Ìî³äÓÒ±ß¡£
+     * æ‰©å±•å¹¶å·¦å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦ä¸²å¡«å……å³è¾¹ã€‚
      * <pre>
      * StringUtil.alignLeft(null, *, *)      = null
      * StringUtil.alignLeft("", 3, "z")      = "zzz"
@@ -3640,11 +3640,11 @@ public class StringUtil {
      * StringUtil.alignLeft("bat", 5, "")    = "bat  "
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padStr Ìî³ä×Ö·û´®
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padStr å¡«å……å­—ç¬¦ä¸²
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignLeft(String str, int size, String padStr) {
         if (str == null) {
@@ -3680,7 +3680,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢ÓÒ¶ÔÆë×Ö·û´®£¬ÓÃ¿Õ¸ñ<code>' '</code>Ìî³ä×ó±ß¡£
+     * æ‰©å±•å¹¶å³å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨ç©ºæ ¼<code>' '</code>å¡«å……å·¦è¾¹ã€‚
      * <pre>
      * StringUtil.alignRight(null, *)   = null
      * StringUtil.alignRight("", 3)     = "   "
@@ -3690,17 +3690,17 @@ public class StringUtil {
      * StringUtil.alignRight("bat", -1) = "bat"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignRight(String str, int size) {
         return alignRight(str, size, ' ');
     }
 
     /**
-     * À©Õ¹²¢ÓÒ¶ÔÆë×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·ûÌî³ä×ó±ß¡£
+     * æ‰©å±•å¹¶å³å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦å¡«å……å·¦è¾¹ã€‚
      * <pre>
      * StringUtil.alignRight(null, *, *)     = null
      * StringUtil.alignRight("", 3, 'z')     = "zzz"
@@ -3710,11 +3710,11 @@ public class StringUtil {
      * StringUtil.alignRight("bat", -1, 'z') = "bat"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padChar Ìî³ä×Ö·û
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padChar å¡«å……å­—ç¬¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignRight(String str, int size, char padChar) {
         if (str == null) {
@@ -3731,7 +3731,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢ÓÒ¶ÔÆë×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·û´®Ìî³ä×ó±ß¡£
+     * æ‰©å±•å¹¶å³å¯¹é½å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦ä¸²å¡«å……å·¦è¾¹ã€‚
      * <pre>
      * StringUtil.alignRight(null, *, *)      = null
      * StringUtil.alignRight("", 3, "z")      = "zzz"
@@ -3744,11 +3744,11 @@ public class StringUtil {
      * StringUtil.alignRight("bat", 5, "")    = "  bat"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padStr Ìî³ä×Ö·û´®
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padStr å¡«å……å­—ç¬¦ä¸²
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String alignRight(String str, int size, String padStr) {
         if (str == null) {
@@ -3784,7 +3784,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢¾ÓÖĞ×Ö·û´®£¬ÓÃ¿Õ¸ñ<code>' '</code>Ìî³äÁ½±ß¡£
+     * æ‰©å±•å¹¶å±…ä¸­å­—ç¬¦ä¸²ï¼Œç”¨ç©ºæ ¼<code>' '</code>å¡«å……ä¸¤è¾¹ã€‚
      * <pre>
      * StringUtil.center(null, *)   = null
      * StringUtil.center("", 4)     = "    "
@@ -3794,17 +3794,17 @@ public class StringUtil {
      * StringUtil.center("a", 4)    = " a  "
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String center(String str, int size) {
         return center(str, size, ' ');
     }
 
     /**
-     * À©Õ¹²¢¾ÓÖĞ×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·ûÌî³äÁ½±ß¡£
+     * æ‰©å±•å¹¶å±…ä¸­å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦å¡«å……ä¸¤è¾¹ã€‚
      * <pre>
      * StringUtil.center(null, *, *)     = null
      * StringUtil.center("", 4, ' ')     = "    "
@@ -3815,11 +3815,11 @@ public class StringUtil {
      * StringUtil.center("a", 4, 'y')    = "yayy"
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padChar Ìî³ä×Ö·û
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padChar å¡«å……å­—ç¬¦
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String center(String str, int size, char padChar) {
         if ((str == null) || (size <= 0)) {
@@ -3839,7 +3839,7 @@ public class StringUtil {
     }
 
     /**
-     * À©Õ¹²¢¾ÓÖĞ×Ö·û´®£¬ÓÃÖ¸¶¨×Ö·û´®Ìî³äÁ½±ß¡£
+     * æ‰©å±•å¹¶å±…ä¸­å­—ç¬¦ä¸²ï¼Œç”¨æŒ‡å®šå­—ç¬¦ä¸²å¡«å……ä¸¤è¾¹ã€‚
      * <pre>
      * StringUtil.center(null, *, *)     = null
      * StringUtil.center("", 4, " ")     = "    "
@@ -3852,11 +3852,11 @@ public class StringUtil {
      * StringUtil.center("abc", 7, "")   = "  abc  "
      * </pre>
      *
-     * @param str Òª¶ÔÆëµÄ×Ö·û´®
-     * @param size À©Õ¹×Ö·û´®µ½Ö¸¶¨¿í¶È
-     * @param padStr Ìî³ä×Ö·û´®
+     * @param str è¦å¯¹é½çš„å­—ç¬¦ä¸²
+     * @param size æ‰©å±•å­—ç¬¦ä¸²åˆ°æŒ‡å®šå®½åº¦
+     * @param padStr å¡«å……å­—ç¬¦ä¸²
      *
-     * @return À©Õ¹ºóµÄ×Ö·û´®£¬Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return æ‰©å±•åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String center(String str, int size, String padStr) {
         if ((str == null) || (size <= 0)) {
@@ -3880,14 +3880,14 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ·´×ª×Ö·û´®¡£                                                                */
+    /*  åè½¬å­—ç¬¦ä¸²ã€‚                                                                */
     /* ============================================================================ */
 
     /**
-     * ·´×ª×Ö·û´®ÖĞµÄ×Ö·ûË³Ğò¡£
+     * åè½¬å­—ç¬¦ä¸²ä¸­çš„å­—ç¬¦é¡ºåºã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.reverse(null)  = null
@@ -3895,9 +3895,9 @@ public class StringUtil {
      * StringUtil.reverse("bat") = "tab"
      * </pre>
      *
-     * @param str Òª·´×ªµÄ×Ö·û´®
+     * @param str è¦åè½¬çš„å­—ç¬¦ä¸²
      *
-     * @return ·´×ªºóµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åè½¬åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String reverse(String str) {
         if ((str == null) || (str.length() == 0)) {
@@ -3908,10 +3908,10 @@ public class StringUtil {
     }
 
     /**
-     * ·´×ªÖ¸¶¨·Ö¸ô·û·Ö¸ôµÄ¸÷×Ó´®µÄË³Ğò¡£
+     * åè½¬æŒ‡å®šåˆ†éš”ç¬¦åˆ†éš”çš„å„å­ä¸²çš„é¡ºåºã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.reverseDelimited(null, *)      = null
@@ -3920,10 +3920,10 @@ public class StringUtil {
      * StringUtil.reverseDelimited("a.b.c", '.') = "c.b.a"
      * </pre>
      *
-     * @param str Òª·´×ªµÄ×Ö·û´®
-     * @param separatorChar ·Ö¸ô·û
+     * @param str è¦åè½¬çš„å­—ç¬¦ä¸²
+     * @param separatorChar åˆ†éš”ç¬¦
      *
-     * @return ·´×ªºóµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åè½¬åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String reverseDelimited(String str, char separatorChar) {
         if (str == null) {
@@ -3938,10 +3938,10 @@ public class StringUtil {
     }
 
     /**
-     * ·´×ªÖ¸¶¨·Ö¸ô·û·Ö¸ôµÄ¸÷×Ó´®µÄË³Ğò¡£
+     * åè½¬æŒ‡å®šåˆ†éš”ç¬¦åˆ†éš”çš„å„å­ä¸²çš„é¡ºåºã€‚
      * 
      * <p>
-     * Èç¹û×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>¡£
+     * å¦‚æœå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>ã€‚
      * </p>
      * <pre>
      * StringUtil.reverseDelimited(null, *, *)          = null
@@ -3952,11 +3952,11 @@ public class StringUtil {
      * StringUtil.reverseDelimited("a.b.c", ".", null)  = "c b a"
      * </pre>
      *
-     * @param str Òª·´×ªµÄ×Ö·û´®
-     * @param separatorChars ·Ö¸ô·û£¬Èç¹ûÎª<code>null</code>£¬ÔòÄ¬ÈÏÊ¹ÓÃ¿Õ°××Ö·û
-     * @param separator ÓÃÀ´Á¬½Ó×Ó´®µÄ·Ö¸ô·û£¬Èç¹ûÎª<code>null</code>£¬Ä¬ÈÏÊ¹ÓÃ¿Õ¸ñ
+     * @param str è¦åè½¬çš„å­—ç¬¦ä¸²
+     * @param separatorChars åˆ†éš”ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>ï¼Œåˆ™é»˜è®¤ä½¿ç”¨ç©ºç™½å­—ç¬¦
+     * @param separator ç”¨æ¥è¿æ¥å­ä¸²çš„åˆ†éš”ç¬¦ï¼Œå¦‚æœä¸º<code>null</code>ï¼Œé»˜è®¤ä½¿ç”¨ç©ºæ ¼
      *
-     * @return ·´×ªºóµÄ×Ö·û´®£¬Èç¹ûÔ­×Ö·û´®Îª<code>null</code>£¬Ôò·µ»Ø<code>null</code>
+     * @return åè½¬åçš„å­—ç¬¦ä¸²ï¼Œå¦‚æœåŸå­—ç¬¦ä¸²ä¸º<code>null</code>ï¼Œåˆ™è¿”å›<code>null</code>
      */
     public static String reverseDelimited(String str, String separatorChars, String separator) {
         if (str == null) {
@@ -3975,24 +3975,24 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  È¡µÃ×Ö·û´®µÄËõÂÔ¡£                                                          */
+    /*  å–å¾—å­—ç¬¦ä¸²çš„ç¼©ç•¥ã€‚                                                          */
     /* ============================================================================ */
 
     /**
-     * ½«×Ö·û´®×ª»»³ÉÖ¸¶¨³¤¶ÈµÄËõÂÔ£¬ÀıÈç£º ½«"Now is the time for all good men"×ª»»³É"Now is the time for..."¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆæŒ‡å®šé•¿åº¦çš„ç¼©ç•¥ï¼Œä¾‹å¦‚ï¼š å°†"Now is the time for all good men"è½¬æ¢æˆ"Now is the time for..."ã€‚
      * 
      * <ul>
      * <li>
-     * Èç¹û<code>str</code>±È<code>maxWidth</code>¶Ì£¬Ö±½Ó·µ»Ø£»
+     * å¦‚æœ<code>str</code>æ¯”<code>maxWidth</code>çŸ­ï¼Œç›´æ¥è¿”å›ï¼›
      * </li>
      * <li>
-     * ·ñÔò½«Ëü×ª»»³ÉËõÂÔ£º<code>substring(str, 0, max-3) + "..."</code>£»
+     * å¦åˆ™å°†å®ƒè½¬æ¢æˆç¼©ç•¥ï¼š<code>substring(str, 0, max-3) + "..."</code>ï¼›
      * </li>
      * <li>
-     * Èç¹û<code>maxWidth</code>Ğ¡ÓÚ<code>4</code>Å×³ö<code>IllegalArgumentException</code>£»
+     * å¦‚æœ<code>maxWidth</code>å°äº<code>4</code>æŠ›å‡º<code>IllegalArgumentException</code>ï¼›
      * </li>
      * <li>
-     * ·µ»ØµÄ×Ö·û´®²»¿ÉÄÜ³¤ÓÚÖ¸¶¨µÄ<code>maxWidth</code>¡£
+     * è¿”å›çš„å­—ç¬¦ä¸²ä¸å¯èƒ½é•¿äºæŒ‡å®šçš„<code>maxWidth</code>ã€‚
      * </li>
      * </ul>
      * 
@@ -4006,25 +4006,25 @@ public class StringUtil {
      * StringUtil.abbreviate("abcdefg", 3) = IllegalArgumentException
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
-     * @param maxWidth ×î´ó³¤¶È£¬²»Ğ¡ÓÚ<code>4</code>£¬Èç¹ûĞ¡ÓÚ<code>4</code>£¬Ôò¿´×÷<code>4</code>
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
+     * @param maxWidth æœ€å¤§é•¿åº¦ï¼Œä¸å°äº<code>4</code>ï¼Œå¦‚æœå°äº<code>4</code>ï¼Œåˆ™çœ‹ä½œ<code>4</code>
      *
-     * @return ×Ö·û´®ËõÂÔ£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>
+     * @return å­—ç¬¦ä¸²ç¼©ç•¥ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>
      */
     public static String abbreviate(String str, int maxWidth) {
         return abbreviate(str, 0, maxWidth);
     }
 
     /**
-     * ½«×Ö·û´®×ª»»³ÉÖ¸¶¨³¤¶ÈµÄËõÂÔ£¬ÀıÈç£º ½«"Now is the time for all good men"×ª»»³É"...is the time for..."¡£
+     * å°†å­—ç¬¦ä¸²è½¬æ¢æˆæŒ‡å®šé•¿åº¦çš„ç¼©ç•¥ï¼Œä¾‹å¦‚ï¼š å°†"Now is the time for all good men"è½¬æ¢æˆ"...is the time for..."ã€‚
      * 
      * <p>
-     * ºÍ<code>abbreviate(String, int)</code>ÀàËÆ£¬µ«ÊÇÔö¼ÓÁËÒ»¸ö¡°×ó±ß½ç¡±Æ«ÒÆÁ¿¡£
-     * ×¢Òâ£¬¡°×ó±ß½ç¡±´¦µÄ×Ö·ûÎ´±Ø³öÏÖÔÚ½á¹û×Ö·û´®µÄ×î×ó±ß£¬µ«Ò»¶¨³öÏÖÔÚ½á¹û×Ö·û´®ÖĞ¡£
+     * å’Œ<code>abbreviate(String, int)</code>ç±»ä¼¼ï¼Œä½†æ˜¯å¢åŠ äº†ä¸€ä¸ªâ€œå·¦è¾¹ç•Œâ€åç§»é‡ã€‚
+     * æ³¨æ„ï¼Œâ€œå·¦è¾¹ç•Œâ€å¤„çš„å­—ç¬¦æœªå¿…å‡ºç°åœ¨ç»“æœå­—ç¬¦ä¸²çš„æœ€å·¦è¾¹ï¼Œä½†ä¸€å®šå‡ºç°åœ¨ç»“æœå­—ç¬¦ä¸²ä¸­ã€‚
      * </p>
      * 
      * <p>
-     * ·µ»ØµÄ×Ö·û´®²»¿ÉÄÜ³¤ÓÚÖ¸¶¨µÄ<code>maxWidth</code>¡£
+     * è¿”å›çš„å­—ç¬¦ä¸²ä¸å¯èƒ½é•¿äºæŒ‡å®šçš„<code>maxWidth</code>ã€‚
      * <pre>
      * StringUtil.abbreviate(null, *, *)                = null
      * StringUtil.abbreviate("", 0, 4)                  = ""
@@ -4042,18 +4042,18 @@ public class StringUtil {
      * </pre>
      * </p>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
-     * @param offset ×ó±ß½çÆ«ÒÆÁ¿
-     * @param maxWidth ×î´ó³¤¶È£¬²»Ğ¡ÓÚ<code>4</code>£¬Èç¹ûĞ¡ÓÚ<code>4</code>£¬Ôò¿´×÷<code>4</code>
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
+     * @param offset å·¦è¾¹ç•Œåç§»é‡
+     * @param maxWidth æœ€å¤§é•¿åº¦ï¼Œä¸å°äº<code>4</code>ï¼Œå¦‚æœå°äº<code>4</code>ï¼Œåˆ™çœ‹ä½œ<code>4</code>
      *
-     * @return ×Ö·û´®ËõÂÔ£¬Èç¹ûÔ­Ê¼×Ö·û´®Îª<code>null</code>Ôò·µ»Ø<code>null</code>
+     * @return å­—ç¬¦ä¸²ç¼©ç•¥ï¼Œå¦‚æœåŸå§‹å­—ç¬¦ä¸²ä¸º<code>null</code>åˆ™è¿”å›<code>null</code>
      */
     public static String abbreviate(String str, int offset, int maxWidth) {
         if (str == null) {
             return null;
         }
 
-        // µ÷Õû×î´ó¿í¶È
+        // è°ƒæ•´æœ€å¤§å®½åº¦
         if (maxWidth < 4) {
             maxWidth = 4;
         }
@@ -4074,7 +4074,7 @@ public class StringUtil {
             return str.substring(0, maxWidth - 3) + "...";
         }
 
-        // µ÷Õû×î´ó¿í¶È
+        // è°ƒæ•´æœ€å¤§å®½åº¦
         if (maxWidth < 7) {
             maxWidth = 7;
         }
@@ -4087,13 +4087,13 @@ public class StringUtil {
     }
 
     /* ============================================================================ */
-    /*  ±È½ÏÁ½¸ö×Ö·û´®µÄÒìÍ¬¡£                                                      */
+    /*  æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²çš„å¼‚åŒã€‚                                                      */
     /*                                                                              */
-    /*  ²éÕÒ×Ö·û´®Ö®¼äµÄ²îÒì£¬±È½Ï×Ö·û´®µÄÏàËÆ¶È¡£                                  */
+    /*  æŸ¥æ‰¾å­—ç¬¦ä¸²ä¹‹é—´çš„å·®å¼‚ï¼Œæ¯”è¾ƒå­—ç¬¦ä¸²çš„ç›¸ä¼¼åº¦ã€‚                                  */
     /* ============================================================================ */
 
     /**
-     * ±È½ÏÁ½¸ö×Ö·û´®£¬È¡µÃµÚ¶ş¸ö×Ö·û´®ÖĞ£¬ºÍµÚÒ»¸ö×Ö·û´®²»Í¬µÄ²¿·Ö¡£
+     * æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²ï¼Œå–å¾—ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ä¸­ï¼Œå’Œç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ä¸åŒçš„éƒ¨åˆ†ã€‚
      * <pre>
      * StringUtil.difference("i am a machine", "i am a robot")  = "robot"
      * StringUtil.difference(null, null)                        = null
@@ -4107,10 +4107,10 @@ public class StringUtil {
      * StringUtil.difference("abcde", "xyz")                    = "xyz"
      * </pre>
      *
-     * @param str1 ×Ö·û´®1
-     * @param str2 ×Ö·û´®2
+     * @param str1 å­—ç¬¦ä¸²1
+     * @param str2 å­—ç¬¦ä¸²2
      *
-     * @return µÚ¶ş¸ö×Ö·û´®ÖĞ£¬ºÍµÚÒ»¸ö×Ö·û´®²»Í¬µÄ²¿·Ö¡£Èç¹ûÁ½¸ö×Ö·û´®ÏàÍ¬£¬Ôò·µ»Ø¿Õ×Ö·û´®<code>""</code>
+     * @return ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ä¸­ï¼Œå’Œç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ä¸åŒçš„éƒ¨åˆ†ã€‚å¦‚æœä¸¤ä¸ªå­—ç¬¦ä¸²ç›¸åŒï¼Œåˆ™è¿”å›ç©ºå­—ç¬¦ä¸²<code>""</code>
      */
     public static String difference(String str1, String str2) {
         if (str1 == null) {
@@ -4131,7 +4131,7 @@ public class StringUtil {
     }
 
     /**
-     * ±È½ÏÁ½¸ö×Ö·û´®£¬È¡µÃÁ½×Ö·û´®¿ªÊ¼²»Í¬µÄË÷ÒıÖµ¡£
+     * æ¯”è¾ƒä¸¤ä¸ªå­—ç¬¦ä¸²ï¼Œå–å¾—ä¸¤å­—ç¬¦ä¸²å¼€å§‹ä¸åŒçš„ç´¢å¼•å€¼ã€‚
      * <pre>
      * StringUtil.indexOfDifference("i am a machine", "i am a robot")   = 7
      * StringUtil.indexOfDifference(null, null)                         = -1
@@ -4145,10 +4145,10 @@ public class StringUtil {
      * StringUtil.indexOfDifference("abcde", "xyz")                     = 0
      * </pre>
      *
-     * @param str1 ×Ö·û´®1
-     * @param str2 ×Ö·û´®2
+     * @param str1 å­—ç¬¦ä¸²1
+     * @param str2 å­—ç¬¦ä¸²2
      *
-     * @return Á½×Ö·û´®¿ªÊ¼²úÉú²îÒìµÄË÷ÒıÖµ£¬Èç¹ûÁ½×Ö·û´®ÏàÍ¬£¬Ôò·µ»Ø<code>-1</code>
+     * @return ä¸¤å­—ç¬¦ä¸²å¼€å§‹äº§ç”Ÿå·®å¼‚çš„ç´¢å¼•å€¼ï¼Œå¦‚æœä¸¤å­—ç¬¦ä¸²ç›¸åŒï¼Œåˆ™è¿”å›<code>-1</code>
      */
     public static int indexOfDifference(String str1, String str2) {
         if ((str1 == str2) || (str1 == null) || (str2 == null)) {
@@ -4171,11 +4171,11 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃÁ½¸ö×Ö·û´®µÄÏàËÆ¶È£¬<code>0</code>´ú±í×Ö·û´®ÏàµÈ£¬Êı×ÖÔ½´ó±íÊ¾×Ö·û´®Ô½²»Ïñ¡£
+     * å–å¾—ä¸¤ä¸ªå­—ç¬¦ä¸²çš„ç›¸ä¼¼åº¦ï¼Œ<code>0</code>ä»£è¡¨å­—ç¬¦ä¸²ç›¸ç­‰ï¼Œæ•°å­—è¶Šå¤§è¡¨ç¤ºå­—ç¬¦ä¸²è¶Šä¸åƒã€‚
      * 
      * <p>
-     * Õâ¸öËã·¨È¡×Ô<a href="http://www.merriampark.com/ld.htm">http://www.merriampark.com/ld.htm</a>¡£
-     * Ëü¼ÆËãµÄÊÇ´Ó×Ö·û´®1×ª±äµ½×Ö·û´®2ËùĞèÒªµÄÉ¾³ı¡¢²åÈëºÍÌæ»»µÄ²½ÖèÊı¡£
+     * è¿™ä¸ªç®—æ³•å–è‡ª<a href="http://www.merriampark.com/ld.htm">http://www.merriampark.com/ld.htm</a>ã€‚
+     * å®ƒè®¡ç®—çš„æ˜¯ä»å­—ç¬¦ä¸²1è½¬å˜åˆ°å­—ç¬¦ä¸²2æ‰€éœ€è¦çš„åˆ é™¤ã€æ’å…¥å’Œæ›¿æ¢çš„æ­¥éª¤æ•°ã€‚
      * </p>
      * <pre>
      * StringUtil.getLevenshteinDistance(null, *)             = IllegalArgumentException
@@ -4191,10 +4191,10 @@ public class StringUtil {
      * StringUtil.getLevenshteinDistance("hello", "hallo")    = 1
      * </pre>
      *
-     * @param s µÚÒ»¸ö×Ö·û´®£¬Èç¹ûÊÇ<code>null</code>£¬Ôò¿´×÷¿Õ×Ö·û´®
-     * @param t µÚ¶ş¸ö×Ö·û´®£¬Èç¹ûÊÇ<code>null</code>£¬Ôò¿´×÷¿Õ×Ö·û´®
+     * @param s ç¬¬ä¸€ä¸ªå­—ç¬¦ä¸²ï¼Œå¦‚æœæ˜¯<code>null</code>ï¼Œåˆ™çœ‹ä½œç©ºå­—ç¬¦ä¸²
+     * @param t ç¬¬äºŒä¸ªå­—ç¬¦ä¸²ï¼Œå¦‚æœæ˜¯<code>null</code>ï¼Œåˆ™çœ‹ä½œç©ºå­—ç¬¦ä¸²
      *
-     * @return ÏàËÆ¶ÈÖµ
+     * @return ç›¸ä¼¼åº¦å€¼
      */
     public static int getLevenshteinDistance(String s, String t) {
         s = defaultIfNull(s);
@@ -4257,13 +4257,13 @@ public class StringUtil {
     }
 
     /**
-     * È¡µÃ×îĞ¡Êı¡£
+     * å–å¾—æœ€å°æ•°ã€‚
      *
-     * @param a ÕûÊı1
-     * @param b ÕûÊı2
-     * @param c ÕûÊı3
+     * @param a æ•´æ•°1
+     * @param b æ•´æ•°2
+     * @param c æ•´æ•°3
      *
-     * @return Èı¸öÊıÖĞµÄ×îĞ¡Öµ
+     * @return ä¸‰ä¸ªæ•°ä¸­çš„æœ€å°å€¼
      */
     private static int min(int a, int b, int c) {
         if (b < a) {

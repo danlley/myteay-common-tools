@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.transaction.support.TransactionSynchronization;
 
 /**
- * ÓÃÓÚÔÚÊÂÎñÌá½»ºóÖ´ĞĞÄ³¸ö·½·¨µ÷ÓÃµÄÀà¡£
+ * ç”¨äºåœ¨äº‹åŠ¡æäº¤åæ‰§è¡ŒæŸä¸ªæ–¹æ³•è°ƒç”¨çš„ç±»ã€‚
  * 
  * @author min.weixm
  * @version $Id: MethodInvocationTransactionSynchronization.java, v 0.1 Nov 5, 2017 9:32:29 PM min.weixm Exp $
@@ -20,13 +20,13 @@ public class MethodInvocationTransactionSynchronization implements TransactionSy
     /** logger */
     private static final Logger logger = LoggerFactory.getLogger(MethodInvocationTransactionSynchronization.class);
 
-    /** Ò»¸ö·½·¨µ÷ÓÃ */
+    /** ä¸€ä¸ªæ–¹æ³•è°ƒç”¨ */
     private MethodInvocation    methodInvocation;
 
     /**
-     * ¹¹Ôì·½·¨¡£
+     * æ„é€ æ–¹æ³•ã€‚
      *
-     * @param methodInvocation ÓÃÓÚÔÚÊÂÎñÌá½»ºóÖ´ĞĞµÄ·½·¨¡£
+     * @param methodInvocation ç”¨äºåœ¨äº‹åŠ¡æäº¤åæ‰§è¡Œçš„æ–¹æ³•ã€‚
      *
      */
     public MethodInvocationTransactionSynchronization(MethodInvocation methodInvocation) {
@@ -67,12 +67,12 @@ public class MethodInvocationTransactionSynchronization implements TransactionSy
             try {
                 Object result = methodInvocation.proceed();
                 if (logger.isDebugEnabled()) {
-                    logger.debug("ÊÂÎñÌá½»ºóÖ´ĞĞ·½·¨µ÷ÓÃ·µ»Ø½á¹ûÎª" + result + ".");
+                    logger.debug("äº‹åŠ¡æäº¤åæ‰§è¡Œæ–¹æ³•è°ƒç”¨è¿”å›ç»“æœä¸º" + result + ".");
                 }
             } catch (Throwable t) {
-                logger.error("ÔÚÊÂÎñºóÖ´ĞĞ·½·¨µ÷ÓÃ("
+                logger.error("åœ¨äº‹åŠ¡åæ‰§è¡Œæ–¹æ³•è°ƒç”¨("
                              + methodInvocation.getMethod().getDeclaringClass().getName() + "."
-                             + methodInvocation.getMethod().getName() + ")Ê±³öÏÖÒì³£¡£", t);
+                             + methodInvocation.getMethod().getName() + ")æ—¶å‡ºç°å¼‚å¸¸ã€‚", t);
             }
         }
     }
@@ -81,7 +81,7 @@ public class MethodInvocationTransactionSynchronization implements TransactionSy
      * @see org.springframework.transaction.support.TransactionSynchronization#afterCommit()
      */
     public void afterCommit() {
-        // SPRING Éı¼¶ 2.0.6
+        // SPRING å‡çº§ 2.0.6
     }
 
     @Override

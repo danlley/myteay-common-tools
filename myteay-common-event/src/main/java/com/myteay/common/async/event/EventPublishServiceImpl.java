@@ -8,17 +8,17 @@ import org.apache.log4j.Logger;
 import org.springframework.core.task.TaskExecutor;
 
 /**
- * Òì²½ÊÂ¼şÖ´ĞĞ·şÎñ£¨Ä¬ÈÏÖ§³ÖÍ¬²½£©
+ * å¼‚æ­¥äº‹ä»¶æ‰§è¡ŒæœåŠ¡ï¼ˆé»˜è®¤æ”¯æŒåŒæ­¥ï¼‰
  * 
  * @author min.weixm
  * @version $Id: EventPulishServiceImpl.java, v 0.1 Oct 28, 2017 11:23:59 PM min.weixm Exp $
  */
 public class EventPublishServiceImpl<T> implements EventPublishService<T> {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger      logger = Logger.getLogger(EventPublishServiceImpl.class);
 
-    /** ¼àÌıÆ÷ÃèÊöÎÄ¼ş»º´æ */
+    /** ç›‘å¬å™¨æè¿°æ–‡ä»¶ç¼“å­˜ */
     private ListenerDescriptorCache listenerDescriptorCache;
 
     /** 
@@ -30,7 +30,7 @@ public class EventPublishServiceImpl<T> implements EventPublishService<T> {
     public T publishEvent(MtEvent<?> event) throws MtEventException {
 
         if (event == null) {
-            logger.warn("PromocoreEvent is null£¬Ä¬ÈÏ²»Ö´ĞĞ");
+            logger.warn("PromocoreEvent is nullï¼Œé»˜è®¤ä¸æ‰§è¡Œ");
             return null;
         }
 
@@ -38,39 +38,39 @@ public class EventPublishServiceImpl<T> implements EventPublishService<T> {
 
         ListenerDescriptor descriptor = listenerDescriptorCache.getListenerDescriptor(topic);
         if (descriptor == null) {
-            logger.warn("À©Õ¹ÃèÊöÎÄ¼şÅäÖÃ²»¿ÉÎª¿Õ£¬topic=" + topic);
-            throw new MtEventException("À©Õ¹ÃèÊöÎÄ¼şÅäÖÃ²»¿ÉÎª¿Õ£¬topic=" + topic);
+            logger.warn("æ‰©å±•æè¿°æ–‡ä»¶é…ç½®ä¸å¯ä¸ºç©ºï¼Œtopic=" + topic);
+            throw new MtEventException("æ‰©å±•æè¿°æ–‡ä»¶é…ç½®ä¸å¯ä¸ºç©ºï¼Œtopic=" + topic);
         }
 
-        //À©Õ¹µãÔÚ¿ª·¢ÅäÖÃ¹ı³ÌÒÑ½øĞĞĞ£Ñé£¬ÕâÀï²»ĞèÒªÖØ¸´Ğ£Ñé
+        //æ‰©å±•ç‚¹åœ¨å¼€å‘é…ç½®è¿‡ç¨‹å·²è¿›è¡Œæ ¡éªŒï¼Œè¿™é‡Œä¸éœ€è¦é‡å¤æ ¡éªŒ
         EventListener<T> listener = (EventListener<T>) descriptor.getListener();
 
-        //Òì²½Ö´ĞĞ´¦Àí
+        //å¼‚æ­¥æ‰§è¡Œå¤„ç†
         if (descriptor.isAsync()) {
 
-            //À©Õ¹µãÔÚ¿ª·¢ÅäÖÃ¹ı³ÌÒÑ½øĞĞĞ£Ñé£¬ÕâÀï²»ĞèÒªÖØ¸´Ğ£Ñé
+            //æ‰©å±•ç‚¹åœ¨å¼€å‘é…ç½®è¿‡ç¨‹å·²è¿›è¡Œæ ¡éªŒï¼Œè¿™é‡Œä¸éœ€è¦é‡å¤æ ¡éªŒ
             TaskExecutor taskExecutor = descriptor.getTaskExecutor();
 
             try {
                 taskExecutor.execute(new EventListenerExecutor(listener, event));
             } catch (RuntimeException e) {
-                logger.warn("ÊÂ¼ş·¢²¼Æ÷·¢²¼ÊÂ¼ş·¢ÉúÔËĞĞÊ±Òì³££¬¼«¿ÉÄÜÊÇÒì²½ÔËĞĞÊ±¶ÓÁĞ´óĞ¡²»¹»RuntimeException" + event, e);
+                logger.warn("äº‹ä»¶å‘å¸ƒå™¨å‘å¸ƒäº‹ä»¶å‘ç”Ÿè¿è¡Œæ—¶å¼‚å¸¸ï¼Œæå¯èƒ½æ˜¯å¼‚æ­¥è¿è¡Œæ—¶é˜Ÿåˆ—å¤§å°ä¸å¤ŸRuntimeException" + event, e);
             } catch (Exception e) {
-                logger.warn("ÊÂ¼ş·¢²¼Æ÷·¢²¼ÊÂ¼şÊ±·¢ÉúÒì³£Exception" + event, e);
+                logger.warn("äº‹ä»¶å‘å¸ƒå™¨å‘å¸ƒäº‹ä»¶æ—¶å‘ç”Ÿå¼‚å¸¸Exception" + event, e);
             }
         }
-        //Í¬²½Ö´ĞĞ´¦Àí
+        //åŒæ­¥æ‰§è¡Œå¤„ç†
         else {
             try {
                 if (listener.aboutToHandleEvent(event)) {
                     return listener.handleEvent(event);
                 }
             } catch (Exception e) {
-                logger.warn("Í¬²½Ö´ĞĞ¼àÌıÆ÷Ê§°ÜException£¬" + e.getMessage(), e);
+                logger.warn("åŒæ­¥æ‰§è¡Œç›‘å¬å™¨å¤±è´¥Exceptionï¼Œ" + e.getMessage(), e);
             }
         }
 
-        //Ä¬ÈÏÇé¿öÏÂ·µ»ØÖµÎª¿Õ£¬Ö»ÓĞµ±Í¬²½Ö´ĞĞµÄÇé¿öÏÂ²Å»áÓĞ·µ»ØÖµ
+        //é»˜è®¤æƒ…å†µä¸‹è¿”å›å€¼ä¸ºç©ºï¼Œåªæœ‰å½“åŒæ­¥æ‰§è¡Œçš„æƒ…å†µä¸‹æ‰ä¼šæœ‰è¿”å›å€¼
         return null;
 
     }

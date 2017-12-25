@@ -6,14 +6,14 @@ package com.myteay.common.router.support;
 /**
  * 
  * @author Administrator
- * @version $Id: Router.java, v 0.1 2015Äê10ÔÂ26ÈÕ ÏÂÎç3:48:38 Administrator Exp $
+ * @version $Id: Router.java, v 0.1 2015å¹´10æœˆ26æ—¥ ä¸‹åˆ3:48:38 Administrator Exp $
  */
 public class Router {
 
     //    public static void main(String[] args) {
-    //        //"http://192.168.1.1/userRpm/SysRebootRpm.htm?Reboot=ÖØÆôÂ·ÓÉÆ÷";
+    //        //"http://192.168.1.1/userRpm/SysRebootRpm.htm?Reboot=é‡å¯è·¯ç”±å™¨";
     //
-    //        // ÑéÖ¤µÄÓÃ»§ÃûºÍÃÜÂë
+    //        // éªŒè¯çš„ç”¨æˆ·åå’Œå¯†ç 
     //
     //        String login_user = "admin";
     //
@@ -24,27 +24,27 @@ public class Router {
     //
     //        HttpClient httpClient = new DefaultHttpClient();
     //        HttpUriRequest request = new HttpGet(
-    //            "http://192.168.1.1/userRpm/SysRebootRpm.htm?Reboot=ÖØÆôÂ·ÓÉÆ÷");
-    //        //HttpUriRequest request= new HttpGet("http://192.168.1.1/userRpm/StatusRpm.htm?Disconnect=¶ÏÏß&wan=1");
-    //        //HttpUriRequest request= new HttpGet("http://192.168.1.1/userRpm/StatusRpm.htm?Connect=Á¬½Ó&wan=1");
-    //        //http://192.168.1.1/userRpm/StatusRpm.htm?Disconnect=¶ÏÏß&wan=1
+    //            "http://192.168.1.1/userRpm/SysRebootRpm.htm?Reboot=é‡å¯è·¯ç”±å™¨");
+    //        //HttpUriRequest request= new HttpGet("http://192.168.1.1/userRpm/StatusRpm.htm?Disconnect=æ–­çº¿&wan=1");
+    //        //HttpUriRequest request= new HttpGet("http://192.168.1.1/userRpm/StatusRpm.htm?Connect=è¿æ¥&wan=1");
+    //        //http://192.168.1.1/userRpm/StatusRpm.htm?Disconnect=æ–­çº¿&wan=1
     //
-    //        //Ìí¼ÓÑéÖ¤ĞÅÏ¢
+    //        //æ·»åŠ éªŒè¯ä¿¡æ¯
     //        request.addHeader("Authorization", auth);
     //
-    //        // ´òÓ¡ÇëÇóĞÅÏ¢   
+    //        // æ‰“å°è¯·æ±‚ä¿¡æ¯   
     //
     //        try {
-    //            // ·¢ËÍÇëÇó£¬·µ»ØÏìÓ¦   
+    //            // å‘é€è¯·æ±‚ï¼Œè¿”å›å“åº”   
     //            HttpResponse response = httpClient.execute(request);
     //
-    //            // ´òÓ¡ÏìÓ¦ĞÅÏ¢   
+    //            // æ‰“å°å“åº”ä¿¡æ¯   
     //            System.out.println(response.getStatusLine());
     //        } catch (ClientProtocolException e) {
-    //            // Ğ­Òé´íÎó   
+    //            // åè®®é”™è¯¯   
     //            e.printStackTrace();
     //        } catch (IOException e) {
-    //            // ÍøÂçÒì³£   
+    //            // ç½‘ç»œå¼‚å¸¸   
     //            e.printStackTrace();
     //        }
     //

@@ -8,7 +8,7 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 /**
- * ¿ÉÇ¶Ì×µÄÒì³£.
+ * å¯åµŒå¥—çš„å¼‚å¸¸.
  * 
  * @author min.weixm
  * @version $Id: ChainedRuntimeException.java, v 0.1 Nov 5, 2017 9:34:26 PM min.weixm Exp $
@@ -20,25 +20,25 @@ public class ChainedRuntimeException extends RuntimeException
     private Throwable              cause;
 
     /**
-     * ¹¹ÔìÒ»¸ö¿ÕµÄÒì³£.
+     * æ„é€ ä¸€ä¸ªç©ºçš„å¼‚å¸¸.
      */
     public ChainedRuntimeException() {
         super();
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷Òì³£µÄÏêÏ¸ĞÅÏ¢.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼‚å¸¸çš„è¯¦ç»†ä¿¡æ¯.
      *
-     * @param message ÏêÏ¸ĞÅÏ¢
+     * @param message è¯¦ç»†ä¿¡æ¯
      */
     public ChainedRuntimeException(String message) {
         super(message);
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷ÒıÆğÕâ¸öÒì³£µÄÆğÒò.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼•èµ·è¿™ä¸ªå¼‚å¸¸çš„èµ·å› .
      *
-     * @param cause Òì³£µÄÆğÒò
+     * @param cause å¼‚å¸¸çš„èµ·å› 
      */
     public ChainedRuntimeException(Throwable cause) {
         super((cause == null) ? null
@@ -47,10 +47,10 @@ public class ChainedRuntimeException extends RuntimeException
     }
 
     /**
-     * ¹¹ÔìÒ»¸öÒì³£, Ö¸Ã÷ÒıÆğÕâ¸öÒì³£µÄÆğÒò.
+     * æ„é€ ä¸€ä¸ªå¼‚å¸¸, æŒ‡æ˜å¼•èµ·è¿™ä¸ªå¼‚å¸¸çš„èµ·å› .
      *
-     * @param message ÏêÏ¸ĞÅÏ¢
-     * @param cause Òì³£µÄÆğÒò
+     * @param message è¯¦ç»†ä¿¡æ¯
+     * @param cause å¼‚å¸¸çš„èµ·å› 
      */
     public ChainedRuntimeException(String message, Throwable cause) {
         super(message);
@@ -58,43 +58,43 @@ public class ChainedRuntimeException extends RuntimeException
     }
 
     /**
-     * È¡µÃÒıÆğÕâ¸öÒì³£µÄÆğÒò.
+     * å–å¾—å¼•èµ·è¿™ä¸ªå¼‚å¸¸çš„èµ·å› .
      *
-     * @return Òì³£µÄÆğÒò.
+     * @return å¼‚å¸¸çš„èµ·å› .
      */
     public Throwable getCause() {
         return cause;
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½±ê×¼´íÎó.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æ ‡å‡†é”™è¯¯.
      */
     public void printStackTrace() {
         delegate.printStackTrace();
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½Ö¸¶¨Êä³öÁ÷.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æŒ‡å®šè¾“å‡ºæµ.
      *
-     * @param stream Êä³ö×Ö½ÚÁ÷.
+     * @param stream è¾“å‡ºå­—èŠ‚æµ.
      */
     public void printStackTrace(PrintStream stream) {
         delegate.printStackTrace(stream);
     }
 
     /**
-     * ´òÓ¡µ÷ÓÃÕ»µ½Ö¸¶¨Êä³öÁ÷.
+     * æ‰“å°è°ƒç”¨æ ˆåˆ°æŒ‡å®šè¾“å‡ºæµ.
      *
-     * @param writer Êä³ö×Ö·ûÁ÷.
+     * @param writer è¾“å‡ºå­—ç¬¦æµ.
      */
     public void printStackTrace(PrintWriter writer) {
         delegate.printStackTrace(writer);
     }
 
     /**
-     * ´òÓ¡Òì³£µÄµ÷ÓÃÕ», ²»°üÀ¨ÆğÒòÒì³£µÄĞÅÏ¢.
+     * æ‰“å°å¼‚å¸¸çš„è°ƒç”¨æ ˆ, ä¸åŒ…æ‹¬èµ·å› å¼‚å¸¸çš„ä¿¡æ¯.
      *
-     * @param writer ´òÓ¡µ½Êä³öÁ÷
+     * @param writer æ‰“å°åˆ°è¾“å‡ºæµ
      */
     public void printCurrentStackTrace(PrintWriter writer) {
         super.printStackTrace(writer);

@@ -4,22 +4,22 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * ×Ö·û´®´¦Àí¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å¤„ç†å·¥å…·ç±»
  * 
  * @author min.weixm
  * @version $Id: StringUtils.java, v 0.1 Oct 29, 2017 12:20:35 PM min.weixm Exp $
  */
 public class StringUtils {
 
-    /** ¿Õ×Ö·û´® */
+    /** ç©ºå­—ç¬¦ä¸² */
     public static final String EMPTY_STRING = "";
 
-    /** »»ĞĞ×Ö·û´® */
+    /** æ¢è¡Œå­—ç¬¦ä¸² */
     public static final String NEW_LINE     = "\r\n";
 
     /**
-     * ÅĞ¶ÏÊäÈëµÄ×Ö·û´®²ÎÊıÊÇ·ñÎª¿Õ¡£
-     * @param args ÊäÈëµÄ×Ö´®
+     * åˆ¤æ–­è¾“å…¥çš„å­—ç¬¦ä¸²å‚æ•°æ˜¯å¦ä¸ºç©ºã€‚
+     * @param args è¾“å…¥çš„å­—ä¸²
      * @return true/false
      */
     public static boolean validateNull(String args) {
@@ -31,7 +31,7 @@ public class StringUtils {
     }
 
     /**
-     * ÅĞ¶ÏÊäÈëµÄ×Ö·û´®²ÎÊıÊÇ·ñÎª¿Õ»òÕßÊÇ"null"×Ö·û,Èç¹ûÊÇ,¾Í·µ»Øtarget²ÎÊı,Èç¹û²»ÊÇ,¾Í·µ»Øsource²ÎÊı¡£
+     * åˆ¤æ–­è¾“å…¥çš„å­—ç¬¦ä¸²å‚æ•°æ˜¯å¦ä¸ºç©ºæˆ–è€…æ˜¯"null"å­—ç¬¦,å¦‚æœæ˜¯,å°±è¿”å›targetå‚æ•°,å¦‚æœä¸æ˜¯,å°±è¿”å›sourceå‚æ•°ã€‚
      */
     public static String chanageNull(String source, String target) {
         if (source == null || source.length() == 0 || source.equalsIgnoreCase("null")) {
@@ -42,9 +42,9 @@ public class StringUtils {
     }
 
     /**
-     * ¹ıÂË<, >,n ×Ö·ûµÄ·½·¨¡£
-     * @param input ĞèÒª¹ıÂËµÄ×Ö·û
-     * @return Íê³É¹ıÂËÒÔºóµÄ×Ö·û´®
+     * è¿‡æ»¤<, >,n å­—ç¬¦çš„æ–¹æ³•ã€‚
+     * @param input éœ€è¦è¿‡æ»¤çš„å­—ç¬¦
+     * @return å®Œæˆè¿‡æ»¤ä»¥åçš„å­—ç¬¦ä¸²
      */
     public static String filterHtml(String input) {
         if (input == null) {
@@ -64,7 +64,7 @@ public class StringUtils {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñÎª<code>null</code>»ò¿Õ×Ö·û´®<code>""</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸º<code>null</code>æˆ–ç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * <pre>
      * StringUtil.isEmpty(null)      = true
      * StringUtil.isEmpty("")        = true
@@ -73,16 +73,16 @@ public class StringUtils {
      * StringUtil.isEmpty("  bob  ") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isEmpty(String str) {
         return ((str == null) || (str.length() == 0));
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñ²»ÊÇ<code>null</code>ºÍ¿Õ×Ö·û´®<code>""</code>¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸æ˜¯<code>null</code>å’Œç©ºå­—ç¬¦ä¸²<code>""</code>ã€‚
      * <pre>
      * StringUtil.isEmpty(null)      = false
      * StringUtil.isEmpty("")        = false
@@ -91,16 +91,16 @@ public class StringUtils {
      * StringUtil.isEmpty("  bob  ") = true
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹û²»Îª¿Õ, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ä¸ºç©º, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotEmpty(String str) {
         return ((str != null) && (str.length() > 0));
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñ²»ÊÇ¿Õ°×£º<code>null</code>¡¢¿Õ×Ö·û´®<code>""</code>»òÖ»ÓĞ¿Õ°××Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦ä¸æ˜¯ç©ºç™½ï¼š<code>null</code>ã€ç©ºå­—ç¬¦ä¸²<code>""</code>æˆ–åªæœ‰ç©ºç™½å­—ç¬¦ã€‚
      * <pre>
      * StringUtil.isBlank(null)      = false
      * StringUtil.isBlank("")        = false
@@ -109,9 +109,9 @@ public class StringUtils {
      * StringUtil.isBlank("  bob  ") = true
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ°×, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©ºç™½, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isNotBlank(String str) {
         int length;
@@ -130,7 +130,7 @@ public class StringUtils {
     }
 
     /**
-     * ¼ì²é×Ö·û´®ÊÇ·ñÊÇ¿Õ°×£º<code>null</code>¡¢¿Õ×Ö·û´®<code>""</code>»òÖ»ÓĞ¿Õ°××Ö·û¡£
+     * æ£€æŸ¥å­—ç¬¦ä¸²æ˜¯å¦æ˜¯ç©ºç™½ï¼š<code>null</code>ã€ç©ºå­—ç¬¦ä¸²<code>""</code>æˆ–åªæœ‰ç©ºç™½å­—ç¬¦ã€‚
      * <pre>
      * StringUtil.isBlank(null)      = true
      * StringUtil.isBlank("")        = true
@@ -139,9 +139,9 @@ public class StringUtils {
      * StringUtil.isBlank("  bob  ") = false
      * </pre>
      *
-     * @param str Òª¼ì²éµÄ×Ö·û´®
+     * @param str è¦æ£€æŸ¥çš„å­—ç¬¦ä¸²
      *
-     * @return Èç¹ûÎª¿Õ°×, Ôò·µ»Ø<code>true</code>
+     * @return å¦‚æœä¸ºç©ºç™½, åˆ™è¿”å›<code>true</code>
      */
     public static boolean isBlank(String str) {
         int length;
@@ -160,9 +160,9 @@ public class StringUtils {
     }
 
     /**
-     * ¶Ô×Ö·û´®½øĞĞÅÅĞò
-     * e.g. ÅÅĞòÇ°£º¡°Improving code with Lambda expressions in Java 8 aa 11 123 122¡±
-     *      ÅÅĞòºó£º¡°11, 122, 123, 8, aa, code, expressions, Improving, in, Java, Lambda, with¡±
+     * å¯¹å­—ç¬¦ä¸²è¿›è¡Œæ’åº
+     * e.g. æ’åºå‰ï¼šâ€œImproving code with Lambda expressions in Java 8 aa 11 123 122â€
+     *      æ’åºåï¼šâ€œ11, 122, 123, 8, aa, code, expressions, Improving, in, Java, Lambda, withâ€
      * 
      * @param str
      * @param splitor
@@ -177,7 +177,7 @@ public class StringUtils {
         Arrays.sort(oldWay, new Comparator<String>() {
             @Override
             public int compare(String s1, String s2) {
-                // ºöÂÔ´óĞ¡Ğ´ÅÅĞò:
+                // å¿½ç•¥å¤§å°å†™æ’åº:
                 return s1.toLowerCase().compareTo(s2.toLowerCase());
             }
         });

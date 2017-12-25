@@ -12,18 +12,18 @@ import org.springframework.util.CollectionUtils;
 import com.myteay.common.util.tools.StringUtils;
 
 /**
- * 4Î»Ëæ»úÊı×Ö´®Éú³É¹¤¾ßÀà
+ * 4ä½éšæœºæ•°å­—ä¸²ç”Ÿæˆå·¥å…·ç±»
  * 
  * @author Administrator
- * @version $Id: RandomNumStrUtils.java, v 0.1 2015Äê7ÔÂ5ÈÕ ÏÂÎç11:23:53 Administrator Exp $
+ * @version $Id: RandomNumStrUtils.java, v 0.1 2015å¹´7æœˆ5æ—¥ ä¸‹åˆ11:23:53 Administrator Exp $
  */
 public class RandomNumStrUtils {
 
-    /** µ±Ç°¶ÓÁĞ */
+    /** å½“å‰é˜Ÿåˆ— */
     private static ArrayBlockingQueue<String> CURR_QUEUE = new ArrayBlockingQueue<String>(10000);
 
     /**
-     * »ñÈ¡Êı×Ö´®£¬Èç¹ûÄ¿±êÊı×Ö´®¶ÓÁĞÒÑ¾­Ã»ÓĞÊı¾İ£¬Ôò¶Ô¸Ã¶ÓÁĞ½øĞĞ³õÊ¼»¯
+     * è·å–æ•°å­—ä¸²ï¼Œå¦‚æœç›®æ ‡æ•°å­—ä¸²é˜Ÿåˆ—å·²ç»æ²¡æœ‰æ•°æ®ï¼Œåˆ™å¯¹è¯¥é˜Ÿåˆ—è¿›è¡Œåˆå§‹åŒ–
      * 
      * @return
      */
@@ -39,7 +39,7 @@ public class RandomNumStrUtils {
     }
 
     /**
-     * ¶ÓÁĞ³õÊ¼»¯
+     * é˜Ÿåˆ—åˆå§‹åŒ–
      */
     private static void initQueue() {
         if (CURR_QUEUE != null && CURR_QUEUE.remainingCapacity() <= 0) {
@@ -60,7 +60,7 @@ public class RandomNumStrUtils {
     }
 
     /**
-     * µÃµ½´ı¼ÓÈë¶ÓÁĞµÄ¶ÓÁĞÊı¾İ
+     * å¾—åˆ°å¾…åŠ å…¥é˜Ÿåˆ—çš„é˜Ÿåˆ—æ•°æ®
      * 
      * @return
      */
@@ -79,7 +79,7 @@ public class RandomNumStrUtils {
     }
 
     /**
-     * µÃµ½Ò»¸ö³¤¶ÈÎª4µÄÊı×Ö×Ö·û´®
+     * å¾—åˆ°ä¸€ä¸ªé•¿åº¦ä¸º4çš„æ•°å­—å­—ç¬¦ä¸²
      * 
      * @param num
      * @return
@@ -107,7 +107,7 @@ public class RandomNumStrUtils {
     }
 
     /**
-     * ³õÊ¼»¯£¬²¢µÃµ½Ò»¸öÈ«²¿Êı×éÄÚÈİÖÃ0µÄÄ¿±êcharĞÍÊı×é
+     * åˆå§‹åŒ–ï¼Œå¹¶å¾—åˆ°ä¸€ä¸ªå…¨éƒ¨æ•°ç»„å†…å®¹ç½®0çš„ç›®æ ‡charå‹æ•°ç»„
      * 
      * @param len
      * @return

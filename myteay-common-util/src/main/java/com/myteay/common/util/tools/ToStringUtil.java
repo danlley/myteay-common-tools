@@ -11,14 +11,15 @@ import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.util.CollectionUtils;
 
 /**
- * Ê¹ÓÃToStringBuilderÊµÏÖµÄToString¹¤¾ßÀà£¬ÓÃÓÚÃ»ÓÐ¸²Ð´toString·½·¨µÄ¶ÔÏó
- * @author ren.zhang
- * @version $Id: ToStringUtil.java, v 0.1 2011-5-18 ÏÂÎç02:23:23 ren.zhang Exp $
+ * ä½¿ç”¨ToStringBuilderå®žçŽ°çš„ToStringå·¥å…·ç±»ï¼Œç”¨äºŽæ²¡æœ‰è¦†å†™toStringæ–¹æ³•çš„å¯¹è±¡
+ * 
+ * @author min.weixm
+ * @version $Id: ToStringUtil.java, v 0.1 Dec 25, 2017 10:56:51 PM min.weixm Exp $
  */
 public class ToStringUtil {
 
     /**
-     * ÒÔToStringStyle.SHORT_PREFIX_STYLEÀàÐÍ·µ»Ø²ÎÊý¶ÔÏó×ª»»ºóµÄ×Ö·û´®
+     * ä»¥ToStringStyle.SHORT_PREFIX_STYLEç±»åž‹è¿”å›žå‚æ•°å¯¹è±¡è½¬æ¢åŽçš„å­—ç¬¦ä¸²
      * @param object
      * @return
      */
@@ -27,7 +28,7 @@ public class ToStringUtil {
     }
 
     /**
-     * ÒÔToStringStyle.SHORT_PREFIX_STYLEÀàÐÍ·µ»Ø²ÎÊýList×ª»»ºóµÄ×Ö·û´®
+     * ä»¥ToStringStyle.SHORT_PREFIX_STYLEç±»åž‹è¿”å›žå‚æ•°Listè½¬æ¢åŽçš„å­—ç¬¦ä¸²
      * @param list
      * @return
      */
@@ -43,7 +44,7 @@ public class ToStringUtil {
     }
 
     /**
-     * ÒÔToStringStyle.SHORT_PREFIX_STYLEÀàÐÍ·µ»Ø²ÎÊýMap×ª»»ºóµÄ×Ö·û´®
+     * ä»¥ToStringStyle.SHORT_PREFIX_STYLEç±»åž‹è¿”å›žå‚æ•°Mapè½¬æ¢åŽçš„å­—ç¬¦ä¸²
      * @param map
      * @return
      */
@@ -51,10 +52,7 @@ public class ToStringUtil {
         StringBuffer buffer = new StringBuffer("Map={");
         if (!CollectionUtils.isEmpty(map)) {
             for (String key : map.keySet()) {
-                buffer.append("[")
-                    .append(key).append("=>").append(ToStringBuilder
-                        .reflectionToString(map.get(key), ToStringStyle.SHORT_PREFIX_STYLE))
-                    .append("]");
+                buffer.append("[").append(key).append("=>").append(ToStringBuilder.reflectionToString(map.get(key), ToStringStyle.SHORT_PREFIX_STYLE)).append("]");
             }
             buffer.append("}");
         }

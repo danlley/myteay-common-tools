@@ -13,25 +13,25 @@ import org.apache.ibatis.session.defaults.DefaultSqlSessionFactory;
 import org.springframework.util.CollectionUtils;
 
 /**
- * SqlSessionFactory»á»°ÊµÀı¹ÜÀí×é¼ş
+ * SqlSessionFactoryä¼šè¯å®ä¾‹ç®¡ç†ç»„ä»¶
  * 
  * @author danlley(danlley@126.com)
- * @version $Id: SqlSession.java, v 0.1 2017Äê5ÔÂ7ÈÕ ÉÏÎç12:40:16 danlley(danlley@126.com) Exp $
+ * @version $Id: SqlSession.java, v 0.1 2017å¹´5æœˆ7æ—¥ ä¸Šåˆ12:40:16 danlley(danlley@126.com) Exp $
  */
 public class SqlSessionSwitcher {
 
-    /** ÓÃÓÚÖ¸¶¨DefaultSqlSessionFactory£¬Ïß³Ì°²È« */
+    /** ç”¨äºæŒ‡å®šDefaultSqlSessionFactoryï¼Œçº¿ç¨‹å®‰å…¨ */
     private Map<String, DefaultSqlSessionFactory> switcherBeans = new ConcurrentHashMap<String, DefaultSqlSessionFactory>();
 
     /**
-     * »ñÈ¡Ö¸¶¨µÄSqlSessionFactory
+     * è·å–æŒ‡å®šçš„SqlSessionFactory
      * 
      * @param key
      * @return
      */
     public SqlSessionFactory getSqlSessionFactory(String key) {
         if (StringUtils.isBlank(key) || CollectionUtils.isEmpty(switcherBeans) || !switcherBeans.containsKey(key)) {
-            throw new IllegalArgumentException("SqlSessionSwitcher³õÊ¼»¯Ê§°Ü£¬ÎŞ·¨µÃµ½¿ÉÓÃµÄSqlSessionFactoryÊµÀı key=" + key);
+            throw new IllegalArgumentException("SqlSessionSwitcheråˆå§‹åŒ–å¤±è´¥ï¼Œæ— æ³•å¾—åˆ°å¯ç”¨çš„SqlSessionFactoryå®ä¾‹ key=" + key);
         }
 
         return switcherBeans.get(key);

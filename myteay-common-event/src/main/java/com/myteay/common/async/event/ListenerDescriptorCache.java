@@ -12,31 +12,31 @@ import org.apache.log4j.Logger;
 import org.springframework.util.CollectionUtils;
 
 /**
- * ¼àÌıÆ÷ÃèÊöÎÄ¼ş»º´æ
+ * ç›‘å¬å™¨æè¿°æ–‡ä»¶ç¼“å­˜
  * 
  * @author min.weixm
  * @version $Id: ListenerDescriptorCache.java, v 0.1 Oct 28, 2017 11:26:02 PM min.weixm Exp $
  */
 public class ListenerDescriptorCache {
 
-    /** ÈÕÖ¾ */
+    /** æ—¥å¿— */
     public static final Logger              logger         = Logger
         .getLogger(ListenerDescriptorCache.class);
 
-    /** ÊÂ¼şÖ÷ÌâÓëÊÂ¼ş¼àÌıÆ÷Ó³Éä¹ØÏµ */
+    /** äº‹ä»¶ä¸»é¢˜ä¸äº‹ä»¶ç›‘å¬å™¨æ˜ å°„å…³ç³» */
     private Map<String, ListenerDescriptor> topicListeners = new HashMap<String, ListenerDescriptor>();
 
     /**
-     * Í¨¹ıÊÂ¼şÖ÷ÌâµÃµ½¼àÌıÆ÷ÃèÊöÎÄ¼ş
+     * é€šè¿‡äº‹ä»¶ä¸»é¢˜å¾—åˆ°ç›‘å¬å™¨æè¿°æ–‡ä»¶
      * 
-     * @param topic         ÊÂ¼şÖ÷Ìâ
-     * @return              ¼àÌıÆ÷ÃèÊöÎÄ¼ş
-     * @throws MtEventException  Òì³£
+     * @param topic         äº‹ä»¶ä¸»é¢˜
+     * @return              ç›‘å¬å™¨æè¿°æ–‡ä»¶
+     * @throws MtEventException  å¼‚å¸¸
      */
     public ListenerDescriptor getListenerDescriptor(String topic) throws MtEventException {
 
         if (StringUtils.isBlank(topic)) {
-            logger.error("ÓÃÓÚ²éÕÒ¼àÌıÆ÷µÄÖ÷ÌâĞÅÏ¢²»´æÔÚ£¬ÎŞ·¨µÃµ½¼àÌıÆ÷ÃèÊöÎÄ¼ş£¬topic is null");
+            logger.error("ç”¨äºæŸ¥æ‰¾ç›‘å¬å™¨çš„ä¸»é¢˜ä¿¡æ¯ä¸å­˜åœ¨ï¼Œæ— æ³•å¾—åˆ°ç›‘å¬å™¨æè¿°æ–‡ä»¶ï¼Œtopic is null");
             return null;
         }
 
@@ -48,38 +48,38 @@ public class ListenerDescriptorCache {
     }
 
     /**
-     * ×¢²á¼àÌıÆ÷
+     * æ³¨å†Œç›‘å¬å™¨
      * 
-     * @param descriptor    Òì²½Ïß³Ì³Ø
-     * @throws Exception    Òì³£´¦Àí
+     * @param descriptor    å¼‚æ­¥çº¿ç¨‹æ± 
+     * @throws Exception    å¼‚å¸¸å¤„ç†
      */
     public void registerExtension(ListenerDescriptor descriptor, EventListener<?> listener)
                                                                                             throws Exception {
         if (descriptor == null || listener == null) {
-            logger.error("ÊÂ¼şÃèÊöÎÄ¼ş²»¿ÉÓÃ descriptor is null! descriptor=" + descriptor + " listener="
+            logger.error("äº‹ä»¶æè¿°æ–‡ä»¶ä¸å¯ç”¨ descriptor is null! descriptor=" + descriptor + " listener="
                          + listener);
 
             return;
         }
 
         if (StringUtils.isBlank(descriptor.getTopic())) {
-            logger.error("¼àÌıÆ÷×¢²áÊ§°Ü£¬topic=" + descriptor.getTopic() + " async="
+            logger.error("ç›‘å¬å™¨æ³¨å†Œå¤±è´¥ï¼Œtopic=" + descriptor.getTopic() + " async="
                          + descriptor.isAsync() + " taskExecutor=" + descriptor.getTaskExecutor()
                          + " listener=" + listener);
             return;
         }
 
         if (descriptor.isAsync() && descriptor.getTaskExecutor() == null) {
-            logger.error("Òì²½¼àÌıÆ÷ĞèÒªÏìÓ¦µÄÒì²½Ïß³Ì³Ø¡¢¶ÓÁĞÅäÖÃĞÅÏ¢¡£taskExecutor is null! topic="
+            logger.error("å¼‚æ­¥ç›‘å¬å™¨éœ€è¦å“åº”çš„å¼‚æ­¥çº¿ç¨‹æ± ã€é˜Ÿåˆ—é…ç½®ä¿¡æ¯ã€‚taskExecutor is null! topic="
                          + descriptor.getTopic());
             return;
         }
 
-        //ÉèÖÃ¼àÌıÆ÷ĞÅÏ¢
+        //è®¾ç½®ç›‘å¬å™¨ä¿¡æ¯
         descriptor.setListener(listener);
         topicListeners.put(descriptor.getTopic(), descriptor);
 
-        logger.warn("¼àÌıÆ÷×¢²á³É¹¦£ºtopic=" + descriptor.getTopic() + " descriptor=" + descriptor);
+        logger.warn("ç›‘å¬å™¨æ³¨å†ŒæˆåŠŸï¼štopic=" + descriptor.getTopic() + " descriptor=" + descriptor);
 
     }
 }

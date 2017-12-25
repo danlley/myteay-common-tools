@@ -12,54 +12,54 @@ import java.io.File;
 import com.google.zxing.LuminanceSource;
 
 /**
- * ¶şÎ¬ÂëÉú³É¹¤¾ß¸¨Öú´¦ÀíÀà£¬Ö÷Òª¸ºÔğÍ¼Æ¬´¦Àí
+ * äºŒç»´ç ç”Ÿæˆå·¥å…·è¾…åŠ©å¤„ç†ç±»ï¼Œä¸»è¦è´Ÿè´£å›¾ç‰‡å¤„ç†
  * 
  * @author Administrator
- * @version $Id: BufferedImageLuminanceSource.java, v 0.1 2016Äê9ÔÂ3ÈÕ ÏÂÎç11:20:01 Administrator Exp $
+ * @version $Id: BufferedImageLuminanceSource.java, v 0.1 2016å¹´9æœˆ3æ—¥ ä¸‹åˆ11:20:01 Administrator Exp $
  */
 public class BufferedImageLuminanceSource extends LuminanceSource {
 
-    /** Í¼Æ¬Á÷ */
+    /** å›¾ç‰‡æµ */
     private final BufferedImage image;
 
-    /** ×ó²àÎ»ÖÃ */
+    /** å·¦ä¾§ä½ç½® */
     private final int           left;
 
-    /** ¶¥²¿Î»ÖÃ */
+    /** é¡¶éƒ¨ä½ç½® */
     private final int           top;
 
     /**
-     * ²âÊÔ¹¤¾ßÀà
+     * æµ‹è¯•å·¥å…·ç±»
      * 
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        //Éú³É¶şÎ¬Âëµ½Ö¸¶¨µÄÄ¿Â¼ÏÂ
+        //ç”ŸæˆäºŒç»´ç åˆ°æŒ‡å®šçš„ç›®å½•ä¸‹
         QRCodeUtil.encode("http://www.163.com", "d:/860187528828488679.jpg", "d:/MyWorkDoc", true);
 
-        //½âÎö¶şÎ¬ÂëÖĞµÄĞÅÏ¢
+        //è§£æäºŒç»´ç ä¸­çš„ä¿¡æ¯
         String str = QRCodeUtil.decode(new File("d:/MyWorkDoc/17659887.jpg"));
         System.out.println(str);
     }
 
     /**
-     * Ä¬ÈÏ¹¹Ôì·½·¨
+     * é»˜è®¤æ„é€ æ–¹æ³•
      * 
-     * @param image ´ı´¦ÀíµÄÍ¼Æ¬
+     * @param image å¾…å¤„ç†çš„å›¾ç‰‡
      */
     public BufferedImageLuminanceSource(BufferedImage image) {
         this(image, 0, 0, image.getWidth(), image.getHeight());
     }
 
     /**
-     * Ä¬ÈÏ¹¹Ôì·½·¨
+     * é»˜è®¤æ„é€ æ–¹æ³•
      * 
-     * @param image     ´ı´¦ÀíµÄÍ¼Æ¬
-     * @param left      ×ó²àÎ»ÖÃ
-     * @param top       ¶¥²¿Î»ÖÃ
-     * @param width     Í¼Æ¬¿í¶È
-     * @param height    Í¼Æ¬¸ß¶È
+     * @param image     å¾…å¤„ç†çš„å›¾ç‰‡
+     * @param left      å·¦ä¾§ä½ç½®
+     * @param top       é¡¶éƒ¨ä½ç½®
+     * @param width     å›¾ç‰‡å®½åº¦
+     * @param height    å›¾ç‰‡é«˜åº¦
      */
     public BufferedImageLuminanceSource(BufferedImage image, int left, int top, int width,
                                         int height) {
