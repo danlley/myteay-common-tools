@@ -12,15 +12,15 @@ import org.apache.commons.lang.StringUtils;
  * @author min.weixm
  * @version $Id: CharSetEnum.java, v 0.1 Oct 29, 2017 11:53:56 AM min.weixm Exp $
  */
-public enum CharSetEnum {
-                         /**  */
-                         GBK("GBK", "GBK"),
+public enum CharSetEnum implements EnumMessage {
+                                                /**  */
+                                                GBK("GBK", "GBK"),
 
-                         /**  */
-                         GB2312("gb2312", "gb2312"),
+                                                /**  */
+                                                GB2312("gb2312", "gb2312"),
 
-                         /**  */
-                         ISO_8859_1("ISO-8859-1", "ISO-8859-1"),
+                                                /**  */
+                                                ISO_8859_1("ISO-8859-1", "ISO-8859-1"),
 
     ;
     /** value */
@@ -39,15 +39,15 @@ public enum CharSetEnum {
         this.message = message;
     }
 
-    /**
-     * @return Returns the value.
+    /** 
+     * @see com.myteay.common.util.enums.EnumMessage#getValue()
      */
     public String getValue() {
         return value;
     }
 
-    /**
-     * @return Returns the message.
+    /** 
+     * @see com.myteay.common.util.enums.EnumMessage#getMessage()
      */
     public String getMessage() {
         return message;
