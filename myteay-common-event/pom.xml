@@ -11,6 +11,10 @@
     <artifactId>myteay-common-event</artifactId>
     <packaging>jar</packaging>
     <version>1.0.1.20171028</version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    	<jmock.version>1.2.0</jmock.version>
+    </properties>
 
     <name>myteay-common-event</name>
     <url>http://maven.apache.org</url>
