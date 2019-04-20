@@ -17,13 +17,28 @@ import org.apache.commons.lang.StringUtils;
 public class Money implements Serializable {
 
     /** serialVersionUID */
-    private static final long serialVersionUID = 220214845953730021L;
+    private static final long   serialVersionUID   = 220214845953730021L;
 
     /** 金钱的整数部分 */
-    long                      yuan             = 0;
+    private Long                yuan               = 0L;
 
     /** 金钱的小数部分 */
-    int                       cent             = 0;
+    private Integer             cent               = 0;
+
+    /** 金额小数点 */
+    private static final String MONEY_POINT        = ".";
+
+    /** 金额小数点后的最大进位单位 */
+    private static final int    CENT_UNIT          = 100;
+
+    /** 金额小数部分的默认格式 */
+    private char[]              defaultCentPantern = { '0', '0' };
+
+    /** 负数标识 */
+    private boolean             negativeFlag       = false;
+
+    /** 负数标记 */
+    private static final String negative           = "-";
 
     /**
      * 默认构造方法，用于无数据初始化情况下生成金额
@@ -49,6 +64,20 @@ public class Money implements Serializable {
             return;
         }
 
+        String[] srcArray = src.split("\\.");
+        if (src.indexOf(".") == 0 || srcArray.length > 2) {
+            throw new NumberFormatException("金额格式异常，无法完成Money类的初始化");
+        }
+
+        char[] localCentArr = srcArray[1].toCharArray();
+        if (localCentArr.length > 2) {
+            throw new NumberFormatException("金额的小数点后尾数不合法，金额小数点后不允许出现2位以上的小数");
+        }
+        char[] tmpCentPantern = { '0', '0' };
+        System.arraycopy(localCentArr, 0, tmpCentPantern, 0, localCentArr.length);
+
+        this.yuan = Long.parseLong(srcArray[0]);
+        this.cent = Integer.parseInt(new String(tmpCentPantern));
     }
 
     /**
@@ -60,6 +89,13 @@ public class Money implements Serializable {
      * @param cent  金额小数部分
      */
     public Money(long yuan, int cent) {
+
+        if (cent >= CENT_UNIT) {
+            throw new NumberFormatException("金额的小数点后尾数不合法，金额小数点后不允许出现2位以上的小数");
+        }
+
+        this.yuan = yuan;
+        this.cent = cent;
     }
 
     /**
@@ -70,6 +106,149 @@ public class Money implements Serializable {
      * @param yuan
      */
     public Money(long yuan) {
+        this.yuan = yuan;
+    }
+
+    /**
+     * 将源金额累加到当前目标金额
+     * 
+     * @param src   源金额
+     */
+    public void add(Money src) {
+        // 当前金额为空或者金额为零则不做累加
+        if (src == null || (src.getCent() == 0 && src.getYuan() == 0)) {
+            return;
+        }
+
+        int localCent = this.cent + src.getCent();
+        this.yuan += src.getYuan();
+        if (localCent >= CENT_UNIT) {
+            this.yuan++;
+            this.cent = localCent % CENT_UNIT;
+            return;
+        }
+
+        this.cent = localCent;
+
+    }
+
+    /**
+     * 判断当前金额不小于源金额
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isNotSmallThan(Money src) {
+        return !this.isSmallThan(src);
+    }
+
+    /**
+     * 判断两个金额不相等
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isNotEqual(Money src) {
+        return !this.isEqual(src);
+    }
+
+    /**
+     * 检查当前金额不小于源金额
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isNotBiggerThan(Money src) {
+        return !this.isBiggerThan(src);
+    }
+
+    /**
+     * 比较当前金额是否小于源金额
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isSmallThan(Money src) {
+        if (!this.isBiggerThan(src) && !this.isEqual(src)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * 比较两个金额的面额，如果面额相等，则返回true
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isEqual(Money src) {
+        Long localMoney = this.yuan * CENT_UNIT + this.cent;
+        Long localSrcMoney = src.getYuan() * CENT_UNIT + src.getCent();
+
+        return (localMoney - localSrcMoney == 0);
+    }
+
+    /**
+     * 比较当前金额是否大于源金额，如大于，则返回true
+     * 
+     * @param src   源金额
+     * @return
+     */
+    public boolean isBiggerThan(Money src) {
+        Long localMoney = this.yuan * CENT_UNIT + this.cent;
+        Long localSrcMoney = src.getYuan() * CENT_UNIT + src.getCent();
+
+        return (localMoney - localSrcMoney > 0);
+    }
+
+    /**
+     * 当前目标金额减掉源金额
+     * 
+     * @param src   源金额
+     */
+    public void reduce(Money src) {
+        // 当前金额为空或者金额为零则不做扣减
+        if (src == null || (src.getCent() == 0 && src.getYuan() == 0)) {
+            return;
+        }
+
+        Long localMoney = this.yuan * CENT_UNIT + this.cent;
+        Long localSrcMoney = src.getYuan() * CENT_UNIT + src.getCent();
+
+        Long localTmpResult = localMoney - localSrcMoney;
+        if (localTmpResult < 0) {
+            this.negativeFlag = true;
+            localTmpResult *= -1;
+        }
+
+        this.yuan = localTmpResult / CENT_UNIT;
+        this.cent = (int) (localTmpResult % CENT_UNIT);
+    }
+
+    /**
+     * 当前目标金额增加相应的倍数
+     * 
+     * @param number    倍数
+     */
+    public void multiply(int number) {
+        // 当前倍数为零或不合法，则将当前金额直接归零
+        if (number == 0) {
+            this.yuan = 0L;
+            this.cent = 0;
+        }
+
+        if (number < 0) {
+            this.negativeFlag = true;
+            number *= -1;
+        }
+
+        Long localMoney = this.yuan * CENT_UNIT + this.cent;
+        Long tmpResult = localMoney * number;
+
+        this.yuan = tmpResult / CENT_UNIT;
+        this.cent = (int) (tmpResult % CENT_UNIT);
+
     }
 
     /**
@@ -108,4 +287,41 @@ public class Money implements Serializable {
         this.cent = cent;
     }
 
+    /** 
+     * @see java.lang.Object#toString()
+     */
+    public String toString() {
+
+        this.yuan = (this.yuan < 0 ? this.yuan * -1 : this.yuan);
+        this.cent = (this.cent < 0 ? this.cent * -1 : this.cent);
+
+        String localYuan = Long.toString(this.yuan);
+        if (StringUtils.isBlank(localYuan) || this.yuan == 0) {
+            localYuan = "0";
+        }
+
+        String localCent = Integer.toString(this.cent);
+        if (StringUtils.isBlank(localCent) || this.cent == 0) {
+            return localYuan + ".00";
+        }
+
+        char[] localCentArray = localCent.toCharArray();
+        if (localCentArray.length > 2) {
+            throw new NumberFormatException("金额的小数点后尾数不合法，金额小数点后不允许出现2位以上的小数");
+        }
+
+        if (localCentArray.length == 2) {
+            System.arraycopy(localCentArray, 0, this.defaultCentPantern, 0, localCentArray.length);
+        }
+
+        if (localCentArray.length == 1) {
+            System.arraycopy(localCentArray, 0, this.defaultCentPantern, 1, localCentArray.length);
+        }
+
+        if (this.negativeFlag) {
+            return negative + localYuan + MONEY_POINT + new String(this.defaultCentPantern);
+        }
+
+        return localYuan + MONEY_POINT + new String(this.defaultCentPantern);
+    }
 }
