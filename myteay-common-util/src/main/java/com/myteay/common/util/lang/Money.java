@@ -53,31 +53,7 @@ public class Money implements Serializable {
      */
     public Money(String src) throws NumberFormatException {
 
-        // case 1: 初始化目标为空，则只是形成一个空金额对象，不抛出任何异常，此时金额toString后为0.00
-        if (StringUtils.isBlank(src)) {
-            return;
-        }
-
-        if (src.indexOf(".") < 0) {
-            Long localYuan = Long.parseLong(src);
-            this.yuan = localYuan;
-            return;
-        }
-
-        String[] srcArray = src.split("\\.");
-        if (src.indexOf(".") == 0 || srcArray.length > 2) {
-            throw new NumberFormatException("金额格式异常，无法完成Money类的初始化");
-        }
-
-        char[] localCentArr = srcArray[1].toCharArray();
-        if (localCentArr.length > 2) {
-            throw new NumberFormatException("金额的小数点后尾数不合法，金额小数点后不允许出现2位以上的小数");
-        }
-        char[] tmpCentPantern = { '0', '0' };
-        System.arraycopy(localCentArr, 0, tmpCentPantern, 0, localCentArr.length);
-
-        this.yuan = Long.parseLong(srcArray[0]);
-        this.cent = Integer.parseInt(new String(tmpCentPantern));
+        initCurrentMoney(src);
     }
 
     /**
@@ -252,6 +228,40 @@ public class Money implements Serializable {
     }
 
     /**
+     * 初始化当前现金类
+     * 
+     * @param src
+     */
+    private void initCurrentMoney(String src) {
+
+        // case 1: 初始化目标为空，则只是形成一个空金额对象，不抛出任何异常，此时金额toString后为0.00
+        if (StringUtils.isBlank(src)) {
+            return;
+        }
+
+        if (src.indexOf(".") < 0) {
+            Long localYuan = Long.parseLong(src);
+            this.yuan = localYuan;
+            return;
+        }
+
+        String[] srcArray = src.split("\\.");
+        if (src.indexOf(".") == 0 || srcArray.length > 2) {
+            throw new NumberFormatException("金额格式异常，无法完成Money类的初始化");
+        }
+
+        char[] localCentArr = srcArray[1].toCharArray();
+        if (localCentArr.length > 2) {
+            throw new NumberFormatException("金额的小数点后尾数不合法，金额小数点后不允许出现2位以上的小数");
+        }
+        char[] tmpCentPantern = { '0', '0' };
+        System.arraycopy(localCentArr, 0, tmpCentPantern, 0, localCentArr.length);
+
+        this.yuan = Long.parseLong(srcArray[0]);
+        this.cent = Integer.parseInt(new String(tmpCentPantern));
+    }
+
+    /**
      * Getter method for property <tt>yuan</tt>.
      * 
      * @return property value of yuan
@@ -323,5 +333,39 @@ public class Money implements Serializable {
         }
 
         return localYuan + MONEY_POINT + new String(this.defaultCentPantern);
+    }
+
+    //    /** 
+    //     * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+    //     */
+    //    @Override
+    //    public void writeExternal(ObjectOutput out) throws IOException {
+    //        out.write(this.toString().getBytes());
+    //    }
+    //
+    //    /** 
+    //     * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+    //     */
+    //    @Override
+    //    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+    //        String src = in.readLine();
+    //        initCurrentMoney(src);
+    //    }
+
+    /**
+     * readObject is called to restore the state of the StringBuffer from
+     * a stream.
+     */
+    private synchronized void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
+        s.write(this.toString().getBytes());
+    }
+
+    /**
+     * readObject is called to restore the state of the StringBuffer from
+     * a stream.
+     */
+    private void readObject(java.io.ObjectInputStream s) throws java.io.IOException, ClassNotFoundException {
+        String src = s.readLine();
+        initCurrentMoney(src);
     }
 }
