@@ -61,10 +61,42 @@ public class DalMonitorInterceptor implements MethodInterceptor {
      * @return
      */
     private String parseDbName(String packageName) {
-        if (StringUtils.contains(packageName, "dinner")) {
-            return "dinner";
+        // 平台门面
+        if (StringUtils.contains(packageName, "phoenix")) {
+            return "phoenix";
         }
 
-        return "customer";
+        // 数据中心
+        if (StringUtils.contains(packageName, "dbcenter")) {
+            return "dbcenter";
+        }
+
+        // 交易系统
+        if (StringUtils.contains(packageName, "trade")) {
+            return "trade";
+        }
+
+        // 营销系统
+        if (StringUtils.contains(packageName, "promocore")) {
+            return "promocore";
+        }
+
+        // 结算系统
+        if (StringUtils.contains(packageName, "counter")) {
+            return "counter";
+        }
+
+        // 产品账
+        if (StringUtils.contains(packageName, "transprod")) {
+            return "transprod";
+        }
+
+        // 账务系统
+        if (StringUtils.contains(packageName, "accounts")) {
+            return "accounts";
+        }
+
+        // 默认标识
+        return "myteay";
     }
 }
