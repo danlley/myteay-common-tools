@@ -23,37 +23,37 @@ import com.myteay.phoenix.core.model.manage.PxGoodsModel;
 public class PxGoodsOrderModel implements Serializable {
 
     /** serialVersionUID */
-    private static final long             serialVersionUID         = -7943137818618714563L;
+    private static final long          serialVersionUID         = -7943137818618714563L;
 
     /** 会员ID */
-    private String                        userId;
+    private String                     userId;
 
     /** 订单编号 */
-    private String                        orderNo;
+    private String                     orderNo;
 
     /** 店铺名称 */
-    private String                        shopName;
+    private String                     shopName;
 
     /** 店铺ID */
-    private String                        shopId;
+    private String                     shopId;
 
     /** 实付金额 */
-    private String                        actrualPayed;
+    private String                     actrualPayed;
 
     /** 支付方式 */
-    private PxPayTypeEnum                 payType;
+    private PxPayTypeEnum              payType;
 
     /** 订单列表 */
-    private List<PxGoodsModel>            pxGoodsModelList;
+    private List<PxGoodsModel>         pxGoodsModelList;
 
     /** 订单上下文（不接受外部传值）， 关键字取值：PxOrderContextKeyEnum */
-    private transient Map<String, String> orderContext;
+    private Map<String, String>        orderContext;
 
     /** 订单流水清单 */
-    private List<PxGoodsOrderOutModel>    pxGoodsOrderOutModelList = new ArrayList<>();
+    private List<PxGoodsOrderOutModel> pxGoodsOrderOutModelList = new ArrayList<>();
 
     /** 中奖流水操作模型 */
-    private CampShopPrizeOutModel         campShopPrizeOutModel;
+    private CampShopPrizeOutModel      campShopPrizeOutModel;
 
     /**
      * Getter method for property <tt>actrualPayed</tt>.
