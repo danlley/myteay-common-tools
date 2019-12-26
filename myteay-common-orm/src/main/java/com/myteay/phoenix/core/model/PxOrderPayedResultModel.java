@@ -37,6 +37,9 @@ public class PxOrderPayedResultModel implements Serializable {
     /** 图片名称 */
     private String                     shopLogo;
 
+    /** 联系电话 */
+    private String                     shopTel;
+
     /** 下单时间 */
     private Date                       orderTime;
 
@@ -45,6 +48,25 @@ public class PxOrderPayedResultModel implements Serializable {
 
     /** 下单列表 */
     private List<PxGoodsOrderOutModel> pxGoodsOrderOutModelList;
+
+    /**
+     * Getter method for property <tt>shopTel</tt>.
+     * 
+     * @return property value of shopTel
+     */
+    public String getShopTel() {
+        return shopTel;
+    }
+
+    /**
+     * Setter method for property <tt>shopTel</tt>.
+     * 
+     * @param shopTel
+     *            value to be assigned to property shopTel
+     */
+    public void setShopTel(String shopTel) {
+        this.shopTel = shopTel;
+    }
 
     /**
      * Getter method for property <tt>shopId</tt>.
