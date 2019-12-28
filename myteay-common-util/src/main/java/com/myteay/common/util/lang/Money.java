@@ -49,7 +49,8 @@ public class Money implements Serializable {
     /**
      * 金额初始化，用于字符串类型的金额初始化，字符串格式：23.68 含义：23元6角8分
      * 
-     * @param src   金额源数据
+     * @param src
+     *            金额源数据
      */
     public Money(String src) throws NumberFormatException {
 
@@ -61,8 +62,10 @@ public class Money implements Serializable {
      * 
      * 注： 此方法的功能也可以通过默认构造方法得到金钱类对象后，通过相应的set方法对金钱的整数部分和小数部分进行初始化
      * 
-     * @param yuan  金额整数部分
-     * @param cent  金额小数部分
+     * @param yuan
+     *            金额整数部分
+     * @param cent
+     *            金额小数部分
      */
     public Money(long yuan, int cent) {
 
@@ -88,7 +91,8 @@ public class Money implements Serializable {
     /**
      * 将源金额累加到当前目标金额
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      */
     public void add(Money src) {
         // 当前金额为空或者金额为零则不做累加
@@ -111,7 +115,8 @@ public class Money implements Serializable {
     /**
      * 判断当前金额不小于源金额
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isNotSmallThan(Money src) {
@@ -121,7 +126,8 @@ public class Money implements Serializable {
     /**
      * 判断两个金额不相等
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isNotEqual(Money src) {
@@ -131,7 +137,8 @@ public class Money implements Serializable {
     /**
      * 检查当前金额不小于源金额
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isNotBiggerThan(Money src) {
@@ -141,7 +148,8 @@ public class Money implements Serializable {
     /**
      * 比较当前金额是否小于源金额
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isSmallThan(Money src) {
@@ -155,7 +163,8 @@ public class Money implements Serializable {
     /**
      * 比较两个金额的面额，如果面额相等，则返回true
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isEqual(Money src) {
@@ -168,7 +177,8 @@ public class Money implements Serializable {
     /**
      * 比较当前金额是否大于源金额，如大于，则返回true
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      * @return
      */
     public boolean isBiggerThan(Money src) {
@@ -181,7 +191,8 @@ public class Money implements Serializable {
     /**
      * 当前目标金额减掉源金额
      * 
-     * @param src   源金额
+     * @param src
+     *            源金额
      */
     public void reduce(Money src) {
         // 当前金额为空或者金额为零则不做扣减
@@ -205,7 +216,8 @@ public class Money implements Serializable {
     /**
      * 当前目标金额增加相应的倍数
      * 
-     * @param number    倍数
+     * @param number
+     *            倍数
      */
     public void multiply(int number) {
         // 当前倍数为零或不合法，则将当前金额直接归零
@@ -241,7 +253,7 @@ public class Money implements Serializable {
 
         if (src.indexOf(".") < 0) {
             Long localYuan = Long.parseLong(src);
-            this.yuan = localYuan;
+            this.yuan = (localYuan < 0 ? localYuan * -1 : localYuan);
             return;
         }
 
@@ -258,6 +270,7 @@ public class Money implements Serializable {
         System.arraycopy(localCentArr, 0, tmpCentPantern, 0, localCentArr.length);
 
         this.yuan = Long.parseLong(srcArray[0]);
+        this.yuan = (this.yuan < 0 ? this.yuan * -1 : this.yuan);
         this.cent = Integer.parseInt(new String(tmpCentPantern));
     }
 
@@ -273,7 +286,8 @@ public class Money implements Serializable {
     /**
      * Setter method for property <tt>yuan</tt>.
      * 
-     * @param yuan value to be assigned to property yuan
+     * @param yuan
+     *            value to be assigned to property yuan
      */
     public void setYuan(long yuan) {
         this.yuan = yuan;
@@ -291,13 +305,14 @@ public class Money implements Serializable {
     /**
      * Setter method for property <tt>cent</tt>.
      * 
-     * @param cent value to be assigned to property cent
+     * @param cent
+     *            value to be assigned to property cent
      */
     public void setCent(int cent) {
         this.cent = cent;
     }
 
-    /** 
+    /**
      * @see java.lang.Object#toString()
      */
     public String toString() {
@@ -335,22 +350,22 @@ public class Money implements Serializable {
         return localYuan + MONEY_POINT + new String(this.defaultCentPantern);
     }
 
-    //    /** 
-    //     * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
-    //     */
-    //    @Override
-    //    public void writeExternal(ObjectOutput out) throws IOException {
-    //        out.write(this.toString().getBytes());
-    //    }
+    // /**
+    // * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+    // */
+    // @Override
+    // public void writeExternal(ObjectOutput out) throws IOException {
+    // out.write(this.toString().getBytes());
+    // }
     //
-    //    /** 
-    //     * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
-    //     */
-    //    @Override
-    //    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-    //        String src = in.readLine();
-    //        initCurrentMoney(src);
-    //    }
+    // /**
+    // * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+    // */
+    // @Override
+    // public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+    // String src = in.readLine();
+    // initCurrentMoney(src);
+    // }
 
     /**
      * readObject is called to restore the state of the StringBuffer from
