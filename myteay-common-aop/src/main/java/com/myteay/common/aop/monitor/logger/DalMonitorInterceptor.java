@@ -96,6 +96,26 @@ public class DalMonitorInterceptor implements MethodInterceptor {
             return "accounts";
         }
 
+        // 数据仓库
+        if (StringUtils.contains(packageName, "occean")) {
+            return "occean";
+        }
+
+        // 会员系统
+        if (StringUtils.contains(packageName, "customer")) {
+            return "customer";
+        }
+
+        // 无线前端系统
+        if (StringUtils.contains(packageName, "fronter")) {
+            return "fronter";
+        }
+
+        // 折扣系统
+        if (StringUtils.contains(packageName, "discount")) {
+            return "discount";
+        }
+
         // 默认标识
         return "myteay";
     }
