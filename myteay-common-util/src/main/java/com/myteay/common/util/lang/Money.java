@@ -253,6 +253,9 @@ public class Money implements Serializable {
 
         if (src.indexOf(".") < 0) {
             Long localYuan = Long.parseLong(src);
+            if (localYuan < 0) {
+                this.negativeFlag = true;
+            }
             this.yuan = (localYuan < 0 ? localYuan * -1 : localYuan);
             return;
         }
