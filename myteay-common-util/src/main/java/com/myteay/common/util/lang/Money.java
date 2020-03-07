@@ -270,6 +270,11 @@ public class Money implements Serializable {
         System.arraycopy(localCentArr, 0, tmpCentPantern, 0, localCentArr.length);
 
         this.yuan = Long.parseLong(srcArray[0]);
+
+        // bugfix: 如果金额为负数，则对负数金额进行打标，方便业务系统根据自身需要进行处理
+        if (this.yuan < 0) {
+            negativeFlag = true;
+        }
         this.yuan = (this.yuan < 0 ? this.yuan * -1 : this.yuan);
         this.cent = Integer.parseInt(new String(tmpCentPantern));
     }
@@ -310,6 +315,24 @@ public class Money implements Serializable {
      */
     public void setCent(int cent) {
         this.cent = cent;
+    }
+
+    /**
+     * Getter method for property <tt>negativeFlag</tt>.
+     * 
+     * @return property value of negativeFlag
+     */
+    public boolean isNegativeFlag() {
+        return negativeFlag;
+    }
+
+    /**
+     * Setter method for property <tt>negativeFlag</tt>.
+     * 
+     * @param negativeFlag value to be assigned to property negativeFlag
+     */
+    public void setNegativeFlag(boolean negativeFlag) {
+        this.negativeFlag = negativeFlag;
     }
 
     /**
