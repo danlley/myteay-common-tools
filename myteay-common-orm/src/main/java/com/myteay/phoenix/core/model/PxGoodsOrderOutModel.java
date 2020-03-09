@@ -39,6 +39,15 @@ public class PxGoodsOrderOutModel implements Serializable {
     /** 店铺ID */
     private String                shopId;
 
+    /** 已匹配的折扣ID */
+    private String                discountId;
+
+    /** 折扣对应的产品账ID */
+    private String                prodtransId;
+
+    /** 折扣对应的产品账流水ID */
+    private String                prodtransOutId;
+
     /** 店铺名称 */
     private String                shopName;
 
@@ -71,6 +80,60 @@ public class PxGoodsOrderOutModel implements Serializable {
 
     /** 中奖流水操作模型 */
     private CampShopPrizeOutModel campShopPrizeOutModel;
+
+    /**
+     * Getter method for property <tt>discountId</tt>.
+     * 
+     * @return property value of discountId
+     */
+    public String getDiscountId() {
+        return discountId;
+    }
+
+    /**
+     * Setter method for property <tt>discountId</tt>.
+     * 
+     * @param discountId value to be assigned to property discountId
+     */
+    public void setDiscountId(String discountId) {
+        this.discountId = discountId;
+    }
+
+    /**
+     * Getter method for property <tt>prodtransId</tt>.
+     * 
+     * @return property value of prodtransId
+     */
+    public String getProdtransId() {
+        return prodtransId;
+    }
+
+    /**
+     * Setter method for property <tt>prodtransId</tt>.
+     * 
+     * @param prodtransId value to be assigned to property prodtransId
+     */
+    public void setProdtransId(String prodtransId) {
+        this.prodtransId = prodtransId;
+    }
+
+    /**
+     * Getter method for property <tt>prodtransOutId</tt>.
+     * 
+     * @return property value of prodtransOutId
+     */
+    public String getProdtransOutId() {
+        return prodtransOutId;
+    }
+
+    /**
+     * Setter method for property <tt>prodtransOutId</tt>.
+     * 
+     * @param prodtransOutId value to be assigned to property prodtransOutId
+     */
+    public void setProdtransOutId(String prodtransOutId) {
+        this.prodtransOutId = prodtransOutId;
+    }
 
     /**
      * Getter method for property <tt>campShopPrizeOutModel</tt>.
