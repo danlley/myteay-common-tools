@@ -6,6 +6,7 @@ package com.myteay.phoenix.core.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import com.myteay.common.util.tools.ToStringUtil;
 import com.myteay.phoenix.common.util.enums.PxOrderStatusEnum;
@@ -22,64 +23,85 @@ import com.myteay.phoenix.core.model.camp.CampShopPrizeOutModel;
 public class PxGoodsOrderOutModel implements Serializable {
 
     /** serialVersionUID */
-    private static final long     serialVersionUID = -3441348657141560685L;
+    private static final long                       serialVersionUID = -3441348657141560685L;
 
     /** 订单流水号 */
-    private String                id;
+    private String                                  id;
 
     /** 订单编号 */
-    private String                orderNo;
+    private String                                  orderNo;
 
     /** 会员ID */
-    private String                userId;
+    private String                                  userId;
 
     /** 商品ID */
-    private String                goodsId;
+    private String                                  goodsId;
 
     /** 店铺ID */
-    private String                shopId;
+    private String                                  shopId;
 
     /** 已匹配的折扣ID */
-    private String                discountId;
+    private String                                  discountId;
 
     /** 折扣对应的产品账ID */
-    private String                prodtransId;
+    private String                                  prodtransId;
 
     /** 折扣对应的产品账流水ID */
-    private String                prodtransOutId;
+    private String                                  prodtransOutId;
 
     /** 店铺名称 */
-    private String                shopName;
+    private String                                  shopName;
 
     /** 商品名称 */
-    private String                goodsTitle;
+    private String                                  goodsTitle;
 
     /** 订单状态 */
-    private PxOrderStatusEnum     orderStatus;
+    private PxOrderStatusEnum                       orderStatus;
 
     /** 订单状态 */
-    private PxPayTypeEnum         payType;
+    private PxPayTypeEnum                           payType;
 
     /** 商品售价 */
-    private String                goodsPrice;
+    private String                                  goodsPrice;
 
     /** 商品数量 */
-    private String                sellerAmount;
+    private String                                  sellerAmount;
 
     /** 商品原价 */
-    private String                goodsCommPrice;
+    private String                                  goodsCommPrice;
 
     /** 商品类型 */
-    private PxGoodsTypeEnum       goodsType;
+    private PxGoodsTypeEnum                         goodsType;
 
     /** 创建时间 */
-    private Date                  gmtCreated;
+    private Date                                    gmtCreated;
 
     /** 最后修改时间 */
-    private Date                  gmtModified;
+    private Date                                    gmtModified;
 
     /** 中奖流水操作模型 */
-    private CampShopPrizeOutModel campShopPrizeOutModel;
+    private CampShopPrizeOutModel                   campShopPrizeOutModel;
+
+    /** 折扣预处理模型 */
+    private transient List<TcDiscountPreparedModel> tcDiscountPreparedModels;
+
+    /**
+     * Getter method for property <tt>tcDiscountPreparedModels</tt>.
+     * 
+     * @return property value of tcDiscountPreparedModels
+     */
+    public List<TcDiscountPreparedModel> getTcDiscountPreparedModels() {
+        return tcDiscountPreparedModels;
+    }
+
+    /**
+     * Setter method for property <tt>tcDiscountPreparedModels</tt>.
+     * 
+     * @param tcDiscountPreparedModels value to be assigned to property tcDiscountPreparedModels
+     */
+    public void setTcDiscountPreparedModels(List<TcDiscountPreparedModel> tcDiscountPreparedModels) {
+        this.tcDiscountPreparedModels = tcDiscountPreparedModels;
+    }
 
     /**
      * Getter method for property <tt>discountId</tt>.
