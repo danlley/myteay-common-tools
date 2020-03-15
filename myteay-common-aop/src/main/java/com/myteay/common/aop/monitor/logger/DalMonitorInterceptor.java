@@ -87,8 +87,8 @@ public class DalMonitorInterceptor implements MethodInterceptor {
         }
 
         // 产品账
-        if (StringUtils.contains(packageName, "transprod")) {
-            return "transprod";
+        if (StringUtils.contains(packageName, "prodtrans")) {
+            return "prodtrans";
         }
 
         // 账务系统
