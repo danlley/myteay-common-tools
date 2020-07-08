@@ -24,7 +24,7 @@ public enum PxGoodsTypeEnum implements EnumMessage {
 
                                                     PX_GOODS_LYH("PX_GOODS_LYH", "零元换"),
 
-                                                    PX_GOODS_RT_ZC("PX_GOODS_RT_ZC", "早餐"),
+                                                    PX_GOODS_RT_ZC("PX_GOODS_RT_ZC", "披萨"),
 
                                                     PX_GOODS_NC("PX_GOODS_NC", "奶茶"),
 
