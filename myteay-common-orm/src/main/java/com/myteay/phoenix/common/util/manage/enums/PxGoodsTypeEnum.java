@@ -32,7 +32,7 @@ public enum PxGoodsTypeEnum implements EnumMessage {
 
                                                     PX_GOODS_PS("PX_GOODS_PS", "配餐"),
 
-                                                    PX_GOODS_BQL("PX_GOODS_BQL", "冰淇淋"),
+                                                    PX_GOODS_BQL("PX_GOODS_BQL", "炸鸡"),
 
     ;
 

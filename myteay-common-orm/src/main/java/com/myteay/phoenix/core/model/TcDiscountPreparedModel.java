@@ -34,6 +34,48 @@ public class TcDiscountPreparedModel implements Serializable {
     /** 折扣对应的产品账ID */
     private String            prodtransId;
 
+    /** 折扣对应的产品账流水ID */
+    private String            prodtransOutId;
+
+    /** 产品账事务识别码 */
+    private String            prodtransUniqId;
+
+    /**
+     * Getter method for property <tt>prodtransOutId</tt>.
+     * 
+     * @return property value of prodtransOutId
+     */
+    public String getProdtransOutId() {
+        return prodtransOutId;
+    }
+
+    /**
+     * Setter method for property <tt>prodtransOutId</tt>.
+     * 
+     * @param prodtransOutId value to be assigned to property prodtransOutId
+     */
+    public void setProdtransOutId(String prodtransOutId) {
+        this.prodtransOutId = prodtransOutId;
+    }
+
+    /**
+     * Getter method for property <tt>prodtransUniqId</tt>.
+     * 
+     * @return property value of prodtransUniqId
+     */
+    public String getProdtransUniqId() {
+        return prodtransUniqId;
+    }
+
+    /**
+     * Setter method for property <tt>prodtransUniqId</tt>.
+     * 
+     * @param prodtransUniqId value to be assigned to property prodtransUniqId
+     */
+    public void setProdtransUniqId(String prodtransUniqId) {
+        this.prodtransUniqId = prodtransUniqId;
+    }
+
     /**
      * Getter method for property <tt>userId</tt>.
      * 
