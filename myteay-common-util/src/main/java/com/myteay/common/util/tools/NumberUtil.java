@@ -23,4 +23,46 @@ public class NumberUtil {
         }
         return defaultValue;
     }
+
+    /**
+     * <p>Checks if the String contains only unicode digits.
+     * A decimal point is not a unicode digit and returns false.</p>
+     *
+     * <p><code>null</code> will return <code>false</code>.
+     * An empty String ("") will return <code>true</code>.</p>
+     *
+     * <pre>
+     * StringUtils.isNumeric(null)   = false
+     * StringUtils.isNumeric("")     = true
+     * StringUtils.isNumeric("  ")   = false
+     * StringUtils.isNumeric("123")  = true
+     * StringUtils.isNumeric("12 3") = false
+     * StringUtils.isNumeric("ab2c") = false
+     * StringUtils.isNumeric("12-3") = false
+     * StringUtils.isNumeric("12.3") = true
+     * </pre>
+     *
+     * @param str  the String to check, may be null
+     * @return <code>true</code> if only contains digits, and is non-null
+     */
+    public static boolean isNumeric(String str) {
+        if (str == null) {
+            return false;
+        }
+        int sz = str.length();
+        int pointCount = 0;
+        for (int i = 0; i < sz; i++) {
+            if (Character.isDigit(str.charAt(i)) == false) {
+                if (str.charAt(i) != '.') {
+                    return false;
+                }
+                pointCount++;
+                if (i <= 0 || pointCount > 1) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
 }
