@@ -116,7 +116,12 @@ public class DalMonitorInterceptor implements MethodInterceptor {
             return "discount";
         }
 
+        // 折扣系统
+        if (StringUtils.contains(packageName, "shop")) {
+            return "shop";
+        }
+
         // 默认标识
-        return "myteay";
+        return "tiancan";
     }
 }
