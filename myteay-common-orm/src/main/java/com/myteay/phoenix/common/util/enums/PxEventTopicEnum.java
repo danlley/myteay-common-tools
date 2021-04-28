@@ -14,13 +14,7 @@ import org.apache.commons.lang.StringUtils;
  */
 public enum PxEventTopicEnum {
 
-                              PX_GOODS_STATUS_CHANGED("PX_GOODS_STATUS_CHANGED", "店铺信息变更事件"),
-
                               PX_CAMP_BASE_STATUS_CHANGED("PX_CAMP_BASE_STATUS_CHANGED", "店内营销活动信息变更事件"),
-
-                              PX_CAMP_PRIZE_STATUS_CHANGED("PX_CAMP_PRIZE_STATUS_CHANGED", "店内营销活动奖品状态变更事件"),
-
-                              PX_TASK_MOBILE_GOODS_CACHE_LOAD("PX_TASK_MOBILE_GOODS_CACHE_LOAD", "手机端商品列表定时加载事件"),
 
                               PX_TASK_SHOP_EXPIRED("PX_TASK_SHOP_EXPIRED", "监控店铺过期时间事件"),
 
