@@ -50,10 +50,10 @@ public class Router {
     //
     //    }
 
-    public static String getBASE64(String s) {
-        if (s == null)
-            return null;
-        return (new sun.misc.BASE64Encoder()).encode(s.getBytes());
-    }
+    //    public static String getBASE64(String s) {
+    //        if (s == null)
+    //            return null;
+    //        return (new sun.misc.BASE64Encoder()).encode(s.getBytes());
+    //    }
 
 }
