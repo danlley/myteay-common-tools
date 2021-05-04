@@ -1,6 +1,6 @@
-/*
- * Alipay.com Inc.
- * Copyright (c) 2004-2005 All Rights Reserved.
+/**
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger;
 
@@ -70,9 +70,7 @@ public class MethodInvocationTransactionSynchronization implements TransactionSy
                     logger.debug("事务提交后执行方法调用返回结果为" + result + ".");
                 }
             } catch (Throwable t) {
-                logger.error("在事务后执行方法调用("
-                             + methodInvocation.getMethod().getDeclaringClass().getName() + "."
-                             + methodInvocation.getMethod().getName() + ")时出现异常。", t);
+                logger.error("在事务后执行方法调用(" + methodInvocation.getMethod().getDeclaringClass().getName() + "." + methodInvocation.getMethod().getName() + ")时出现异常。", t);
             }
         }
     }

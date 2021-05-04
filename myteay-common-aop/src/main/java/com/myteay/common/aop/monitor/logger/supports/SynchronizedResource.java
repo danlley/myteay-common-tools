@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.supports;
 
@@ -15,8 +15,7 @@ import org.slf4j.LoggerFactory;
  */
 public class SynchronizedResource {
 
-    private static final Logger logger               = LoggerFactory
-        .getLogger(SynchronizedResource.class);
+    private static final Logger logger               = LoggerFactory.getLogger(SynchronizedResource.class);
 
     /** 同时允许的资源数 */
     private int                 resourceCount        = 5;
@@ -32,15 +31,13 @@ public class SynchronizedResource {
             currentResourceCount++;
 
             if (logger.isDebugEnabled()) {
-                logger.debug("资源[" + resourceName + "], 计数[" + currentResourceCount + "/"
-                             + resourceCount + "], 申请[成功]");
+                logger.debug("资源[" + resourceName + "], 计数[" + currentResourceCount + "/" + resourceCount + "], 申请[成功]");
             }
 
             return true;
         } else {
             if (logger.isWarnEnabled()) {
-                logger.warn("资源[" + resourceName + "], 计数[" + currentResourceCount + "/"
-                            + resourceCount + "], 申请[失败]");
+                logger.warn("资源[" + resourceName + "], 计数[" + currentResourceCount + "/" + resourceCount + "], 申请[失败]");
             }
 
             return false;
@@ -51,8 +48,7 @@ public class SynchronizedResource {
         currentResourceCount--;
 
         if (logger.isDebugEnabled()) {
-            logger.debug("资源[" + resourceName + "], 计数[" + currentResourceCount + "/"
-                         + resourceCount + "], 释放[成功]");
+            logger.debug("资源[" + resourceName + "], 计数[" + currentResourceCount + "/" + resourceCount + "], 释放[成功]");
         }
     }
 

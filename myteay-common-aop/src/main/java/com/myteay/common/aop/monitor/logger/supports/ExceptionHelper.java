@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.supports;
 
@@ -35,8 +35,7 @@ public class ExceptionHelper {
     static {
         // JDK1.4支持Throwable.getStackTrace()方法
         try {
-            GET_STACK_TRACE_METHOD = Throwable.class.getMethod(GET_STACK_TRACE_METHOD_NAME,
-                new Class[0]);
+            GET_STACK_TRACE_METHOD = Throwable.class.getMethod(GET_STACK_TRACE_METHOD_NAME, new Class[0]);
         } catch (NoSuchMethodException e) {
         }
     }
@@ -133,8 +132,7 @@ public class ExceptionHelper {
      * @param writer 输出流
      * @param currentStack 当前的堆栈
      */
-    private static void printStackTraceRecursive(ChainedThrowable throwable, PrintWriter writer,
-                                                 String[] currentStack) {
+    private static void printStackTraceRecursive(ChainedThrowable throwable, PrintWriter writer, String[] currentStack) {
         ChainedThrowable cause = getChainedThrowableCause(throwable);
 
         if (cause != null) {
@@ -155,8 +153,7 @@ public class ExceptionHelper {
             }
 
             if (j < (causeStack.length - 1)) {
-                writer.println(STRING_MORE_PREFIX + (causeStack.length - j - 1)
-                               + STRING_MORE_SUFFIX);
+                writer.println(STRING_MORE_PREFIX + (causeStack.length - j - 1) + STRING_MORE_SUFFIX);
             }
 
             printStackTraceRecursive(cause, writer, causeStack);
@@ -170,8 +167,7 @@ public class ExceptionHelper {
      * @param writer 输出流
      * @param cause 是否是起因异常
      */
-    private static void printThrowableMessage(ChainedThrowable throwable, PrintWriter writer,
-                                              boolean cause) {
+    private static void printThrowableMessage(ChainedThrowable throwable, PrintWriter writer, boolean cause) {
         StringBuffer buffer = new StringBuffer();
 
         if (cause) {
@@ -284,8 +280,7 @@ public class ExceptionHelper {
                 if ((j != -1) && ((k == -1) || (j < k))) {
                     p = j + 1;
 
-                    if ((p < stackTraceDump.length())
-                        && (stackTraceDump.charAt(p) == STRING_LF.charAt(0))) {
+                    if ((p < stackTraceDump.length()) && (stackTraceDump.charAt(p) == STRING_LF.charAt(0))) {
                         p++; // CRLF
                     }
 
@@ -377,8 +372,7 @@ public class ExceptionHelper {
             public int compareTo(Object o) {
                 StackTraceEntry otherEntry = (StackTraceEntry) o;
                 int thisWeight = includesMessage + includesThrowable;
-                int otherWeight = otherEntry.includesMessage
-                                  + otherEntry.includesThrowable;
+                int otherWeight = otherEntry.includesMessage + otherEntry.includesThrowable;
 
                 // weight大的排在前, 如果weight相同, 则count小的排在前
                 if (thisWeight == otherWeight) {

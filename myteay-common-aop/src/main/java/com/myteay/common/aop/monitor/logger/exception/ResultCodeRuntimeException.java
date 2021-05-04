@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.exception;
 
@@ -43,8 +43,7 @@ public class ResultCodeRuntimeException extends ChainedRuntimeException {
      * 构造一个空的异常.
      */
     public ResultCodeRuntimeException(ResultCode resultCode, Throwable cause) {
-        super((resultCode == null) ? null
-            : resultCode.name(), cause);
+        super((resultCode == null) ? null : resultCode.name(), cause);
         this.resultCode = resultCode;
     }
 

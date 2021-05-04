@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.https;
 
@@ -73,18 +73,14 @@ public class HttpsRestTemplateTools {
      * @throws KeyManagementException   证书管理异常
      * @return                          CloseableHttpClient
      */
-    private static CloseableHttpClient acceptsDefaultUntrustedCertsHttpClient() throws KeyStoreException,
-                                                                                NoSuchAlgorithmException,
-                                                                                KeyManagementException {
+    private static CloseableHttpClient acceptsDefaultUntrustedCertsHttpClient() throws KeyStoreException, NoSuchAlgorithmException, KeyManagementException {
 
         //不做任何处理，默认相信所有证书
-        SSLContext sslContext = new SSLContextBuilder()
-            .loadTrustMaterial(null, new TrustStrategy() {
-                public boolean isTrusted(X509Certificate[] arg0,
-                                         String arg1) throws CertificateException {
-                    return true;
-                }
-            }).build();
+        SSLContext sslContext = new SSLContextBuilder().loadTrustMaterial(null, new TrustStrategy() {
+            public boolean isTrusted(X509Certificate[] arg0, String arg1) throws CertificateException {
+                return true;
+            }
+        }).build();
 
         //将对证书的认可配置加入上下文
         HttpClientBuilder b = HttpClientBuilder.create();
@@ -94,16 +90,12 @@ public class HttpsRestTemplateTools {
         HostnameVerifier hostnameVerifier = NoopHostnameVerifier.INSTANCE;
 
         //注册请求方式
-        SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext,
-            hostnameVerifier);
-        Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder
-            .<ConnectionSocketFactory> create()
-            .register("http", PlainConnectionSocketFactory.getSocketFactory())
-            .register("https", sslSocketFactory).build();
+        SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, hostnameVerifier);
+        Registry<ConnectionSocketFactory> socketFactoryRegistry = RegistryBuilder.<ConnectionSocketFactory> create()
+            .register("http", PlainConnectionSocketFactory.getSocketFactory()).register("https", sslSocketFactory).build();
 
         //将请求方式加入连接管理器（支持多线程）
-        PoolingHttpClientConnectionManager connMgr = new PoolingHttpClientConnectionManager(
-            socketFactoryRegistry);
+        PoolingHttpClientConnectionManager connMgr = new PoolingHttpClientConnectionManager(socketFactoryRegistry);
         connMgr.setMaxTotal(200);
         connMgr.setDefaultMaxPerRoute(100);
         b.setConnectionManager(connMgr);

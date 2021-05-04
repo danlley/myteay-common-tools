@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2004-2015 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.router.support;
 

@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2015-2016 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.util.qrcode;
 
@@ -69,14 +69,12 @@ public class QRCodeUtil {
      * @return              返回生成好的二维码图片
      * @throws Exception    异常处理
      */
-    private static BufferedImage createImage(String content, String imgPath, boolean needCompress)
-                                                                                                   throws Exception {
+    private static BufferedImage createImage(String content, String imgPath, boolean needCompress) throws Exception {
         Hashtable<EncodeHintType, Object> hints = new Hashtable<EncodeHintType, Object>();
         hints.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.H);
         hints.put(EncodeHintType.CHARACTER_SET, CHARSET);
         hints.put(EncodeHintType.MARGIN, 1);
-        BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE,
-            QRCODE_SIZE, QRCODE_SIZE, hints);
+        BitMatrix bitMatrix = new MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, QRCODE_SIZE, QRCODE_SIZE, hints);
         int width = bitMatrix.getWidth();
         int height = bitMatrix.getHeight();
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -101,8 +99,7 @@ public class QRCodeUtil {
      * @param needCompress  是否需要压缩
      * @throws Exception    异常处理
      */
-    private static void insertImage(BufferedImage source, String imgPath, boolean needCompress)
-                                                                                                throws Exception {
+    private static void insertImage(BufferedImage source, String imgPath, boolean needCompress) throws Exception {
         File file = new File(imgPath);
         if (!file.exists()) {
             System.err.println("" + imgPath + "   该文件不存在！");
@@ -145,12 +142,10 @@ public class QRCodeUtil {
      * @param needCompress  是否压缩
      * @throws Exception    异常处理
      */
-    public static void encode(String content, String imgPath, String destPath, boolean needCompress)
-                                                                                                     throws Exception {
+    public static void encode(String content, String imgPath, String destPath, boolean needCompress) throws Exception {
 
         if (logger.isInfoEnabled()) {
-            logger.info("开始创建二维码content=" + content + " imgPath=" + imgPath + " destPath="
-                        + destPath + " needCompress=" + needCompress);
+            logger.info("开始创建二维码content=" + content + " imgPath=" + imgPath + " destPath=" + destPath + " needCompress=" + needCompress);
         }
 
         BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
@@ -174,12 +169,10 @@ public class QRCodeUtil {
      * @param needCompress  是否压缩
      * @throws Exception    异常处理
      */
-    public static String encode(String content, String imgPath, boolean needCompress,
-                                String destPath) throws Exception {
+    public static String encode(String content, String imgPath, boolean needCompress, String destPath) throws Exception {
 
         if (logger.isInfoEnabled()) {
-            logger.info("开始创建二维码content=" + content + " imgPath=" + imgPath + " destPath="
-                        + destPath + " needCompress=" + needCompress);
+            logger.info("开始创建二维码content=" + content + " imgPath=" + imgPath + " destPath=" + destPath + " needCompress=" + needCompress);
         }
 
         BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
@@ -243,8 +236,7 @@ public class QRCodeUtil {
      * @param needCompress  是否压缩
      * @throws Exception    异常处理方式
      */
-    public static void encode(String content, String destPath, boolean needCompress)
-                                                                                     throws Exception {
+    public static void encode(String content, String destPath, boolean needCompress) throws Exception {
         QRCodeUtil.encode(content, null, destPath, needCompress);
     }
 
@@ -268,8 +260,7 @@ public class QRCodeUtil {
      * @param needCompress  是否需要压缩
      * @throws Exception    异常处理
      */
-    public static void encode(String content, String imgPath, OutputStream output,
-                              boolean needCompress) throws Exception {
+    public static void encode(String content, String imgPath, OutputStream output, boolean needCompress) throws Exception {
         BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
         ImageIO.write(image, FORMAT_NAME, output);
     }

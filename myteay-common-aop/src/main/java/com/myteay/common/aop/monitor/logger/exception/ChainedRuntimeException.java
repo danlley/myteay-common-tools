@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.exception;
 
@@ -13,8 +13,7 @@ import java.io.PrintWriter;
  * @author min.weixm
  * @version $Id: ChainedRuntimeException.java, v 0.1 Nov 5, 2017 9:34:26 PM min.weixm Exp $
  */
-public class ChainedRuntimeException extends RuntimeException
-                                     implements ChainedThrowable {
+public class ChainedRuntimeException extends RuntimeException implements ChainedThrowable {
     private static final long      serialVersionUID = 3257005466717533235L;
     private final ChainedThrowable delegate         = new ChainedThrowableDelegate(this);
     private Throwable              cause;
@@ -41,8 +40,7 @@ public class ChainedRuntimeException extends RuntimeException
      * @param cause 异常的起因
      */
     public ChainedRuntimeException(Throwable cause) {
-        super((cause == null) ? null
-            : cause.getMessage());
+        super((cause == null) ? null : cause.getMessage());
         this.cause = cause;
     }
 

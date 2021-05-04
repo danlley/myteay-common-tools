@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.supports;
 
@@ -200,8 +200,7 @@ public final class Profiler {
             this.startTime = System.currentTimeMillis();
             this.parentEntry = parentEntry;
             this.firstEntry = (Entry) ObjectUtil.defaultIfNull(firstEntry, this);
-            this.baseTime = (firstEntry == null) ? 0
-                : firstEntry.startTime;
+            this.baseTime = (firstEntry == null) ? 0 : firstEntry.startTime;
         }
 
         /**
@@ -236,8 +235,7 @@ public final class Profiler {
          * @return 相对起始时间
          */
         public long getStartTime() {
-            return (baseTime > 0) ? (startTime - baseTime)
-                : 0;
+            return (baseTime > 0) ? (startTime - baseTime) : 0;
         }
 
         /**
@@ -430,8 +428,7 @@ public final class Profiler {
             double percent = getPecentage();
             double percentOfAll = getPecentageOfAll();
 
-            Object[] params = new Object[] {
-                                             message, // {0} - entry信息 
+            Object[] params = new Object[] { message, // {0} - entry信息 
                                              new Long(startTime), // {1} - 起始时间
                                              new Long(duration), // {2} - 持续总时间
                                              new Long(durationOfSelf), // {3} - 自身消耗的时间

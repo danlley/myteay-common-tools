@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -67,8 +67,7 @@ public class ObjectUtil {
      * @return 对象本身或默认对象
      */
     public static Object defaultIfNull(Object object, Object defaultValue) {
-        return (object != null) ? object
-            : defaultValue;
+        return (object != null) ? object : defaultValue;
     }
 
     /* ============================================================================ */
@@ -136,8 +135,7 @@ public class ObjectUtil {
      * @return hash值
      */
     public static int identityHashCode(Object object) {
-        return (object == null) ? 0
-            : System.identityHashCode(object);
+        return (object == null) ? 0 : System.identityHashCode(object);
     }
 
     /* ============================================================================ */
@@ -280,8 +278,7 @@ public class ObjectUtil {
 
         // Not cloneable
         if (!(array instanceof Cloneable)) {
-            throw new CloneNotSupportedException("Object of class " + array.getClass().getName()
-                                                 + " is not Cloneable");
+            throw new CloneNotSupportedException("Object of class " + array.getClass().getName() + " is not Cloneable");
         }
 
         // 用reflection调用clone方法
@@ -341,9 +338,7 @@ public class ObjectUtil {
      * @return 对象的<code>toString()</code>的返回值，或空字符串<code>""</code>
      */
     public static String toString(Object object) {
-        return (object == null) ? StringUtil.EMPTY_STRING
-            : (object.getClass().isArray() ? ArrayUtil.toString(object)
-                : object.toString());
+        return (object == null) ? StringUtil.EMPTY_STRING : (object.getClass().isArray() ? ArrayUtil.toString(object) : object.toString());
     }
 
     /**
@@ -363,8 +358,6 @@ public class ObjectUtil {
      * @return 对象的<code>toString()</code>的返回值，或指定字符串
      */
     public static String toString(Object object, String nullStr) {
-        return (object == null) ? nullStr
-            : (object.getClass().isArray() ? ArrayUtil.toString(object)
-                : object.toString());
+        return (object == null) ? nullStr : (object.getClass().isArray() ? ArrayUtil.toString(object) : object.toString());
     }
 }

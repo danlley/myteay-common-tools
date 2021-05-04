@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -84,8 +84,7 @@ public class MessageUtil {
      * @return key对应的字符串，如果key为<code>null</code>或resource
      *         bundle为<code>null</code>，则返回<code>null</code>。如果resource key未找到，则返回<code>key</code>
      */
-    public static String getMessage(ResourceBundle bundle, String key, Object param1,
-                                    Object param2, Object param3) {
+    public static String getMessage(ResourceBundle bundle, String key, Object param1, Object param2, Object param3) {
         return getMessage(bundle, key, new Object[] { param1, param2, param3 });
     }
 
@@ -102,8 +101,7 @@ public class MessageUtil {
      * @return key对应的字符串，如果key为<code>null</code>或resource
      *         bundle为<code>null</code>，则返回<code>null</code>。如果resource key未找到，则返回<code>key</code>
      */
-    public static String getMessage(ResourceBundle bundle, String key, Object param1,
-                                    Object param2, Object param3, Object param4) {
+    public static String getMessage(ResourceBundle bundle, String key, Object param1, Object param2, Object param3, Object param4) {
         return getMessage(bundle, key, new Object[] { param1, param2, param3, param4 });
     }
 
@@ -121,8 +119,7 @@ public class MessageUtil {
      * @return key对应的字符串，如果key为<code>null</code>或resource
      *         bundle为<code>null</code>，则返回<code>null</code>。如果resource key未找到，则返回<code>key</code>
      */
-    public static String getMessage(ResourceBundle bundle, String key, Object param1,
-                                    Object param2, Object param3, Object param4, Object param5) {
+    public static String getMessage(ResourceBundle bundle, String key, Object param1, Object param2, Object param3, Object param4, Object param5) {
         return getMessage(bundle, key, new Object[] { param1, param2, param3, param4, param5 });
     }
 
@@ -196,8 +193,7 @@ public class MessageUtil {
      *
      * @return 格式化的字符串，如果message为<code>null</code>，则返回<code>null</code>
      */
-    public static String formatMessage(String message, Object param1, Object param2, Object param3,
-                                       Object param4) {
+    public static String formatMessage(String message, Object param1, Object param2, Object param3, Object param4) {
         return formatMessage(message, new Object[] { param1, param2, param3, param4 });
     }
 
@@ -213,8 +209,7 @@ public class MessageUtil {
      *
      * @return 格式化的字符串，如果message为<code>null</code>，则返回<code>null</code>
      */
-    public static String formatMessage(String message, Object param1, Object param2, Object param3,
-                                       Object param4, Object param5) {
+    public static String formatMessage(String message, Object param1, Object param2, Object param3, Object param4, Object param5) {
         return formatMessage(message, new Object[] { param1, param2, param3, param4, param5 });
     }
 }

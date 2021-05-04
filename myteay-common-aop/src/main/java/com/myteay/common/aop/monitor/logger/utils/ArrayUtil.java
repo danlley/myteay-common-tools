@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -401,8 +401,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static Object[] defaultIfNull(Object[] array) {
-        return (array == null) ? EMPTY_OBJECT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_OBJECT_ARRAY : array;
     }
 
     /**
@@ -418,8 +417,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static long[] defaultIfNull(long[] array) {
-        return (array == null) ? EMPTY_LONG_ARRAY
-            : array;
+        return (array == null) ? EMPTY_LONG_ARRAY : array;
     }
 
     /**
@@ -435,8 +433,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static int[] defaultIfNull(int[] array) {
-        return (array == null) ? EMPTY_INT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_INT_ARRAY : array;
     }
 
     /**
@@ -452,8 +449,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static short[] defaultIfNull(short[] array) {
-        return (array == null) ? EMPTY_SHORT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_SHORT_ARRAY : array;
     }
 
     /**
@@ -469,8 +465,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static byte[] defaultIfNull(byte[] array) {
-        return (array == null) ? EMPTY_BYTE_ARRAY
-            : array;
+        return (array == null) ? EMPTY_BYTE_ARRAY : array;
     }
 
     /**
@@ -486,8 +481,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static double[] defaultIfNull(double[] array) {
-        return (array == null) ? EMPTY_DOUBLE_ARRAY
-            : array;
+        return (array == null) ? EMPTY_DOUBLE_ARRAY : array;
     }
 
     /**
@@ -503,8 +497,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static float[] defaultIfNull(float[] array) {
-        return (array == null) ? EMPTY_FLOAT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_FLOAT_ARRAY : array;
     }
 
     /**
@@ -520,8 +513,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static boolean[] defaultIfNull(boolean[] array) {
-        return (array == null) ? EMPTY_BOOLEAN_ARRAY
-            : array;
+        return (array == null) ? EMPTY_BOOLEAN_ARRAY : array;
     }
 
     /**
@@ -537,8 +529,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static char[] defaultIfNull(char[] array) {
-        return (array == null) ? EMPTY_CHAR_ARRAY
-            : array;
+        return (array == null) ? EMPTY_CHAR_ARRAY : array;
     }
 
     /**
@@ -555,8 +546,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static Object[] defaultIfNull(Object[] array, Object[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -573,8 +563,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static long[] defaultIfNull(long[] array, long[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -591,8 +580,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static int[] defaultIfNull(int[] array, int[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -609,8 +597,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static short[] defaultIfNull(short[] array, short[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -627,8 +614,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static byte[] defaultIfNull(byte[] array, byte[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -645,8 +631,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static double[] defaultIfNull(double[] array, double[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -663,8 +648,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static float[] defaultIfNull(float[] array, float[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -681,8 +665,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static boolean[] defaultIfNull(boolean[] array, boolean[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -699,8 +682,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static char[] defaultIfNull(char[] array, char[] defaultArray) {
-        return (array == null) ? defaultArray
-            : array;
+        return (array == null) ? defaultArray : array;
     }
 
     /**
@@ -717,9 +699,7 @@ public class ArrayUtil {
      * @return 数组本身或指定类型的空数组
      */
     public static Object[] defaultIfNull(Object[] array, Class defaultComponentType) {
-        return (array == null)
-            ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType), 0)
-            : array;
+        return (array == null) ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType), 0) : array;
     }
 
     /**
@@ -739,8 +719,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static Object[] defaultIfEmpty(Object[] array) {
-        return (array == null) ? EMPTY_OBJECT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_OBJECT_ARRAY : array;
     }
 
     /**
@@ -760,8 +739,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static long[] defaultIfEmpty(long[] array) {
-        return (array == null) ? EMPTY_LONG_ARRAY
-            : array;
+        return (array == null) ? EMPTY_LONG_ARRAY : array;
     }
 
     /**
@@ -781,8 +759,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static int[] defaultIfEmpty(int[] array) {
-        return (array == null) ? EMPTY_INT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_INT_ARRAY : array;
     }
 
     /**
@@ -802,8 +779,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static short[] defaultIfEmpty(short[] array) {
-        return (array == null) ? EMPTY_SHORT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_SHORT_ARRAY : array;
     }
 
     /**
@@ -823,8 +799,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static byte[] defaultIfEmpty(byte[] array) {
-        return (array == null) ? EMPTY_BYTE_ARRAY
-            : array;
+        return (array == null) ? EMPTY_BYTE_ARRAY : array;
     }
 
     /**
@@ -844,8 +819,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static double[] defaultIfEmpty(double[] array) {
-        return (array == null) ? EMPTY_DOUBLE_ARRAY
-            : array;
+        return (array == null) ? EMPTY_DOUBLE_ARRAY : array;
     }
 
     /**
@@ -865,8 +839,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static float[] defaultIfEmpty(float[] array) {
-        return (array == null) ? EMPTY_FLOAT_ARRAY
-            : array;
+        return (array == null) ? EMPTY_FLOAT_ARRAY : array;
     }
 
     /**
@@ -886,8 +859,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static boolean[] defaultIfEmpty(boolean[] array) {
-        return (array == null) ? EMPTY_BOOLEAN_ARRAY
-            : array;
+        return (array == null) ? EMPTY_BOOLEAN_ARRAY : array;
     }
 
     /**
@@ -907,8 +879,7 @@ public class ArrayUtil {
      * @return 数组本身或空数组<code>[]</code>
      */
     public static char[] defaultIfEmpty(char[] array) {
-        return (array == null) ? EMPTY_CHAR_ARRAY
-            : array;
+        return (array == null) ? EMPTY_CHAR_ARRAY : array;
     }
 
     /**
@@ -925,8 +896,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static Object[] defaultIfEmpty(Object[] array, Object[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -943,8 +913,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static long[] defaultIfEmpty(long[] array, long[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -961,8 +930,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static int[] defaultIfEmpty(int[] array, int[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -979,8 +947,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static short[] defaultIfEmpty(short[] array, short[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -997,8 +964,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static byte[] defaultIfEmpty(byte[] array, byte[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -1015,8 +981,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static double[] defaultIfEmpty(double[] array, double[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -1033,8 +998,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static float[] defaultIfEmpty(float[] array, float[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -1051,8 +1015,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static boolean[] defaultIfEmpty(boolean[] array, boolean[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -1069,8 +1032,7 @@ public class ArrayUtil {
      * @return 数组本身或指定的默认数组
      */
     public static char[] defaultIfEmpty(char[] array, char[] defaultArray) {
-        return ((array == null) || (array.length == 0)) ? defaultArray
-            : array;
+        return ((array == null) || (array.length == 0)) ? defaultArray : array;
     }
 
     /**
@@ -1087,9 +1049,7 @@ public class ArrayUtil {
      * @return 数组本身或指定类型的空数组
      */
     public static Object[] defaultIfEmpty(Object[] array, Class defaultComponentType) {
-        return ((array == null) || (array.length == 0))
-            ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType), 0)
-            : array;
+        return ((array == null) || (array.length == 0)) ? (Object[]) Array.newInstance(ClassUtil.getNonPrimitiveType(defaultComponentType), 0) : array;
     }
 
     /* ============================================================================ */
@@ -1301,8 +1261,7 @@ public class ArrayUtil {
             long[] longArray = (long[]) array;
 
             for (int i = 0; i < longArray.length; i++) {
-                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER)
-                           + ((int) (longArray[i] ^ (longArray[i] >> 32)));
+                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER) + ((int) (longArray[i] ^ (longArray[i] >> 32)));
             }
         } else if (array instanceof int[]) {
             int[] intArray = (int[]) array;
@@ -1328,22 +1287,19 @@ public class ArrayUtil {
             for (int i = 0; i < doubleArray.length; i++) {
                 long longBits = Double.doubleToLongBits(doubleArray[i]);
 
-                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER)
-                           + ((int) (longBits ^ (longBits >> 32)));
+                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER) + ((int) (longBits ^ (longBits >> 32)));
             }
         } else if (array instanceof float[]) {
             float[] floatArray = (float[]) array;
 
             for (int i = 0; i < floatArray.length; i++) {
-                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER)
-                           + Float.floatToIntBits(floatArray[i]);
+                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER) + Float.floatToIntBits(floatArray[i]);
             }
         } else if (array instanceof boolean[]) {
             boolean[] booleanArray = (boolean[]) array;
 
             for (int i = 0; i < booleanArray.length; i++) {
-                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER) + (booleanArray[i] ? 1
-                    : 0);
+                hashCode = (hashCode * MULTIPLIER_NON_ZERO_ODD_NUMBER) + (booleanArray[i] ? 1 : 0);
             }
         } else if (array instanceof char[]) {
             char[] charArray = (char[]) array;
@@ -1527,8 +1483,7 @@ public class ArrayUtil {
             }
 
             for (int i = 0; i < booleanArray.length; i++) {
-                list.add(booleanArray[i] ? Boolean.TRUE
-                    : Boolean.FALSE);
+                list.add(booleanArray[i] ? Boolean.TRUE : Boolean.FALSE);
             }
         } else if (array instanceof char[]) {
             char[] charArray = (char[]) array;
@@ -1626,14 +1581,12 @@ public class ArrayUtil {
                 Object[] entry = (Object[]) object;
 
                 if (entry.length < 2) {
-                    throw new IllegalArgumentException("Array element " + i + ", '" + object
-                                                       + "', has a length less than 2");
+                    throw new IllegalArgumentException("Array element " + i + ", '" + object + "', has a length less than 2");
                 }
 
                 map.put(entry[0], entry[1]);
             } else {
-                throw new IllegalArgumentException("Array element " + i + ", '" + object
-                                                   + "', is neither of type Map.Entry nor an Array");
+                throw new IllegalArgumentException("Array element " + i + ", '" + object + "', is neither of type Map.Entry nor an Array");
             }
         }
 
@@ -1830,10 +1783,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(Object[] array1, Object[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1847,10 +1798,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(long[] array1, long[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1864,10 +1813,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(int[] array1, int[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1881,10 +1828,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(short[] array1, short[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1898,10 +1843,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(byte[] array1, byte[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1915,10 +1858,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(double[] array1, double[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1932,10 +1873,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(float[] array1, float[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1949,10 +1888,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(boolean[] array1, boolean[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -1966,10 +1903,8 @@ public class ArrayUtil {
      * @return 如果两个数组长度相同，则返回<code>true</code>
      */
     public static boolean isSameLength(char[] array1, char[] array2) {
-        int length1 = (array1 == null) ? 0
-            : array1.length;
-        int length2 = (array2 == null) ? 0
-            : array2.length;
+        int length1 = (array1 == null) ? 0 : array1.length;
+        int length2 = (array2 == null) ? 0 : array2.length;
 
         return length1 == length2;
     }
@@ -2256,8 +2191,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -2577,8 +2511,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -2890,8 +2823,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -3203,8 +3135,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -3516,8 +3447,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -3910,8 +3840,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -4061,8 +3990,7 @@ public class ArrayUtil {
      *
      * @return 该元素在数组中的序号，如果数组为<code>null</code>或未找到，则返回<code>-1</code>。
      */
-    public static int lastIndexOf(double[] array, double doubleToFind, int startIndex,
-                                  double tolerance) {
+    public static int lastIndexOf(double[] array, double doubleToFind, int startIndex, double tolerance) {
         if (array == null) {
             return -1;
         }
@@ -4124,8 +4052,7 @@ public class ArrayUtil {
      *
      * @return 该元素序列在数组中的序号，如果数组为<code>null</code>或未找到，则返回<code>-1</code>。
      */
-    public static int lastIndexOf(double[] array, double[] arrayToFind, int startIndex,
-                                  double tolerance) {
+    public static int lastIndexOf(double[] array, double[] arrayToFind, int startIndex, double tolerance) {
         if ((array == null) || (arrayToFind == null)) {
             return -1;
         }
@@ -4423,8 +4350,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -4636,8 +4562,7 @@ public class ArrayUtil {
      *
      * @return 该元素序列在数组中的序号，如果数组为<code>null</code>或未找到，则返回<code>-1</code>。
      */
-    public static int lastIndexOf(float[] array, float[] arrayToFind, int startIndex,
-                                  float tolerance) {
+    public static int lastIndexOf(float[] array, float[] arrayToFind, int startIndex, float tolerance) {
         if ((array == null) || (arrayToFind == null)) {
             return -1;
         }
@@ -4854,8 +4779,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -5167,8 +5091,7 @@ public class ArrayUtil {
         int targetLength = arrayToFind.length;
 
         if (startIndex >= sourceLength) {
-            return (targetLength == 0) ? sourceLength
-                : (-1);
+            return (targetLength == 0) ? sourceLength : (-1);
         }
 
         if (startIndex < 0) {
@@ -5489,8 +5412,7 @@ public class ArrayUtil {
      * @param nullArrayStr 如果数组是<code>null</code>，则返回此字符串
      * @param nullElementStr 如果数组中的元素为<code>null</code>，则返回此字符串
      */
-    private static void toString(StringBuffer buffer, Object array, String nullArrayStr,
-                                 String nullElementStr) {
+    private static void toString(StringBuffer buffer, Object array, String nullArrayStr, String nullElementStr) {
         if (array == null) {
             buffer.append(nullElementStr);
             return;

@@ -1,3 +1,7 @@
+/**
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
+ */
 package com.myteay.common.util.page;
 
 import java.io.Serializable;
@@ -427,8 +431,7 @@ public class Paginator implements Serializable, Cloneable {
         }
 
         sb.append(" of ").append(getPages()).append(",\n");
-        sb.append("    Showing items ").append(getBeginIndex()).append(" to ")
-            .append(getEndIndex()).append(" (total ").append(getItems()).append(" items), ");
+        sb.append("    Showing items ").append(getBeginIndex()).append(" to ").append(getEndIndex()).append(" (total ").append(getItems()).append(" items), ");
         sb.append("offset=").append(getOffset()).append(", length=").append(getLength());
 
         return sb.toString();

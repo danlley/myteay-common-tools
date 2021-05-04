@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2015-2016 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.router.support;
 
@@ -11,23 +11,23 @@ package com.myteay.common.router.support;
  */
 public enum TPLinkRouterEnums {
 
-    /**  */
-    TPLINK_CONN("TPLINK_CONN", "StatusRpm", "Connect", "连 接", "&wan="),
+                               /**  */
+                               TPLINK_CONN("TPLINK_CONN", "StatusRpm", "Connect", "连 接", "&wan="),
 
-    /**  */
-    TPLINK_DISCONNECT("TPLINK_DISCONNECT", "StatusRpm", "Disconnect", "断 线", "&wan="),
+                               /**  */
+                               TPLINK_DISCONNECT("TPLINK_DISCONNECT", "StatusRpm", "Disconnect", "断 线", "&wan="),
 
-    /**  */
-    TPLINK_RENEW("TPLINK_RENEW", "StatusRpm", "RenewIp", "更 新", "&wan="),
+                               /**  */
+                               TPLINK_RENEW("TPLINK_RENEW", "StatusRpm", "RenewIp", "更 新", "&wan="),
 
-    /**  */
-    TPLINK_RELEASE_IP("TPLINK_RELEASE_IP", "StatusRpm", "ReleaseIp", "释 放", "&wan="),
+                               /**  */
+                               TPLINK_RELEASE_IP("TPLINK_RELEASE_IP", "StatusRpm", "ReleaseIp", "释 放", "&wan="),
 
-    /**  */
-    TPLINK_LOGIN("TPLINK_LOGIN", "StatusRpm", "Login", "登 录", "&wan="),
+                               /**  */
+                               TPLINK_LOGIN("TPLINK_LOGIN", "StatusRpm", "Login", "登 录", "&wan="),
 
-    /**  */
-    TPLINK_LOGOUT("TPLINK_LOGOUT", "StatusRpm", "Logout", "退 出", "&wan="),
+                               /**  */
+                               TPLINK_LOGOUT("TPLINK_LOGOUT", "StatusRpm", "Logout", "退 出", "&wan="),
 
     ;
     /** value */
@@ -50,8 +50,7 @@ public enum TPLinkRouterEnums {
      * @param code
      * @param description
      */
-    private TPLinkRouterEnums(String value, String model, String type, String typeValue,
-                              String params) {
+    private TPLinkRouterEnums(String value, String model, String type, String typeValue, String params) {
         this.value = value;
         this.model = model;
         this.type = type;

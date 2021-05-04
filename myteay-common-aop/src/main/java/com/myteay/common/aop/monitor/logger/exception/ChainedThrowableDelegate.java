@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.exception;
 
@@ -20,21 +20,15 @@ import com.myteay.common.aop.monitor.logger.supports.ExceptionHelper;
  * @author min.weixm
  * @version $Id: ChainedThrowableDelegate.java, v 0.1 Nov 5, 2017 9:34:50 PM min.weixm Exp $
  */
-public class ChainedThrowableDelegate
-                                      implements ChainedThrowable {
+public class ChainedThrowableDelegate implements ChainedThrowable {
     private static final long        serialVersionUID   = 3257288032683241523L;
 
     /** 表示异常不存在的常量. */
     protected static final Throwable NO_CAUSE           = new Throwable();
 
     /** 常见的用来取得异常起因的方法名. */
-    private static final String[]    CAUSE_METHOD_NAMES = {
-                                                            "getNested", "getNestedException",
-                                                            "getNextException", "getTargetException",
-                                                            "getException", "getSourceException",
-                                                            "getCausedByException", "getRootCause",
-                                                            "getCause"
-    };
+    private static final String[]    CAUSE_METHOD_NAMES = { "getNested", "getNestedException", "getNextException", "getTargetException", "getException", "getSourceException",
+                                                            "getCausedByException", "getRootCause", "getCause" };
 
     /** 常见的用来取得异常起因的字段名. */
     private static final String[]    CAUSE_FIELD_NAMES  = { "detail" };
@@ -59,12 +53,11 @@ public class ChainedThrowableDelegate
     public Throwable getCause() {
         Throwable cause = getCauseByWellKnownTypes(delegatedThrowable);
 
-        for (Class<?> throwableClass = delegatedThrowable.getClass(); (cause == null) && Throwable.class.isAssignableFrom(
-            throwableClass); throwableClass = throwableClass.getSuperclass()) {
+        for (Class<?> throwableClass = delegatedThrowable.getClass(); (cause == null)
+                                                                      && Throwable.class.isAssignableFrom(throwableClass); throwableClass = throwableClass.getSuperclass()) {
             // 尝试常见的方法
             for (int i = 0; (cause == null) && (i < CAUSE_METHOD_NAMES.length); i++) {
-                cause = getCauseByMethodName(delegatedThrowable, throwableClass,
-                    CAUSE_METHOD_NAMES[i]);
+                cause = getCauseByMethodName(delegatedThrowable, throwableClass, CAUSE_METHOD_NAMES[i]);
             }
 
             // 尝试常见的字段
@@ -125,8 +118,7 @@ public class ChainedThrowableDelegate
      *
      * @return 异常起因或<code>NO_CAUSE</code>
      */
-    public Throwable getCauseByMethodName(Throwable throwable, Class<?> throwableClass,
-                                          String methodName) {
+    public Throwable getCauseByMethodName(Throwable throwable, Class<?> throwableClass, String methodName) {
         Method method = null;
 
         try {
@@ -163,8 +155,7 @@ public class ChainedThrowableDelegate
      *
      * @return 异常起因或<code>NO_CAUSE</code>
      */
-    public Throwable getCauseByFieldName(Throwable throwable, Class<?> throwableClass,
-                                         String fieldName) {
+    public Throwable getCauseByFieldName(Throwable throwable, Class<?> throwableClass, String fieldName) {
         Field field = null;
 
         try {

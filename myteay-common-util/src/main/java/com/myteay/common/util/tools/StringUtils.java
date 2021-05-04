@@ -1,3 +1,7 @@
+/**
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
+ */
 package com.myteay.common.util.tools;
 
 import java.util.Arrays;

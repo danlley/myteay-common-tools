@@ -1,5 +1,6 @@
 /**
- * Copyright (c) 2004-2015 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.util.tools;
 
@@ -8,8 +9,6 @@ import java.util.List;
 import java.util.concurrent.ArrayBlockingQueue;
 
 import org.springframework.util.CollectionUtils;
-
-import com.myteay.common.util.tools.StringUtils;
 
 /**
  * 4位随机数字串生成工具类

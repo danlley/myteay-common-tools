@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2015-2016 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.util.qrcode;
 
@@ -61,8 +61,7 @@ public class BufferedImageLuminanceSource extends LuminanceSource {
      * @param width     图片宽度
      * @param height    图片高度
      */
-    public BufferedImageLuminanceSource(BufferedImage image, int left, int top, int width,
-                                        int height) {
+    public BufferedImageLuminanceSource(BufferedImage image, int left, int top, int width, int height) {
         super(width, height);
 
         int sourceWidth = image.getWidth();
@@ -111,8 +110,7 @@ public class BufferedImageLuminanceSource extends LuminanceSource {
     }
 
     public LuminanceSource crop(int left, int top, int width, int height) {
-        return new BufferedImageLuminanceSource(image, this.left + left, this.top + top, width,
-            height);
+        return new BufferedImageLuminanceSource(image, this.left + left, this.top + top, width, height);
     }
 
     public boolean isRotateSupported() {
@@ -123,13 +121,11 @@ public class BufferedImageLuminanceSource extends LuminanceSource {
         int sourceWidth = image.getWidth();
         int sourceHeight = image.getHeight();
         AffineTransform transform = new AffineTransform(0.0, -1.0, 1.0, 0.0, 0.0, sourceWidth);
-        BufferedImage rotatedImage = new BufferedImage(sourceHeight, sourceWidth,
-            BufferedImage.TYPE_BYTE_GRAY);
+        BufferedImage rotatedImage = new BufferedImage(sourceHeight, sourceWidth, BufferedImage.TYPE_BYTE_GRAY);
         Graphics2D g = rotatedImage.createGraphics();
         g.drawImage(image, transform, null);
         g.dispose();
         int width = getWidth();
-        return new BufferedImageLuminanceSource(rotatedImage, top, sourceWidth - (left + width),
-            getHeight(), width);
+        return new BufferedImageLuminanceSource(rotatedImage, top, sourceWidth - (left + width), getHeight(), width);
     }
 }

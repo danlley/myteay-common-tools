@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2015-2018 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.util.tools;
 
@@ -50,7 +50,8 @@ public class EnumUtil {
      * @throws IllegalArgumentException     异常（非法参数）
      * @throws InvocationTargetException    异常（方法唤起失败）
      */
-    private static List<DataDictionaryModel> invokeValues(Class<?> clazz) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    private static List<DataDictionaryModel> invokeValues(Class<?> clazz) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
+                                                                          InvocationTargetException {
         Method method = clazz.getMethod(ENUM_METHOD_VALUES);
         EnumMessage inter[] = (EnumMessage[]) method.invoke(null, null);
         DataDictionaryModel dataDictionaryModel = null;

@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -151,8 +151,7 @@ public class StringUtil {
      * @return 字符串本身或空字符串<code>""</code>
      */
     public static String defaultIfNull(String str) {
-        return (str == null) ? EMPTY_STRING
-            : str;
+        return (str == null) ? EMPTY_STRING : str;
     }
 
     /**
@@ -170,8 +169,7 @@ public class StringUtil {
      * @return 字符串本身或指定的默认字符串
      */
     public static String defaultIfNull(String str, String defaultStr) {
-        return (str == null) ? defaultStr
-            : str;
+        return (str == null) ? defaultStr : str;
     }
 
     /**
@@ -192,8 +190,7 @@ public class StringUtil {
      * @return 字符串本身或空字符串<code>""</code>
      */
     public static String defaultIfEmpty(String str) {
-        return (str == null) ? EMPTY_STRING
-            : str;
+        return (str == null) ? EMPTY_STRING : str;
     }
 
     /**
@@ -211,8 +208,7 @@ public class StringUtil {
      * @return 字符串本身或指定的默认字符串
      */
     public static String defaultIfEmpty(String str, String defaultStr) {
-        return ((str == null) || (str.length() == 0)) ? defaultStr
-            : str;
+        return ((str == null) || (str.length() == 0)) ? defaultStr : str;
     }
 
     /**
@@ -229,8 +225,7 @@ public class StringUtil {
      * @return 字符串本身或空字符串<code>""</code>
      */
     public static String defaultIfBlank(String str) {
-        return isBlank(str) ? EMPTY_STRING
-            : str;
+        return isBlank(str) ? EMPTY_STRING : str;
     }
 
     /**
@@ -248,8 +243,7 @@ public class StringUtil {
      * @return 字符串本身或指定的默认字符串
      */
     public static String defaultIfBlank(String str, String defaultStr) {
-        return isBlank(str) ? defaultStr
-            : str;
+        return isBlank(str) ? defaultStr : str;
     }
 
     /* ============================================================================ */
@@ -953,8 +947,7 @@ public class StringUtil {
             return str;
         }
 
-        return new StringBuffer(strLen).append(Character.toTitleCase(str.charAt(0)))
-            .append(str.substring(1)).toString();
+        return new StringBuffer(strLen).append(Character.toTitleCase(str.charAt(0))).append(str.substring(1)).toString();
     }
 
     /**
@@ -981,8 +974,7 @@ public class StringUtil {
             return str;
         }
 
-        return new StringBuffer(strLen).append(Character.toLowerCase(str.charAt(0)))
-            .append(str.substring(1)).toString();
+        return new StringBuffer(strLen).append(Character.toLowerCase(str.charAt(0))).append(str.substring(1)).toString();
     }
 
     /**
@@ -1157,8 +1149,7 @@ public class StringUtil {
                                                                                      buffer.append(Character.toLowerCase(ch));
                                                                                  }
 
-                                                                                 protected void startDigitSentence(StringBuffer buffer,
-                                                                                                                   char ch) {
+                                                                                 protected void startDigitSentence(StringBuffer buffer, char ch) {
                                                                                      buffer.append(ch);
                                                                                  }
 
@@ -1190,8 +1181,7 @@ public class StringUtil {
                                                                                      buffer.append(Character.toLowerCase(ch));
                                                                                  }
 
-                                                                                 protected void startDigitSentence(StringBuffer buffer,
-                                                                                                                   char ch) {
+                                                                                 protected void startDigitSentence(StringBuffer buffer, char ch) {
                                                                                      buffer.append(ch);
                                                                                  }
 
@@ -1227,8 +1217,7 @@ public class StringUtil {
                                                                                      buffer.append(Character.toUpperCase(ch));
                                                                                  }
 
-                                                                                 protected void startDigitSentence(StringBuffer buffer,
-                                                                                                                   char ch) {
+                                                                                 protected void startDigitSentence(StringBuffer buffer, char ch) {
                                                                                      buffer.append(ch);
                                                                                  }
 
@@ -1266,8 +1255,7 @@ public class StringUtil {
                                                                                      buffer.append(Character.toLowerCase(ch));
                                                                                  }
 
-                                                                                 protected void startDigitSentence(StringBuffer buffer,
-                                                                                                                   char ch) {
+                                                                                 protected void startDigitSentence(StringBuffer buffer, char ch) {
                                                                                      buffer.append(ch);
                                                                                  }
 
@@ -1476,8 +1464,7 @@ public class StringUtil {
         }
 
         protected boolean isDelimiter(char ch) {
-            return !Character.isUpperCase(ch) && !Character.isLowerCase(ch)
-                   && !Character.isDigit(ch);
+            return !Character.isUpperCase(ch) && !Character.isLowerCase(ch) && !Character.isDigit(ch);
         }
 
         protected abstract void startSentence(StringBuffer buffer, char ch);
@@ -1762,9 +1749,7 @@ public class StringUtil {
         }
 
         int arraySize = array.length;
-        int bufSize = (arraySize == 0) ? 0
-            : ((((array[0] == null) ? 16
-                : array[0].toString().length()) + 1) * arraySize);
+        int bufSize = (arraySize == 0) ? 0 : ((((array[0] == null) ? 16 : array[0].toString().length()) + 1) * arraySize);
         StringBuffer buf = new StringBuffer(bufSize);
 
         for (int i = 0; i < arraySize; i++) {
@@ -1811,12 +1796,7 @@ public class StringUtil {
         // ArraySize ==  0: Len = 0
         // ArraySize > 0:   Len = NofStrings *(len(firstString) + len(separator))
         //           (估计大约所有的字符串都一样长)
-        int bufSize = (arraySize == 0) ? 0
-            : (arraySize * (((array[0] == null) ? 16
-                : array[0].toString()
-                    .length())
-                            + ((separator != null) ? separator.length()
-                                : 0)));
+        int bufSize = (arraySize == 0) ? 0 : (arraySize * (((array[0] == null) ? 16 : array[0].toString().length()) + ((separator != null) ? separator.length() : 0)));
 
         StringBuffer buf = new StringBuffer(bufSize);
 
@@ -2043,8 +2023,7 @@ public class StringUtil {
      * @return 第一个匹配的索引值。如果字符串为<code>null</code>或未找到，则返回<code>-1</code>
      */
     public static int indexOfAny(String str, char[] searchChars) {
-        if ((str == null) || (str.length() == 0) || (searchChars == null)
-            || (searchChars.length == 0)) {
+        if ((str == null) || (str.length() == 0) || (searchChars == null) || (searchChars.length == 0)) {
             return -1;
         }
 
@@ -2080,8 +2059,7 @@ public class StringUtil {
      * @return 第一个匹配的索引值。如果字符串为<code>null</code>或未找到，则返回<code>-1</code>
      */
     public static int indexOfAny(String str, String searchChars) {
-        if ((str == null) || (str.length() == 0) || (searchChars == null)
-            || (searchChars.length() == 0)) {
+        if ((str == null) || (str.length() == 0) || (searchChars == null) || (searchChars.length() == 0)) {
             return -1;
         }
 
@@ -2150,8 +2128,7 @@ public class StringUtil {
             }
         }
 
-        return (ret == Integer.MAX_VALUE) ? (-1)
-            : ret;
+        return (ret == Integer.MAX_VALUE) ? (-1) : ret;
     }
 
     /**
@@ -2173,8 +2150,7 @@ public class StringUtil {
      * @return 第一个匹配的索引值。如果字符串为<code>null</code>或未找到，则返回<code>-1</code>
      */
     public static int indexOfAnyBut(String str, char[] searchChars) {
-        if ((str == null) || (str.length() == 0) || (searchChars == null)
-            || (searchChars.length == 0)) {
+        if ((str == null) || (str.length() == 0) || (searchChars == null) || (searchChars.length == 0)) {
             return -1;
         }
 
@@ -2212,8 +2188,7 @@ public class StringUtil {
      * @return 第一个匹配的索引值。如果字符串为<code>null</code>或未找到，则返回<code>-1</code>
      */
     public static int indexOfAnyBut(String str, String searchChars) {
-        if ((str == null) || (str.length() == 0) || (searchChars == null)
-            || (searchChars.length() == 0)) {
+        if ((str == null) || (str.length() == 0) || (searchChars == null) || (searchChars.length() == 0)) {
             return -1;
         }
 
@@ -2907,8 +2882,7 @@ public class StringUtil {
      * @return 子串，如果原始串为<code>null</code>，则返回<code>null</code>
      */
     public static String substringBeforeLast(String str, String separator) {
-        if ((str == null) || (separator == null) || (str.length() == 0)
-            || (separator.length() == 0)) {
+        if ((str == null) || (separator == null) || (str.length() == 0) || (separator.length() == 0)) {
             return str;
         }
 
@@ -3172,8 +3146,7 @@ public class StringUtil {
      * @return 被替换后的字符串，如果原始字符串为<code>null</code>，则返回<code>null</code>
      */
     public static String replace(String text, String repl, String with, int max) {
-        if ((text == null) || (repl == null) || (with == null) || (repl.length() == 0)
-            || (max == 0)) {
+        if ((text == null) || (repl == null) || (with == null) || (repl.length() == 0) || (max == 0)) {
             return text;
         }
 
@@ -3254,8 +3227,7 @@ public class StringUtil {
      * @return 被替换后的字符串，如果原始字符串为<code>null</code>，则返回<code>null</code>
      */
     public static String replaceChars(String str, String searchChars, String replaceChars) {
-        if ((str == null) || (str.length() == 0) || (searchChars == null)
-            || (searchChars.length() == 0)) {
+        if ((str == null) || (str.length() == 0) || (searchChars == null) || (searchChars.length() == 0)) {
             return str;
         }
 
@@ -3358,8 +3330,7 @@ public class StringUtil {
             end = temp;
         }
 
-        return new StringBuffer((len + start) - end + overlay.length() + 1).append(str.substring(
-            0, start)).append(overlay).append(str.substring(end)).toString();
+        return new StringBuffer((len + start) - end + overlay.length() + 1).append(str.substring(0, start)).append(overlay).append(str.substring(end)).toString();
     }
 
     /* ============================================================================ */

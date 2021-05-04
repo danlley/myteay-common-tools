@@ -1,6 +1,6 @@
-/*
- * Alipay.com Inc.
- * Copyright (c) 2004-2005 All Rights Reserved.
+/**
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger;
 
@@ -37,8 +37,7 @@ public class PerformanceMonitorInterceptor implements MethodInterceptor {
      * @see org.aopalliance.intercept.MethodInterceptor#invoke(org.aopalliance.intercept.MethodInvocation)
      */
     public Object invoke(MethodInvocation invocation) throws Throwable {
-        String name = invocation.getMethod().getDeclaringClass().getName() + "."
-                      + invocation.getMethod().getName();
+        String name = invocation.getMethod().getDeclaringClass().getName() + "." + invocation.getMethod().getName();
 
         Profiler.enter("Invoking method: " + name);
 

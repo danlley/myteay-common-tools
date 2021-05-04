@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -29,8 +29,7 @@ public class DataSrcUtil {
         ConnectionHolder conHolder = (ConnectionHolder) TransactionSynchronizationManager.getResource(dataSource);
         if (conHolder != null) {
             try {
-                Method method = ConnectionHolder.class.getDeclaredMethod("isTransactionActive",
-                    new Class[0]);
+                Method method = ConnectionHolder.class.getDeclaredMethod("isTransactionActive", new Class[0]);
                 method.setAccessible(true);
                 return (Boolean) method.invoke(conHolder);
             } catch (Exception e) {

@@ -1,6 +1,6 @@
 /**
- * Myteay.com Inc.
- * Copyright (c) 2005-2017 All Rights Reserved.
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger.utils;
 
@@ -420,8 +420,7 @@ public class ClassUtil {
             return null;
         }
 
-        return object.getClass().getName().replace(PACKAGE_SEPARATOR_CHAR, RESOURCE_SEPARATOR_CHAR)
-               + ".class";
+        return object.getClass().getName().replace(PACKAGE_SEPARATOR_CHAR, RESOURCE_SEPARATOR_CHAR) + ".class";
     }
 
     /**
@@ -484,8 +483,7 @@ public class ClassUtil {
             return null;
         }
 
-        return getPackageNameForObject(object).replace(PACKAGE_SEPARATOR_CHAR,
-            RESOURCE_SEPARATOR_CHAR);
+        return getPackageNameForObject(object).replace(PACKAGE_SEPARATOR_CHAR, RESOURCE_SEPARATOR_CHAR);
     }
 
     /**
@@ -902,45 +900,34 @@ public class ClassUtil {
 
             // short可以接受：short, byte
             if (Short.TYPE.equals(clazz)) {
-                return Short.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass);
+                return Short.class.equals(fromClass) || Byte.TYPE.equals(fromClass) || Byte.class.equals(fromClass);
             }
 
             // int可以接受：int、byte、short、char
             if (Integer.TYPE.equals(clazz)) {
-                return Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                return Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass) || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass) || Character.class.equals((fromClass));
             }
 
             // long可以接受：long、int、byte、short、char
             if (Long.TYPE.equals(clazz)) {
-                return Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                return Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass) || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
+                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass) || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
                        || Character.class.equals((fromClass));
             }
 
             // float可以接受：float, long, int, byte, short, char
             if (Float.TYPE.equals(clazz)) {
-                return Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
-                       || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
-                       || Character.class.equals((fromClass));
+                return Float.class.equals(fromClass) || Long.TYPE.equals(fromClass) || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
+                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass) || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
+                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass) || Character.class.equals((fromClass));
             }
 
             // double可以接受：double, float, long, int, byte, short, char
             if (Double.TYPE.equals(clazz)) {
-                return Double.class.equals(fromClass) || Float.TYPE.equals(fromClass)
-                       || Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
-                       || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass)
-                       || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
-                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass)
-                       || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
+                return Double.class.equals(fromClass) || Float.TYPE.equals(fromClass) || Float.class.equals(fromClass) || Long.TYPE.equals(fromClass)
+                       || Long.class.equals(fromClass) || Integer.TYPE.equals(fromClass) || Integer.class.equals(fromClass) || Byte.TYPE.equals(fromClass)
+                       || Byte.class.equals(fromClass) || Short.TYPE.equals(fromClass) || Short.class.equals(fromClass) || Character.TYPE.equals(fromClass)
                        || Character.class.equals((fromClass));
             }
         }

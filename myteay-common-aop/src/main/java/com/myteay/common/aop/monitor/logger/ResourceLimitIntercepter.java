@@ -1,6 +1,6 @@
-/*
- * Alipay.com Inc.
- * Copyright (c) 2004-2006 All Rights Reserved.
+/**
+ * GanguTianCan.com Inc.
+ * Copyright (c) 2005-2021 All Rights Reserved.
  */
 package com.myteay.common.aop.monitor.logger;
 
@@ -38,8 +38,7 @@ public class ResourceLimitIntercepter implements MethodInterceptor {
     public Object invoke(MethodInvocation invocation) throws Throwable {
         if (StringUtil.equals(invocation.getMethod().getName(), methodName)) {
             if (logger.isDebugEnabled()) {
-                logger.debug("拦截方法=[" + invocation.getMethod().getClass().getName() + "."
-                             + methodName + "]");
+                logger.debug("拦截方法=[" + invocation.getMethod().getClass().getName() + "." + methodName + "]");
             }
 
             if (synchronizedResource.applyResource()) {
@@ -49,8 +48,7 @@ public class ResourceLimitIntercepter implements MethodInterceptor {
                     synchronizedResource.releaseResource();
                 }
             } else {
-                throw new ResourceLimitExceedException(synchronizedResource.getResourceName(),
-                    ResultCode.RESOURCE_LIMIT_EXCEED);
+                throw new ResourceLimitExceedException(synchronizedResource.getResourceName(), ResultCode.RESOURCE_LIMIT_EXCEED);
             }
         } else {
             return invocation.proceed();
