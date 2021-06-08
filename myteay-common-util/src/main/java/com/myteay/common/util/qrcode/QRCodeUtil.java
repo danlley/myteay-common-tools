@@ -17,7 +17,6 @@ import java.util.Hashtable;
 
 import javax.imageio.ImageIO;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.google.zxing.BarcodeFormat;
@@ -30,9 +29,6 @@ import com.google.zxing.Result;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
-import com.myteay.common.util.generators.MtUidGeneratorException;
-import com.myteay.common.util.generators.UIDGener;
-import com.myteay.common.util.tools.RandomNumStrUtils;
 
 /**
  * 二维码生成工具类（带中心图片模式）
@@ -158,49 +154,6 @@ public class QRCodeUtil {
         }
 
         logger.warn("二维码生成路径为 path=" + path);
-    }
-
-    /**
-     * 二维码编码
-     * 
-     * @param content       二维码内容
-     * @param imgPath       中心图片存放路径
-     * @param destPath      目标二维码生成后的图片存放路径
-     * @param needCompress  是否压缩
-     * @throws Exception    异常处理
-     */
-    public static String encode(String content, String imgPath, boolean needCompress, String destPath) throws Exception {
-
-        if (logger.isInfoEnabled()) {
-            logger.info("开始创建二维码content=" + content + " imgPath=" + imgPath + " destPath=" + destPath + " needCompress=" + needCompress);
-        }
-
-        BufferedImage image = QRCodeUtil.createImage(content, imgPath, needCompress);
-        mkdirs(destPath);
-
-        String filename = null;
-        try {
-            filename = UIDGener.genUserId("甘谷县", RandomNumStrUtils.getNum());
-        } catch (MtUidGeneratorException e) {
-            logger.warn("生成二维码文件名失败。content=" + content, e);
-            throw new Exception("生成二维码文件名失败 content=" + content);
-        }
-
-        if (StringUtils.isBlank(filename)) {
-            logger.warn("生成二维码文件名失败filename不可用，filename is null!");
-            throw new Exception("生成二维码文件名失败 filename is null content=" + content);
-        }
-
-        File file = new File(destPath + "/" + filename + ".jpg");
-        ImageIO.write(image, FORMAT_NAME, file);
-        String path = null;
-        if (file != null) {
-            path = file.getAbsolutePath();
-        }
-
-        logger.warn("二维码生成路径为 path=" + path);
-
-        return filename + ".jpg";
     }
 
     /**
