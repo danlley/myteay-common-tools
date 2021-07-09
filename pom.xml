@@ -41,9 +41,7 @@
 
     <modules>
         <module>myteay-common-util</module>
-        <module>myteay-common-event</module>
         <module>myteay-common-aop</module>
-        <module>myteay-common-router</module>
         <module>myteay-common-http</module>
     </modules>
 </project>
